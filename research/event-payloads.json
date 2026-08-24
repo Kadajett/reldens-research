@@ -1,0 +1,5548 @@
+{
+  "generatedFrom": {
+    "method": "balanced-paren scan of every emit site (research/scripts/lib/scan.mjs); object keys and class properties extracted, never guessed",
+    "styleCounts": {
+      "object-literal": 145,
+      "positional": 99,
+      "class-instance": 3,
+      "none": 1
+    },
+    "eventsWithUniformObjectPayload": 127,
+    "totalEvents": 231
+  },
+  "events": {
+    "reldens.actionsPrepareEventsListeners": [
+      {
+        "origin": "reldens",
+        "file": "lib/actions/server/event-listeners.js",
+        "line": 55,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "actionsPlugin",
+          "classPath"
+        ]
+      }
+    ],
+    "reldens.activateRoom": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 85,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "room",
+          "this.gameManager"
+        ]
+      }
+    ],
+    "reldens.activatedRoom": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-manager.js",
+        "line": 435,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "sceneRoom",
+          "this"
+        ]
+      }
+    ],
+    "reldens.activatedRoom_": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-manager.js",
+        "line": 436,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "sceneRoom",
+          "this"
+        ]
+      }
+    ],
+    "reldens.adminAfterEntityDelete": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager/router-contents.js",
+        "line": 305,
+        "style": "object-literal",
+        "wrapped": true,
+        "keys": [
+          {
+            "key": "driverResource",
+            "computed": false,
+            "valueExpr": "driverResource"
+          },
+          {
+            "key": "idProperty",
+            "computed": false,
+            "valueExpr": "idProperty"
+          },
+          {
+            "key": "ids",
+            "computed": false,
+            "valueExpr": "ids"
+          }
+        ]
+      }
+    ],
+    "reldens.adminAfterEntitySave": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager/router-contents.js",
+        "line": 351,
+        "style": "object-literal",
+        "wrapped": true,
+        "keys": [
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "res",
+            "computed": false,
+            "valueExpr": "res"
+          },
+          {
+            "key": "driverResource",
+            "computed": false,
+            "valueExpr": "driverResource"
+          },
+          {
+            "key": "entityPath",
+            "computed": false,
+            "valueExpr": "entityPath"
+          },
+          {
+            "key": "entityData",
+            "computed": false,
+            "valueExpr": "saveResult"
+          }
+        ]
+      }
+    ],
+    "reldens.adminBeforeEntityEdit": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager/router.js",
+        "line": 128,
+        "style": "object-literal",
+        "wrapped": true,
+        "keys": [
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "res",
+            "computed": false,
+            "valueExpr": "res"
+          },
+          {
+            "key": "driverResource",
+            "computed": false,
+            "valueExpr": "driverResource"
+          },
+          {
+            "key": "entityPath",
+            "computed": false,
+            "valueExpr": "entityPath"
+          }
+        ]
+      }
+    ],
+    "reldens.adminBeforeEntityLoad": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager/router-contents.js",
+        "line": 490,
+        "style": "object-literal",
+        "wrapped": true,
+        "keys": [
+          {
+            "key": "driverResource",
+            "computed": false,
+            "valueExpr": "driverResource"
+          },
+          {
+            "key": "entityId",
+            "computed": false,
+            "valueExpr": "id"
+          }
+        ]
+      }
+    ],
+    "reldens.adminBeforeEntitySave": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager/router.js",
+        "line": 162,
+        "style": "object-literal",
+        "wrapped": true,
+        "keys": [
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "res",
+            "computed": false,
+            "valueExpr": "res"
+          },
+          {
+            "key": "driverResource",
+            "computed": false,
+            "valueExpr": "driverResource"
+          },
+          {
+            "key": "entityPath",
+            "computed": false,
+            "valueExpr": "entityPath"
+          }
+        ]
+      },
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager/router.js",
+        "line": 192,
+        "style": "object-literal",
+        "wrapped": true,
+        "keys": [
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "res",
+            "computed": false,
+            "valueExpr": "res"
+          },
+          {
+            "key": "driverResource",
+            "computed": false,
+            "valueExpr": "driverResource"
+          },
+          {
+            "key": "entityPath",
+            "computed": false,
+            "valueExpr": "entityPath"
+          }
+        ]
+      }
+    ],
+    "reldens.adminBeforeFieldRender": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager/router-contents.js",
+        "line": 266,
+        "style": "object-literal",
+        "wrapped": true,
+        "keys": [
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "driverResource",
+            "computed": false,
+            "valueExpr": "driverResource"
+          },
+          {
+            "key": "propertyKey",
+            "computed": false,
+            "valueExpr": "propertyKey"
+          },
+          {
+            "key": "property",
+            "computed": false,
+            "valueExpr": "property"
+          },
+          {
+            "key": "templateData",
+            "computed": false,
+            "valueExpr": "templateData"
+          },
+          {
+            "key": "loadedEntity",
+            "computed": false,
+            "valueExpr": "loadedEntity"
+          },
+          {
+            "key": "renderedEditProperties",
+            "computed": false,
+            "valueExpr": "renderedEditProperties"
+          },
+          {
+            "key": "adminContentsRender",
+            "computed": false,
+            "valueExpr": "this.adminContentsRender.bind(this)"
+          },
+          {
+            "key": "adminFilesContents",
+            "computed": false,
+            "valueExpr": "this.adminFilesContents"
+          }
+        ]
+      }
+    ],
+    "reldens.adminEditPropertiesPopulation": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager/router-contents.js",
+        "line": 229,
+        "style": "object-literal",
+        "wrapped": true,
+        "keys": [
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "driverResource",
+            "computed": false,
+            "valueExpr": "driverResource"
+          },
+          {
+            "key": "renderedEditProperties",
+            "computed": false,
+            "valueExpr": "renderedEditProperties"
+          },
+          {
+            "key": "loadedEntity",
+            "computed": false,
+            "valueExpr": "loadedEntity"
+          },
+          {
+            "key": "entityId",
+            "computed": false,
+            "valueExpr": "driverResource.id()"
+          },
+          {
+            "key": "entityData",
+            "computed": false,
+            "valueExpr": "loadedEntity"
+          }
+        ]
+      }
+    ],
+    "reldens.adminIsAuthenticated": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager/router.js",
+        "line": 207,
+        "style": "object-literal",
+        "wrapped": true,
+        "keys": [
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "res",
+            "computed": false,
+            "valueExpr": "res"
+          },
+          {
+            "key": "next",
+            "computed": false,
+            "valueExpr": "next"
+          },
+          {
+            "key": "allowContinue",
+            "computed": false,
+            "valueExpr": "allowContinue"
+          }
+        ],
+        "resolvedFromLocal": "event"
+      }
+    ],
+    "reldens.adminListPropertiesPopulation": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager/router-contents.js",
+        "line": 112,
+        "style": "object-literal",
+        "wrapped": true,
+        "keys": [
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "driverResource",
+            "computed": false,
+            "valueExpr": "driverResource"
+          },
+          {
+            "key": "listProperties",
+            "computed": false,
+            "valueExpr": "listProperties"
+          }
+        ]
+      }
+    ],
+    "reldens.adminSideBarBeforeRender": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager/contents-builder.js",
+        "line": 106,
+        "style": "object-literal",
+        "wrapped": true,
+        "keys": [
+          {
+            "key": "navigationContents",
+            "computed": false,
+            "valueExpr": "navigationContents"
+          },
+          {
+            "key": "navigationView",
+            "computed": false,
+            "valueExpr": "navigationView"
+          }
+        ],
+        "resolvedFromLocal": "eventAdminSideBarBeforeRender"
+      }
+    ],
+    "reldens.adminSideBarBeforeSubItems": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager/contents-builder.js",
+        "line": 92,
+        "style": "object-literal",
+        "wrapped": true,
+        "keys": [
+          {
+            "key": "navigationContents",
+            "computed": false,
+            "valueExpr": "navigationContents"
+          }
+        ],
+        "resolvedFromLocal": "eventAdminSideBarBeforeSubItems"
+      }
+    ],
+    "reldens.adminViewPropertiesPopulation": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager/router-contents.js",
+        "line": 202,
+        "style": "object-literal",
+        "wrapped": true,
+        "keys": [
+          {
+            "key": "idProperty",
+            "computed": false,
+            "valueExpr": "idProperty"
+          },
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "driverResource",
+            "computed": false,
+            "valueExpr": "driverResource"
+          },
+          {
+            "key": "loadedEntity",
+            "computed": false,
+            "valueExpr": "loadedEntity"
+          },
+          {
+            "key": "renderedViewProperties",
+            "computed": false,
+            "valueExpr": "renderedViewProperties"
+          }
+        ]
+      }
+    ],
+    "reldens.afterContentProcess": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/template-engine.js",
+        "line": 188,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "processedContent",
+            "computed": false,
+            "valueExpr": "processedTemplate"
+          },
+          {
+            "key": "variables",
+            "computed": false,
+            "valueExpr": "enhancedData"
+          },
+          {
+            "key": "renderContext",
+            "computed": false,
+            "valueExpr": "renderContext"
+          }
+        ],
+        "resolvedFromLocal": "afterProcessData"
+      }
+    ],
+    "reldens.afterCreateAdminManager": [
+      {
+        "origin": "reldens",
+        "file": "lib/admin/server/subscribers/create-admin-subscriber.js",
+        "line": 75,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "serverManager",
+            "computed": false,
+            "valueExpr": "serverManager"
+          }
+        ]
+      }
+    ],
+    "reldens.afterEnrichPlayerWithLocale": [
+      {
+        "origin": "reldens",
+        "file": "lib/snippets/server/initial-game-data-enricher.js",
+        "line": 39,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "superInitialGameData",
+            "computed": false,
+            "valueExpr": "superInitialGameData"
+          },
+          {
+            "key": "roomGame",
+            "computed": false,
+            "valueExpr": "roomGame"
+          },
+          {
+            "key": "client",
+            "computed": false,
+            "valueExpr": "client"
+          },
+          {
+            "key": "userModel",
+            "computed": false,
+            "valueExpr": "userModel"
+          }
+        ],
+        "resolvedFromLocal": "eventData"
+      }
+    ],
+    "reldens.afterGiveRewards": [
+      {
+        "origin": "reldens",
+        "file": "lib/rewards/server/subscribers/rewards-subscriber.js",
+        "line": 79,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "itemRewards",
+            "computed": false,
+            "valueExpr": "itemRewards"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "targetObject",
+            "computed": false,
+            "valueExpr": "targetObject"
+          },
+          {
+            "key": "winningRewards",
+            "computed": false,
+            "valueExpr": "winningRewards"
+          }
+        ]
+      }
+    ],
+    "reldens.afterInitEngineAndStartGame": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-manager.js",
+        "line": 361,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this.initialGameData",
+          "joinedFirstRoom"
+        ]
+      }
+    ],
+    "reldens.afterPlayerJoinedClan": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/clan-join.js",
+        "line": 72,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "playerJoining",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "clan",
+            "computed": false,
+            "valueExpr": "clanToJoin"
+          }
+        ]
+      }
+    ],
+    "reldens.afterPlayerJoinedTeam": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/team-join.js",
+        "line": 85,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "currentTeam",
+            "computed": false,
+            "valueExpr": "currentTeam"
+          },
+          {
+            "key": "playerJoining",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          }
+        ]
+      }
+    ],
+    "reldens.afterProcessPlayerDropsBeforeBroadcast": [
+      {
+        "origin": "reldens",
+        "file": "lib/inventory/server/subscribers/player-death-subscriber.js",
+        "line": 103,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "dropsMappedData",
+          "eventResult"
+        ]
+      }
+    ],
+    "reldens.afterProcessRewardsDropsBeforeBroadcast": [
+      {
+        "origin": "reldens",
+        "file": "lib/rewards/server/rewards-drops-processor.js",
+        "line": 49,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "dropsMappedData",
+          "eventResult"
+        ]
+      }
+    ],
+    "reldens.afterRunAdditionalRespawnSetup": [
+      {
+        "origin": "reldens",
+        "file": "lib/respawn/server/room-respawn.js",
+        "line": 137,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "objInstance",
+            "computed": false,
+            "valueExpr": "objInstance"
+          },
+          {
+            "key": "clonedObjProps",
+            "computed": false,
+            "valueExpr": "clonedObjProps"
+          },
+          {
+            "key": "respawnArea",
+            "computed": false,
+            "valueExpr": "respawnArea"
+          },
+          {
+            "key": "multipleObj",
+            "computed": false,
+            "valueExpr": "multipleObj"
+          },
+          {
+            "key": "objClass",
+            "computed": false,
+            "valueExpr": "objClass"
+          },
+          {
+            "key": "objectIndex",
+            "computed": false,
+            "valueExpr": "objectIndex"
+          },
+          {
+            "key": "roomRespawn",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.afterRunAdditionalSetup": [
+      {
+        "origin": "reldens",
+        "file": "lib/objects/server/manager.js",
+        "line": 144,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "objectInstance",
+            "computed": false,
+            "valueExpr": "objectInstance"
+          },
+          {
+            "key": "objectData",
+            "computed": false,
+            "valueExpr": "objectData"
+          },
+          {
+            "key": "objectsManager",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.afterSceneDynamicCreate": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/scene-dynamic.js",
+        "line": 104,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this"
+        ]
+      }
+    ],
+    "reldens.afterTeamLeave": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/team-leave.js",
+        "line": 95,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "currentTeam",
+            "computed": false,
+            "valueExpr": "currentTeam"
+          },
+          {
+            "key": "leavingPlayerName",
+            "computed": false,
+            "valueExpr": "leavingPlayerName"
+          }
+        ]
+      }
+    ],
+    "reldens.afterVariablesCreated": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/template-engine.js",
+        "line": 168,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "variables",
+            "computed": false,
+            "valueExpr": "systemVariables"
+          },
+          {
+            "key": "renderContext",
+            "computed": false,
+            "valueExpr": "renderContext"
+          }
+        ],
+        "resolvedFromLocal": "eventData"
+      }
+    ],
+    "reldens.allAudiosLoaded": [
+      {
+        "origin": "reldens",
+        "file": "lib/audio/client/manager.js",
+        "line": 365,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "audios",
+          "currentScene",
+          "audio"
+        ]
+      }
+    ],
+    "reldens.audioLoaded": [
+      {
+        "origin": "reldens",
+        "file": "lib/audio/client/manager.js",
+        "line": 363,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "audios",
+          "currentScene",
+          "audio"
+        ]
+      }
+    ],
+    "reldens.audioManagerDeleteAudios": [
+      {
+        "origin": "reldens",
+        "file": "lib/audio/client/manager.js",
+        "line": 449,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "room",
+          "gameManager",
+          "message"
+        ]
+      }
+    ],
+    "reldens.audioManagerUpdateAudiosLoaded": [
+      {
+        "origin": "reldens",
+        "file": "lib/audio/client/manager.js",
+        "line": 432,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "room",
+          "gameManager",
+          "message"
+        ]
+      }
+    ],
+    "reldens.audioManagerUpdateCategoriesLoaded": [
+      {
+        "origin": "reldens",
+        "file": "lib/audio/client/manager.js",
+        "line": 426,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "room",
+          "gameManager",
+          "message"
+        ]
+      }
+    ],
+    "reldens.battleEnded": [
+      {
+        "origin": "reldens",
+        "file": "lib/actions/server/pve.js",
+        "line": 332,
+        "style": "class-instance",
+        "wrapped": false,
+        "className": "BattleEndedEvent",
+        "classFile": "lib/actions/server/events/battle-ended-event.js",
+        "properties": [
+          "actionData",
+          "playerSchema",
+          "pve",
+          "room"
+        ],
+        "resolvedFromLocal": "event"
+      }
+    ],
+    "reldens.beforeClanDisband": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/clan-leave.js",
+        "line": 97,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "singleRemoveId",
+            "computed": false,
+            "valueExpr": "singleRemoveId"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          },
+          {
+            "key": "continueDisband",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "event"
+      }
+    ],
+    "reldens.beforeClanJoin": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/clan-join.js",
+        "line": 42,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "clanToJoin",
+            "computed": false,
+            "valueExpr": "clanToJoin"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          },
+          {
+            "key": "continueBeforeJoin",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "eventBeforeJoin"
+      }
+    ],
+    "reldens.beforeClanUpdatePlayers": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/clan-join.js",
+        "line": 66,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "clanToJoin",
+            "computed": false,
+            "valueExpr": "clanToJoin"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          },
+          {
+            "key": "continueBeforeJoinUpdate",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "eventBeforeJoinUpdate"
+      }
+    ],
+    "reldens.beforeContentProcess": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/template-engine.js",
+        "line": 175,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "content",
+            "computed": false,
+            "valueExpr": "template"
+          },
+          {
+            "key": "variables",
+            "computed": false,
+            "valueExpr": "enhancedData"
+          },
+          {
+            "key": "renderContext",
+            "computed": false,
+            "valueExpr": "renderContext"
+          }
+        ],
+        "resolvedFromLocal": "beforeProcessData"
+      }
+    ],
+    "reldens.beforeCreateAdminManager": [
+      {
+        "origin": "reldens",
+        "file": "lib/admin/server/subscribers/create-admin-subscriber.js",
+        "line": 40,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "serverManager",
+            "computed": false,
+            "valueExpr": "serverManager"
+          }
+        ]
+      }
+    ],
+    "reldens.beforeCreateEngine": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-manager.js",
+        "line": 299,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this.initialGameData",
+          "this"
+        ]
+      }
+    ],
+    "reldens.beforeCreateUiScene": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/scene-preloader.js",
+        "line": 217,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this"
+        ]
+      }
+    ],
+    "reldens.beforeEnrichPlayerWithClan": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/event-handlers/create-player-clan-handler.js",
+        "line": 49,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "client",
+            "computed": false,
+            "valueExpr": "client"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "room",
+            "computed": false,
+            "valueExpr": "room"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          },
+          {
+            "key": "continueProcess",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "startEvent"
+      }
+    ],
+    "reldens.beforeEnrichPlayerWithClanUpdate": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/event-handlers/create-player-clan-handler.js",
+        "line": 71,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "client",
+            "computed": false,
+            "valueExpr": "client"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "room",
+            "computed": false,
+            "valueExpr": "room"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          },
+          {
+            "key": "continueProcess",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "endEvent"
+      }
+    ],
+    "reldens.beforeEnrichUserWithLocale": [
+      {
+        "origin": "reldens",
+        "file": "lib/snippets/server/initial-game-data-enricher.js",
+        "line": 26,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "startEvent"
+        ]
+      }
+    ],
+    "reldens.beforeGetParsedValue": [
+      {
+        "origin": "reldens",
+        "file": "lib/config/server/manager.js",
+        "line": 102,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "configManager",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "config",
+            "computed": false,
+            "valueExpr": "config"
+          }
+        ]
+      }
+    ],
+    "reldens.beforeGiveRewards": [
+      {
+        "origin": "reldens",
+        "file": "lib/rewards/server/subscribers/rewards-subscriber.js",
+        "line": 52,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "targetObject",
+            "computed": false,
+            "valueExpr": "targetObject"
+          },
+          {
+            "key": "continueEvent",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "eventDrop"
+      }
+    ],
+    "reldens.beforeInitEngineAndStartGame": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-manager.js",
+        "line": 291,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this.initialGameData",
+          "this"
+        ]
+      }
+    ],
+    "reldens.beforeInitializeManagers": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/manager.js",
+        "line": 394,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "serverManager",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "continueProcess",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "event"
+      }
+    ],
+    "reldens.beforeJoinGame": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-manager.js",
+        "line": 184,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "gameManager",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "formData",
+            "computed": false,
+            "valueExpr": "formData"
+          },
+          {
+            "key": "isNewUser",
+            "computed": false,
+            "valueExpr": "isNewUser"
+          }
+        ]
+      }
+    ],
+    "reldens.beforeJoinGameRoom": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-manager.js",
+        "line": 193,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this.gameRoom"
+        ]
+      }
+    ],
+    "reldens.beforeLoadConfigurations": [
+      {
+        "origin": "reldens",
+        "file": "lib/config/server/manager.js",
+        "line": 57,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "configManager",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.beforePreload": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/scene-preloader.js",
+        "line": 81,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "eventUiScene"
+        ]
+      }
+    ],
+    "reldens.beforePreloadUiScene": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/scene-preloader.js",
+        "line": 132,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this"
+        ]
+      }
+    ],
+    "reldens.beforeReconnectGameClient": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 422,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "message",
+          "this"
+        ]
+      }
+    ],
+    "reldens.beforeRemovingDroppedReward": [
+      {
+        "origin": "reldens",
+        "file": "lib/rewards/server/reward-message-actions.js",
+        "line": 61,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "roomObject",
+            "computed": false,
+            "valueExpr": "roomObject"
+          },
+          {
+            "key": "client",
+            "computed": false,
+            "valueExpr": "client"
+          },
+          {
+            "key": "room",
+            "computed": false,
+            "valueExpr": "room"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "continueEvent",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "eventData"
+      }
+    ],
+    "reldens.beforeSceneDynamicCreate": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/scene-dynamic.js",
+        "line": 93,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this"
+        ]
+      }
+    ],
+    "reldens.beforeSceneExecuteMessages": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/scene.js",
+        "line": 449,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "room",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "client",
+            "computed": false,
+            "valueExpr": "client"
+          },
+          {
+            "key": "messageData",
+            "computed": false,
+            "valueExpr": "messageData"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "canContinue",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "event"
+      }
+    ],
+    "reldens.beforeSetupAdminManager": [
+      {
+        "origin": "reldens",
+        "file": "lib/admin/server/subscribers/create-admin-subscriber.js",
+        "line": 73,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "serverManager",
+            "computed": false,
+            "valueExpr": "serverManager"
+          }
+        ]
+      }
+    ],
+    "reldens.beforeSuperInitialGameData": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/game.js",
+        "line": 69,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "superInitialGameData",
+          "this",
+          "client",
+          "userModel"
+        ]
+      }
+    ],
+    "reldens.beforeTeamCreate": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/team-join.js",
+        "line": 63,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "teamProps",
+            "computed": false,
+            "valueExpr": "teamProps"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          },
+          {
+            "key": "continueBeforeCreate",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "beforeCreateEvent"
+      }
+    ],
+    "reldens.beforeTeamDisband": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/team-leave.js",
+        "line": 99,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "singleRemoveId",
+            "computed": false,
+            "valueExpr": "singleRemoveId"
+          },
+          {
+            "key": "room",
+            "computed": false,
+            "valueExpr": "room"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          },
+          {
+            "key": "continueDisband",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "event"
+      },
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/team-leave.js",
+        "line": 107,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "singleRemoveId",
+            "computed": false,
+            "valueExpr": "singleRemoveId"
+          },
+          {
+            "key": "room",
+            "computed": false,
+            "valueExpr": "room"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          },
+          {
+            "key": "continueDisband",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "event"
+      }
+    ],
+    "reldens.beforeTeamJoin": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/team-join.js",
+        "line": 70,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "currentTeam",
+            "computed": false,
+            "valueExpr": "currentTeam"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          },
+          {
+            "key": "continueBeforeJoin",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "eventBeforeJoin"
+      }
+    ],
+    "reldens.beforeTeamUpdatePlayers": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/team-join.js",
+        "line": 79,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "currentTeam",
+            "computed": false,
+            "valueExpr": "currentTeam"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          },
+          {
+            "key": "continueBeforeJoinUpdate",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "eventBeforeJoinUpdate"
+      }
+    ],
+    "reldens.buildAdminContentsAfter": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager/contents-builder.js",
+        "line": 45,
+        "style": "none",
+        "wrapped": true
+      }
+    ],
+    "reldens.changeSceneDestroyPrevious": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/scene-dynamic.js",
+        "line": 559,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this"
+        ]
+      }
+    ],
+    "reldens.chatMessageObjectCreated": [
+      {
+        "origin": "reldens",
+        "file": "lib/chat/client/chat-ui.js",
+        "line": 613,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "message"
+        ]
+      }
+    ],
+    "reldens.clanDisconnectAfterSendUpdate": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/clan-disconnect.js",
+        "line": 72,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          },
+          {
+            "key": "continueLeave",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "event"
+      }
+    ],
+    "reldens.clanDisconnectBeforeSendUpdate": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/clan-disconnect.js",
+        "line": 56,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "playerId",
+            "computed": false,
+            "valueExpr": "playerId"
+          },
+          {
+            "key": "sendUpdate",
+            "computed": false,
+            "valueExpr": "sendUpdate"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          }
+        ]
+      }
+    ],
+    "reldens.clanJoinInviteRejected": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/clan-message-actions.js",
+        "line": 75,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "clientSendingInvite",
+            "computed": false,
+            "valueExpr": "clientSendingInvite"
+          },
+          {
+            "key": "playerRejectingName",
+            "computed": false,
+            "valueExpr": "playerRejectingName"
+          },
+          {
+            "key": "clanInvite",
+            "computed": false,
+            "valueExpr": "clanInvite"
+          }
+        ]
+      }
+    ],
+    "reldens.clanLeave": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/clan-leave.js",
+        "line": 29,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "message",
+            "computed": false,
+            "valueExpr": "message"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          }
+        ]
+      }
+    ],
+    "reldens.clanLeaveAfterSendUpdate": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/clan-leave.js",
+        "line": 106,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "singleRemoveId",
+            "computed": false,
+            "valueExpr": "singleRemoveId"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          },
+          {
+            "key": "continueDisband",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "event"
+      }
+    ],
+    "reldens.clanLeaveBeforeSendUpdate": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/clan-leave.js",
+        "line": 81,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "playerId",
+            "computed": false,
+            "valueExpr": "playerId"
+          },
+          {
+            "key": "sendUpdate",
+            "computed": false,
+            "valueExpr": "sendUpdate"
+          },
+          {
+            "key": "currentClan",
+            "computed": false,
+            "valueExpr": "currentClan"
+          },
+          {
+            "key": "disbandClan",
+            "computed": false,
+            "valueExpr": "disbandClan"
+          },
+          {
+            "key": "singleRemoveId",
+            "computed": false,
+            "valueExpr": "singleRemoveId"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          }
+        ]
+      }
+    ],
+    "reldens.clientStartAfter": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/handlers/client-start-handler.js",
+        "line": 52,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this"
+        ]
+      }
+    ],
+    "reldens.clientStartBefore": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-manager.js",
+        "line": 125,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this"
+        ]
+      }
+    ],
+    "reldens.closeUI": [
+      {
+        "origin": "reldens",
+        "file": "lib/chat/client/chat-ui.js",
+        "line": 170,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "ui",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "closeButton",
+            "computed": false,
+            "valueExpr": "this.chatCloseButton"
+          },
+          {
+            "key": "openButton",
+            "computed": false,
+            "valueExpr": "this.chatOpenButton"
+          },
+          {
+            "key": "dialogBox",
+            "computed": false,
+            "valueExpr": "this.uiChat"
+          },
+          {
+            "key": "dialogContainer",
+            "computed": false,
+            "valueExpr": "this.uiChat.getChildByProperty('id', ChatConst.CHAT_UI)"
+          },
+          {
+            "key": "uiScene",
+            "computed": false,
+            "valueExpr": "this.uiScene"
+          }
+        ]
+      },
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/user-interface.js",
+        "line": 193,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "ui",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "closeButton",
+            "computed": false,
+            "valueExpr": "this.closeButton"
+          },
+          {
+            "key": "openButton",
+            "computed": false,
+            "valueExpr": "this.openButton"
+          },
+          {
+            "key": "dialogBox",
+            "computed": false,
+            "valueExpr": "dialogBox"
+          },
+          {
+            "key": "dialogContainer",
+            "computed": false,
+            "valueExpr": "dialogContainer"
+          },
+          {
+            "key": "uiScene",
+            "computed": false,
+            "valueExpr": "uiScene"
+          }
+        ]
+      },
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/ui-factory.js",
+        "line": 75,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "ui",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "closeButton",
+            "computed": false,
+            "valueExpr": "closeButton"
+          },
+          {
+            "key": "openButton",
+            "computed": false,
+            "valueExpr": "openButton"
+          },
+          {
+            "key": "dialogBox",
+            "computed": false,
+            "valueExpr": "dialogBox"
+          },
+          {
+            "key": "dialogContainer",
+            "computed": false,
+            "valueExpr": "dialogContainer"
+          },
+          {
+            "key": "uiScene",
+            "computed": false,
+            "valueExpr": "this.uiScene"
+          }
+        ]
+      },
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/settings-ui.js",
+        "line": 62,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "ui",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "closeButton",
+            "computed": false,
+            "valueExpr": "closeButton"
+          },
+          {
+            "key": "openButton",
+            "computed": false,
+            "valueExpr": "openButton"
+          },
+          {
+            "key": "dialogBox",
+            "computed": false,
+            "valueExpr": "dialogBox"
+          },
+          {
+            "key": "dialogContainer",
+            "computed": false,
+            "valueExpr": "dialogContainer"
+          },
+          {
+            "key": "uiScene",
+            "computed": false,
+            "valueExpr": "uiScene"
+          }
+        ]
+      },
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/instructions-ui.js",
+        "line": 53,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "ui",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "closeButton",
+            "computed": false,
+            "valueExpr": "closeButton"
+          },
+          {
+            "key": "openButton",
+            "computed": false,
+            "valueExpr": "openButton"
+          },
+          {
+            "key": "dialogBox",
+            "computed": false,
+            "valueExpr": "dialogBox"
+          },
+          {
+            "key": "dialogContainer",
+            "computed": false,
+            "valueExpr": "dialogContainer"
+          },
+          {
+            "key": "uiScene",
+            "computed": false,
+            "valueExpr": "uiScene"
+          }
+        ]
+      },
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/minimap-ui.js",
+        "line": 98,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "ui",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "closeButton",
+            "computed": false,
+            "valueExpr": "closeButton"
+          },
+          {
+            "key": "minimap",
+            "computed": false,
+            "valueExpr": "minimap"
+          },
+          {
+            "key": "box",
+            "computed": false,
+            "valueExpr": "box"
+          }
+        ]
+      },
+      {
+        "origin": "reldens",
+        "file": "lib/users/client/player-stats-ui.js",
+        "line": 59,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "ui",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "closeButton",
+            "computed": false,
+            "valueExpr": "closeButton"
+          },
+          {
+            "key": "openButton",
+            "computed": false,
+            "valueExpr": "openButton"
+          },
+          {
+            "key": "dialogBox",
+            "computed": false,
+            "valueExpr": "dialogBox"
+          },
+          {
+            "key": "dialogContainer",
+            "computed": false,
+            "valueExpr": "dialogContainer"
+          },
+          {
+            "key": "uiScene",
+            "computed": false,
+            "valueExpr": "uiScene"
+          }
+        ]
+      }
+    ],
+    "reldens.cmsManagerInitializeServices": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/manager.js",
+        "line": 390,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "manager",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.createAnimationAfter": [
+      {
+        "origin": "reldens",
+        "file": "lib/objects/client/animation-engine.js",
+        "line": 223,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "animationEngine",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.createAppServer": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/manager.js",
+        "line": 339,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "serverManager",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "continueProcess",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "event"
+      }
+    ],
+    "reldens.createCurrentPlayer": [
+      {
+        "origin": "reldens",
+        "file": "lib/prediction/client/room-events-override.js",
+        "line": 41,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "player",
+            "computed": false,
+            "valueExpr": "player"
+          },
+          {
+            "key": "key",
+            "computed": false,
+            "valueExpr": "key"
+          },
+          {
+            "key": "previousScene",
+            "computed": false,
+            "valueExpr": "previousScene"
+          },
+          {
+            "key": "roomEvents",
+            "computed": false,
+            "valueExpr": "roomEvents"
+          }
+        ],
+        "resolvedFromLocal": "eventData"
+      },
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 232,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "player",
+            "computed": false,
+            "valueExpr": "player"
+          },
+          {
+            "key": "key",
+            "computed": false,
+            "valueExpr": "key"
+          },
+          {
+            "key": "previousScene",
+            "computed": false,
+            "valueExpr": "previousScene"
+          },
+          {
+            "key": "roomEvents",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ],
+        "resolvedFromLocal": "eventData"
+      }
+    ],
+    "reldens.createDynamicAnimation_": [
+      {
+        "origin": "reldens",
+        "file": "lib/objects/client/plugin.js",
+        "line": 539,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "animProps"
+        ]
+      }
+    ],
+    "reldens.createDynamicAnimationsBefore": [
+      {
+        "origin": "reldens",
+        "file": "lib/objects/client/plugin.js",
+        "line": 517,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "sceneDynamic"
+        ]
+      }
+    ],
+    "reldens.createEngineScene": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 861,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "player",
+          "room",
+          "previousScene",
+          "this"
+        ]
+      }
+    ],
+    "reldens.createEngineSceneDone": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 877,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "player",
+            "computed": false,
+            "valueExpr": "player"
+          },
+          {
+            "key": "key",
+            "computed": false,
+            "valueExpr": "key"
+          },
+          {
+            "key": "previousScene",
+            "computed": false,
+            "valueExpr": "previousScene"
+          },
+          {
+            "key": "roomEvents",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ],
+        "resolvedFromLocal": "eventData"
+      }
+    ],
+    "reldens.createGameServer": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/manager.js",
+        "line": 378,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "serverManager",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "continueProcess",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "event"
+      }
+    ],
+    "reldens.createNewPlayerBefore": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 553,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "loginData",
+          "playerData",
+          "this"
+        ]
+      }
+    ],
+    "reldens.createNewPlayerCriticalError": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 572,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "loginData",
+          "error",
+          "result"
+        ]
+      }
+    ],
+    "reldens.createNewUserAfter": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 517,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "newUser",
+          "this",
+          "result"
+        ]
+      }
+    ],
+    "reldens.createNewUserError": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 521,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "userData",
+          "result"
+        ]
+      }
+    ],
+    "reldens.createPlayerAfter": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/scene.js",
+        "line": 250,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "client",
+          "userModel",
+          "currentPlayer",
+          "this"
+        ]
+      }
+    ],
+    "reldens.createPlayerAnimations": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/scene-preloader.js",
+        "line": 446,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "avatarKey"
+        ]
+      }
+    ],
+    "reldens.createPlayerBefore": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/scene.js",
+        "line": 225,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "client",
+          "userModel",
+          "this"
+        ]
+      }
+    ],
+    "reldens.createPlayerStatsAfter": [
+      {
+        "origin": "reldens",
+        "file": "lib/users/server/plugin.js",
+        "line": 308,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "client",
+          "userModel",
+          "currentPlayer",
+          "roomScene"
+        ]
+      }
+    ],
+    "reldens.createPreload": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/scene-preloader.js",
+        "line": 206,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "eventUiScene"
+        ]
+      }
+    ],
+    "reldens.createUiScene": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/scene-preloader.js",
+        "line": 227,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this"
+        ]
+      }
+    ],
+    "reldens.createWorld": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/scene.js",
+        "line": 503,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "roomData",
+          "objectsManager",
+          "this"
+        ]
+      }
+    ],
+    "reldens.createdMinimap": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/minimap.js",
+        "line": 58,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this"
+        ]
+      }
+    ],
+    "reldens.createdNewPlayer": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 567,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "player",
+          "loginData",
+          "this",
+          "result"
+        ]
+      }
+    ],
+    "reldens.createdPlayerSchema": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/scene.js",
+        "line": 239,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "client",
+          "userModel",
+          "currentPlayer",
+          "this"
+        ]
+      }
+    ],
+    "reldens.createdPreloaderInstance": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 820,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "this.scenePreloader"
+        ]
+      }
+    ],
+    "reldens.createdPreloaderRecurring": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 796,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "this.scenePreloader"
+        ]
+      }
+    ],
+    "reldens.createdRoomsEventsInstance": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-manager.js",
+        "line": 358,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "joinedFirstRoom",
+          "this"
+        ]
+      }
+    ],
+    "reldens.createdUserInterface": [
+      {
+        "origin": "reldens",
+        "file": "lib/objects/client/plugin.js",
+        "line": 498,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "gameManager",
+            "computed": false,
+            "valueExpr": "gameManager"
+          },
+          {
+            "key": "id",
+            "computed": false,
+            "valueExpr": "animProps.id"
+          },
+          {
+            "key": "userInterface",
+            "computed": false,
+            "valueExpr": "roomEvents.objectsUi[animProps.id]"
+          },
+          {
+            "key": "ObjectsPlugin",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.createdWorldObject": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/p2world.js",
+        "line": 686,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "p2world",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "roomObject",
+            "computed": false,
+            "valueExpr": "roomObject"
+          },
+          {
+            "key": "bodyObject",
+            "computed": false,
+            "valueExpr": "bodyObject"
+          },
+          {
+            "key": "bodyMass",
+            "computed": false,
+            "valueExpr": "bodyMass"
+          },
+          {
+            "key": "collision",
+            "computed": false,
+            "valueExpr": "collision"
+          },
+          {
+            "key": "hasState",
+            "computed": false,
+            "valueExpr": "hasState"
+          },
+          {
+            "key": "objectIndex",
+            "computed": false,
+            "valueExpr": "objectIndex"
+          },
+          {
+            "key": "tileW",
+            "computed": false,
+            "valueExpr": "tileW"
+          },
+          {
+            "key": "tileH",
+            "computed": false,
+            "valueExpr": "tileH"
+          },
+          {
+            "key": "posX",
+            "computed": false,
+            "valueExpr": "posX"
+          },
+          {
+            "key": "posY",
+            "computed": false,
+            "valueExpr": "posY"
+          },
+          {
+            "key": "pathFinder",
+            "computed": false,
+            "valueExpr": "pathFinder"
+          }
+        ]
+      }
+    ],
+    "reldens.defineRoomsInGameServerDone": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/manager.js",
+        "line": 117,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this"
+        ]
+      }
+    ],
+    "reldens.disconnectLoggedBefore": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/scene.js",
+        "line": 175,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "room",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "player",
+            "computed": false,
+            "valueExpr": "player"
+          },
+          {
+            "key": "client",
+            "computed": false,
+            "valueExpr": "client"
+          },
+          {
+            "key": "userModel",
+            "computed": false,
+            "valueExpr": "userModel"
+          }
+        ]
+      }
+    ],
+    "reldens.dynamicForm.afterSave": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/dynamic-form.js",
+        "line": 295,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "formConfig",
+            "computed": false,
+            "valueExpr": "formConfig"
+          },
+          {
+            "key": "preparedValues",
+            "computed": false,
+            "valueExpr": "preparedValues"
+          },
+          {
+            "key": "result",
+            "computed": false,
+            "valueExpr": "result"
+          }
+        ]
+      }
+    ],
+    "reldens.dynamicForm.afterValidation": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/dynamic-form.js",
+        "line": 64,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "formKey",
+            "computed": false,
+            "valueExpr": "formKey"
+          },
+          {
+            "key": "formConfig",
+            "computed": false,
+            "valueExpr": "formConfig"
+          },
+          {
+            "key": "submittedValues",
+            "computed": false,
+            "valueExpr": "submittedValues"
+          },
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "validationResult",
+            "computed": false,
+            "valueExpr": "{isValid: true, formConfig}"
+          }
+        ]
+      }
+    ],
+    "reldens.dynamicForm.beforeSave": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/dynamic-form.js",
+        "line": 281,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "formConfig",
+            "computed": false,
+            "valueExpr": "formConfig"
+          },
+          {
+            "key": "preparedValues",
+            "computed": false,
+            "valueExpr": "preparedValues"
+          }
+        ]
+      }
+    ],
+    "reldens.dynamicForm.beforeValidation": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/dynamic-form.js",
+        "line": 42,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "formKey",
+            "computed": false,
+            "valueExpr": "formKey"
+          },
+          {
+            "key": "formConfig",
+            "computed": false,
+            "valueExpr": "formConfig"
+          },
+          {
+            "key": "submittedValues",
+            "computed": false,
+            "valueExpr": "submittedValues"
+          },
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          }
+        ]
+      }
+    ],
+    "reldens.dynamicFormRenderer.afterFieldsRender": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/dynamic-form-renderer.js",
+        "line": 43,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "formConfig",
+            "computed": false,
+            "valueExpr": "formConfig"
+          },
+          {
+            "key": "fieldsToRender",
+            "computed": false,
+            "valueExpr": "fieldsToRender"
+          },
+          {
+            "key": "formFields",
+            "computed": false,
+            "valueExpr": "formFields"
+          },
+          {
+            "key": "domain",
+            "computed": false,
+            "valueExpr": "domain"
+          },
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "attributes",
+            "computed": false,
+            "valueExpr": "attributes"
+          },
+          {
+            "key": "systemVariables",
+            "computed": false,
+            "valueExpr": "systemVariables"
+          },
+          {
+            "key": "enhancedData",
+            "computed": false,
+            "valueExpr": "enhancedData"
+          }
+        ]
+      }
+    ],
+    "reldens.dynamicFormRenderer.beforeFieldsRender": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/dynamic-form-renderer.js",
+        "line": 33,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "formConfig",
+            "computed": false,
+            "valueExpr": "formConfig"
+          },
+          {
+            "key": "fieldsToRender",
+            "computed": false,
+            "valueExpr": "fieldsToRender"
+          },
+          {
+            "key": "domain",
+            "computed": false,
+            "valueExpr": "domain"
+          },
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "attributes",
+            "computed": false,
+            "valueExpr": "attributes"
+          },
+          {
+            "key": "systemVariables",
+            "computed": false,
+            "valueExpr": "systemVariables"
+          },
+          {
+            "key": "enhancedData",
+            "computed": false,
+            "valueExpr": "enhancedData"
+          }
+        ]
+      }
+    ],
+    "reldens.dynamicFormRequestHandler.afterSave": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/dynamic-form-request-handler.js",
+        "line": 65,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "formKey",
+            "computed": false,
+            "valueExpr": "formKey"
+          },
+          {
+            "key": "submissionResult",
+            "computed": false,
+            "valueExpr": "submissionResult"
+          },
+          {
+            "key": "formConfig",
+            "computed": false,
+            "valueExpr": "validation.formConfig"
+          },
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "res",
+            "computed": false,
+            "valueExpr": "res"
+          }
+        ]
+      }
+    ],
+    "reldens.dynamicFormRequestHandler.beforeSave": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/dynamic-form-request-handler.js",
+        "line": 51,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "formKey",
+            "computed": false,
+            "valueExpr": "formKey"
+          },
+          {
+            "key": "preparedValues",
+            "computed": false,
+            "valueExpr": "preparedValues"
+          },
+          {
+            "key": "formConfig",
+            "computed": false,
+            "valueExpr": "validation.formConfig"
+          },
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "res",
+            "computed": false,
+            "valueExpr": "res"
+          }
+        ]
+      }
+    ],
+    "reldens.dynamicFormRequestHandler.beforeValidation": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/dynamic-form-request-handler.js",
+        "line": 37,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "formKey",
+            "computed": false,
+            "valueExpr": "formKey"
+          },
+          {
+            "key": "submittedValues",
+            "computed": false,
+            "valueExpr": "submittedValues"
+          },
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "res",
+            "computed": false,
+            "valueExpr": "res"
+          }
+        ]
+      }
+    ],
+    "reldens.endChangedScene": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 460,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "message",
+            "computed": false,
+            "valueExpr": "message"
+          },
+          {
+            "key": "roomEvents",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.endObjectHitObject": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 399,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "bodyA",
+            "computed": false,
+            "valueExpr": "bodyA"
+          },
+          {
+            "key": "bodyB",
+            "computed": false,
+            "valueExpr": "bodyB"
+          },
+          {
+            "key": "priorityObject",
+            "computed": false,
+            "valueExpr": "priorityObject"
+          }
+        ]
+      }
+    ],
+    "reldens.endObjectHitWall": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 446,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "objectBody",
+            "computed": false,
+            "valueExpr": "objectBody"
+          }
+        ]
+      }
+    ],
+    "reldens.endPlayerHitChangePoint": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 364,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "collisionsManager",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "playerBody",
+            "computed": false,
+            "valueExpr": "playerBody"
+          },
+          {
+            "key": "changePoint",
+            "computed": false,
+            "valueExpr": "changePoint"
+          },
+          {
+            "key": "changeData",
+            "computed": false,
+            "valueExpr": "changeData"
+          }
+        ]
+      }
+    ],
+    "reldens.endPlayerHitObjectBegin": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 269,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "playerBody",
+            "computed": false,
+            "valueExpr": "playerBody"
+          },
+          {
+            "key": "otherBody",
+            "computed": false,
+            "valueExpr": "otherBody"
+          }
+        ]
+      }
+    ],
+    "reldens.endPlayerHitWallEnd": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 319,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "playerBody",
+            "computed": false,
+            "valueExpr": "playerBody"
+          },
+          {
+            "key": "wallBody",
+            "computed": false,
+            "valueExpr": "wallBody"
+          }
+        ]
+      }
+    ],
+    "reldens.eventBuildSideBarBefore": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager/contents-builder.js",
+        "line": 69,
+        "style": "object-literal",
+        "wrapped": true,
+        "keys": [
+          {
+            "key": "navigationContents",
+            "computed": false,
+            "valueExpr": "navigationContents"
+          }
+        ],
+        "resolvedFromLocal": "eventBuildSideBarBefore"
+      }
+    ],
+    "reldens.featuresManagerLoadFeaturesAfter": [
+      {
+        "origin": "reldens",
+        "file": "lib/features/server/manager.js",
+        "line": 89,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "featuresManager",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "featuresCollection",
+            "computed": false,
+            "valueExpr": "featuresCollection"
+          }
+        ]
+      }
+    ],
+    "reldens.formsTransformer.afterRender": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/template-engine/forms-transformer.js",
+        "line": 74,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "formKey",
+            "computed": false,
+            "valueExpr": "formKey"
+          },
+          {
+            "key": "formConfig",
+            "computed": false,
+            "valueExpr": "formConfig"
+          },
+          {
+            "key": "formContent",
+            "computed": false,
+            "valueExpr": "formContent"
+          },
+          {
+            "key": "domain",
+            "computed": false,
+            "valueExpr": "domain"
+          },
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "systemVariables",
+            "computed": false,
+            "valueExpr": "systemVariables"
+          },
+          {
+            "key": "enhancedData",
+            "computed": false,
+            "valueExpr": "enhancedData"
+          }
+        ]
+      }
+    ],
+    "reldens.formsTransformer.beforeRender": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/template-engine/forms-transformer.js",
+        "line": 52,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "formKey",
+            "computed": false,
+            "valueExpr": "formKey"
+          },
+          {
+            "key": "formConfig",
+            "computed": false,
+            "valueExpr": "formConfig"
+          },
+          {
+            "key": "fieldsToRender",
+            "computed": false,
+            "valueExpr": "fieldsToRender"
+          },
+          {
+            "key": "formAttributes",
+            "computed": false,
+            "valueExpr": "tag.attributes"
+          },
+          {
+            "key": "domain",
+            "computed": false,
+            "valueExpr": "domain"
+          },
+          {
+            "key": "req",
+            "computed": false,
+            "valueExpr": "req"
+          },
+          {
+            "key": "systemVariables",
+            "computed": false,
+            "valueExpr": "systemVariables"
+          },
+          {
+            "key": "enhancedData",
+            "computed": false,
+            "valueExpr": "enhancedData"
+          }
+        ]
+      }
+    ],
+    "reldens.gameEngineClearTarget": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-engine.js",
+        "line": 253,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "clearedTargetData"
+        ]
+      }
+    ],
+    "reldens.gameEngineShowTarget": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-engine.js",
+        "line": 180,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "target",
+          "previousTarget",
+          "targetName"
+        ]
+      }
+    ],
+    "reldens.gameEngineTabTarget": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-engine.js",
+        "line": 300,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "closerTarget",
+          "previousTarget"
+        ]
+      }
+    ],
+    "reldens.gameOver": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 514,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "message",
+          "this"
+        ]
+      }
+    ],
+    "reldens.gameOverReload": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 306,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "defaultReload"
+        ]
+      }
+    ],
+    "reldens.gameRoomError": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-manager.js",
+        "line": 168,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this"
+        ]
+      }
+    ],
+    "reldens.guestInvalidChangePoint": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 344,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "collisionsManager",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "playerBody",
+            "computed": false,
+            "valueExpr": "playerBody"
+          },
+          {
+            "key": "changePoint",
+            "computed": false,
+            "valueExpr": "changePoint"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "contactClient",
+            "computed": false,
+            "valueExpr": "contactClient"
+          },
+          {
+            "key": "isGuest",
+            "computed": false,
+            "valueExpr": "isGuest"
+          }
+        ]
+      }
+    ],
+    "reldens.guestLoginInvalidParams": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 295,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "user",
+          "userData",
+          "result"
+        ]
+      }
+    ],
+    "reldens.initUiAfter": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 350,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "message",
+          "this"
+        ]
+      }
+    ],
+    "reldens.initUiBefore": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 348,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "message",
+          "this"
+        ]
+      }
+    ],
+    "reldens.invalidData": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 289,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "userData",
+          "result"
+        ]
+      }
+    ],
+    "reldens.joinRoomEnd": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/scene.js",
+        "line": 156,
+        "style": "class-instance",
+        "wrapped": false,
+        "className": "JoinedSceneRoomEvent",
+        "classFile": "lib/rooms/server/events/joined-scene-room-event.js",
+        "properties": [
+          "client",
+          "isGuest",
+          "loggedPlayer",
+          "options",
+          "roomScene",
+          "userModel"
+        ]
+      }
+    ],
+    "reldens.joinRoomInvalid": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/scene.js",
+        "line": 149,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "client",
+          "options",
+          "userModel",
+          "isGuest"
+        ]
+      }
+    ],
+    "reldens.joinRoomStart": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/scene.js",
+        "line": 136,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "client",
+          "options",
+          "userModel"
+        ]
+      }
+    ],
+    "reldens.joinedRoom": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-manager.js",
+        "line": 446,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "sceneRoom",
+          "this"
+        ]
+      }
+    ],
+    "reldens.joinedRoom_": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-manager.js",
+        "line": 447,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "sceneRoom",
+          "this"
+        ]
+      }
+    ],
+    "reldens.loadFeature_": [
+      {
+        "origin": "reldens",
+        "file": "lib/features/client/manager.js",
+        "line": 60,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this.featuresList[featureCode]",
+          "this"
+        ]
+      }
+    ],
+    "reldens.loadFeatures": [
+      {
+        "origin": "reldens",
+        "file": "lib/features/client/manager.js",
+        "line": 46,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "featuresCodeList"
+        ]
+      }
+    ],
+    "reldens.loginError": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 395,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "user",
+          "userData",
+          "result"
+        ]
+      }
+    ],
+    "reldens.loginInvalidParams": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 307,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "user",
+          "userData",
+          "result"
+        ]
+      }
+    ],
+    "reldens.loginInvalidPassword": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 380,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "user",
+          "userData",
+          "result"
+        ]
+      }
+    ],
+    "reldens.loginInvalidRole": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 374,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "user",
+          "userData",
+          "result"
+        ]
+      }
+    ],
+    "reldens.loginSuccess": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 391,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "user",
+          "userData",
+          "result"
+        ]
+      }
+    ],
+    "reldens.manager.initializeAdminManager": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/manager.js",
+        "line": 563,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "manager",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "authenticationCallback",
+            "computed": false,
+            "valueExpr": "authenticationCallback"
+          },
+          {
+            "key": "adminFilesContents",
+            "computed": false,
+            "valueExpr": "adminFilesContents"
+          },
+          {
+            "key": "translations",
+            "computed": false,
+            "valueExpr": "translations"
+          }
+        ]
+      }
+    ],
+    "reldens.objectBodyChange": [
+      {
+        "origin": "reldens",
+        "file": "lib/objects/client/plugin.js",
+        "line": 205,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "body",
+            "computed": false,
+            "valueExpr": "body"
+          },
+          {
+            "key": "key",
+            "computed": false,
+            "valueExpr": "key"
+          },
+          {
+            "key": "changes",
+            "computed": false,
+            "valueExpr": "{[propertyKey]: newValue}"
+          }
+        ]
+      }
+    ],
+    "reldens.objectBodyChanged": [
+      {
+        "origin": "reldens",
+        "file": "lib/objects/client/plugin.js",
+        "line": 284,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "body",
+            "computed": false,
+            "valueExpr": "body"
+          },
+          {
+            "key": "key",
+            "computed": false,
+            "valueExpr": "key"
+          }
+        ]
+      },
+      {
+        "origin": "reldens",
+        "file": "lib/objects/client/plugin.js",
+        "line": 300,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "body",
+            "computed": false,
+            "valueExpr": "body"
+          },
+          {
+            "key": "key",
+            "computed": false,
+            "valueExpr": "key"
+          }
+        ]
+      }
+    ],
+    "reldens.objectHitObjectEnd": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 412,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "bodyA",
+            "computed": false,
+            "valueExpr": "bodyA"
+          },
+          {
+            "key": "bodyB",
+            "computed": false,
+            "valueExpr": "bodyB"
+          }
+        ]
+      }
+    ],
+    "reldens.objectHitWallBegin": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 424,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "objectBody",
+            "computed": false,
+            "valueExpr": "objectBody"
+          },
+          {
+            "key": "wall",
+            "computed": false,
+            "valueExpr": "wall"
+          },
+          {
+            "key": "continue",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "event"
+      }
+    ],
+    "reldens.onJoinRoomGame": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/game.js",
+        "line": 41,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "client",
+          "options",
+          "userModel",
+          "this"
+        ]
+      }
+    ],
+    "reldens.onPreparePlayerCreationFormSubmit": [
+      {
+        "origin": "reldens",
+        "file": "lib/users/client/plugin.js",
+        "line": 322,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "usersPlugin",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "form",
+            "computed": false,
+            "valueExpr": "form"
+          },
+          {
+            "key": "gameManager",
+            "computed": false,
+            "valueExpr": "gameManager"
+          }
+        ]
+      }
+    ],
+    "reldens.onPreparePlayerSelectorFormSubmit": [
+      {
+        "origin": "reldens",
+        "file": "lib/users/client/plugin.js",
+        "line": 265,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "usersPlugin",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "form",
+            "computed": false,
+            "valueExpr": "form"
+          },
+          {
+            "key": "select",
+            "computed": false,
+            "valueExpr": "select"
+          },
+          {
+            "key": "selectedPlayer",
+            "computed": false,
+            "valueExpr": "selectedPlayer"
+          },
+          {
+            "key": "gameManager",
+            "computed": false,
+            "valueExpr": "gameManager"
+          }
+        ]
+      }
+    ],
+    "reldens.onPrepareSinglePlayerSelectorFormSubmit": [
+      {
+        "origin": "reldens",
+        "file": "lib/users/client/plugin.js",
+        "line": 196,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "usersPlugin",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "form",
+            "computed": false,
+            "valueExpr": "form"
+          },
+          {
+            "key": "selectElement",
+            "computed": false,
+            "valueExpr": "selectElement"
+          },
+          {
+            "key": "player",
+            "computed": false,
+            "valueExpr": "player"
+          },
+          {
+            "key": "gameManager",
+            "computed": false,
+            "valueExpr": "gameManager"
+          }
+        ]
+      }
+    ],
+    "reldens.onRoomDispose": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/login.js",
+        "line": 298,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "roomName",
+            "computed": false,
+            "valueExpr": "this.roomName"
+          },
+          {
+            "key": "roomId",
+            "computed": false,
+            "valueExpr": "this.roomId"
+          },
+          {
+            "key": "result",
+            "computed": false,
+            "valueExpr": "result"
+          }
+        ],
+        "resolvedFromLocal": "event"
+      }
+    ],
+    "reldens.onSavePlayerStateBefore": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/scene.js",
+        "line": 719,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "room",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "playerId",
+            "computed": false,
+            "valueExpr": "playerId"
+          },
+          {
+            "key": "updatePatch",
+            "computed": false,
+            "valueExpr": "updatePatch"
+          },
+          {
+            "key": "updateReady",
+            "computed": false,
+            "valueExpr": "updateReady"
+          }
+        ]
+      }
+    ],
+    "reldens.onSavePlayerStatsBefore": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/scene.js",
+        "line": 748,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "room",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "client",
+            "computed": false,
+            "valueExpr": "client"
+          },
+          {
+            "key": "objectState",
+            "computed": false,
+            "valueExpr": "objectState"
+          }
+        ]
+      }
+    ],
+    "reldens.openUI": [
+      {
+        "origin": "reldens",
+        "file": "lib/chat/client/chat-ui.js",
+        "line": 156,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "ui",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "openButton",
+            "computed": false,
+            "valueExpr": "this.chatOpenButton"
+          },
+          {
+            "key": "dialogBox",
+            "computed": false,
+            "valueExpr": "this.uiChat"
+          },
+          {
+            "key": "dialogContainer",
+            "computed": false,
+            "valueExpr": "this.uiChat.getChildByProperty('id', ChatConst.CHAT_UI)"
+          },
+          {
+            "key": "uiScene",
+            "computed": false,
+            "valueExpr": "this.uiScene"
+          }
+        ]
+      },
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/user-interface.js",
+        "line": 155,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "ui",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "openButton",
+            "computed": false,
+            "valueExpr": "this.openButton"
+          },
+          {
+            "key": "dialogBox",
+            "computed": false,
+            "valueExpr": "dialogBox"
+          },
+          {
+            "key": "dialogContainer",
+            "computed": false,
+            "valueExpr": "dialogContainer"
+          },
+          {
+            "key": "uiScene",
+            "computed": false,
+            "valueExpr": "uiScene"
+          }
+        ]
+      },
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/ui-factory.js",
+        "line": 56,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "ui",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "openButton",
+            "computed": false,
+            "valueExpr": "openButton"
+          },
+          {
+            "key": "dialogBox",
+            "computed": false,
+            "valueExpr": "dialogBox"
+          },
+          {
+            "key": "dialogContainer",
+            "computed": false,
+            "valueExpr": "dialogContainer"
+          },
+          {
+            "key": "uiScene",
+            "computed": false,
+            "valueExpr": "this.uiScene"
+          }
+        ]
+      },
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/settings-ui.js",
+        "line": 51,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "ui",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "openButton",
+            "computed": false,
+            "valueExpr": "openButton"
+          },
+          {
+            "key": "dialogBox",
+            "computed": false,
+            "valueExpr": "dialogBox"
+          },
+          {
+            "key": "dialogContainer",
+            "computed": false,
+            "valueExpr": "dialogContainer"
+          },
+          {
+            "key": "uiScene",
+            "computed": false,
+            "valueExpr": "uiScene"
+          }
+        ]
+      },
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/instructions-ui.js",
+        "line": 44,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "ui",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "openButton",
+            "computed": false,
+            "valueExpr": "openButton"
+          },
+          {
+            "key": "dialogBox",
+            "computed": false,
+            "valueExpr": "dialogBox"
+          },
+          {
+            "key": "dialogContainer",
+            "computed": false,
+            "valueExpr": "dialogContainer"
+          },
+          {
+            "key": "uiScene",
+            "computed": false,
+            "valueExpr": "uiScene"
+          }
+        ]
+      },
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/minimap-ui.js",
+        "line": 77,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "ui",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "openButton",
+            "computed": false,
+            "valueExpr": "openButton"
+          },
+          {
+            "key": "minimap",
+            "computed": false,
+            "valueExpr": "minimap"
+          },
+          {
+            "key": "box",
+            "computed": false,
+            "valueExpr": "box"
+          }
+        ]
+      },
+      {
+        "origin": "reldens",
+        "file": "lib/users/client/player-stats-ui.js",
+        "line": 49,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "ui",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "openButton",
+            "computed": false,
+            "valueExpr": "openButton"
+          },
+          {
+            "key": "dialogBox",
+            "computed": false,
+            "valueExpr": "dialogBox"
+          },
+          {
+            "key": "dialogContainer",
+            "computed": false,
+            "valueExpr": "dialogContainer"
+          },
+          {
+            "key": "uiScene",
+            "computed": false,
+            "valueExpr": "uiScene"
+          }
+        ]
+      }
+    ],
+    "reldens.parsingMapLayerAfter": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/p2world.js",
+        "line": 245,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "layer",
+            "computed": false,
+            "valueExpr": "layer"
+          },
+          {
+            "key": "world",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ],
+        "resolvedFromLocal": "eventData"
+      }
+    ],
+    "reldens.parsingMapLayerBefore": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/p2world.js",
+        "line": 243,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "layer",
+            "computed": false,
+            "valueExpr": "layer"
+          },
+          {
+            "key": "world",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ],
+        "resolvedFromLocal": "eventData"
+      }
+    ],
+    "reldens.parsingMapLayersAfterBodiesQueue": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/p2world.js",
+        "line": 254,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "layer",
+            "computed": false,
+            "valueExpr": "layer"
+          },
+          {
+            "key": "world",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ],
+        "resolvedFromLocal": "eventData"
+      }
+    ],
+    "reldens.playerAttack": [
+      {
+        "origin": "reldens",
+        "file": "lib/actions/client/receiver-wrapper.js",
+        "line": 104,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "message",
+          "this.room"
+        ]
+      }
+    ],
+    "reldens.playerDeath": [
+      {
+        "origin": "reldens",
+        "file": "lib/actions/server/battle.js",
+        "line": 197,
+        "style": "class-instance",
+        "wrapped": false,
+        "className": "PlayerDeathEvent",
+        "classFile": "lib/actions/server/events/player-death-event.js",
+        "properties": [
+          "affectedProperty",
+          "attackerPlayer",
+          "room",
+          "targetClient",
+          "targetSchema"
+        ]
+      }
+    ],
+    "reldens.playerEngineAddPlayer": [
+      {
+        "origin": "reldens",
+        "file": "lib/users/client/player-engine.js",
+        "line": 171,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "id",
+          "addPlayerData"
+        ]
+      }
+    ],
+    "reldens.playerHitObjectEnd": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 281,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "playerBody",
+            "computed": false,
+            "valueExpr": "playerBody"
+          },
+          {
+            "key": "result",
+            "computed": false,
+            "valueExpr": "result"
+          }
+        ]
+      }
+    ],
+    "reldens.playerHitPlayer": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 237,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "bodyA",
+            "computed": false,
+            "valueExpr": "bodyA"
+          },
+          {
+            "key": "bodyB",
+            "computed": false,
+            "valueExpr": "bodyB"
+          }
+        ]
+      }
+    ],
+    "reldens.playerHitPlayerEnd": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 251,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "bodyA",
+            "computed": false,
+            "valueExpr": "bodyA"
+          },
+          {
+            "key": "bodyB",
+            "computed": false,
+            "valueExpr": "bodyB"
+          }
+        ]
+      }
+    ],
+    "reldens.playerHitWallBegin": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 296,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "playerBody",
+            "computed": false,
+            "valueExpr": "playerBody"
+          },
+          {
+            "key": "wallBody",
+            "computed": false,
+            "valueExpr": "wallBody"
+          }
+        ]
+      }
+    ],
+    "reldens.playerLeftScene": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 589,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "code",
+            "computed": false,
+            "valueExpr": "code"
+          },
+          {
+            "key": "roomEvents",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.playerNewName": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 536,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "loginData",
+          "result"
+        ]
+      }
+    ],
+    "reldens.playerNewNameUnavailable": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 557,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "loginData",
+          "isNameAvailable",
+          "result"
+        ]
+      }
+    ],
+    "reldens.playerPersistDataAfter": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/scene.js",
+        "line": 237,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "client",
+          "userModel",
+          "currentPlayer",
+          "params",
+          "this"
+        ]
+      }
+    ],
+    "reldens.playerPersistDataBefore": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/scene.js",
+        "line": 233,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "client",
+          "userModel",
+          "currentPlayer",
+          "params",
+          "this"
+        ]
+      }
+    ],
+    "reldens.playerSceneUnavailable": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 545,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "loginData",
+          "result"
+        ]
+      }
+    ],
+    "reldens.playerStatsUpdateAfter": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 620,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "message",
+          "this"
+        ]
+      }
+    ],
+    "reldens.playerStatsUpdateBefore": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 409,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "message",
+          "this"
+        ]
+      }
+    ],
+    "reldens.playersOnAdd": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 168,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "player",
+          "key",
+          "previousScene",
+          "this"
+        ]
+      }
+    ],
+    "reldens.playersOnAddReady": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 875,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "player",
+            "computed": false,
+            "valueExpr": "currentScene.player"
+          },
+          {
+            "key": "previousScene",
+            "computed": false,
+            "valueExpr": "previousScene"
+          },
+          {
+            "key": "roomEvents",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ],
+        "resolvedFromLocal": "playerAddEventData"
+      }
+    ],
+    "reldens.playersOnRemove": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 281,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "player",
+          "key",
+          "this"
+        ]
+      }
+    ],
+    "reldens.playersQueueBefore": [
+      {
+        "origin": "reldens",
+        "file": "lib/prediction/client/room-events-override.js",
+        "line": 33,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "player",
+          "key",
+          "previousScene",
+          "roomEvents"
+        ]
+      },
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 227,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "player",
+          "key",
+          "previousScene",
+          "this"
+        ]
+      }
+    ],
+    "reldens.preloadUiScene": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/scene-preloader.js",
+        "line": 166,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this"
+        ]
+      }
+    ],
+    "reldens.processForgotPassword": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 679,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "userData",
+          "sendResult"
+        ]
+      }
+    ],
+    "reldens.processUserRequestIsValidDataBefore": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 285,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "userData"
+        ]
+      }
+    ],
+    "reldens.register": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 501,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "userData",
+          "result"
+        ]
+      }
+    ],
+    "reldens.registrationInvalidParams": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 313,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "user",
+          "userData",
+          "result"
+        ]
+      }
+    ],
+    "reldens.removePlayerBefore": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/scene.js",
+        "line": 662,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "room",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "stateObject",
+            "computed": false,
+            "valueExpr": "stateObject"
+          }
+        ]
+      }
+    ],
+    "reldens.restoreObjectAfter": [
+      {
+        "origin": "reldens",
+        "file": "lib/objects/server/object/type/enemy-object.js",
+        "line": 396,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "enemyObject",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "room",
+            "computed": false,
+            "valueExpr": "room"
+          }
+        ]
+      }
+    ],
+    "reldens.roomLoginOnAuth": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/login.js",
+        "line": 94,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "roomLogin",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "result",
+            "computed": false,
+            "valueExpr": "result"
+          },
+          {
+            "key": "loginResult",
+            "computed": false,
+            "valueExpr": "loginResult"
+          },
+          {
+            "key": "client",
+            "computed": false,
+            "valueExpr": "client"
+          },
+          {
+            "key": "options",
+            "computed": false,
+            "valueExpr": "options"
+          },
+          {
+            "key": "request",
+            "computed": false,
+            "valueExpr": "request"
+          }
+        ]
+      }
+    ],
+    "reldens.roomLoginOnCreate": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/login.js",
+        "line": 58,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "roomLogin",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "options",
+            "computed": false,
+            "valueExpr": "options"
+          }
+        ]
+      }
+    ],
+    "reldens.roomsDefinition": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/manager.js",
+        "line": 93,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this.defineExtraRooms"
+        ]
+      }
+    ],
+    "reldens.roomsMessageActionsByRoom": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/manager.js",
+        "line": 184,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "roomMessageActions",
+          "roomName"
+        ]
+      }
+    ],
+    "reldens.roomsMessageActionsGlobal": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/manager.js",
+        "line": 99,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [],
+        "resolvedFromLocal": "globalMessageActions"
+      }
+    ],
+    "reldens.runBattlePveAfter": [
+      {
+        "origin": "reldens",
+        "file": "lib/actions/server/pve.js",
+        "line": 82,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "target",
+            "computed": false,
+            "valueExpr": "target"
+          },
+          {
+            "key": "roomScene",
+            "computed": false,
+            "valueExpr": "roomScene"
+          },
+          {
+            "key": "attackResult",
+            "computed": false,
+            "valueExpr": "attackResult"
+          }
+        ]
+      }
+    ],
+    "reldens.runGameOver": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 510,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "message",
+            "computed": false,
+            "valueExpr": "message"
+          },
+          {
+            "key": "defaultBehavior",
+            "computed": false,
+            "valueExpr": "defaultBehavior"
+          },
+          {
+            "key": "roomEvents",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.runPlayerAnimation": [
+      {
+        "origin": "reldens",
+        "file": "lib/users/client/player-engine.js",
+        "line": 333,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "playerId",
+          "playerState",
+          "playerSprite"
+        ]
+      }
+    ],
+    "reldens.savePlayerStatsUpdateClient": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/scene.js",
+        "line": 762,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "client",
+          "playerSchema",
+          "this"
+        ]
+      }
+    ],
+    "reldens.sceneRoomOnCreate": [
+      {
+        "origin": "reldens",
+        "file": "lib/rooms/server/scene.js",
+        "line": 116,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this"
+        ]
+      }
+    ],
+    "reldens.serverBeforeDefineRooms": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/manager.js",
+        "line": 413,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "serverManager",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.serverBeforeListen": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/manager.js",
+        "line": 275,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "serverManager",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.serverBeforeLoginManager": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/manager.js",
+        "line": 447,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "serverManager",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.serverConfigFeaturesReady": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/manager.js",
+        "line": 471,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "serverManager",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "configProcessor",
+            "computed": false,
+            "valueExpr": "this.configManager"
+          }
+        ]
+      }
+    ],
+    "reldens.serverConfigReady": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/manager.js",
+        "line": 506,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "serverManager",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "configProcessor",
+            "computed": false,
+            "valueExpr": "this.configManager"
+          }
+        ]
+      }
+    ],
+    "reldens.serverReady": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/manager.js",
+        "line": 280,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "serverManager",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.setAudio": [
+      {
+        "origin": "reldens",
+        "file": "lib/audio/client/manager.js",
+        "line": 80,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "audioManager",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "categoryKey",
+            "computed": false,
+            "valueExpr": "audioKey"
+          },
+          {
+            "key": "enabled",
+            "computed": false,
+            "valueExpr": "enabled"
+          }
+        ]
+      }
+    ],
+    "reldens.setSceneOnPlayers": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/server/login-manager.js",
+        "line": 387,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "user",
+          "userData"
+        ]
+      }
+    ],
+    "reldens.setupActions": [
+      {
+        "origin": "reldens",
+        "file": "lib/objects/server/object/type/enemy-object.js",
+        "line": 226,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "enemyObject",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.setupAdminManagers": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager.js",
+        "line": 161,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "adminManager",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.setupAdminRouter": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager.js",
+        "line": 157,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "adminManager",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.setupAdminRoutes": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager.js",
+        "line": 159,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "adminManager",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.setupEntitiesRoutes": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/admin-manager/router.js",
+        "line": 145,
+        "style": "object-literal",
+        "wrapped": true,
+        "keys": [
+          {
+            "key": "entityPath",
+            "computed": false,
+            "valueExpr": "entityPath"
+          },
+          {
+            "key": "entityRoute",
+            "computed": false,
+            "valueExpr": "entityRoute"
+          },
+          {
+            "key": "driverResource",
+            "computed": false,
+            "valueExpr": "driverResource"
+          }
+        ]
+      }
+    ],
+    "reldens.startChangedScene": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 452,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "message",
+            "computed": false,
+            "valueExpr": "message"
+          },
+          {
+            "key": "roomEvents",
+            "computed": false,
+            "valueExpr": "this"
+          }
+        ]
+      }
+    ],
+    "reldens.startEngineScene": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/room-events.js",
+        "line": 773,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "player",
+          "room",
+          "previousScene"
+        ]
+      }
+    ],
+    "reldens.startGameAfter": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-manager.js",
+        "line": 154,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this"
+        ]
+      }
+    ],
+    "reldens.startGameBefore": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-manager.js",
+        "line": 138,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this"
+        ]
+      }
+    ],
+    "reldens.startObjectHitObject": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 381,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "bodyA",
+            "computed": false,
+            "valueExpr": "bodyA"
+          },
+          {
+            "key": "bodyB",
+            "computed": false,
+            "valueExpr": "bodyB"
+          }
+        ]
+      }
+    ],
+    "reldens.startObjectHitWall": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 441,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "objectBody",
+            "computed": false,
+            "valueExpr": "objectBody"
+          }
+        ]
+      }
+    ],
+    "reldens.startPlayerHitChangePoint": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 330,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "collisionsManager",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "playerBody",
+            "computed": false,
+            "valueExpr": "playerBody"
+          },
+          {
+            "key": "changePoint",
+            "computed": false,
+            "valueExpr": "changePoint"
+          }
+        ]
+      }
+    ],
+    "reldens.startPlayerHitObjectBegin": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 262,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "playerBody",
+            "computed": false,
+            "valueExpr": "playerBody"
+          },
+          {
+            "key": "otherBody",
+            "computed": false,
+            "valueExpr": "otherBody"
+          }
+        ]
+      }
+    ],
+    "reldens.startPlayerHitWallEnd": [
+      {
+        "origin": "reldens",
+        "file": "lib/world/server/collisions-manager.js",
+        "line": 307,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "playerBody",
+            "computed": false,
+            "valueExpr": "playerBody"
+          },
+          {
+            "key": "wallBody",
+            "computed": false,
+            "valueExpr": "wallBody"
+          }
+        ]
+      }
+    ],
+    "reldens.teamJoinInviteRejected": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/team-message-actions.js",
+        "line": 61,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "playerSendingInvite",
+            "computed": false,
+            "valueExpr": "playerSendingInvite"
+          },
+          {
+            "key": "playerRejectingName",
+            "computed": false,
+            "valueExpr": "playerRejectingName"
+          }
+        ]
+      }
+    ],
+    "reldens.teamLeave": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/team-leave.js",
+        "line": 31,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "data",
+            "computed": false,
+            "valueExpr": "data"
+          },
+          {
+            "key": "room",
+            "computed": false,
+            "valueExpr": "room"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          }
+        ]
+      }
+    ],
+    "reldens.teamLeaveBeforeSendUpdate": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/team-leave.js",
+        "line": 80,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "playerId",
+            "computed": false,
+            "valueExpr": "playerId"
+          },
+          {
+            "key": "sendUpdate",
+            "computed": false,
+            "valueExpr": "sendUpdate"
+          },
+          {
+            "key": "currentTeam",
+            "computed": false,
+            "valueExpr": "currentTeam"
+          },
+          {
+            "key": "isOwnerDisbanding",
+            "computed": false,
+            "valueExpr": "isOwnerDisbanding"
+          },
+          {
+            "key": "areLessPlayerThanRequired",
+            "computed": false,
+            "valueExpr": "areLessPlayerThanRequired"
+          },
+          {
+            "key": "singleRemoveId",
+            "computed": false,
+            "valueExpr": "singleRemoveId"
+          },
+          {
+            "key": "room",
+            "computed": false,
+            "valueExpr": "room"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          }
+        ]
+      }
+    ],
+    "reldens.templateReloader.templatesChanged": [
+      {
+        "origin": "@reldens/cms",
+        "file": "lib/template-reloader.js",
+        "line": 213,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "reloader",
+            "computed": false,
+            "valueExpr": "this"
+          },
+          {
+            "key": "changedFiles",
+            "computed": false,
+            "valueExpr": "this.getChangedFiles()"
+          }
+        ]
+      }
+    ],
+    "reldens.tryClanStart": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/try-clan-invite.js",
+        "line": 69,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "client",
+            "computed": false,
+            "valueExpr": "client"
+          },
+          {
+            "key": "data",
+            "computed": false,
+            "valueExpr": "data"
+          },
+          {
+            "key": "room",
+            "computed": false,
+            "valueExpr": "room"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          },
+          {
+            "key": "continueStart",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "event"
+      }
+    ],
+    "reldens.tryTeamStart": [
+      {
+        "origin": "reldens",
+        "file": "lib/teams/server/message-actions/try-team-start.js",
+        "line": 47,
+        "style": "object-literal",
+        "wrapped": false,
+        "keys": [
+          {
+            "key": "client",
+            "computed": false,
+            "valueExpr": "client"
+          },
+          {
+            "key": "data",
+            "computed": false,
+            "valueExpr": "data"
+          },
+          {
+            "key": "room",
+            "computed": false,
+            "valueExpr": "room"
+          },
+          {
+            "key": "playerSchema",
+            "computed": false,
+            "valueExpr": "playerSchema"
+          },
+          {
+            "key": "teamsPlugin",
+            "computed": false,
+            "valueExpr": "teamsPlugin"
+          },
+          {
+            "key": "continueStart",
+            "computed": false,
+            "valueExpr": "true"
+          }
+        ],
+        "resolvedFromLocal": "event"
+      }
+    ],
+    "reldens.updateGameSizeAfter": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-engine.js",
+        "line": 100,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "newWidth",
+          "newHeight"
+        ]
+      }
+    ],
+    "reldens.updateGameSizeBefore": [
+      {
+        "origin": "reldens",
+        "file": "lib/game/client/game-engine.js",
+        "line": 88,
+        "style": "positional",
+        "wrapped": false,
+        "args": [
+          "this",
+          "newWidth",
+          "newHeight"
+        ]
+      }
+    ]
+  }
+}

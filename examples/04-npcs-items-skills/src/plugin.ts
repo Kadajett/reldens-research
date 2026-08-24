@@ -7,7 +7,7 @@
  * real value in your database rather than guessing.
  */
 import { PluginInterface, type PluginSetupProps } from 'reldens/lib/features/plugin-interface';
-import type { ReldensEventsManager } from 'reldens-events';
+import type { BeforeInitializeManagersEvent, ReldensEventsManager } from 'reldens-events';
 import { TutorialNpc } from './objects/tutorial-npc';
 import { TutorialEnemy } from './objects/tutorial-enemy';
 import { registerItemsHooks } from './systems/items';
@@ -20,8 +20,8 @@ export class ServerPlugin extends PluginInterface {
     override setup(props: PluginSetupProps): boolean {
         this.events = props.events;
 
-        this.events.on('reldens.beforeInitializeManagers', (eventProps: any) => {
-            this.registerCustomClasses(eventProps);
+        this.events.on('reldens.beforeInitializeManagers', (event: BeforeInitializeManagersEvent) => {
+            this.registerCustomClasses(event);
         });
 
         registerItemsHooks(this.events);
@@ -30,8 +30,8 @@ export class ServerPlugin extends PluginInterface {
         return true;
     }
 
-    registerCustomClasses(props: any): void {
-        const customClasses = props.serverManager.configManager.configList.server.customClasses;
+    registerCustomClasses(event: BeforeInitializeManagersEvent): void {
+        const customClasses = event.serverManager.configManager.configList.server.customClasses;
         customClasses.objects ??= {};
 
         // TODO: replace these keys with the class keys from your own objects rows.

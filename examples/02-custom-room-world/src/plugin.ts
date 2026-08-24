@@ -7,7 +7,7 @@
  * row that names your class is skipped with "Custom room class not found".
  */
 import { PluginInterface, type PluginSetupProps } from 'reldens/lib/features/plugin-interface';
-import type { ReldensEventsManager } from 'reldens-events';
+import type { BeforeInitializeManagersEvent, ReldensEventsManager } from 'reldens-events';
 import { TutorialRoom } from './rooms/tutorial-room';
 import { registerWorldHooks } from './world/world-hooks';
 
@@ -25,8 +25,8 @@ export class ServerPlugin extends PluginInterface {
     override setup(props: PluginSetupProps): boolean {
         this.events = props.events;
 
-        this.events.on('reldens.beforeInitializeManagers', (eventProps: any) => {
-            this.registerCustomClasses(eventProps);
+        this.events.on('reldens.beforeInitializeManagers', (event: BeforeInitializeManagersEvent) => {
+            this.registerCustomClasses(event);
         });
 
         registerWorldHooks(this.events);
@@ -34,8 +34,8 @@ export class ServerPlugin extends PluginInterface {
         return true;
     }
 
-    registerCustomClasses(props: any): void {
-        const customClasses = props.serverManager.configManager.configList.server.customClasses;
+    registerCustomClasses(event: BeforeInitializeManagersEvent): void {
+        const customClasses = event.serverManager.configManager.configList.server.customClasses;
         customClasses.roomsClass ??= {};
         customClasses.objects ??= {};
 

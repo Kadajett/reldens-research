@@ -69,9 +69,41 @@ function read<T>(name: string): T {
     return JSON.parse(readFileSync(join(researchDir, name), 'utf8')) as T;
 }
 
+interface EventPayloadSite {
+    origin: string;
+    file: string;
+    line: number;
+    style: 'object-literal' | 'class-instance' | 'positional' | 'none';
+    wrapped: boolean;
+    keys?: Array<{key: string; computed?: boolean; spread?: boolean; unparsed?: boolean; valueExpr?: string}>;
+    className?: string;
+    classFile?: string | null;
+    properties?: string[];
+    args?: string[];
+    resolvedFromLocal?: string;
+}
+
+interface EventPayloads {
+    generatedFrom: Record<string, unknown>;
+    events: Record<string, EventPayloadSite[]>;
+}
+
+interface ServerMessages {
+    generatedFrom: Record<string, unknown>;
+    messages: Record<string, Array<{
+        channel: string;
+        file: string;
+        line: number;
+        actVia: string;
+        keys: Array<{key: string; spread: boolean; computed: boolean; valueExpr?: string}>;
+    }>>;
+}
+
 const surface = read<ApiSurface>('api-surface.json');
 const constants = read<RuntimeConstants>('runtime-constants.json');
 const inventory = read<ApiInventory>('api-inventory.json');
+const payloads = read<EventPayloads>('event-payloads.json');
+const serverMessages = read<ServerMessages>('server-messages.json');
 
 const header = (what: string): string => `/**
  * GENERATED - do not edit by hand.
@@ -316,6 +348,166 @@ export const RELDENS_SUBCLASS_COUNTS = ${asConst(inventory.subclassCountsInsideP
 export const RELDENS_EXPORTS: ReldensExport[] = ${asConst(inventory.exports)};
 `);
 
+// ---------------------------------------------------------------- event payloads
+// Per event: what a listener actually receives, read from the emit sites.
+// requiredKeys are the plain keys present at EVERY site; sometimesKeys appear at
+// some sites only; computed keys and spreads can never be demanded by a schema.
+type PayloadInfo =
+    | {style: 'object'; requiredKeys: string[]; sometimesKeys: string[]; hasSpreadOrComputed: boolean; sites: string[]}
+    | {style: 'class'; className: string; classFile: string | null; properties: string[]; sites: string[]}
+    | {style: 'positional'; args: string[]; sites: string[]}
+    | {style: 'none'; sites: string[]}
+    | {style: 'mixed'; sites: string[]};
+
+const payloadInfo: Record<string, PayloadInfo> = {};
+for(const [eventName, sites] of Object.entries(payloads.events)){
+    const siteRefs = sites.map((site) => site.origin+':'+site.file+':L'+site.line);
+    const styles = new Set(sites.map((site) => site.style));
+    if(1 < styles.size){
+        payloadInfo[eventName] = {style: 'mixed', sites: siteRefs};
+        continue;
+    }
+    const [style] = styles;
+    if('object-literal' === style){
+        const perSiteKeys = sites.map((site) => {
+            const plain = (site.keys ?? [])
+                .filter((entry) => !entry.computed && !entry.spread && !entry.unparsed)
+                .map((entry) => entry.key);
+            // @reldens/cms emitEvent wraps every payload as {adminManager: this, ...eventData}.
+            return site.wrapped ? ['adminManager', ...plain] : plain;
+        });
+        const union = [...new Set(perSiteKeys.flat())].sort();
+        const required = union.filter((key) => perSiteKeys.every((keys) => keys.includes(key)));
+        payloadInfo[eventName] = {
+            style: 'object',
+            requiredKeys: required,
+            sometimesKeys: union.filter((key) => !required.includes(key)),
+            hasSpreadOrComputed: sites.some((site) =>
+                (site.keys ?? []).some((entry) => entry.computed || entry.spread) || site.wrapped),
+            sites: siteRefs
+        };
+        continue;
+    }
+    if('class-instance' === style){
+        const first = sites[0]!;
+        payloadInfo[eventName] = {
+            style: 'class',
+            className: first.className!,
+            classFile: first.classFile ?? null,
+            properties: first.properties ?? [],
+            sites: siteRefs
+        };
+        continue;
+    }
+    if('positional' === style){
+        payloadInfo[eventName] = {style: 'positional', args: sites[0]!.args ?? [], sites: siteRefs};
+        continue;
+    }
+    payloadInfo[eventName] = {style: 'none', sites: siteRefs};
+}
+
+writeFileSync(join(outDir, 'event-payloads.ts'), header(
+    `What every reldens.* listener receives, read from the emit sites by\n * research/scripts/lib/scan.mjs. 'object' payloads list the keys a schema may\n * demand; 'positional' events pass separate arguments; 'class' payloads carry the\n * listed constructor properties.`
+)+`
+export type EventPayloadInfo =
+    | {style: 'object'; requiredKeys: string[]; sometimesKeys: string[]; hasSpreadOrComputed: boolean; sites: string[]}
+    | {style: 'class'; className: string; classFile: string | null; properties: string[]; sites: string[]}
+    | {style: 'positional'; args: string[]; sites: string[]}
+    | {style: 'none'; sites: string[]}
+    | {style: 'mixed'; sites: string[]};
+
+export const RELDENS_EVENT_PAYLOAD_INFO: Record<string, EventPayloadInfo> = ${asConst(payloadInfo)};
+`);
+
+// ---------------------------------------------------------------- server messages
+const messageInfo: Record<string, {
+    channels: string[];
+    requiredKeys: string[];
+    sometimesKeys: string[];
+    sites: string[];
+}> = {};
+for(const [act, sites] of Object.entries(serverMessages.messages)){
+    if('(dynamic or none)' === act){
+        continue;
+    }
+    const perSiteKeys = sites.map((site) => site.keys
+        .filter((entry) => !entry.spread)
+        .map((entry) => 'act' === entry.key || /ACTION_KEY/.test(entry.key) ? 'act' : entry.key));
+    const union = [...new Set(perSiteKeys.flat())].sort();
+    const required = union.filter((key) => perSiteKeys.every((keys) => keys.includes(key)));
+    messageInfo[act] = {
+        channels: [...new Set(sites.map((site) => site.channel))].sort(),
+        requiredKeys: required,
+        sometimesKeys: union.filter((key) => !required.includes(key)),
+        sites: sites.map((site) => site.file+':L'+site.line)
+    };
+}
+
+writeFileSync(join(outDir, 'server-messages.ts'), header(
+    `Every server-to-client message literal, keyed by the resolved wire value of its\n * act field. Extracted from client.send('*', {...}) / broadcast('*', {...}) sites;\n * act references and computed keys resolved through the runtime constants dump.`
+)+`
+export interface ServerMessageInfo {
+    channels: string[];
+    requiredKeys: string[];
+    sometimesKeys: string[];
+    sites: string[];
+}
+
+export const RELDENS_SERVER_MESSAGE_INFO: Record<string, ServerMessageInfo> = ${asConst(messageInfo)};
+`);
+
+// ---------------------------------------------------------------- ambient payload map
+// Also emitted into packages/reldens-types so editors get key-level completion on
+// event payloads without depending on the schemas package.
+{
+    const lines = [];
+    lines.push('/**');
+    lines.push(' * GENERATED by @reldens-tutorials/schemas - do not edit by hand.');
+    lines.push(' *');
+    lines.push(' * Key-level payload shapes for every reldens.* event, extracted from the emit');
+    lines.push(' * sites. Values are typed `unknown` on purpose: the extraction proves which keys');
+    lines.push(' * exist, not what they hold. Narrow locally, or through the zod schemas in');
+    lines.push(' * @reldens-tutorials/schemas which carry the same data plus provenance.');
+    lines.push(' *');
+    lines.push(' * Source: reldens@'+surface.generatedFrom.version);
+    lines.push(' * Regenerate: npm run generate --workspace @reldens-tutorials/schemas');
+    lines.push(' */');
+    lines.push("declare module 'reldens-event-payloads' {");
+    lines.push('    /** Events whose listeners receive ONE object; keys per event. */');
+    lines.push('    export interface ReldensObjectEventPayloads {');
+    for(const [eventName, info] of Object.entries(payloadInfo)){
+        if('object' !== info.style && 'class' !== info.style){
+            continue;
+        }
+        const keys = 'object' === info.style
+            ? [...info.requiredKeys.map((key) => key+': unknown'),
+                ...info.sometimesKeys.map((key) => key+'?: unknown')]
+            : info.properties.map((key) => key+': unknown');
+        const open = 'object' === info.style && info.hasSpreadOrComputed;
+        lines.push('        '+JSON.stringify(eventName)+': {'
+            +keys.join('; ')
+            +(open ? (keys.length ? '; ' : '')+'[key: string]: unknown' : '')
+            +'};');
+    }
+    lines.push('    }');
+    lines.push('');
+    lines.push('    /** Events whose listeners receive POSITIONAL arguments; the emit argument expressions. */');
+    lines.push('    export interface ReldensPositionalEventArgs {');
+    for(const [eventName, info] of Object.entries(payloadInfo)){
+        if('positional' !== info.style){
+            continue;
+        }
+        lines.push('        '+JSON.stringify(eventName)+': '+JSON.stringify(info.args)+';');
+    }
+    lines.push('    }');
+    lines.push('}');
+    lines.push('');
+    writeFileSync(
+        join(packageRoot, '..', 'reldens-types', 'event-payloads.d.ts'),
+        lines.join('\n')
+    );
+}
+
 // ---------------------------------------------------------------- meta
 writeFileSync(join(outDir, 'meta.ts'), header('Provenance for the whole generated set.')+`
 export const GENERATION_META = {
@@ -330,7 +522,9 @@ export const GENERATION_META = {
         events: ${eventProvenance.length},
         customClassBuckets: ${buckets.length},
         envVars: ${surface.envVars.length},
-        configPaths: ${surface.configPaths.length}
+        configPaths: ${surface.configPaths.length},
+        eventPayloads: ${Object.keys(payloadInfo).length},
+        serverMessages: ${Object.keys(messageInfo).length}
     }
 } as const;
 `);
@@ -341,7 +535,7 @@ try {
     // not a git repo, or nothing to diff
 }
 
-console.log('generated:', ['events', 'custom-classes', 'env', 'config-paths', 'constants', 'exports', 'meta']
+console.log('generated:', ['events', 'custom-classes', 'env', 'config-paths', 'constants', 'exports', 'event-payloads', 'server-messages', 'meta']
     .map((name) => name+'.ts').join(', '));
 console.log('events:', eventProvenance.length, '| buckets:', buckets.length,
     '| env:', surface.envVars.length, '| config paths:', surface.configPaths.length,

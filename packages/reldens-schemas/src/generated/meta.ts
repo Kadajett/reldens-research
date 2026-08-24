@@ -19,6 +19,8 @@ export const GENERATION_META = {
         events: 287,
         customClassBuckets: 11,
         envVars: 85,
-        configPaths: 176
+        configPaths: 176,
+        eventPayloads: 231,
+        serverMessages: 22
     }
 } as const;

@@ -12,9 +12,56 @@
  */
 
 /// <reference path="./events.d.ts" />
+/// <reference path="./event-payloads.d.ts" />
 
 declare module 'reldens/server' {
     import { ReldensEventName, ReldensEventsManager } from 'reldens-events';
+
+    /** Any class Reldens will instantiate for you. */
+    export type CustomClassConstructor = new (...args: any[]) => any;
+
+    /**
+     * The server half of the customClasses tree, as Reldens reads it at runtime.
+     * Each bucket's lookup site (verified against 4.0.0-beta.39.8):
+     *   objects                lib/objects/server/manager.js:101, keyed by objects.object_class_key
+     *   roomsClass             lib/rooms/server/manager.js:137,  keyed by rooms.roomClassPath
+     *   sceneDataProcessor     lib/rooms/server/scene-data-filter.js:71, a single class
+     *   inventory.items        lib/inventory/server/subscribers/server-subscriber.js:38
+     *   inventory.groups       lib/inventory/server/subscribers/server-subscriber.js:42
+     *   skills.skillsList      lib/actions/server/data-loader.js:62
+     *   skills.classPath       lib/actions/server/data-loader.js:89
+     * A missing objects key falls back to the built-in type; a room whose
+     * roomClassPath names an unregistered class is SKIPPED with an error.
+     */
+    export interface ServerCustomClasses {
+        objects?: Record<string, CustomClassConstructor>;
+        roomsClass?: Record<string, CustomClassConstructor>;
+        sceneDataProcessor?: CustomClassConstructor;
+        inventory?: {
+            items?: Record<string, CustomClassConstructor>;
+            groups?: Record<string, CustomClassConstructor>;
+        };
+        skills?: {
+            skillsList?: Record<string, CustomClassConstructor>;
+            classPath?: Record<string, CustomClassConstructor>;
+        };
+        [bucket: string]: unknown;
+    }
+
+    /**
+     * lib/config/server/manager.js. `configList.server.customClasses` is seeded from
+     * the ServerManager config's `customClasses` (constructor, line 40) and is the
+     * object plugins mutate on reldens.beforeInitializeManagers.
+     */
+    export interface ServerConfigManager {
+        configList: {
+            server: {customClasses: ServerCustomClasses} & Record<string, any>;
+            client: Record<string, any>;
+        };
+        get(path: string, defaultValue?: any): any;
+        getWithoutLogs(path: string, defaultValue?: any): any;
+        [key: string]: any;
+    }
 
     /** Config object handed to `new ServerManager(config)`. */
     export interface ServerManagerConfig {
@@ -46,7 +93,7 @@ declare module 'reldens/server' {
 
         events: ReldensEventsManager;
         projectRoot: string;
-        configManager: any;
+        configManager: ServerConfigManager;
         themeManager: any;
         dataServer: any;
         featuresManager: any;

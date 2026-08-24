@@ -119,22 +119,21 @@ export const RoomLoginOnAuthPayloadSchema = withSource(
 
 export const JoinedSceneRoomEventSchema = withSource(
     z.looseObject({
-        room: z.unknown(),
+        roomScene: z.unknown(),
         client: z.unknown(),
         options: z.unknown(),
         userModel: z.unknown(),
         loggedPlayer: z.unknown(),
-        isGuest: z.boolean().optional()
+        isGuest: z.boolean()
     }),
     {
-        confidence: 'INFERRED',
+        confidence: 'EXTRACTED',
         sources: [
             {file: 'lib/rooms/server/scene.js', line: 156, note: "emit('reldens.joinRoomEnd', new JoinedSceneRoomEvent(...))"},
-            {file: 'lib/rooms/server/events/joined-scene-room-event.js', line: 1, note: 'the payload class'}
+            {file: 'lib/rooms/server/events/joined-scene-room-event.js', line: 1, note: 'constructor assigns roomScene/client/options/userModel/loggedPlayer/isGuest'}
         ],
-        describe: 'Payload of reldens.joinRoomEnd. One of the few events with a dedicated payload class '
-            +'rather than an ad-hoc object literal. Field names come from the constructor arguments; '
-            +'the property names it assigns were not individually verified, hence INFERRED.'
+        describe: 'Payload of reldens.joinRoomEnd - one of the platform\'s three dedicated payload '
+            +'classes. Properties verified by the emit-site extractor (note roomScene, not room).'
     }
 );
 
@@ -145,11 +144,3 @@ export const EVENT_PAYLOADS = {
     'reldens.roomLoginOnAuth': RoomLoginOnAuthPayloadSchema,
     'reldens.joinRoomEnd': JoinedSceneRoomEventSchema
 } as const;
-
-/**
- * The payload schema for an event, or `z.unknown()` when the shape has not been
- * verified. Deliberately not a guess: an unverified event gets no false confidence.
- */
-export function payloadSchemaFor(name: string): z.ZodType {
-    return (EVENT_PAYLOADS as Record<string, z.ZodType>)[name] ?? z.unknown();
-}

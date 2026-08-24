@@ -10,7 +10,7 @@
  * so keep them cheap and keep them pure where you can.
  */
 import { PluginInterface, type PluginSetupProps } from 'reldens/lib/features/plugin-interface';
-import type { ReldensEventsManager } from 'reldens-events';
+import type { BeforeInitializeManagersEvent, ReldensEventsManager, ServerConfigFeaturesReadyEvent } from 'reldens-events';
 
 export class ServerPlugin extends PluginInterface {
 
@@ -21,14 +21,14 @@ export class ServerPlugin extends PluginInterface {
 
         // Fires once the features table has been loaded and every feature module is
         // registered. This is the earliest point at which the game's own managers exist.
-        this.events.on('reldens.serverConfigFeaturesReady', (eventProps: any) => {
-            this.onFeaturesReady(eventProps);
+        this.events.on('reldens.serverConfigFeaturesReady', (event: ServerConfigFeaturesReadyEvent) => {
+            this.onFeaturesReady(event);
         });
 
         // Fires before the room/login/users managers are constructed. This is where
         // custom classes have to be registered: after this point the config is read.
-        this.events.on('reldens.beforeInitializeManagers', (eventProps: any) => {
-            this.registerCustomClasses(eventProps);
+        this.events.on('reldens.beforeInitializeManagers', (event: BeforeInitializeManagersEvent) => {
+            this.registerCustomClasses(event);
         });
 
         // TODO: pick the events you actually need. `packages/reldens-types/events.d.ts`
@@ -39,22 +39,32 @@ export class ServerPlugin extends PluginInterface {
     }
 
     /**
-     * TODO: whatever needs the game's data before any player can connect —
+     * TODO: whatever needs the game's data before any player can connect:
      *  loading your own tables, warming a cache, validating configuration.
+     *
+     * `event.configProcessor` is the loaded ConfigManager (same instance as
+     * serverManager.configManager), so database config paths are readable here:
+     *  event.configProcessor.get('client/ui/chat')
      */
-    onFeaturesReady(_props: any): void {
+    onFeaturesReady(_event: ServerConfigFeaturesReadyEvent): void {
     }
 
     /**
      * Custom classes are how you replace a built-in implementation without forking.
      *
-     * `objects` is keyed by the object's class key (the `client_key` / class key on the
-     * objects row, e.g. 'npc_2'); `roomsClass` is keyed by the `roomClassPath` column on
-     * the rooms row. A room or object whose key is not registered falls back to the
-     * platform default, and a room that names a missing class is skipped with an error.
+     * `objects` is keyed by the object's class key (the `object_class_key` column on
+     * the objects row, e.g. 'npc_2'); `roomsClass` is keyed by the `roomClassPath`
+     * column on the rooms row. An object whose key is not registered falls back to
+     * the platform default; a room that names a missing class is skipped with an
+     * error. The full bucket list is typed on ServerCustomClasses in
+     * packages/reldens-types, with each lookup site cited.
+     *
+     * The event payload is `{serverManager, continueProcess}` and Reldens reads
+     * `continueProcess` back after the emit: setting it to false here aborts manager
+     * initialization entirely (lib/game/server/manager.js:393-397).
      */
-    registerCustomClasses(props: any): void {
-        const customClasses = props.serverManager.configManager.configList.server.customClasses;
+    registerCustomClasses(event: BeforeInitializeManagersEvent): void {
+        const customClasses = event.serverManager.configManager.configList.server.customClasses;
         customClasses.objects ??= {};
         customClasses.roomsClass ??= {};
 

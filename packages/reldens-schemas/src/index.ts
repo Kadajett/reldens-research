@@ -25,6 +25,8 @@ export * from './protocol';
 export * from './env';
 export * from './room-state';
 export * from './demo-plugins';
+export * from './event-payload-schemas';
+export * from './server-message-schemas';
 
 export { RELDENS_CONSTANTS } from './generated/constants';
 export { RELDENS_CONFIG_PATHS, RELDENS_CONFIG_PATH_SITES, type ReldensConfigPath } from './generated/config-paths';

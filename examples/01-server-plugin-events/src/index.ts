@@ -6,8 +6,8 @@
  * details from docker-compose.yml, and it writes `.env`, creates the schema,
  * generates entities and restarts into the game. See README.md.
  */
-import { ServerManager } from 'reldens/server';
 import { ServerManagerConfigSchema } from '@reldens-tutorials/schemas';
+import { ServerManager } from 'reldens/server';
 import { ServerPlugin } from './plugin';
 import { pluginDefinition } from './plugin-definition';
 import { resolveReldensModulePath } from './reldens-module-path';
@@ -18,7 +18,7 @@ console.info('[example-01] plugin definition validated:', pluginDefinition.name)
 // object - a bad reldensModulePath, for example, surfaces minutes later as a Parcel
 // error - so the schema turns those into immediate, located failures.
 const config = ServerManagerConfigSchema.parse({
-    projectRoot: __dirname + '/..',
+    projectRoot: `${__dirname}/..`,
     projectThemeName: 'default',
     reldensModulePath: resolveReldensModulePath(),
     jsSourceMaps: '1' === process.env['RELDENS_JS_SOURCEMAPS'],

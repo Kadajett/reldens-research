@@ -35,6 +35,8 @@ node_modules/reldens
   -> research/scripts/build-api-inventory.mjs     every module.exports.*, methods, inheritance
   -> research/scripts/build-api-surface.mjs       customClasses buckets, env vars, config paths, events
   -> research/scripts/dump-runtime-constants.mjs  real constant values via require()
+  -> research/scripts/extract-event-payloads.mjs  payload shape of every emit site (231 events)
+  -> research/scripts/extract-server-messages.mjs every send/broadcast literal, keyed by wire act
   -> scripts/generate.ts                   src/generated/*.ts
   -> src/*.ts                              the hand-written schemas
   -> test/*.test.ts                        the proof
@@ -46,6 +48,8 @@ After upgrading reldens:
 node research/scripts/build-api-inventory.mjs
 node research/scripts/build-api-surface.mjs
 node research/scripts/dump-runtime-constants.mjs
+node research/scripts/extract-event-payloads.mjs
+node research/scripts/extract-server-messages.mjs
 npm run generate --workspace @reldens-tutorials/schemas
 npm test --workspace @reldens-tutorials/schemas   # review what changed
 ```
@@ -62,6 +66,8 @@ npm test --workspace @reldens-tutorials/schemas   # review what changed
 | `env` | all 85 RELDENS_* vars with who-reads-what provenance |
 | `room-state` | the synchronised state a client observes |
 | `demo-plugins` | the tutorial plugin definition schema, with platform-rule refinements |
+| `event-payload-schemas` | key-level schemas for all 145 object/class payload events; positional events documented, never faked |
+| `server-message-schemas` | schemas for all 22 server-to-client message acts, plus AnyServerMessageSchema |
 
 ## The demo plugin schema
 

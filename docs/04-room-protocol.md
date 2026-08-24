@@ -1,10 +1,6 @@
 # The room protocol
 
-What a client sends and receives, for anyone writing one that is not the Phaser
-client that ships with the platform. Verified against `reldens@4.0.0-beta.39.8`;
-the wider version of this table (trade, teams, inventory, professions) is the one
-driving the AgentArena headless client at
-`~/Dev/agentArena/services/mcp-gateway/src/reldens/protocol.js`.
+What a client sends and receives.
 
 Reldens abbreviates every key and spreads the constants across per-feature
 `constants.js` files. Message envelopes are `{act: '<key>', ...}` sent to the
@@ -12,21 +8,28 @@ wildcard channel: `room.send('*', message)`.
 
 ## Connecting
 
-```
-1. joinOrCreate('room_game', {username, password, isNewUser})
-2. wait for {act: 's'}                    START_GAME: gameConfig, maybe player
-3. no player? send {act: 'cp', formData: {'new-player-name', selectedScene}}
-   wait for {act: 'cps'}                  CREATE_PLAYER_RESULT
-4. sceneName = player.state.scene         the server decides, not the client
-5. joinOrCreate(sceneName, {...login, selectedPlayer: player.id, selectedScene})
-6. optionally joinOrCreate('chat', {...login, selectedPlayer: player.id})
-```
+1. `joinOrCreate('room_game', {username, password, isNewUser})`
+2. Wait for `{act: 's'}`, the START_GAME message: gameConfig, maybe player
+3. No player? Send `{act: 'cp', formData: {'new-player-name', selectedScene}}`,
+   then wait for `{act: 'cps'}`, the CREATE_PLAYER_RESULT
+4. `sceneName = player.state.scene`: the server decides, not the client
+5. `joinOrCreate(sceneName, {...login, selectedPlayer: player.id, selectedScene})`
+6. Optionally `joinOrCreate('chat', {...login, selectedPlayer: player.id})`
 
 Keep the lobby room joined. It is what holds the session open.
 
-Attach any listener for onJoin-time pushes (inventory, class path) on the line
-immediately after step 5's `await`. Colyseus holds those messages until the join
-is acknowledged and then delivers them all at once, a heartbeat later.
+During step 5, the server's join handler (`RoomScene.onJoin`,
+`lib/rooms/server/scene.js:129`) fires events that make the feature plugins
+`client.send(...)` the player's full inventory and full skill list
+(`lib/inventory/server/plugin.js:50`, `@reldens/skills/lib/server/sender.js:68`).
+There is no client-side `onJoin`: these arrive as ordinary room messages.
+
+Colyseus queues messages sent to a client whose join is still in flight and
+delivers them in one burst right after the `joinOrCreate` promise resolves. They
+are sent once and never re-broadcast (later skill messages are deltas), so attach
+your `onMessage` listeners on the line immediately after step 5's `await`, before
+any other `await`. A listener attached later misses the only push there will ever
+be, until a scene change triggers a fresh join.
 
 `joinOrCreate(sceneName, …)` and not `join`: scene changes are driven by the
 server when a player walks onto a change point.

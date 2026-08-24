@@ -1,0 +1,1022 @@
+{
+  "generatedFrom": {
+    "method": "balanced-paren scan of every client.send('*', {...}) / broadcast('*', {...}) literal (research/scripts/lib/scan.mjs); act values and computed keys resolved through runtime-constants.json",
+    "totalSites": 39,
+    "distinctActs": 23,
+    "unresolvedActs": 3
+  },
+  "messages": {
+    "rwdUp": [
+      {
+        "channel": "send",
+        "file": "lib/rewards/server/rewards-events-data-sender.js",
+        "line": 40,
+        "actVia": "RewardsConst.ACTIONS.UPDATE",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": true,
+            "valueExpr": "RewardsConst.ACTIONS.UPDATE"
+          },
+          {
+            "key": "rewards",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.rewardsActionsMapper.map(rewards)"
+          },
+          {
+            "key": "listener",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "RewardsConst.KEY"
+          }
+        ]
+      }
+    ],
+    "rwdAcpted": [
+      {
+        "channel": "send",
+        "file": "lib/rewards/server/rewards-events-data-sender.js",
+        "line": 66,
+        "actVia": "RewardsConst.ACTIONS.ACCEPTED_REWARD",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": true,
+            "valueExpr": "RewardsConst.ACTIONS.ACCEPTED_REWARD"
+          },
+          {
+            "key": "acceptedReward",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "acceptedReward"
+          },
+          {
+            "key": "listener",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "RewardsConst.KEY"
+          }
+        ]
+      }
+    ],
+    "drmv": [
+      {
+        "channel": "broadcast",
+        "file": "lib/rewards/server/reward-message-actions.js",
+        "line": 54,
+        "actVia": "ObjectsConst.DROPS.REMOVE",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "ObjectsConst.DROPS.REMOVE"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "objectId"
+          }
+        ]
+      },
+      {
+        "channel": "broadcast",
+        "file": "lib/rooms/server/scene.js",
+        "line": 845,
+        "actVia": "ObjectsConst.DROPS.REMOVE",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "ObjectsConst.DROPS.REMOVE"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "roomObject.objectIndex"
+          }
+        ]
+      }
+    ],
+    "ap": [
+      {
+        "channel": "broadcast",
+        "file": "lib/audio/server/manager.js",
+        "line": 206,
+        "actVia": "AudioConst.AUDIO_UPDATE",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "AudioConst.AUDIO_UPDATE"
+          },
+          {
+            "key": "roomId",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "roomId"
+          },
+          {
+            "key": "audios",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "[newAudioModel]"
+          }
+        ]
+      }
+    ],
+    "ps": [
+      {
+        "channel": "send",
+        "file": "lib/rooms/server/scene.js",
+        "line": 342,
+        "actVia": "GameConst.PLAYER_STATS",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.PLAYER_STATS"
+          },
+          {
+            "key": "stats",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "playerSchema.stats"
+          },
+          {
+            "key": "statsBase",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "playerSchema.statsBase"
+          }
+        ]
+      },
+      {
+        "channel": "send",
+        "file": "lib/rooms/server/scene.js",
+        "line": 763,
+        "actVia": "GameConst.PLAYER_STATS",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.PLAYER_STATS"
+          },
+          {
+            "key": "stats",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "playerSchema.stats"
+          },
+          {
+            "key": "statsBase",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "playerSchema.statsBase"
+          }
+        ]
+      }
+    ],
+    "cgs": [
+      {
+        "channel": "broadcast",
+        "file": "lib/rooms/server/scene.js",
+        "line": 578,
+        "actVia": "GameConst.CHANGING_SCENE",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.CHANGING_SCENE"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "client.sessionId"
+          },
+          {
+            "key": "scene",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "currentPlayer.state.scene"
+          },
+          {
+            "key": "prev",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "data.prev"
+          }
+        ]
+      }
+    ],
+    "cs": [
+      {
+        "channel": "broadcast",
+        "file": "lib/rooms/server/scene.js",
+        "line": 638,
+        "actVia": "GameConst.CHANGED_SCENE",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.CHANGED_SCENE"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "client.sessionId"
+          },
+          {
+            "key": "scene",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "currentPlayer.state.scene"
+          },
+          {
+            "key": "prev",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "data.prev"
+          },
+          {
+            "key": "x",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "currentPlayer.state.x"
+          },
+          {
+            "key": "y",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "currentPlayer.state.y"
+          },
+          {
+            "key": "dir",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "currentPlayer.state.dir"
+          },
+          {
+            "key": "playerName",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "currentPlayer.playerName"
+          },
+          {
+            "key": "playedTime",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.SHOW_PLAYER_TIME.ALL_PLAYERS === showPlayedTimeConfig ? currentPlayer."
+          },
+          {
+            "key": "avatarKey",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "currentPlayer.avatarKey"
+          }
+        ]
+      }
+    ],
+    "r": [
+      {
+        "channel": "send",
+        "file": "lib/rooms/server/scene.js",
+        "line": 655,
+        "actVia": "GameConst.RECONNECT",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.RECONNECT"
+          },
+          {
+            "key": "player",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "currentPlayer"
+          },
+          {
+            "key": "prev",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "data.prev"
+          }
+        ]
+      }
+    ],
+    "luer": [
+      {
+        "channel": "send",
+        "file": "lib/rooms/server/game.js",
+        "line": 50,
+        "actVia": "GameConst.ACTIONS.LOGIN_UPDATE_ERROR (suffix match)",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": true,
+            "valueExpr": "GameConst.LOGIN_UPDATE_ERROR"
+          }
+        ]
+      }
+    ],
+    "closeUi": [
+      {
+        "channel": "send",
+        "file": "lib/inventory/server/message-actions.js",
+        "line": 109,
+        "actVia": "GameConst.CLOSE_UI_ACTION",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.CLOSE_UI_ACTION"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "'trade' + playerSchema.sessionId"
+          }
+        ]
+      },
+      {
+        "channel": "send",
+        "file": "lib/objects/server/object/type/npc-object.js",
+        "line": 93,
+        "actVia": "GameConst.CLOSE_UI_ACTION",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.CLOSE_UI_ACTION"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.id"
+          }
+        ]
+      },
+      {
+        "channel": "send",
+        "file": "theme/plugins/objects/server/quest-npc.js",
+        "line": 30,
+        "actVia": "GameConst.CLOSE_UI_ACTION",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.CLOSE_UI_ACTION"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.id"
+          }
+        ]
+      }
+    ],
+    "adsP": [
+      {
+        "channel": "send",
+        "file": "lib/ads/server/event-handlers/create-player-ads-handler.js",
+        "line": 51,
+        "actVia": "AdsConst.ACTIONS.ADS_PLAYED",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "AdsConst.ACTIONS.ADS_PLAYED"
+          },
+          {
+            "key": "playedAdsModels",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.adsByPlayerId[playerSchema.player_id]"
+          }
+        ]
+      }
+    ],
+    "cln.ini": [
+      {
+        "channel": "send",
+        "file": "lib/teams/server/event-handlers/create-player-clan-handler.js",
+        "line": 60,
+        "actVia": "TeamsConst.ACTIONS.CLAN_INITIALIZE",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "TeamsConst.ACTIONS.CLAN_INITIALIZE"
+          },
+          {
+            "key": "listener",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "TeamsConst.CLAN_KEY"
+          }
+        ]
+      }
+    ],
+    "scoUp": [
+      {
+        "channel": "send",
+        "file": "lib/scores/server/scores-sender.js",
+        "line": 51,
+        "actVia": "ScoresConst.ACTIONS.UPDATE",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "ScoresConst.ACTIONS.UPDATE"
+          },
+          {
+            "key": "newTotalScore",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "newTotalScore"
+          },
+          {
+            "key": "listener",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "ScoresConst.KEY"
+          }
+        ]
+      }
+    ],
+    "scoTops": [
+      {
+        "channel": "broadcast",
+        "file": "lib/scores/server/scores-sender.js",
+        "line": 70,
+        "actVia": "ScoresConst.ACTIONS.TOP_SCORES_UPDATE",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "ScoresConst.ACTIONS.TOP_SCORES_UPDATE"
+          },
+          {
+            "key": "scores",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "scores"
+          },
+          {
+            "key": "listener",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "ScoresConst.KEY"
+          }
+        ]
+      }
+    ],
+    "go": [
+      {
+        "channel": "send",
+        "file": "lib/actions/server/battle.js",
+        "line": 186,
+        "actVia": "GameConst.GAME_OVER",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.GAME_OVER"
+          }
+        ]
+      }
+    ],
+    "rv": [
+      {
+        "channel": "broadcast",
+        "file": "lib/actions/server/battle.js",
+        "line": 234,
+        "actVia": "GameConst.REVIVED",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.REVIVED"
+          },
+          {
+            "key": "t",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "sessionId"
+          }
+        ]
+      }
+    ],
+    "(dynamic or none)": [
+      {
+        "channel": "broadcast",
+        "file": "lib/actions/server/skills/type-attack.js",
+        "line": 34,
+        "actVia": "unresolved: skillAction",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "skillAction"
+          },
+          {
+            "key": "owner",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.owner.broadcastKey"
+          },
+          {
+            "key": "target",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.target.broadcastKey"
+          }
+        ]
+      },
+      {
+        "channel": "broadcast",
+        "file": "lib/actions/server/skills/type-effect.js",
+        "line": 34,
+        "actVia": "unresolved: skillAction",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "skillAction"
+          },
+          {
+            "key": "owner",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.owner.broadcastKey"
+          },
+          {
+            "key": "target",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.target.broadcastKey"
+          }
+        ]
+      },
+      {
+        "channel": "broadcast",
+        "file": "lib/actions/server/skills/type-physical-effect.js",
+        "line": 53,
+        "actVia": "unresolved: hitKey",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "hitKey"
+          },
+          {
+            "key": "x",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "notTheBullet.position[0]"
+          },
+          {
+            "key": "y",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "notTheBullet.position[1]"
+          },
+          {
+            "key": "owner",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.owner.broadcastKey"
+          },
+          {
+            "key": "target",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "validDefender.broadcastKey"
+          }
+        ]
+      },
+      {
+        "channel": "send",
+        "file": "theme/plugins/bot.js",
+        "line": 104,
+        "actVia": "no act field",
+        "keys": [
+          {
+            "key": "dir",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "sc.randomValueFromArray([GameConst.LEFT, GameConst.RIGHT, GameConst.DOWN, GameCo"
+          }
+        ]
+      }
+    ],
+    "ui": [
+      {
+        "channel": "send",
+        "file": "lib/objects/server/object/type/npc-object.js",
+        "line": 134,
+        "actVia": "GameConst.UI",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.UI"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.id"
+          },
+          {
+            "key": "content",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.invalidOptionMessage"
+          }
+        ]
+      },
+      {
+        "channel": "send",
+        "file": "theme/plugins/objects/server/weapons-master.js",
+        "line": 28,
+        "actVia": "GameConst.UI",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.UI"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.id"
+          },
+          {
+            "key": "content",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "contentMessage"
+          }
+        ]
+      },
+      {
+        "channel": "send",
+        "file": "theme/plugins/objects/server/weapons-master.js",
+        "line": 35,
+        "actVia": "GameConst.UI",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.UI"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.id"
+          },
+          {
+            "key": "content",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "contentMessage"
+          }
+        ]
+      },
+      {
+        "channel": "send",
+        "file": "theme/plugins/objects/server/weapons-master.js",
+        "line": 39,
+        "actVia": "GameConst.UI",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.UI"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.id"
+          },
+          {
+            "key": "content",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "contentMessage"
+          }
+        ]
+      },
+      {
+        "channel": "send",
+        "file": "theme/plugins/objects/server/healer.js",
+        "line": 77,
+        "actVia": "GameConst.UI",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.UI"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.id"
+          },
+          {
+            "key": "content",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "contentMessage"
+          }
+        ]
+      },
+      {
+        "channel": "send",
+        "file": "theme/plugins/objects/server/quest-npc.js",
+        "line": 37,
+        "actVia": "GameConst.UI",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.UI"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.id"
+          },
+          {
+            "key": "content",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "contentMessage"
+          }
+        ]
+      },
+      {
+        "channel": "send",
+        "file": "theme/plugins/objects/server/quest-npc.js",
+        "line": 44,
+        "actVia": "GameConst.UI",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.UI"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.id"
+          },
+          {
+            "key": "content",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "contentMessage"
+          }
+        ]
+      },
+      {
+        "channel": "send",
+        "file": "theme/plugins/objects/server/quest-npc.js",
+        "line": 51,
+        "actVia": "GameConst.UI",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.UI"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.id"
+          },
+          {
+            "key": "content",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "contentMessage"
+          }
+        ]
+      },
+      {
+        "channel": "send",
+        "file": "theme/plugins/objects/server/quest-npc.js",
+        "line": 59,
+        "actVia": "GameConst.UI",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.UI"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "this.id"
+          },
+          {
+            "key": "content",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "contentMessage"
+          }
+        ]
+      }
+    ],
+    "cp": [
+      {
+        "channel": "send",
+        "file": "lib/users/client/plugin.js",
+        "line": 328,
+        "actVia": "GameConst.CREATE_PLAYER",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.CREATE_PLAYER"
+          },
+          {
+            "key": "formData",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "serializedForm"
+          }
+        ]
+      },
+      {
+        "channel": "send",
+        "file": "theme/plugins/bot.js",
+        "line": 44,
+        "actVia": "GameConst.CREATE_PLAYER",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.CREATE_PLAYER"
+          },
+          {
+            "key": "formData",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "{\n                'new-player-name': randomGuestName + '-player',\n              "
+          }
+        ]
+      }
+    ],
+    "pj": [
+      {
+        "channel": "send",
+        "file": "lib/users/client/player-engine.js",
+        "line": 187,
+        "actVia": "GameConst.TYPE_PLAYER",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.TYPE_PLAYER"
+          },
+          {
+            "key": "id",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "id"
+          }
+        ]
+      }
+    ],
+    "alu": [
+      {
+        "channel": "broadcast",
+        "file": "lib/users/server/plugin.js",
+        "line": 163,
+        "actVia": "UsersConst.ACTION_LIFEBAR_UPDATE",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "UsersConst.ACTION_LIFEBAR_UPDATE"
+          },
+          {
+            "key": "oT",
+            "spread": false,
+            "computed": true,
+            "valueExpr": "ActionsConst.DATA_TYPE_VALUE_OBJECT"
+          },
+          {
+            "key": "oK",
+            "spread": false,
+            "computed": true,
+            "valueExpr": "enemyObject.broadcastKey"
+          },
+          {
+            "key": "newValue",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "enemyObject.stats[this.lifeProp]"
+          },
+          {
+            "key": "totalValue",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "enemyObject.initialStats[this.lifeProp]"
+          }
+        ]
+      }
+    ],
+    "c": [
+      {
+        "channel": "send",
+        "file": "theme/plugins/bot.js",
+        "line": 87,
+        "actVia": "ChatConst.CHAT_ACTION",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "ChatConst.CHAT_ACTION"
+          },
+          {
+            "key": "m",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "'Hello ' + userData.username + '! This is a load test bot message. Date: ' + (ne"
+          }
+        ]
+      }
+    ],
+    "stop": [
+      {
+        "channel": "send",
+        "file": "theme/plugins/bot.js",
+        "line": 109,
+        "actVia": "GameConst.STOP",
+        "keys": [
+          {
+            "key": "act",
+            "spread": false,
+            "computed": false,
+            "valueExpr": "GameConst.STOP"
+          }
+        ]
+      }
+    ]
+  }
+}

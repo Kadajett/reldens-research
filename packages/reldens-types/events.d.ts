@@ -14,7 +14,80 @@
  * field, then narrow it locally.
  */
 declare module 'reldens-events' {
+    import type { ServerManager } from 'reldens/server';
+
     export type ReldensEventName = ReldensKnownEventName | (string & {});
+
+    /**
+     * Payload of 'reldens.beforeInitializeManagers'.
+     *
+     * Emitted as `{serverManager: this, continueProcess: true}` and read back after
+     * the emit: a listener that sets `continueProcess = false` aborts manager
+     * initialization entirely (lib/game/server/manager.js:393-397).
+     *
+     * This event is also the registration deadline for server custom classes:
+     * mutate `serverManager.configManager.configList.server.customClasses` here,
+     * because RoomsManager reads it immediately afterwards.
+     */
+    export interface BeforeInitializeManagersEvent {
+        serverManager: ServerManager;
+        continueProcess: boolean;
+    }
+
+    /**
+     * Payload of 'reldens.serverConfigFeaturesReady'.
+     *
+     * Emitted right after FeaturesManager.loadFeatures() resolves
+     * (lib/game/server/manager.js:471-474), so the features table is loaded and every
+     * enabled feature plugin has run its setup(). `configProcessor` is the same
+     * ConfigManager instance as `serverManager.configManager`, under the name the
+     * built-in plugins use for it - by this point the database configuration is
+     * loaded, so `configProcessor.get('client/ui/chat')` style reads work.
+     *
+     * Nothing is read back from the payload after the emit: unlike
+     * beforeInitializeManagers there is no abort mechanism here.
+     */
+    export interface ServerConfigFeaturesReadyEvent {
+        serverManager: ServerManager;
+        configProcessor: import('reldens/server').ServerConfigManager;
+    }
+
+    /**
+     * Payload of 'reldens.joinRoomEnd' - one of the platform's three dedicated
+     * payload classes (lib/rooms/server/events/joined-scene-room-event.js).
+     * Emitted from RoomScene.onJoin (lib/rooms/server/scene.js:156) after the
+     * player is created on the scene and added to activePlayers.
+     */
+    export interface JoinedSceneRoomEvent {
+        roomScene: any;
+        client: any;
+        options: Record<string, any>;
+        userModel: any;
+        loggedPlayer: any;
+        isGuest: boolean;
+    }
+
+    /**
+     * Payload of 'reldens.battleEnded' (lib/actions/server/events/battle-ended-event.js).
+     * Emitted from Pve.battleEnded (lib/actions/server/pve.js:332) when an enemy dies.
+     */
+    export interface BattleEndedEvent {
+        playerSchema: any;
+        pve: any;
+        actionData: any;
+        room: any;
+    }
+
+    /**
+     * Payload of 'reldens.playerDeath' (lib/actions/server/events/player-death-event.js).
+     */
+    export interface PlayerDeathEvent {
+        targetClient: any;
+        targetSchema: any;
+        attackerPlayer: any;
+        room: any;
+        affectedProperty: string;
+    }
 
     export interface ReldensEventsManager {
         /** Register a listener. `removeKey` lets you drop it again with `off`/`offByKey`. */
