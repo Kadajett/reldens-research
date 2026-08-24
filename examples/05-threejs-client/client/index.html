@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Reldens - Three.js client</title>
+    <style>
+        html, body { margin: 0; height: 100%; background: #10131a; color: #e6e8ee;
+            font: 14px/1.5 system-ui, sans-serif; overflow: hidden; }
+        canvas { display: block; }
+        #login { position: fixed; inset: 0; display: grid; place-content: center;
+            gap: 8px; background: #10131a; }
+        #login input, #login button { padding: 8px 10px; font: inherit;
+            border: 1px solid #333a4a; border-radius: 6px; background: #171b25; color: inherit; }
+        #login button { cursor: pointer; background: #2b6cb0; border-color: #2b6cb0; }
+        #status { position: fixed; left: 12px; bottom: 12px; opacity: .7; }
+    </style>
+</head>
+<body>
+    <canvas id="view"></canvas>
+    <form id="login">
+        <strong>Reldens - Three.js client</strong>
+        <input name="username" placeholder="username" autocomplete="username" required/>
+        <input name="password" type="password" placeholder="password" autocomplete="current-password" required/>
+        <input name="playerName" placeholder="player name (new accounts only)" value="Explorer"/>
+        <button type="submit">Enter the world</button>
+        <small>Register through the Phaser client on :8085 first.</small>
+    </form>
+    <div id="status"></div>
+    <script type="module" src="./main.ts"></script>
+</body>
+</html>

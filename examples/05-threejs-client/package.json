@@ -1,0 +1,42 @@
+{
+  "name": "@reldens-tutorials/threejs-client",
+  "private": true,
+  "version": "0.1.0",
+  "description": "AgentArena-style non-forking extension: Reldens authoritative server, custom Three.js client speaking the room protocol directly.",
+  "main": "index.js",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json --watch",
+    "start": "node index.js",
+    "dev": "tsx watch src/index.ts",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:reset": "docker compose down -v && docker compose up -d",
+    "dev:client": "vite",
+    "build:client": "vite build",
+    "typecheck:client": "tsc --noEmit -p tsconfig.client.json"
+  },
+  "dependencies": {
+    "reldens": "^4.0.0-beta.39.8",
+    "colyseus.js": "0.16.22",
+    "three": "^0.171.0"
+  },
+  "devDependencies": {
+    "@reldens-tutorials/types": "*",
+    "@types/three": "^0.171.0",
+    "vite": "^6.0.7"
+  },
+  "browserslist": [
+    "> 0.5%, last 2 versions, not dead"
+  ],
+  "targets": {
+    "main": false
+  },
+  "alias": {
+    "process": false
+  },
+  "reldensTutorial": {
+    "appPort": 8085
+  }
+}

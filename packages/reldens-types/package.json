@@ -1,0 +1,9 @@
+{
+  "name": "@reldens-tutorials/types",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Hand-written ambient TypeScript declarations for the (untyped, CommonJS) reldens package.",
+  "types": "index.d.ts",
+  "main": "index.d.ts",
+  "files": ["index.d.ts", "*.d.ts"]
+}

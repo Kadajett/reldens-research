@@ -1,0 +1,31 @@
+# Throwaway MySQL for this example only. Each tutorial gets its own database and
+# host port so several of them can run side by side.
+#
+#   docker compose up -d      start it
+#   docker compose down -v    stop it and delete the data
+#
+# Feed these values to the Reldens web installer on first run:
+#   host localhost   port 3311   database reldens_tut_05   user reldens   password reldens
+services:
+    mysql:
+        image: mysql:8.4
+        container_name: reldens-tut-05-mysql
+        restart: unless-stopped
+        command: --mysql-native-password=ON
+        environment:
+            MYSQL_ROOT_PASSWORD: reldens
+            MYSQL_DATABASE: reldens_tut_05
+            MYSQL_USER: reldens
+            MYSQL_PASSWORD: reldens
+        ports:
+            - "3311:3306"
+        volumes:
+            - reldens-tut-05-mysql:/var/lib/mysql
+        healthcheck:
+            test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-preldens"]
+            interval: 5s
+            timeout: 5s
+            retries: 20
+
+volumes:
+    reldens-tut-05-mysql:

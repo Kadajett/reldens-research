@@ -1,0 +1,39 @@
+{
+  "name": "@reldens-tutorials/npcs-items-skills",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Custom NPC object classes plus @reldens/items-system, @reldens/modifiers and @reldens/skills.",
+  "main": "index.js",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -p tsconfig.json --watch",
+    "start": "node index.js",
+    "dev": "tsx watch src/index.ts",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:reset": "docker compose down -v && docker compose up -d"
+  },
+  "dependencies": {
+    "reldens": "^4.0.0-beta.39.8",
+    "@reldens/items-system": "^0.49.0",
+    "@reldens/modifiers": "^0.34.0",
+    "@reldens/skills": "^0.48.0",
+    "@reldens/utils": "^0.54.0"
+  },
+  "devDependencies": {
+    "@reldens-tutorials/types": "*"
+  },
+  "browserslist": [
+    "> 0.5%, last 2 versions, not dead"
+  ],
+  "targets": {
+    "main": false
+  },
+  "alias": {
+    "process": false
+  },
+  "reldensTutorial": {
+    "appPort": 8084
+  }
+}
