@@ -18,7 +18,8 @@
     "reldens": "^4.0.0-beta.39.8"
   },
   "devDependencies": {
-    "@reldens-tutorials/types": "*"
+    "@reldens-tutorials/types": "*",
+    "@reldens-tutorials/schemas": "*"
   },
   "browserslist": [
     "> 0.5%, last 2 versions, not dead"

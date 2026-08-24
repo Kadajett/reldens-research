@@ -1,0 +1,10 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "noEmit": true,
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "noUncheckedIndexedAccess": false
+    },
+    "include": ["scripts/**/*.ts", "test/**/*.ts", "src/**/*.ts"]
+}

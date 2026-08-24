@@ -3,6 +3,9 @@
  */
 import { ServerManager } from 'reldens/server';
 import { ServerPlugin } from './plugin';
+import { pluginDefinition } from './plugin-definition';
+
+console.info('[example-04] plugin definition validated:', pluginDefinition.name);
 import { resolveReldensModulePath } from './reldens-module-path';
 
 const appServer = new ServerManager({

@@ -26,3 +26,8 @@ examples/*/.gitignore
 
 # parcel cache, created wherever the bundler runs
 .parcel-cache/
+
+# graphify working files - graph.json is regenerable from reldens-source
+research/graphify-out/cache/
+research/graphify-out/manifest.json
+research/graphify-out/.graphify_root

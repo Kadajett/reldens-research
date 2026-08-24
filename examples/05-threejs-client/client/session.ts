@@ -20,6 +20,12 @@
  * lobby room must stay joined: it is what keeps the session alive.
  */
 import { Client, type Room } from 'colyseus.js';
+import {
+    LoginOptionsSchema,
+    SceneJoinOptionsSchema,
+    StartGameMessageSchema,
+    CreatePlayerResultMessageSchema
+} from '@reldens-tutorials/schemas';
 import { ReldensProtocol, type LoginOptions, type RoomState } from './protocol';
 
 export interface ReldensSession {
@@ -57,13 +63,16 @@ export async function openSession(
 ): Promise<ReldensSession> {
     const client = new Client(serverUrl);
 
-    const gameRoom = await client.joinOrCreate(ReldensProtocol.ROOM_GAME, login);
-    const initialData = await waitForMessage(
+    // The schemas package validates the wire shapes against the values extracted
+    // from the installed reldens package, so a drifted key fails here with a zod
+    // error instead of a silent server-side ignore.
+    const gameRoom = await client.joinOrCreate(ReldensProtocol.ROOM_GAME, LoginOptionsSchema.parse(login));
+    const initialData = StartGameMessageSchema.parse(await waitForMessage(
         gameRoom,
         (message) => ReldensProtocol.START_GAME === message?.act,
         10_000,
         'start-game data'
-    );
+    )) as Record<string, any>;
 
     let player = initialData.player;
     if(!player){
@@ -77,7 +86,7 @@ export async function openSession(
             act: ReldensProtocol.CREATE_PLAYER,
             formData: {'new-player-name': playerName, selectedScene: requestedScene}
         });
-        const result = await pending;
+        const result = CreatePlayerResultMessageSchema.parse(await pending) as Record<string, any>;
         if(result.error || !result.player){
             throw new Error(result.message ?? 'Reldens refused to create a player.');
         }
@@ -89,11 +98,11 @@ export async function openSession(
         throw new Error('No scene was selected for this player.');
     }
 
-    const sceneRoom = await client.joinOrCreate<RoomState>(sceneName, {
+    const sceneRoom = await client.joinOrCreate<RoomState>(sceneName, SceneJoinOptionsSchema.parse({
         ...login,
         selectedPlayer: player.id,
         selectedScene: sceneName
-    });
+    }));
 
     // TODO: attach anything that listens for the onJoin burst RIGHT HERE, before
     //  any further await. Inventory and class-path pushes arrive within a heartbeat.

@@ -1,0 +1,7056 @@
+{
+  "generatedFrom": {
+    "package": "reldens",
+    "version": "4.0.0-beta.39.8",
+    "method": "literal grep over the source tree; every entry carries file:line"
+  },
+  "customClassBuckets": [
+    {
+      "bucket": "client/customClasses/inventory/groups",
+      "sites": [
+        {
+          "file": "lib/inventory/client/plugin.js",
+          "line": 234,
+          "keyedByRuntimeValue": false,
+          "source": "let groupClasses = roomEvents.gameManager.config.getWithoutLogs('client/customClasses/inventory/groups', {});"
+        }
+      ]
+    },
+    {
+      "bucket": "client/customClasses/inventory/items",
+      "sites": [
+        {
+          "file": "lib/inventory/client/plugin.js",
+          "line": 230,
+          "keyedByRuntimeValue": false,
+          "source": "let inventoryClasses = roomEvents.gameManager.config.getWithoutLogs('client/customClasses/inventory/items', {});"
+        }
+      ]
+    },
+    {
+      "bucket": "client/customClasses/message/listeners",
+      "sites": [
+        {
+          "file": "lib/game/client/room-events.js",
+          "line": 383,
+          "keyedByRuntimeValue": false,
+          "source": "let customListeners = this.gameManager.config.get('client/customClasses/message/listeners', {});"
+        }
+      ]
+    },
+    {
+      "bucket": "client/customClasses/objects",
+      "sites": [
+        {
+          "file": "lib/objects/client/plugin.js",
+          "line": 541,
+          "keyedByRuntimeValue": true,
+          "source": "'client/customClasses/objects/'+animProps.key,"
+        }
+      ]
+    },
+    {
+      "bucket": "customClasses.objects",
+      "sites": [
+        {
+          "file": "theme/plugins/client-plugin.js",
+          "line": 25,
+          "keyedByRuntimeValue": false,
+          "source": "if(!customClasses['objects']){"
+        },
+        {
+          "file": "theme/plugins/client-plugin.js",
+          "line": 26,
+          "keyedByRuntimeValue": false,
+          "source": "customClasses.objects = {};"
+        },
+        {
+          "file": "theme/plugins/client-plugin.js",
+          "line": 28,
+          "keyedByRuntimeValue": false,
+          "source": "customClasses.objects['people_town_1'] = Npc1;"
+        },
+        {
+          "file": "theme/plugins/server-plugin.js",
+          "line": 26,
+          "keyedByRuntimeValue": false,
+          "source": "if(!customClasses['objects']){"
+        },
+        {
+          "file": "theme/plugins/server-plugin.js",
+          "line": 27,
+          "keyedByRuntimeValue": false,
+          "source": "customClasses.objects = {};"
+        },
+        {
+          "file": "theme/plugins/server-plugin.js",
+          "line": 34,
+          "keyedByRuntimeValue": false,
+          "source": "customClasses.objects['npc_2'] = Healer;"
+        },
+        {
+          "file": "theme/plugins/server-plugin.js",
+          "line": 35,
+          "keyedByRuntimeValue": false,
+          "source": "customClasses.objects['npc_4'] = WeaponsMaster;"
+        },
+        {
+          "file": "theme/plugins/server-plugin.js",
+          "line": 36,
+          "keyedByRuntimeValue": false,
+          "source": "customClasses.objects['npc_5'] = QuestNpc;"
+        }
+      ]
+    },
+    {
+      "bucket": "customClasses.roomsClass",
+      "sites": [
+        {
+          "file": "theme/plugins/server-plugin.js",
+          "line": 29,
+          "keyedByRuntimeValue": false,
+          "source": "if(!customClasses['roomsClass']){"
+        },
+        {
+          "file": "theme/plugins/server-plugin.js",
+          "line": 30,
+          "keyedByRuntimeValue": false,
+          "source": "customClasses.roomsClass = {};"
+        }
+      ]
+    },
+    {
+      "bucket": "server/customClasses/inventory/groups",
+      "sites": [
+        {
+          "file": "lib/inventory/server/group-hot-plug-callbacks.js",
+          "line": 60,
+          "keyedByRuntimeValue": false,
+          "source": "(projectConfig.serverManager.configManager.getWithoutLogs('server/customClasses/inventory/groups', {}))"
+        },
+        {
+          "file": "lib/inventory/server/subscribers/server-subscriber.js",
+          "line": 42,
+          "keyedByRuntimeValue": false,
+          "source": "(configProcessor.getWithoutLogs('server/customClasses/inventory/groups', {})),"
+        },
+        {
+          "file": "lib/inventory/server/subscribers/player-subscriber.js",
+          "line": 40,
+          "keyedByRuntimeValue": false,
+          "source": "groupClasses: room.config.getWithoutLogs('server/customClasses/inventory/groups', {}),"
+        },
+        {
+          "file": "lib/objects/server/object/type/trader-object.js",
+          "line": 44,
+          "keyedByRuntimeValue": false,
+          "source": "this.configuredGroupClasses = this.config.getWithoutLogs('server/customClasses/inventory/groups', {});"
+        }
+      ]
+    },
+    {
+      "bucket": "server/customClasses/inventory/items",
+      "sites": [
+        {
+          "file": "lib/inventory/server/subscribers/server-subscriber.js",
+          "line": 38,
+          "keyedByRuntimeValue": false,
+          "source": "(configProcessor.getWithoutLogs('server/customClasses/inventory/items', {})),"
+        },
+        {
+          "file": "lib/inventory/server/subscribers/player-subscriber.js",
+          "line": 39,
+          "keyedByRuntimeValue": false,
+          "source": "itemClasses: room.config.getWithoutLogs('server/customClasses/inventory/items', {}),"
+        },
+        {
+          "file": "lib/objects/server/object/type/trader-object.js",
+          "line": 43,
+          "keyedByRuntimeValue": false,
+          "source": "this.configuredItemClasses = this.config.getWithoutLogs('server/customClasses/inventory/items', {});"
+        }
+      ]
+    },
+    {
+      "bucket": "server/customClasses/objects",
+      "sites": [
+        {
+          "file": "lib/objects/server/manager.js",
+          "line": 101,
+          "keyedByRuntimeValue": true,
+          "source": "let objClass = this.config.getWithoutLogs('server/customClasses/objects/'+objectData.object_class_key, false);"
+        }
+      ]
+    },
+    {
+      "bucket": "server/customClasses/roomsClass",
+      "sites": [
+        {
+          "file": "lib/rooms/server/manager.js",
+          "line": 137,
+          "keyedByRuntimeValue": true,
+          "source": "let roomClassDefinition = props.config.get('server/customClasses/roomsClass/'+roomModel.roomClassPath);"
+        }
+      ]
+    },
+    {
+      "bucket": "server/customClasses/sceneDataProcessor",
+      "sites": [
+        {
+          "file": "lib/rooms/server/scene-data-filter.js",
+          "line": 71,
+          "keyedByRuntimeValue": false,
+          "source": "this.customProcessor = this.config.getWithoutLogs('server/customClasses/sceneDataProcessor', false);"
+        }
+      ]
+    },
+    {
+      "bucket": "server/customClasses/skills/classPath",
+      "sites": [
+        {
+          "file": "lib/actions/server/data-loader.js",
+          "line": 89,
+          "keyedByRuntimeValue": false,
+          "source": "configProcessor.getWithoutLogs('server/customClasses/skills/classPath', {})"
+        }
+      ]
+    },
+    {
+      "bucket": "server/customClasses/skills/skillsList",
+      "sites": [
+        {
+          "file": "lib/actions/server/data-loader.js",
+          "line": 62,
+          "keyedByRuntimeValue": false,
+          "source": "let skillsClasses = configProcessor.getWithoutLogs('server/customClasses/skills/skillsList', {});"
+        }
+      ]
+    }
+  ],
+  "pluginSetupCallSites": [
+    {
+      "file": "lib/features/client/manager.js",
+      "line": 58,
+      "source": "await this.featuresList[featureCode].setup({gameManager: this.gameManager, events: this.events});"
+    },
+    {
+      "file": "lib/features/server/manager.js",
+      "line": 82,
+      "source": "await featureEntity.package.setup(setupServerProperties);"
+    },
+    {
+      "file": "lib/game/client/game-manager.js",
+      "line": 120,
+      "source": "this.plugins[customPluginKey].setup({gameManager: this, events: this.events});"
+    },
+    {
+      "file": "lib/game/server/manager.js",
+      "line": 121,
+      "source": "this.customPlugin.setup({events: this.events});"
+    }
+  ],
+  "envVars": [
+    {
+      "name": "RELDENS_ADMIN_ROUTE_PATH",
+      "inInstallTemplate": true,
+      "readBy": [
+        "@reldens/cms",
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 28
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/installer.js",
+          "line": 382
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/admin/server/subscribers/create-admin-subscriber.js",
+          "line": 58
+        },
+        {
+          "origin": "@reldens/cms",
+          "file": "lib/manager.js",
+          "line": 195
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_ADMIN_SECRET",
+      "inInstallTemplate": true,
+      "readBy": [
+        "@reldens/cms",
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 29
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/admin/server/subscribers/create-admin-subscriber.js",
+          "line": 57
+        },
+        {
+          "origin": "@reldens/cms",
+          "file": "lib/manager.js",
+          "line": 196
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_ALLOW_BUILD_CLIENT",
+      "inInstallTemplate": false,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/theme-manager.js",
+          "line": 448
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/theme-manager.js",
+          "line": 450
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/admin/server/subscribers/theme-manager-subscriber.js",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_ALLOW_BUILD_CSS",
+      "inInstallTemplate": false,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/theme-manager.js",
+          "line": 377
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/theme-manager.js",
+          "line": 379
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/admin/server/subscribers/theme-manager-subscriber.js",
+          "line": 70
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_ALLOW_RUN_BUNDLER",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 65
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/theme-manager.js",
+          "line": 678
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_APP_HOST",
+      "inInstallTemplate": true,
+      "readBy": [
+        "@reldens/cms",
+        "@reldens/server-utils",
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 6
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 145
+        },
+        {
+          "origin": "@reldens/server-utils",
+          "file": "lib/app-server-factory.js",
+          "line": 251
+        },
+        {
+          "origin": "@reldens/cms",
+          "file": "lib/manager.js",
+          "line": 193
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_APP_PORT",
+      "inInstallTemplate": true,
+      "readBy": [
+        "@reldens/cms",
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 7
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 148
+        },
+        {
+          "origin": "@reldens/cms",
+          "file": "lib/manager.js",
+          "line": 194
+        },
+        {
+          "origin": "@reldens/cms",
+          "file": "lib/installer.js",
+          "line": 528
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_CORS_HEADERS",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_CORS_METHODS",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_CORS_ORIGIN",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_CREATE_CONFIG_FILE",
+      "inInstallTemplate": false,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 265
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_CSS_SOURCEMAPS",
+      "inInstallTemplate": false,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "bin/commander.js",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DB_CLIENT",
+      "inInstallTemplate": true,
+      "readBy": [
+        "@reldens/cms",
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 39
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/data-server-config.js",
+          "line": 35
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/installer.js",
+          "line": 384
+        },
+        {
+          "origin": "reldens",
+          "file": "bin/commander.js",
+          "line": 136
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DB_HOST",
+      "inInstallTemplate": true,
+      "readBy": [
+        "@reldens/cms",
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 40
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/data-server-config.js",
+          "line": 38
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/installer.js",
+          "line": 385
+        },
+        {
+          "origin": "reldens",
+          "file": "bin/commander.js",
+          "line": 133
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DB_LIMIT",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 47
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/data-server-config.js",
+          "line": 52
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DB_NAME",
+      "inInstallTemplate": true,
+      "readBy": [
+        "@reldens/cms",
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 42
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/data-server-config.js",
+          "line": 40
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/installer.js",
+          "line": 387
+        },
+        {
+          "origin": "reldens",
+          "file": "bin/commander.js",
+          "line": 134
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DB_PASSWORD",
+      "inInstallTemplate": true,
+      "readBy": [
+        "@reldens/cms",
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 44
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/data-server-config.js",
+          "line": 42
+        },
+        {
+          "origin": "reldens",
+          "file": "bin/commander.js",
+          "line": 132
+        },
+        {
+          "origin": "@reldens/cms",
+          "file": "lib/manager.js",
+          "line": 203
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DB_POOL_MAX",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 46
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/data-server-config.js",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DB_POOL_MIN",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 45
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/data-server-config.js",
+          "line": 57
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DB_PORT",
+      "inInstallTemplate": true,
+      "readBy": [
+        "@reldens/cms",
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 41
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/data-server-config.js",
+          "line": 39
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/installer.js",
+          "line": 386
+        },
+        {
+          "origin": "@reldens/cms",
+          "file": "lib/manager.js",
+          "line": 200
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DB_URL",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/installer/prisma-subprocess-worker.js",
+          "line": 170
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 49
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/data-server-config.js",
+          "line": 71
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DB_URL_OPTIONS",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 51
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/data-server-config.js",
+          "line": 75
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DB_USER",
+      "inInstallTemplate": true,
+      "readBy": [
+        "@reldens/cms",
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 43
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/data-server-config.js",
+          "line": 41
+        },
+        {
+          "origin": "reldens",
+          "file": "bin/commander.js",
+          "line": 131
+        },
+        {
+          "origin": "@reldens/cms",
+          "file": "lib/manager.js",
+          "line": 202
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DEBUG_QUERIES",
+      "inInstallTemplate": false,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/installer.js",
+          "line": 208
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DEFAULT_DOMAIN",
+      "inInstallTemplate": false,
+      "readBy": [
+        "@reldens/cms"
+      ],
+      "readSites": [
+        {
+          "origin": "@reldens/cms",
+          "file": "lib/manager.js",
+          "line": 65
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DEFAULT_ENCODING",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 3
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 155
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/installer.js",
+          "line": 411
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/theme-manager.js",
+          "line": 96
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DOMAIN_CDN_MAPPING",
+      "inInstallTemplate": false,
+      "readBy": [
+        "@reldens/cms"
+      ],
+      "readSites": [
+        {
+          "origin": "@reldens/cms",
+          "file": "lib/manager.js",
+          "line": 76
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DOMAIN_MAPPING",
+      "inInstallTemplate": false,
+      "readBy": [
+        "@reldens/cms"
+      ],
+      "readSites": [
+        {
+          "origin": "@reldens/cms",
+          "file": "lib/manager.js",
+          "line": 66
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_DOMAIN_PUBLIC_URL_MAPPING",
+      "inInstallTemplate": false,
+      "readBy": [
+        "@reldens/cms"
+      ],
+      "readSites": [
+        {
+          "origin": "@reldens/cms",
+          "file": "lib/manager.js",
+          "line": 71
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_ENABLE_TRACE_FOR",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 54
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_EXPRESS_HTTPS_CERT",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 12
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 160
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_EXPRESS_HTTPS_CHAIN",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 13
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 158
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_EXPRESS_HTTPS_PASSPHRASE",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 14
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 157
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_EXPRESS_HTTPS_PRIVATE_KEY",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 11
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 159
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_EXPRESS_JSON_LIMIT",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 16
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_EXPRESS_RATE_LIMIT_APPLY_KEY_GENERATOR",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 73
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 164
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_EXPRESS_RATE_LIMIT_MAX_REQUESTS",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 72
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 163
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_EXPRESS_RATE_LIMIT_MS",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 71
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 162
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_EXPRESS_SERVE_HOME",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 69
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 351
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_EXPRESS_SERVE_STATICS",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 75
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 356
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_EXPRESS_TRUSTED_PROXY",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 70
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 161
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/installer.js",
+          "line": 381
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_EXPRESS_URLENCODED_LIMIT",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 17
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_EXPRESS_USE_HTTPS",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 10
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 156
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_FIREBASE_API_KEY",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 81
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/firebase/server/plugin.js",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_FIREBASE_APP_ID",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 82
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/firebase/server/plugin.js",
+          "line": 76
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_FIREBASE_AUTH_DOMAIN",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 83
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/firebase/server/plugin.js",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_FIREBASE_DATABASE_URL",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 84
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/firebase/server/plugin.js",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_FIREBASE_ENABLE",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 80
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/firebase/server/plugin.js",
+          "line": 62
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_FIREBASE_MEASUREMENTID",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 88
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/firebase/server/plugin.js",
+          "line": 78
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_FIREBASE_MESSAGING_SENDER_ID",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 87
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/firebase/server/plugin.js",
+          "line": 74
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_FIREBASE_PROJECT_ID",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 85
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/firebase/server/plugin.js",
+          "line": 70
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_FIREBASE_STORAGE_BUCKET",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 86
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/firebase/server/plugin.js",
+          "line": 71
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_FORCE_COPY_ASSETS_ON_BUNDLE",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 67
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/theme-manager.js",
+          "line": 686
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_FORCE_RESET_DIST_ON_BUNDLE",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 66
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/theme-manager.js",
+          "line": 682
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_GLOBAL_RATE_LIMIT",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 18
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_GUESTS_EMAIL_DOMAIN",
+      "inInstallTemplate": false,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 137
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_HOST",
+      "inInstallTemplate": false,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/installer.js",
+          "line": 378
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_HOT_PLUG",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 30
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 135
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/installer.js",
+          "line": 383
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_INSTALLATION_TYPE",
+      "inInstallTemplate": false,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 94
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_JS_SOURCEMAPS",
+      "inInstallTemplate": false,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "bin/commander.js",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_LOG_LEVEL",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 53
+        },
+        {
+          "origin": "reldens",
+          "file": "bin/generate.js",
+          "line": 34
+        },
+        {
+          "origin": "reldens",
+          "file": "bin/commander.js",
+          "line": 32
+        },
+        {
+          "origin": "reldens",
+          "file": "bin/commander.js",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_MAILER_ENABLE",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 56
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/mailer.js",
+          "line": 39
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_MAILER_FORGOT_PASSWORD_LIMIT",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 63
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/login-manager.js",
+          "line": 667
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_MAILER_FROM",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 62
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/mailer.js",
+          "line": 51
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_MAILER_HOST",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_MAILER_PASS",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 61
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/mailer.js",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_MAILER_PORT",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 59
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/mailer.js",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_MAILER_SERVICE",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 57
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/mailer.js",
+          "line": 41
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_MAILER_USER",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 60
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/mailer.js",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_MONITOR",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 32
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 171
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_MONITOR_AUTH",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 33
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 172
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_MONITOR_PASS",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 35
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 174
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_MONITOR_USER",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 34
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 173
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_PING_INTERVAL",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 77
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 370
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_PING_MAX_RETRIES",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 78
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 371
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_PORT",
+      "inInstallTemplate": false,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/installer.js",
+          "line": 379
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_PUBLIC_URL",
+      "inInstallTemplate": true,
+      "readBy": [
+        "@reldens/cms",
+        "@reldens/server-utils",
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 8
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/manager.js",
+          "line": 169
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/installer.js",
+          "line": 380
+        },
+        {
+          "origin": "@reldens/server-utils",
+          "file": "lib/app-server-factory.js",
+          "line": 252
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_SITE_KEY_MAPPING",
+      "inInstallTemplate": false,
+      "readBy": [
+        "@reldens/cms"
+      ],
+      "readSites": [
+        {
+          "origin": "@reldens/cms",
+          "file": "lib/manager.js",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_STORAGE_DRIVER",
+      "inInstallTemplate": true,
+      "readBy": [
+        "@reldens/cms",
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/data-server-initializer.js",
+          "line": 116
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/entities-loader.js",
+          "line": 41
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 37
+        },
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/data-server-config.js",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_TOO_MANY_REQUESTS_MESSAGE",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 19
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_USE_CORS",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_USE_EXPRESS_JSON",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 15
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_USE_HELMET",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 21
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_USE_URLENCODED",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 20
+        }
+      ]
+    },
+    {
+      "name": "RELDENS_USE_XSS_PROTECTION",
+      "inInstallTemplate": true,
+      "readBy": [
+        "reldens"
+      ],
+      "readSites": [
+        {
+          "origin": "reldens",
+          "file": "lib/game/server/install-templates/.env.dist",
+          "line": 22
+        }
+      ]
+    }
+  ],
+  "configPaths": [
+    {
+      "path": "client/actions/damage",
+      "sites": [
+        {
+          "file": "lib/actions/client/receiver-wrapper.js",
+          "line": 429
+        }
+      ]
+    },
+    {
+      "path": "client/actions/skills/affectedProperty",
+      "sites": [
+        {
+          "file": "lib/rooms/server/scene.js",
+          "line": 88
+        },
+        {
+          "file": "lib/actions/server/battle.js",
+          "line": 140
+        },
+        {
+          "file": "lib/actions/server/skills/type-physical-attack.js",
+          "line": 100
+        },
+        {
+          "file": "lib/actions/server/skills/type-physical-effect.js",
+          "line": 94
+        }
+      ]
+    },
+    {
+      "path": "client/ads/collection",
+      "sites": [
+        {
+          "file": "lib/ads/client/providers/crazy-games.js",
+          "line": 83
+        },
+        {
+          "file": "lib/ads/client/providers/game-monetize.js",
+          "line": 71
+        }
+      ]
+    },
+    {
+      "path": "client/ads/general",
+      "sites": [
+        {
+          "file": "lib/ads/client/plugin.js",
+          "line": 60
+        }
+      ]
+    },
+    {
+      "path": "client/chat/messages",
+      "sites": [
+        {
+          "file": "lib/chat/client/chat-ui.js",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "path": "client/chat/messages/characterLimit",
+      "sites": [
+        {
+          "file": "lib/chat/server/room-chat.js",
+          "line": 61
+        },
+        {
+          "file": "lib/chat/server/message-actions.js",
+          "line": 105
+        }
+      ]
+    },
+    {
+      "path": "client/clan/general/openInvites",
+      "sites": [
+        {
+          "file": "lib/teams/client/target-box-enricher.js",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "path": "client/clan/labels/disbandLabel",
+      "sites": [
+        {
+          "file": "lib/teams/client/clan-message-handler.js",
+          "line": 321
+        }
+      ]
+    },
+    {
+      "path": "client/clan/labels/leaveLabel",
+      "sites": [
+        {
+          "file": "lib/teams/client/clan-message-handler.js",
+          "line": 322
+        }
+      ]
+    },
+    {
+      "path": "client/customClasses/inventory/groups",
+      "sites": [
+        {
+          "file": "lib/inventory/client/plugin.js",
+          "line": 234
+        }
+      ]
+    },
+    {
+      "path": "client/customClasses/inventory/items",
+      "sites": [
+        {
+          "file": "lib/inventory/client/plugin.js",
+          "line": 230
+        }
+      ]
+    },
+    {
+      "path": "client/customClasses/message/listeners",
+      "sites": [
+        {
+          "file": "lib/game/client/room-events.js",
+          "line": 383
+        }
+      ]
+    },
+    {
+      "path": "client/general/animations/frameRate",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-dynamic.js",
+          "line": 66
+        },
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 97
+        }
+      ]
+    },
+    {
+      "path": "client/general/assets/arrowDownFrameHeight",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 117
+        }
+      ]
+    },
+    {
+      "path": "client/general/assets/arrowDownFrameWidth",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 116
+        }
+      ]
+    },
+    {
+      "path": "client/general/assets/arrowDownPath",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 121
+        }
+      ]
+    },
+    {
+      "path": "client/general/assets/statsIconPath",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "path": "client/general/audio/defaultAudioConfig",
+      "sites": [
+        {
+          "file": "lib/audio/client/plugin.js",
+          "line": 128
+        }
+      ]
+    },
+    {
+      "path": "client/general/controls/action_button_hold",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 549
+        }
+      ]
+    },
+    {
+      "path": "client/general/controls/allowSimultaneousKeys",
+      "sites": [
+        {
+          "file": "lib/world/client/debug-world-creator.js",
+          "line": 35
+        },
+        {
+          "file": "lib/prediction/client/prediction-world-creator.js",
+          "line": 41
+        },
+        {
+          "file": "lib/rooms/server/scene.js",
+          "line": 81
+        }
+      ]
+    },
+    {
+      "path": "client/general/engine/cameraInterpolationX",
+      "sites": [
+        {
+          "file": "lib/users/client/player-engine.js",
+          "line": 93
+        }
+      ]
+    },
+    {
+      "path": "client/general/engine/cameraInterpolationY",
+      "sites": [
+        {
+          "file": "lib/users/client/player-engine.js",
+          "line": 97
+        }
+      ]
+    },
+    {
+      "path": "client/general/engine/cameraRoundPixels",
+      "sites": [
+        {
+          "file": "lib/users/client/player-engine.js",
+          "line": 89
+        }
+      ]
+    },
+    {
+      "path": "client/general/engine/clientInterpolation",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-dynamic.js",
+          "line": 67
+        }
+      ]
+    },
+    {
+      "path": "client/general/engine/interpolationSpeed",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-dynamic.js",
+          "line": 68
+        }
+      ]
+    },
+    {
+      "path": "client/general/gameEngine/updateGameSizeTimeOut",
+      "sites": [
+        {
+          "file": "lib/game/client/game-engine.js",
+          "line": 105
+        }
+      ]
+    },
+    {
+      "path": "client/general/users/allowGuest",
+      "sites": [
+        {
+          "file": "lib/game/client/handlers/guest-form-handler.js",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "path": "client/general/users/allowGuestUserName",
+      "sites": [
+        {
+          "file": "lib/game/client/handlers/guest-form-handler.js",
+          "line": 59
+        },
+        {
+          "file": "lib/game/server/login-manager.js",
+          "line": 74
+        }
+      ]
+    },
+    {
+      "path": "client/general/users/allowRegistration",
+      "sites": [
+        {
+          "file": "lib/game/client/handlers/forgot-password-form-handler.js",
+          "line": 37
+        },
+        {
+          "file": "lib/game/client/handlers/registration-form-handler.js",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "path": "client/levels/animations",
+      "sites": [
+        {
+          "file": "lib/actions/client/preloader-handler.js",
+          "line": 60
+        }
+      ]
+    },
+    {
+      "path": "client/map/dropsTile/height",
+      "sites": [
+        {
+          "file": "lib/objects/client/drops-message-listener.js",
+          "line": 120
+        }
+      ]
+    },
+    {
+      "path": "client/map/dropsTile/width",
+      "sites": [
+        {
+          "file": "lib/objects/client/drops-message-listener.js",
+          "line": 115
+        }
+      ]
+    },
+    {
+      "path": "client/map/layersDepth/belowPlayer",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-dynamic.js",
+          "line": 579
+        }
+      ]
+    },
+    {
+      "path": "client/map/layersDepth/changePoints",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-dynamic.js",
+          "line": 580
+        }
+      ]
+    },
+    {
+      "path": "client/map/tileData/height",
+      "sites": [
+        {
+          "file": "lib/game/server/login-manager.js",
+          "line": 65
+        },
+        {
+          "file": "lib/objects/client/drops-message-listener.js",
+          "line": 120
+        }
+      ]
+    },
+    {
+      "path": "client/map/tileData/width",
+      "sites": [
+        {
+          "file": "lib/game/server/login-manager.js",
+          "line": 64
+        },
+        {
+          "file": "lib/objects/client/drops-message-listener.js",
+          "line": 115
+        }
+      ]
+    },
+    {
+      "path": "client/message/listeners",
+      "sites": [
+        {
+          "file": "lib/game/client/room-events.js",
+          "line": 382
+        }
+      ]
+    },
+    {
+      "path": "client/players/animations/basedOnPress",
+      "sites": [
+        {
+          "file": "lib/world/server/p2world.js",
+          "line": 149
+        },
+        {
+          "file": "lib/users/client/player-engine.js",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "path": "client/players/animations/collideWorldBounds",
+      "sites": [
+        {
+          "file": "lib/users/client/player-engine.js",
+          "line": 84
+        }
+      ]
+    },
+    {
+      "path": "client/players/animations/defaultFrames",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 411
+        }
+      ]
+    },
+    {
+      "path": "client/players/animations/diagonalHorizontal",
+      "sites": [
+        {
+          "file": "lib/world/server/p2world.js",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "path": "client/players/animations/fadeDuration",
+      "sites": [
+        {
+          "file": "lib/users/client/player-engine.js",
+          "line": 86
+        }
+      ]
+    },
+    {
+      "path": "client/players/barsProperties",
+      "sites": [
+        {
+          "file": "lib/users/client/player-stats-bars-ui.js",
+          "line": 45
+        },
+        {
+          "file": "lib/users/client/plugin.js",
+          "line": 76
+        }
+      ]
+    },
+    {
+      "path": "client/players/multiplePlayers/enabled",
+      "sites": [
+        {
+          "file": "lib/users/client/plugin.js",
+          "line": 117
+        }
+      ]
+    },
+    {
+      "path": "client/players/multiplePlayers/showAvatar",
+      "sites": [
+        {
+          "file": "lib/actions/client/player-selector.js",
+          "line": 86
+        },
+        {
+          "file": "lib/users/client/plugin.js",
+          "line": 224
+        }
+      ]
+    },
+    {
+      "path": "client/players/name/minimumLength",
+      "sites": [
+        {
+          "file": "lib/game/server/login-manager.js",
+          "line": 533
+        }
+      ]
+    },
+    {
+      "path": "client/players/physicalBody/height",
+      "sites": [
+        {
+          "file": "lib/prediction/client/prediction-world-creator.js",
+          "line": 55
+        },
+        {
+          "file": "lib/rooms/server/scene.js",
+          "line": 90
+        }
+      ]
+    },
+    {
+      "path": "client/players/physicalBody/width",
+      "sites": [
+        {
+          "file": "lib/prediction/client/prediction-world-creator.js",
+          "line": 54
+        },
+        {
+          "file": "lib/rooms/server/scene.js",
+          "line": 89
+        }
+      ]
+    },
+    {
+      "path": "client/players/playedTime/label",
+      "sites": [
+        {
+          "file": "lib/game/client/game-engine.js",
+          "line": 226
+        }
+      ]
+    },
+    {
+      "path": "client/players/reconciliation/timeOutMs",
+      "sites": [
+        {
+          "file": "lib/prediction/client/player-engine-prediction.js",
+          "line": 31
+        }
+      ]
+    },
+    {
+      "path": "client/players/size",
+      "sites": [
+        {
+          "file": "lib/users/client/lifebar-ui.js",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "path": "client/players/size/height",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 64
+        },
+        {
+          "file": "lib/users/client/plugin.js",
+          "line": 237
+        }
+      ]
+    },
+    {
+      "path": "client/players/size/leftOffset",
+      "sites": [
+        {
+          "file": "lib/game/client/room-events.js",
+          "line": 456
+        },
+        {
+          "file": "lib/users/client/player-engine.js",
+          "line": 82
+        }
+      ]
+    },
+    {
+      "path": "client/players/size/topOffset",
+      "sites": [
+        {
+          "file": "lib/game/client/room-events.js",
+          "line": 455
+        },
+        {
+          "file": "lib/users/client/player-engine.js",
+          "line": 80
+        }
+      ]
+    },
+    {
+      "path": "client/players/size/width",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 63
+        },
+        {
+          "file": "lib/users/client/plugin.js",
+          "line": 234
+        }
+      ]
+    },
+    {
+      "path": "client/players/tapMovement/enabled",
+      "sites": [
+        {
+          "file": "lib/rooms/server/scene.js",
+          "line": 383
+        },
+        {
+          "file": "lib/game/client/scene-dynamic.js",
+          "line": 343
+        }
+      ]
+    },
+    {
+      "path": "client/rewards",
+      "sites": [
+        {
+          "file": "lib/rewards/server/rewards-events-provider.js",
+          "line": 26
+        }
+      ]
+    },
+    {
+      "path": "client/rewards/general",
+      "sites": [
+        {
+          "file": "lib/rewards/server/subscribers/rewards-subscriber.js",
+          "line": 32
+        }
+      ]
+    },
+    {
+      "path": "client/rewards/general/splitItems",
+      "sites": [
+        {
+          "file": "lib/rewards/server/pick-up-object.js",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "path": "client/rewards/labels/includeItemsDescription",
+      "sites": [
+        {
+          "file": "lib/rewards/client/message-handler.js",
+          "line": 182
+        }
+      ]
+    },
+    {
+      "path": "client/rewards/labels/itemsSeparator",
+      "sites": [
+        {
+          "file": "lib/rewards/client/message-handler.js",
+          "line": 206
+        }
+      ]
+    },
+    {
+      "path": "client/rewards/labels/itemsTemplate",
+      "sites": [
+        {
+          "file": "lib/rewards/client/message-handler.js",
+          "line": 207
+        }
+      ]
+    },
+    {
+      "path": "client/rewards/labels/title",
+      "sites": [
+        {
+          "file": "lib/rewards/client/message-handler.js",
+          "line": 101
+        }
+      ]
+    },
+    {
+      "path": "client/rooms/featuresRoomsNames",
+      "sites": [
+        {
+          "file": "lib/game/client/game-client.js",
+          "line": 136
+        }
+      ]
+    },
+    {
+      "path": "client/rooms/selection",
+      "sites": [
+        {
+          "file": "lib/rooms/server/manager.js",
+          "line": 82
+        },
+        {
+          "file": "lib/game/server/login-manager.js",
+          "line": 430
+        },
+        {
+          "file": "lib/game/server/login-manager.js",
+          "line": 599
+        }
+      ]
+    },
+    {
+      "path": "client/rooms/selection/allowOnLogin",
+      "sites": [
+        {
+          "file": "lib/rooms/client/plugin.js",
+          "line": 37
+        },
+        {
+          "file": "lib/users/client/plugin.js",
+          "line": 118
+        }
+      ]
+    },
+    {
+      "path": "client/rooms/servers",
+      "sites": [
+        {
+          "file": "lib/game/server/login-manager.js",
+          "line": 162
+        }
+      ]
+    },
+    {
+      "path": "client/rooms/servers/",
+      "sites": [
+        {
+          "file": "lib/game/client/game-client.js",
+          "line": 153
+        }
+      ]
+    },
+    {
+      "path": "client/scores/labels/content",
+      "sites": [
+        {
+          "file": "lib/scores/client/scores-message-handler.js",
+          "line": 97
+        }
+      ]
+    },
+    {
+      "path": "client/scores/labels/myScore",
+      "sites": [
+        {
+          "file": "lib/scores/client/scores-message-handler.js",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "path": "client/scores/labels/title",
+      "sites": [
+        {
+          "file": "lib/scores/client/scores-message-handler.js",
+          "line": 94
+        }
+      ]
+    },
+    {
+      "path": "client/skills/animations",
+      "sites": [
+        {
+          "file": "lib/actions/client/preloader-handler.js",
+          "line": 61
+        }
+      ]
+    },
+    {
+      "path": "client/trade/players/awaitTimeOut",
+      "sites": [
+        {
+          "file": "lib/inventory/server/message-actions.js",
+          "line": 153
+        }
+      ]
+    },
+    {
+      "path": "client/trade/players/timeOut",
+      "sites": [
+        {
+          "file": "lib/inventory/server/message-actions.js",
+          "line": 161
+        }
+      ]
+    },
+    {
+      "path": "client/trade/titles/myItems",
+      "sites": [
+        {
+          "file": "lib/inventory/client/trade-message-handler.js",
+          "line": 417
+        }
+      ]
+    },
+    {
+      "path": "client/ui/",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 362
+        },
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 376
+        }
+      ]
+    },
+    {
+      "path": "client/ui/animations/highlightColor",
+      "sites": [
+        {
+          "file": "lib/objects/client/animation-engine.js",
+          "line": 117
+        }
+      ]
+    },
+    {
+      "path": "client/ui/animations/highlightOnOver",
+      "sites": [
+        {
+          "file": "lib/objects/client/animation-engine.js",
+          "line": 112
+        }
+      ]
+    },
+    {
+      "path": "client/ui/chat",
+      "sites": [
+        {
+          "file": "lib/chat/client/chat-ui.js",
+          "line": 59
+        },
+        {
+          "file": "lib/chat/server/plugin.js",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "path": "client/ui/chat/showTabs",
+      "sites": [
+        {
+          "file": "lib/chat/client/plugin.js",
+          "line": 76
+        },
+        {
+          "file": "lib/chat/client/chat-tabs.js",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "path": "client/ui/controls/allowPrimaryTouch",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-dynamic.js",
+          "line": 350
+        }
+      ]
+    },
+    {
+      "path": "client/ui/controls/defaultActionKey",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 505
+        },
+        {
+          "file": "lib/actions/client/skills-ui.js",
+          "line": 28
+        },
+        {
+          "file": "lib/users/client/player-engine.js",
+          "line": 108
+        }
+      ]
+    },
+    {
+      "path": "client/ui/controls/disableContextMenu",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-dynamic.js",
+          "line": 122
+        }
+      ]
+    },
+    {
+      "path": "client/ui/controls/enabled",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 136
+        }
+      ]
+    },
+    {
+      "path": "client/ui/controls/joystickLeft",
+      "sites": [
+        {
+          "file": "lib/game/client/joystick.js",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "path": "client/ui/controls/joystickThreshold",
+      "sites": [
+        {
+          "file": "lib/game/client/joystick.js",
+          "line": 42
+        }
+      ]
+    },
+    {
+      "path": "client/ui/controls/joystickTop",
+      "sites": [
+        {
+          "file": "lib/game/client/joystick.js",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "path": "client/ui/controls/opacityEffect",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 595
+        },
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 618
+        }
+      ]
+    },
+    {
+      "path": "client/ui/controls/primaryMove",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-dynamic.js",
+          "line": 349
+        }
+      ]
+    },
+    {
+      "path": "client/ui/fullScreenButton/enabled",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 155
+        }
+      ]
+    },
+    {
+      "path": "client/ui/instructions/enabled",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 142
+        }
+      ]
+    },
+    {
+      "path": "client/ui/lifeBar",
+      "sites": [
+        {
+          "file": "lib/users/client/lifebar-ui.js",
+          "line": 38
+        },
+        {
+          "file": "lib/users/server/plugin.js",
+          "line": 95
+        }
+      ]
+    },
+    {
+      "path": "client/ui/lifeBar/enabled",
+      "sites": [
+        {
+          "file": "lib/users/server/plugin.js",
+          "line": 80
+        }
+      ]
+    },
+    {
+      "path": "client/ui/loading/assetsColor",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 652
+        }
+      ]
+    },
+    {
+      "path": "client/ui/loading/assetsSize",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 639
+        }
+      ]
+    },
+    {
+      "path": "client/ui/loading/font",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 637
+        }
+      ]
+    },
+    {
+      "path": "client/ui/loading/fontSize",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 638
+        }
+      ]
+    },
+    {
+      "path": "client/ui/loading/loadingColor",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 647
+        }
+      ]
+    },
+    {
+      "path": "client/ui/loading/percentColor",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 650
+        }
+      ]
+    },
+    {
+      "path": "client/ui/loading/show",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 626
+        }
+      ]
+    },
+    {
+      "path": "client/ui/loading/showAssets",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 692
+        }
+      ]
+    },
+    {
+      "path": "client/ui/maximum/enabled",
+      "sites": [
+        {
+          "file": "lib/game/client/game-engine.js",
+          "line": 136
+        }
+      ]
+    },
+    {
+      "path": "client/ui/maximum/x",
+      "sites": [
+        {
+          "file": "lib/game/client/game-engine.js",
+          "line": 137
+        }
+      ]
+    },
+    {
+      "path": "client/ui/maximum/y",
+      "sites": [
+        {
+          "file": "lib/game/client/game-engine.js",
+          "line": 139
+        }
+      ]
+    },
+    {
+      "path": "client/ui/minimap",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-dynamic.js",
+          "line": 69
+        }
+      ]
+    },
+    {
+      "path": "client/ui/minimap/enabled",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 145
+        }
+      ]
+    },
+    {
+      "path": "client/ui/options/acceptOrDecline",
+      "sites": [
+        {
+          "file": "lib/inventory/client/trade-message-handler.js",
+          "line": 94
+        },
+        {
+          "file": "lib/teams/client/clan-message-handler.js",
+          "line": 134
+        },
+        {
+          "file": "lib/teams/client/team-message-handler.js",
+          "line": 79
+        }
+      ]
+    },
+    {
+      "path": "client/ui/playerBox/enabled",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 133
+        }
+      ]
+    },
+    {
+      "path": "client/ui/players/highlightColor",
+      "sites": [
+        {
+          "file": "lib/users/client/player-engine.js",
+          "line": 112
+        }
+      ]
+    },
+    {
+      "path": "client/ui/players/highlightOnOver",
+      "sites": [
+        {
+          "file": "lib/users/client/player-engine.js",
+          "line": 110
+        }
+      ]
+    },
+    {
+      "path": "client/ui/players/nameText",
+      "sites": [
+        {
+          "file": "lib/users/client/player-engine.js",
+          "line": 100
+        }
+      ]
+    },
+    {
+      "path": "client/ui/players/showCurrentPlayerName",
+      "sites": [
+        {
+          "file": "lib/users/client/player-engine.js",
+          "line": 104
+        }
+      ]
+    },
+    {
+      "path": "client/ui/players/showNames",
+      "sites": [
+        {
+          "file": "lib/users/client/player-engine.js",
+          "line": 102
+        }
+      ]
+    },
+    {
+      "path": "client/ui/players/showNamesLimit",
+      "sites": [
+        {
+          "file": "lib/users/client/player-engine.js",
+          "line": 106
+        }
+      ]
+    },
+    {
+      "path": "client/ui/playerStats/enabled",
+      "sites": [
+        {
+          "file": "lib/users/client/player-stats-ui.js",
+          "line": 27
+        }
+      ]
+    },
+    {
+      "path": "client/ui/pointer/show",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-dynamic.js",
+          "line": 666
+        },
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 112
+        },
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 451
+        }
+      ]
+    },
+    {
+      "path": "client/ui/pointer/topOffSet",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-dynamic.js",
+          "line": 672
+        }
+      ]
+    },
+    {
+      "path": "client/ui/preloadLoading/enabled",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 163
+        }
+      ]
+    },
+    {
+      "path": "client/ui/preloadOptionsTemplates/enabled",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 158
+        }
+      ]
+    },
+    {
+      "path": "client/ui/preloadTarget/enabled",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 152
+        }
+      ]
+    },
+    {
+      "path": "client/ui/sceneLabel/enabled",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 139
+        }
+      ]
+    },
+    {
+      "path": "client/ui/screen/adjustUiElementsToMapSize",
+      "sites": [
+        {
+          "file": "lib/game/client/game-engine.js",
+          "line": 127
+        }
+      ]
+    },
+    {
+      "path": "client/ui/screen/centerSmallMapsCamera",
+      "sites": [
+        {
+          "file": "lib/game/client/game-engine.js",
+          "line": 155
+        }
+      ]
+    },
+    {
+      "path": "client/ui/screen/responsive",
+      "sites": [
+        {
+          "file": "lib/game/client/game-manager.js",
+          "line": 249
+        },
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 379
+        }
+      ]
+    },
+    {
+      "path": "client/ui/screen/updateGameSizeEnabled",
+      "sites": [
+        {
+          "file": "lib/game/client/game-engine.js",
+          "line": 89
+        }
+      ]
+    },
+    {
+      "path": "client/ui/settings/enabled",
+      "sites": [
+        {
+          "file": "lib/game/client/scene-preloader.js",
+          "line": 148
+        }
+      ]
+    },
+    {
+      "path": "client/ui/teams/sharedProperties",
+      "sites": [
+        {
+          "file": "lib/teams/server/message-actions/clan-create.js",
+          "line": 84
+        },
+        {
+          "file": "lib/teams/server/message-actions/team-join.js",
+          "line": 58
+        },
+        {
+          "file": "lib/teams/server/event-handlers/create-player-clan-handler.js",
+          "line": 34
+        }
+      ]
+    },
+    {
+      "path": "client/ui/uiTarget/hideOnDialog",
+      "sites": [
+        {
+          "file": "lib/game/client/room-events.js",
+          "line": 662
+        }
+      ]
+    },
+    {
+      "path": "client/world/debug/enabled",
+      "sites": [
+        {
+          "file": "lib/world/client/plugin.js",
+          "line": 58
+        }
+      ]
+    },
+    {
+      "path": "server/actions/pvp",
+      "sites": [
+        {
+          "file": "lib/actions/server/player-enricher.js",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "path": "server/actions/pvp/enabled",
+      "sites": [
+        {
+          "file": "lib/actions/server/player-enricher.js",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "path": "server/admin/roleId",
+      "sites": [
+        {
+          "file": "lib/users/server/create-admin.js",
+          "line": 47
+        }
+      ]
+    },
+    {
+      "path": "server/ads/collection",
+      "sites": [
+        {
+          "file": "lib/ads/server/message-actions.js",
+          "line": 156
+        }
+      ]
+    },
+    {
+      "path": "server/baseUrl",
+      "sites": [
+        {
+          "file": "lib/rooms/server/login.js",
+          "line": 119
+        }
+      ]
+    },
+    {
+      "path": "server/chat/messages/broadcast_join",
+      "sites": [
+        {
+          "file": "lib/chat/server/message-actions.js",
+          "line": 61
+        }
+      ]
+    },
+    {
+      "path": "server/chat/messages/broadcast_leave",
+      "sites": [
+        {
+          "file": "lib/chat/server/room-chat.js",
+          "line": 202
+        }
+      ]
+    },
+    {
+      "path": "server/chat/messages/global_allowed_roles",
+      "sites": [
+        {
+          "file": "lib/chat/server/room-chat.js",
+          "line": 155
+        }
+      ]
+    },
+    {
+      "path": "server/chat/messages/global_enabled",
+      "sites": [
+        {
+          "file": "lib/chat/server/room-chat.js",
+          "line": 149
+        }
+      ]
+    },
+    {
+      "path": "server/clan/settings/nameLimit",
+      "sites": [
+        {
+          "file": "lib/teams/server/message-actions/clan-create.js",
+          "line": 34
+        }
+      ]
+    },
+    {
+      "path": "server/customClasses/inventory/groups",
+      "sites": [
+        {
+          "file": "lib/inventory/server/group-hot-plug-callbacks.js",
+          "line": 60
+        },
+        {
+          "file": "lib/inventory/server/subscribers/server-subscriber.js",
+          "line": 42
+        },
+        {
+          "file": "lib/inventory/server/subscribers/player-subscriber.js",
+          "line": 40
+        },
+        {
+          "file": "lib/objects/server/object/type/trader-object.js",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "path": "server/customClasses/inventory/items",
+      "sites": [
+        {
+          "file": "lib/inventory/server/subscribers/server-subscriber.js",
+          "line": 38
+        },
+        {
+          "file": "lib/inventory/server/subscribers/player-subscriber.js",
+          "line": 39
+        },
+        {
+          "file": "lib/objects/server/object/type/trader-object.js",
+          "line": 43
+        }
+      ]
+    },
+    {
+      "path": "server/customClasses/objects/",
+      "sites": [
+        {
+          "file": "lib/objects/server/manager.js",
+          "line": 101
+        }
+      ]
+    },
+    {
+      "path": "server/customClasses/roomsClass/",
+      "sites": [
+        {
+          "file": "lib/rooms/server/manager.js",
+          "line": 137
+        }
+      ]
+    },
+    {
+      "path": "server/customClasses/sceneDataProcessor",
+      "sites": [
+        {
+          "file": "lib/rooms/server/scene-data-filter.js",
+          "line": 71
+        }
+      ]
+    },
+    {
+      "path": "server/customClasses/skills/classPath",
+      "sites": [
+        {
+          "file": "lib/actions/server/data-loader.js",
+          "line": 89
+        }
+      ]
+    },
+    {
+      "path": "server/customClasses/skills/skillsList",
+      "sites": [
+        {
+          "file": "lib/actions/server/data-loader.js",
+          "line": 62
+        }
+      ]
+    },
+    {
+      "path": "server/enemies/default",
+      "sites": [
+        {
+          "file": "lib/objects/server/object/type/enemy-object.js",
+          "line": 61
+        }
+      ]
+    },
+    {
+      "path": "server/enemies/initialStats",
+      "sites": [
+        {
+          "file": "lib/objects/server/object/type/enemy-object.js",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "path": "server/enemies/updateInitialPosition",
+      "sites": [
+        {
+          "file": "lib/objects/server/object/type/enemy-object.js",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "path": "server/mailer/forgotPassword/subject",
+      "sites": [
+        {
+          "file": "lib/game/server/login-manager.js",
+          "line": 694
+        }
+      ]
+    },
+    {
+      "path": "server/objects/actions/interactionsDistance",
+      "sites": [
+        {
+          "file": "lib/objects/server/object/type/drop-object.js",
+          "line": 36
+        },
+        {
+          "file": "lib/objects/server/object/type/npc-object.js",
+          "line": 34
+        }
+      ]
+    },
+    {
+      "path": "server/objects/drops/autoPickUpOnHit",
+      "sites": [
+        {
+          "file": "lib/objects/server/object/type/drop-object.js",
+          "line": 53
+        }
+      ]
+    },
+    {
+      "path": "server/objects/drops/disappearTime",
+      "sites": [
+        {
+          "file": "lib/rooms/server/scene.js",
+          "line": 820
+        }
+      ]
+    },
+    {
+      "path": "server/players/actions/initialClassPathId",
+      "sites": [
+        {
+          "file": "lib/actions/server/player-class-path-handler.js",
+          "line": 28
+        }
+      ]
+    },
+    {
+      "path": "server/players/drop/percent",
+      "sites": [
+        {
+          "file": "lib/inventory/server/subscribers/player-death-subscriber.js",
+          "line": 48
+        }
+      ]
+    },
+    {
+      "path": "server/players/drop/quantity",
+      "sites": [
+        {
+          "file": "lib/inventory/server/subscribers/player-death-subscriber.js",
+          "line": 59
+        }
+      ]
+    },
+    {
+      "path": "server/players/gameOver/timeOut",
+      "sites": [
+        {
+          "file": "lib/actions/server/battle.js",
+          "line": 194
+        }
+      ]
+    },
+    {
+      "path": "server/players/guestsUser/emailDomain",
+      "sites": [
+        {
+          "file": "lib/world/server/collisions-manager.js",
+          "line": 43
+        },
+        {
+          "file": "lib/rooms/server/login.js",
+          "line": 55
+        },
+        {
+          "file": "lib/game/server/manager.js",
+          "line": 511
+        },
+        {
+          "file": "lib/game/server/login-manager.js",
+          "line": 76
+        }
+      ]
+    },
+    {
+      "path": "server/players/guestUser/allowOnRooms",
+      "sites": [
+        {
+          "file": "lib/rooms/server/manager.js",
+          "line": 83
+        }
+      ]
+    },
+    {
+      "path": "server/players/physicsBody/speed",
+      "sites": [
+        {
+          "file": "lib/world/server/p2world.js",
+          "line": 907
+        }
+      ]
+    },
+    {
+      "path": "server/players/physicsBody/usePlayerSpeedConfig",
+      "sites": [
+        {
+          "file": "lib/world/server/p2world.js",
+          "line": 153
+        }
+      ]
+    },
+    {
+      "path": "server/players/physicsBody/usePlayerSpeedProperty",
+      "sites": [
+        {
+          "file": "lib/users/server/plugin.js",
+          "line": 45
+        }
+      ]
+    },
+    {
+      "path": "server/players/stateHandler/enabled",
+      "sites": [
+        {
+          "file": "lib/rooms/server/scene.js",
+          "line": 83
+        }
+      ]
+    },
+    {
+      "path": "server/players/stateHandler/timeOut",
+      "sites": [
+        {
+          "file": "lib/rooms/server/scene.js",
+          "line": 92
+        }
+      ]
+    },
+    {
+      "path": "server/rewards/avoidGuestRewardsOnLogin",
+      "sites": [
+        {
+          "file": "lib/rewards/server/event-handlers/login-state-handler.js",
+          "line": 49
+        }
+      ]
+    },
+    {
+      "path": "server/rooms/data/sendAll",
+      "sites": [
+        {
+          "file": "lib/rooms/server/scene-data-filter.js",
+          "line": 70
+        }
+      ]
+    },
+    {
+      "path": "server/rooms/disposeTimeout",
+      "sites": [
+        {
+          "file": "lib/rooms/server/scene.js",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "path": "server/rooms/maps/overrideSceneImagesWithMapFile",
+      "sites": [
+        {
+          "file": "lib/admin/server/subscribers/rooms-entity-subscriber.js",
+          "line": 228
+        },
+        {
+          "file": "lib/admin/server/room-map-tilesets-validator.js",
+          "line": 36
+        }
+      ]
+    },
+    {
+      "path": "server/rooms/validateRoomOnServer",
+      "sites": [
+        {
+          "file": "lib/rooms/server/login.js",
+          "line": 115
+        }
+      ]
+    },
+    {
+      "path": "server/rooms/validateRoomsOriginRequest",
+      "sites": [
+        {
+          "file": "lib/rooms/server/login.js",
+          "line": 57
+        }
+      ]
+    },
+    {
+      "path": "server/rooms/world",
+      "sites": [
+        {
+          "file": "lib/rooms/server/world-config.js",
+          "line": 25
+        }
+      ]
+    },
+    {
+      "path": "server/scores",
+      "sites": [
+        {
+          "file": "lib/scores/server/subscriber/increase-score-on-kill.js",
+          "line": 33
+        }
+      ]
+    },
+    {
+      "path": "server/scores/fullTableView/enabled",
+      "sites": [
+        {
+          "file": "lib/scores/server/plugin.js",
+          "line": 44
+        }
+      ]
+    },
+    {
+      "path": "server/scores/fullTableView/scoresPath",
+      "sites": [
+        {
+          "file": "lib/scores/server/plugin.js",
+          "line": 46
+        }
+      ]
+    },
+    {
+      "path": "server/scores/fullTableView/title",
+      "sites": [
+        {
+          "file": "lib/scores/server/subscriber/create-scores-route.js",
+          "line": 77
+        }
+      ]
+    },
+    {
+      "path": "server/shutdownTime",
+      "sites": [
+        {
+          "file": "lib/admin/server/subscribers/shutdown-subscriber.js",
+          "line": 85
+        },
+        {
+          "file": "lib/admin/server/subscribers/shutdown-subscriber.js",
+          "line": 108
+        }
+      ]
+    }
+  ],
+  "events": {
+    "totalNames": 233,
+    "names": [
+      "reldens.actionsPrepareEventsListeners",
+      "reldens.activateRoom",
+      "reldens.activatedRoom",
+      "reldens.activatedRoom_",
+      "reldens.adminAfterEntityDelete",
+      "reldens.adminAfterEntitySave",
+      "reldens.adminBeforeEntityEdit",
+      "reldens.adminBeforeEntityLoad",
+      "reldens.adminBeforeEntitySave",
+      "reldens.adminBeforeFieldRender",
+      "reldens.adminEditPropertiesPopulation",
+      "reldens.adminIsAuthenticated",
+      "reldens.adminListPropertiesPopulation",
+      "reldens.adminSideBarBeforeRender",
+      "reldens.adminSideBarBeforeSubItems",
+      "reldens.adminViewPropertiesPopulation",
+      "reldens.afterContentProcess",
+      "reldens.afterCreateAdminManager",
+      "reldens.afterEnrichPlayerWithLocale",
+      "reldens.afterGiveRewards",
+      "reldens.afterInitEngineAndStartGame",
+      "reldens.afterPlayerJoinedClan",
+      "reldens.afterPlayerJoinedTeam",
+      "reldens.afterProcessPlayerDropsBeforeBroadcast",
+      "reldens.afterProcessRewardsDropsBeforeBroadcast",
+      "reldens.afterRunAdditionalRespawnSetup",
+      "reldens.afterRunAdditionalSetup",
+      "reldens.afterSceneDynamicCreate",
+      "reldens.afterTeamLeave",
+      "reldens.afterVariablesCreated",
+      "reldens.allAudiosLoaded",
+      "reldens.audioLoaded",
+      "reldens.audioManagerDeleteAudios",
+      "reldens.audioManagerUpdateAudiosLoaded",
+      "reldens.audioManagerUpdateCategoriesLoaded",
+      "reldens.battleEnded",
+      "reldens.beforeClanDisband",
+      "reldens.beforeClanJoin",
+      "reldens.beforeClanUpdatePlayers",
+      "reldens.beforeContentProcess",
+      "reldens.beforeCreateAdminManager",
+      "reldens.beforeCreateEngine",
+      "reldens.beforeCreateUiScene",
+      "reldens.beforeEnrichPlayerWithClan",
+      "reldens.beforeEnrichPlayerWithClanUpdate",
+      "reldens.beforeEnrichUserWithLocale",
+      "reldens.beforeGetParsedValue",
+      "reldens.beforeGiveRewards",
+      "reldens.beforeInitEngineAndStartGame",
+      "reldens.beforeInitializeManagers",
+      "reldens.beforeJoinGame",
+      "reldens.beforeJoinGameRoom",
+      "reldens.beforeLoadConfigurations",
+      "reldens.beforePreload",
+      "reldens.beforePreloadUiScene",
+      "reldens.beforeReconnectGameClient",
+      "reldens.beforeRemovingDroppedReward",
+      "reldens.beforeSceneDynamicCreate",
+      "reldens.beforeSceneExecuteMessages",
+      "reldens.beforeSetupAdminManager",
+      "reldens.beforeSuperInitialGameData",
+      "reldens.beforeTeamCreate",
+      "reldens.beforeTeamDisband",
+      "reldens.beforeTeamJoin",
+      "reldens.beforeTeamUpdatePlayers",
+      "reldens.buildAdminContentsAfter",
+      "reldens.changeSceneDestroyPrevious",
+      "reldens.chatMessageObjectCreated",
+      "reldens.clanDisconnectAfterSendUpdate",
+      "reldens.clanDisconnectBeforeSendUpdate",
+      "reldens.clanJoinInviteRejected",
+      "reldens.clanLeave",
+      "reldens.clanLeaveAfterSendUpdate",
+      "reldens.clanLeaveBeforeSendUpdate",
+      "reldens.clientStartAfter",
+      "reldens.clientStartBefore",
+      "reldens.closeUI",
+      "reldens.cmsManagerInitializeServices",
+      "reldens.createAnimationAfter",
+      "reldens.createAppServer",
+      "reldens.createCurrentPlayer",
+      "reldens.createDynamicAnimation_",
+      "reldens.createDynamicAnimationsBefore",
+      "reldens.createEngineScene",
+      "reldens.createEngineSceneDone",
+      "reldens.createGameServer",
+      "reldens.createNewPlayerBefore",
+      "reldens.createNewPlayerCriticalError",
+      "reldens.createNewUserAfter",
+      "reldens.createNewUserError",
+      "reldens.createPlayerAfter",
+      "reldens.createPlayerAnimations",
+      "reldens.createPlayerBefore",
+      "reldens.createPlayerStatsAfter",
+      "reldens.createPreload",
+      "reldens.createUiScene",
+      "reldens.createWorld",
+      "reldens.createdMinimap",
+      "reldens.createdNewPlayer",
+      "reldens.createdPlayerSchema",
+      "reldens.createdPreloaderInstance",
+      "reldens.createdPreloaderRecurring",
+      "reldens.createdRoomsEventsInstance",
+      "reldens.createdUserInterface",
+      "reldens.createdWorldObject",
+      "reldens.defineRoomsInGameServerDone",
+      "reldens.disconnectLoggedBefore",
+      "reldens.dynamicForm.afterSave",
+      "reldens.dynamicForm.afterValidation",
+      "reldens.dynamicForm.beforeSave",
+      "reldens.dynamicForm.beforeValidation",
+      "reldens.dynamicFormRenderer.afterFieldsRender",
+      "reldens.dynamicFormRenderer.beforeFieldsRender",
+      "reldens.dynamicFormRequestHandler.afterSave",
+      "reldens.dynamicFormRequestHandler.beforeSave",
+      "reldens.dynamicFormRequestHandler.beforeValidation",
+      "reldens.endChangedScene",
+      "reldens.endObjectHitObject",
+      "reldens.endObjectHitWall",
+      "reldens.endPlayerHitChangePoint",
+      "reldens.endPlayerHitObjectBegin",
+      "reldens.endPlayerHitWallEnd",
+      "reldens.eventBuildSideBarBefore",
+      "reldens.featuresManagerLoadFeaturesAfter",
+      "reldens.formsTransformer.afterRender",
+      "reldens.formsTransformer.beforeRender",
+      "reldens.gameEngineClearTarget",
+      "reldens.gameEngineShowTarget",
+      "reldens.gameEngineTabTarget",
+      "reldens.gameOver",
+      "reldens.gameOverReload",
+      "reldens.gameRoomError",
+      "reldens.guestInvalidChangePoint",
+      "reldens.guestLoginInvalidParams",
+      "reldens.initUiAfter",
+      "reldens.initUiBefore",
+      "reldens.invalidData",
+      "reldens.items.",
+      "reldens.joinRoomEnd",
+      "reldens.joinRoomInvalid",
+      "reldens.joinRoomStart",
+      "reldens.joinedRoom",
+      "reldens.joinedRoom_",
+      "reldens.loadFeature_",
+      "reldens.loadFeatures",
+      "reldens.loginError",
+      "reldens.loginInvalidParams",
+      "reldens.loginInvalidPassword",
+      "reldens.loginInvalidRole",
+      "reldens.loginSuccess",
+      "reldens.manager.initializeAdminManager",
+      "reldens.objectBodyChange",
+      "reldens.objectBodyChanged",
+      "reldens.objectHitObjectEnd",
+      "reldens.objectHitWallBegin",
+      "reldens.onJoinRoomGame",
+      "reldens.onPreparePlayerCreationFormSubmit",
+      "reldens.onPreparePlayerSelectorFormSubmit",
+      "reldens.onPrepareSinglePlayerSelectorFormSubmit",
+      "reldens.onRoomDispose",
+      "reldens.onSavePlayerStateBefore",
+      "reldens.onSavePlayerStatsBefore",
+      "reldens.openUI",
+      "reldens.parsingMapLayerAfter",
+      "reldens.parsingMapLayerBefore",
+      "reldens.parsingMapLayersAfterBodiesQueue",
+      "reldens.playerAttack",
+      "reldens.playerDeath",
+      "reldens.playerEngineAddPlayer",
+      "reldens.playerHitObjectEnd",
+      "reldens.playerHitPlayer",
+      "reldens.playerHitPlayerEnd",
+      "reldens.playerHitWallBegin",
+      "reldens.playerLeftScene",
+      "reldens.playerNewName",
+      "reldens.playerNewNameUnavailable",
+      "reldens.playerPersistDataAfter",
+      "reldens.playerPersistDataBefore",
+      "reldens.playerSceneUnavailable",
+      "reldens.playerStatsUpdateAfter",
+      "reldens.playerStatsUpdateBefore",
+      "reldens.playersOnAdd",
+      "reldens.playersOnAddReady",
+      "reldens.playersOnRemove",
+      "reldens.playersQueueBefore",
+      "reldens.preloadUiScene",
+      "reldens.processForgotPassword",
+      "reldens.processUserRequestIsValidDataBefore",
+      "reldens.register",
+      "reldens.registrationInvalidParams",
+      "reldens.removePlayerBefore",
+      "reldens.restoreObjectAfter",
+      "reldens.roomLoginOnAuth",
+      "reldens.roomLoginOnCreate",
+      "reldens.roomsDefinition",
+      "reldens.roomsMessageActionsByRoom",
+      "reldens.roomsMessageActionsGlobal",
+      "reldens.runBattlePveAfter",
+      "reldens.runGameOver",
+      "reldens.runPlayerAnimation",
+      "reldens.savePlayerStatsUpdateClient",
+      "reldens.sceneRoomOnCreate",
+      "reldens.serverBeforeDefineRooms",
+      "reldens.serverBeforeListen",
+      "reldens.serverBeforeLoginManager",
+      "reldens.serverConfigFeaturesReady",
+      "reldens.serverConfigReady",
+      "reldens.serverReady",
+      "reldens.setAudio",
+      "reldens.setSceneOnPlayers",
+      "reldens.setupActions",
+      "reldens.setupAdminManagers",
+      "reldens.setupAdminRouter",
+      "reldens.setupAdminRoutes",
+      "reldens.setupEntitiesRoutes",
+      "reldens.skills.",
+      "reldens.startChangedScene",
+      "reldens.startEngineScene",
+      "reldens.startGameAfter",
+      "reldens.startGameBefore",
+      "reldens.startObjectHitObject",
+      "reldens.startObjectHitWall",
+      "reldens.startPlayerHitChangePoint",
+      "reldens.startPlayerHitObjectBegin",
+      "reldens.startPlayerHitWallEnd",
+      "reldens.teamJoinInviteRejected",
+      "reldens.teamLeave",
+      "reldens.teamLeaveBeforeSendUpdate",
+      "reldens.templateReloader.templatesChanged",
+      "reldens.tryClanStart",
+      "reldens.tryTeamStart",
+      "reldens.updateGameSizeAfter",
+      "reldens.updateGameSizeBefore"
+    ],
+    "emitSites": [
+      {
+        "name": "reldens.actionsPrepareEventsListeners",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/actions/server/event-listeners.js",
+            "line": 55,
+            "payload": "actionsPlugin, classPath"
+          }
+        ]
+      },
+      {
+        "name": "reldens.activatedRoom",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-manager.js",
+            "line": 435,
+            "payload": "sceneRoom, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.activatedRoom_",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-manager.js",
+            "line": 436,
+            "payload": ""
+          }
+        ]
+      },
+      {
+        "name": "reldens.activateRoom",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 85,
+            "payload": "room, this.gameManager"
+          }
+        ]
+      },
+      {
+        "name": "reldens.adminAfterEntityDelete",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager/router-contents.js",
+            "line": 305,
+            "payload": "{driverResource, idProperty, ids}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.adminAfterEntitySave",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager/router-contents.js",
+            "line": 351,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.adminBeforeEntityEdit",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager/router.js",
+            "line": 128,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.adminBeforeEntityLoad",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager/router-contents.js",
+            "line": 490,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.adminBeforeEntitySave",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager/router.js",
+            "line": 162,
+            "payload": "{"
+          },
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager/router.js",
+            "line": 192,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.adminBeforeFieldRender",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager/router-contents.js",
+            "line": 266,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.adminEditPropertiesPopulation",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager/router-contents.js",
+            "line": 229,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.adminIsAuthenticated",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager/router.js",
+            "line": 207,
+            "payload": "event"
+          }
+        ]
+      },
+      {
+        "name": "reldens.adminListPropertiesPopulation",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager/router-contents.js",
+            "line": 112,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.adminSideBarBeforeRender",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager/contents-builder.js",
+            "line": 106,
+            "payload": "eventAdminSideBarBeforeRender"
+          }
+        ]
+      },
+      {
+        "name": "reldens.adminSideBarBeforeSubItems",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager/contents-builder.js",
+            "line": 92,
+            "payload": "eventAdminSideBarBeforeSubItems"
+          }
+        ]
+      },
+      {
+        "name": "reldens.adminViewPropertiesPopulation",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager/router-contents.js",
+            "line": 202,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.afterContentProcess",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/template-engine.js",
+            "line": 188,
+            "payload": "afterProcessData"
+          }
+        ]
+      },
+      {
+        "name": "reldens.afterCreateAdminManager",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/admin/server/subscribers/create-admin-subscriber.js",
+            "line": 75,
+            "payload": "{serverManager}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.afterEnrichPlayerWithLocale",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/snippets/server/initial-game-data-enricher.js",
+            "line": 39,
+            "payload": "eventData"
+          }
+        ]
+      },
+      {
+        "name": "reldens.afterGiveRewards",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rewards/server/subscribers/rewards-subscriber.js",
+            "line": 79,
+            "payload": "{itemRewards, playerSchema, targetObject, winningRewards}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.afterInitEngineAndStartGame",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-manager.js",
+            "line": 361,
+            "payload": "this.initialGameData, joinedFirstRoom"
+          }
+        ]
+      },
+      {
+        "name": "reldens.afterPlayerJoinedClan",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/clan-join.js",
+            "line": 72,
+            "payload": "{ playerJoining: playerSchema, clan: clanToJoin }"
+          }
+        ]
+      },
+      {
+        "name": "reldens.afterPlayerJoinedTeam",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/team-join.js",
+            "line": 85,
+            "payload": "{currentTeam, playerJoining: playerSchema}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.afterProcessPlayerDropsBeforeBroadcast",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/inventory/server/subscribers/player-death-subscriber.js",
+            "line": 103,
+            "payload": "dropsMappedData, eventResult"
+          }
+        ]
+      },
+      {
+        "name": "reldens.afterProcessRewardsDropsBeforeBroadcast",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rewards/server/rewards-drops-processor.js",
+            "line": 49,
+            "payload": "dropsMappedData, eventResult"
+          }
+        ]
+      },
+      {
+        "name": "reldens.afterRunAdditionalRespawnSetup",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/respawn/server/room-respawn.js",
+            "line": 137,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.afterRunAdditionalSetup",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/objects/server/manager.js",
+            "line": 144,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.afterSceneDynamicCreate",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/scene-dynamic.js",
+            "line": 104,
+            "payload": "this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.afterTeamLeave",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/team-leave.js",
+            "line": 95,
+            "payload": "{currentTeam, leavingPlayerName}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.afterVariablesCreated",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/template-engine.js",
+            "line": 168,
+            "payload": "eventData"
+          }
+        ]
+      },
+      {
+        "name": "reldens.allAudiosLoaded",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/audio/client/manager.js",
+            "line": 365,
+            "payload": "this, audios, currentScene, audio"
+          }
+        ]
+      },
+      {
+        "name": "reldens.audioLoaded",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/audio/client/manager.js",
+            "line": 363,
+            "payload": "this, audios, currentScene, audio"
+          }
+        ]
+      },
+      {
+        "name": "reldens.audioManagerDeleteAudios",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/audio/client/manager.js",
+            "line": 449,
+            "payload": "this, room, gameManager, message"
+          }
+        ]
+      },
+      {
+        "name": "reldens.audioManagerUpdateAudiosLoaded",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/audio/client/manager.js",
+            "line": 432,
+            "payload": "this, room, gameManager, message"
+          }
+        ]
+      },
+      {
+        "name": "reldens.audioManagerUpdateCategoriesLoaded",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/audio/client/manager.js",
+            "line": 426,
+            "payload": "this, room, gameManager, message"
+          }
+        ]
+      },
+      {
+        "name": "reldens.battleEnded",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/actions/server/pve.js",
+            "line": 332,
+            "payload": "event"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeClanDisband",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/clan-leave.js",
+            "line": 97,
+            "payload": "event"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeClanJoin",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/clan-join.js",
+            "line": 42,
+            "payload": "eventBeforeJoin"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeClanUpdatePlayers",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/clan-join.js",
+            "line": 66,
+            "payload": "eventBeforeJoinUpdate"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeContentProcess",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/template-engine.js",
+            "line": 175,
+            "payload": "beforeProcessData"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeCreateAdminManager",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/admin/server/subscribers/create-admin-subscriber.js",
+            "line": 40,
+            "payload": "{serverManager}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeCreateEngine",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-manager.js",
+            "line": 299,
+            "payload": "this.initialGameData, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeCreateUiScene",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/scene-preloader.js",
+            "line": 217,
+            "payload": "this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeEnrichPlayerWithClan",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/event-handlers/create-player-clan-handler.js",
+            "line": 49,
+            "payload": "startEvent"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeEnrichPlayerWithClanUpdate",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/event-handlers/create-player-clan-handler.js",
+            "line": 71,
+            "payload": "endEvent"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeEnrichUserWithLocale",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/snippets/server/initial-game-data-enricher.js",
+            "line": 26,
+            "payload": "startEvent"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeGetParsedValue",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/config/server/manager.js",
+            "line": 102,
+            "payload": "{configManager: this, config: config}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeGiveRewards",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rewards/server/subscribers/rewards-subscriber.js",
+            "line": 52,
+            "payload": "eventDrop"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeInitEngineAndStartGame",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-manager.js",
+            "line": 291,
+            "payload": "this.initialGameData, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeInitializeManagers",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/manager.js",
+            "line": 394,
+            "payload": "event"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeJoinGame",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-manager.js",
+            "line": 184,
+            "payload": "{gameManager: this, formData, isNewUser}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeJoinGameRoom",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-manager.js",
+            "line": 193,
+            "payload": "this.gameRoom"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeLoadConfigurations",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/config/server/manager.js",
+            "line": 57,
+            "payload": "{configManager: this}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforePreload",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/scene-preloader.js",
+            "line": 81,
+            "payload": "this, eventUiScene"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforePreloadUiScene",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/scene-preloader.js",
+            "line": 132,
+            "payload": "this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeReconnectGameClient",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 422,
+            "payload": "message, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeRemovingDroppedReward",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rewards/server/reward-message-actions.js",
+            "line": 61,
+            "payload": "eventData"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeSceneDynamicCreate",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/scene-dynamic.js",
+            "line": 93,
+            "payload": "this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeSceneExecuteMessages",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/scene.js",
+            "line": 449,
+            "payload": "event"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeSetupAdminManager",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/admin/server/subscribers/create-admin-subscriber.js",
+            "line": 73,
+            "payload": "{serverManager}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeSuperInitialGameData",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/game.js",
+            "line": 69,
+            "payload": "superInitialGameData, this, client, userModel"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeTeamCreate",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/team-join.js",
+            "line": 63,
+            "payload": "beforeCreateEvent"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeTeamDisband",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/team-leave.js",
+            "line": 99,
+            "payload": "event"
+          },
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/team-leave.js",
+            "line": 107,
+            "payload": "event"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeTeamJoin",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/team-join.js",
+            "line": 70,
+            "payload": "eventBeforeJoin"
+          }
+        ]
+      },
+      {
+        "name": "reldens.beforeTeamUpdatePlayers",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/team-join.js",
+            "line": 79,
+            "payload": "eventBeforeJoinUpdate"
+          }
+        ]
+      },
+      {
+        "name": "reldens.buildAdminContentsAfter",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager/contents-builder.js",
+            "line": 45,
+            "payload": ""
+          }
+        ]
+      },
+      {
+        "name": "reldens.changeSceneDestroyPrevious",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/scene-dynamic.js",
+            "line": 559,
+            "payload": "this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.chatMessageObjectCreated",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/chat/client/chat-ui.js",
+            "line": 613,
+            "payload": "this, message"
+          }
+        ]
+      },
+      {
+        "name": "reldens.clanDisconnectAfterSendUpdate",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/clan-disconnect.js",
+            "line": 72,
+            "payload": "event"
+          }
+        ]
+      },
+      {
+        "name": "reldens.clanDisconnectBeforeSendUpdate",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/clan-disconnect.js",
+            "line": 56,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.clanJoinInviteRejected",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/clan-message-actions.js",
+            "line": 75,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.clanLeave",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/clan-leave.js",
+            "line": 29,
+            "payload": "{message, playerSchema, teamsPlugin}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.clanLeaveAfterSendUpdate",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/clan-leave.js",
+            "line": 106,
+            "payload": "event"
+          }
+        ]
+      },
+      {
+        "name": "reldens.clanLeaveBeforeSendUpdate",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/clan-leave.js",
+            "line": 81,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.clientStartAfter",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/handlers/client-start-handler.js",
+            "line": 52,
+            "payload": "this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.clientStartBefore",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-manager.js",
+            "line": 125,
+            "payload": "this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.closeUI",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/chat/client/chat-ui.js",
+            "line": 170,
+            "payload": "{"
+          },
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/user-interface.js",
+            "line": 193,
+            "payload": "{"
+          },
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/ui-factory.js",
+            "line": 75,
+            "payload": "{ui: this, closeButton, openButton, dialogBox, dialogContainer, uiScene: this.uiScene}"
+          },
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/settings-ui.js",
+            "line": 62,
+            "payload": "{ui: this, closeButton, openButton, dialogBox, dialogContainer, uiScene}"
+          },
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/instructions-ui.js",
+            "line": 53,
+            "payload": "{ui: this, closeButton, openButton, dialogBox, dialogContainer, uiScene}"
+          },
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/minimap-ui.js",
+            "line": 98,
+            "payload": "{ui: this, closeButton, minimap, box}"
+          },
+          {
+            "origin": "reldens",
+            "file": "lib/users/client/player-stats-ui.js",
+            "line": 59,
+            "payload": "{ui: this, closeButton, openButton, dialogBox, dialogContainer, uiScene}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.cmsManagerInitializeServices",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/manager.js",
+            "line": 390,
+            "payload": "{manager: this}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createAnimationAfter",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/objects/client/animation-engine.js",
+            "line": 223,
+            "payload": "{animationEngine: this}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createAppServer",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/manager.js",
+            "line": 339,
+            "payload": "event"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createCurrentPlayer",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/prediction/client/room-events-override.js",
+            "line": 41,
+            "payload": "eventData"
+          },
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 232,
+            "payload": "eventData"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createdMinimap",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/minimap.js",
+            "line": 58,
+            "payload": "this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createdNewPlayer",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 567,
+            "payload": "player, loginData, this, result"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createdPlayerSchema",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/scene.js",
+            "line": 239,
+            "payload": "client, userModel, currentPlayer, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createdPreloaderInstance",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 820,
+            "payload": "this, this.scenePreloader"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createdPreloaderRecurring",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 796,
+            "payload": "this, this.scenePreloader"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createdRoomsEventsInstance",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-manager.js",
+            "line": 358,
+            "payload": "joinedFirstRoom, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createdUserInterface",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/objects/client/plugin.js",
+            "line": 498,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createdWorldObject",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/p2world.js",
+            "line": 686,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createDynamicAnimation_",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/objects/client/plugin.js",
+            "line": 539,
+            "payload": ""
+          }
+        ]
+      },
+      {
+        "name": "reldens.createDynamicAnimationsBefore",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/objects/client/plugin.js",
+            "line": 517,
+            "payload": "this, sceneDynamic"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createEngineScene",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 861,
+            "payload": "player, room, previousScene, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createEngineSceneDone",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 877,
+            "payload": "eventData"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createGameServer",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/manager.js",
+            "line": 378,
+            "payload": "event"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createNewPlayerBefore",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 553,
+            "payload": "loginData, playerData, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createNewPlayerCriticalError",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 572,
+            "payload": "this, loginData, error, result"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createNewUserAfter",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 517,
+            "payload": "newUser, this, result"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createNewUserError",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 521,
+            "payload": "this, userData, result"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createPlayerAfter",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/scene.js",
+            "line": 250,
+            "payload": "client, userModel, currentPlayer, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createPlayerAnimations",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/scene-preloader.js",
+            "line": 446,
+            "payload": "this, avatarKey"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createPlayerBefore",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/scene.js",
+            "line": 225,
+            "payload": "client, userModel, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createPlayerStatsAfter",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/users/server/plugin.js",
+            "line": 308,
+            "payload": "client, userModel, currentPlayer, roomScene"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createPreload",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/scene-preloader.js",
+            "line": 206,
+            "payload": "this, eventUiScene"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createUiScene",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/scene-preloader.js",
+            "line": 227,
+            "payload": "this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.createWorld",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/scene.js",
+            "line": 503,
+            "payload": "roomData, objectsManager, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.defineRoomsInGameServerDone",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/manager.js",
+            "line": 117,
+            "payload": "this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.disconnectLoggedBefore",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/scene.js",
+            "line": 175,
+            "payload": "{room: this, player, client, userModel}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.dynamicForm.afterSave",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/dynamic-form.js",
+            "line": 295,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.dynamicForm.afterValidation",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/dynamic-form.js",
+            "line": 64,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.dynamicForm.beforeSave",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/dynamic-form.js",
+            "line": 281,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.dynamicForm.beforeValidation",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/dynamic-form.js",
+            "line": 42,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.dynamicFormRenderer.afterFieldsRender",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/dynamic-form-renderer.js",
+            "line": 43,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.dynamicFormRenderer.beforeFieldsRender",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/dynamic-form-renderer.js",
+            "line": 33,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.dynamicFormRequestHandler.afterSave",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/dynamic-form-request-handler.js",
+            "line": 65,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.dynamicFormRequestHandler.beforeSave",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/dynamic-form-request-handler.js",
+            "line": 51,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.dynamicFormRequestHandler.beforeValidation",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/dynamic-form-request-handler.js",
+            "line": 37,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.endChangedScene",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 460,
+            "payload": "{message, roomEvents: this}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.endObjectHitObject",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 399,
+            "payload": "{bodyA, bodyB, priorityObject}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.endObjectHitWall",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 446,
+            "payload": "{objectBody}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.endPlayerHitChangePoint",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 364,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.endPlayerHitObjectBegin",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 269,
+            "payload": "{playerBody, otherBody}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.endPlayerHitWallEnd",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 319,
+            "payload": "{playerBody, wallBody}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.eventBuildSideBarBefore",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager/contents-builder.js",
+            "line": 69,
+            "payload": "eventBuildSideBarBefore"
+          }
+        ]
+      },
+      {
+        "name": "reldens.featuresManagerLoadFeaturesAfter",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/features/server/manager.js",
+            "line": 89,
+            "payload": "{featuresManager: this, featuresCollection}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.formsTransformer.afterRender",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/template-engine/forms-transformer.js",
+            "line": 74,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.formsTransformer.beforeRender",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/template-engine/forms-transformer.js",
+            "line": 52,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.gameEngineClearTarget",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-engine.js",
+            "line": 253,
+            "payload": "this, clearedTargetData"
+          }
+        ]
+      },
+      {
+        "name": "reldens.gameEngineShowTarget",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-engine.js",
+            "line": 180,
+            "payload": "this, target, previousTarget, targetName"
+          }
+        ]
+      },
+      {
+        "name": "reldens.gameEngineTabTarget",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-engine.js",
+            "line": 300,
+            "payload": "this, closerTarget, previousTarget"
+          }
+        ]
+      },
+      {
+        "name": "reldens.gameOver",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 514,
+            "payload": "message, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.gameOverReload",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 306,
+            "payload": "this, defaultReload"
+          }
+        ]
+      },
+      {
+        "name": "reldens.gameRoomError",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-manager.js",
+            "line": 168,
+            "payload": "this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.guestInvalidChangePoint",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 344,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.guestLoginInvalidParams",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 295,
+            "payload": "this, user, userData, result"
+          }
+        ]
+      },
+      {
+        "name": "reldens.initUiAfter",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 350,
+            "payload": "message, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.initUiBefore",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 348,
+            "payload": "message, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.invalidData",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 289,
+            "payload": "this, userData, result"
+          }
+        ]
+      },
+      {
+        "name": "reldens.joinedRoom",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-manager.js",
+            "line": 446,
+            "payload": "sceneRoom, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.joinedRoom_",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-manager.js",
+            "line": 447,
+            "payload": ""
+          }
+        ]
+      },
+      {
+        "name": "reldens.joinRoomEnd",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/scene.js",
+            "line": 156,
+            "payload": "new JoinedSceneRoomEvent(this, client, options, userModel, loggedPlayer, isGuest"
+          }
+        ]
+      },
+      {
+        "name": "reldens.joinRoomInvalid",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/scene.js",
+            "line": 149,
+            "payload": "this, client, options, userModel, isGuest"
+          }
+        ]
+      },
+      {
+        "name": "reldens.joinRoomStart",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/scene.js",
+            "line": 136,
+            "payload": "this, client, options, userModel"
+          }
+        ]
+      },
+      {
+        "name": "reldens.loadFeature_",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/features/client/manager.js",
+            "line": 60,
+            "payload": ""
+          }
+        ]
+      },
+      {
+        "name": "reldens.loadFeatures",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/features/client/manager.js",
+            "line": 46,
+            "payload": "this, featuresCodeList"
+          }
+        ]
+      },
+      {
+        "name": "reldens.loginError",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 395,
+            "payload": "this, user, userData, result"
+          }
+        ]
+      },
+      {
+        "name": "reldens.loginInvalidParams",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 307,
+            "payload": "this, user, userData, result"
+          }
+        ]
+      },
+      {
+        "name": "reldens.loginInvalidPassword",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 380,
+            "payload": "this, user, userData, result"
+          }
+        ]
+      },
+      {
+        "name": "reldens.loginInvalidRole",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 374,
+            "payload": "this, user, userData, result"
+          }
+        ]
+      },
+      {
+        "name": "reldens.loginSuccess",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 391,
+            "payload": "this, user, userData, result"
+          }
+        ]
+      },
+      {
+        "name": "reldens.manager.initializeAdminManager",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/manager.js",
+            "line": 563,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.objectBodyChange",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/objects/client/plugin.js",
+            "line": 205,
+            "payload": "{body, key, changes: {[propertyKey]: newValue}}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.objectBodyChanged",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/objects/client/plugin.js",
+            "line": 284,
+            "payload": "{body, key}"
+          },
+          {
+            "origin": "reldens",
+            "file": "lib/objects/client/plugin.js",
+            "line": 300,
+            "payload": "{body, key}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.objectHitObjectEnd",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 412,
+            "payload": "{bodyA, bodyB}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.objectHitWallBegin",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 424,
+            "payload": "event"
+          }
+        ]
+      },
+      {
+        "name": "reldens.onJoinRoomGame",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/game.js",
+            "line": 41,
+            "payload": "client, options, userModel, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.onPreparePlayerCreationFormSubmit",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/users/client/plugin.js",
+            "line": 322,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.onPreparePlayerSelectorFormSubmit",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/users/client/plugin.js",
+            "line": 265,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.onPrepareSinglePlayerSelectorFormSubmit",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/users/client/plugin.js",
+            "line": 196,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.onRoomDispose",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/login.js",
+            "line": 298,
+            "payload": "event"
+          }
+        ]
+      },
+      {
+        "name": "reldens.onSavePlayerStateBefore",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/scene.js",
+            "line": 719,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.onSavePlayerStatsBefore",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/scene.js",
+            "line": 748,
+            "payload": "{room: this, playerSchema, client, objectState}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.openUI",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/chat/client/chat-ui.js",
+            "line": 156,
+            "payload": "{"
+          },
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/user-interface.js",
+            "line": 155,
+            "payload": "{ui: this, openButton: this.openButton, dialogBox, dialogContainer, uiScene}"
+          },
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/ui-factory.js",
+            "line": 56,
+            "payload": "{ui: this, openButton, dialogBox, dialogContainer, uiScene: this.uiScene}"
+          },
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/settings-ui.js",
+            "line": 51,
+            "payload": "{ui: this, openButton, dialogBox, dialogContainer, uiScene}"
+          },
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/instructions-ui.js",
+            "line": 44,
+            "payload": "{ui: this, openButton, dialogBox, dialogContainer, uiScene}"
+          },
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/minimap-ui.js",
+            "line": 77,
+            "payload": "{ui: this, openButton, minimap, box}"
+          },
+          {
+            "origin": "reldens",
+            "file": "lib/users/client/player-stats-ui.js",
+            "line": 49,
+            "payload": "{ui: this, openButton, dialogBox, dialogContainer, uiScene}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.parsingMapLayerAfter",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/p2world.js",
+            "line": 245,
+            "payload": "eventData"
+          }
+        ]
+      },
+      {
+        "name": "reldens.parsingMapLayerBefore",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/p2world.js",
+            "line": 243,
+            "payload": "eventData"
+          }
+        ]
+      },
+      {
+        "name": "reldens.parsingMapLayersAfterBodiesQueue",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/p2world.js",
+            "line": 254,
+            "payload": "eventData"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playerAttack",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/actions/client/receiver-wrapper.js",
+            "line": 104,
+            "payload": "message, this.room"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playerDeath",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/actions/server/battle.js",
+            "line": 197,
+            "payload": "new PlayerDeathEvent({"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playerEngineAddPlayer",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/users/client/player-engine.js",
+            "line": 171,
+            "payload": "this, id, addPlayerData"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playerHitObjectEnd",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 281,
+            "payload": "{playerBody, result}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playerHitPlayer",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 237,
+            "payload": "{bodyA, bodyB}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playerHitPlayerEnd",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 251,
+            "payload": "{bodyA, bodyB}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playerHitWallBegin",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 296,
+            "payload": "{playerBody, wallBody}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playerLeftScene",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 589,
+            "payload": "{code, roomEvents: this}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playerNewName",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 536,
+            "payload": "this, loginData, result"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playerNewNameUnavailable",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 557,
+            "payload": "this, loginData, isNameAvailable, result"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playerPersistDataAfter",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/scene.js",
+            "line": 237,
+            "payload": "client, userModel, currentPlayer, params, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playerPersistDataBefore",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/scene.js",
+            "line": 233,
+            "payload": "client, userModel, currentPlayer, params, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playerSceneUnavailable",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 545,
+            "payload": "this, loginData, result"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playersOnAdd",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 168,
+            "payload": "player, key, previousScene, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playersOnAddReady",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 875,
+            "payload": "playerAddEventData"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playersOnRemove",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 281,
+            "payload": "player, key, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playersQueueBefore",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/prediction/client/room-events-override.js",
+            "line": 33,
+            "payload": "player, key, previousScene, roomEvents"
+          },
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 227,
+            "payload": "player, key, previousScene, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playerStatsUpdateAfter",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 620,
+            "payload": "message, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.playerStatsUpdateBefore",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 409,
+            "payload": "message, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.preloadUiScene",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/scene-preloader.js",
+            "line": 166,
+            "payload": "this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.processForgotPassword",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 679,
+            "payload": "this, userData, sendResult"
+          }
+        ]
+      },
+      {
+        "name": "reldens.processUserRequestIsValidDataBefore",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 285,
+            "payload": "this, userData"
+          }
+        ]
+      },
+      {
+        "name": "reldens.register",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 501,
+            "payload": "this, userData, result"
+          }
+        ]
+      },
+      {
+        "name": "reldens.registrationInvalidParams",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 313,
+            "payload": "this, user, userData, result"
+          }
+        ]
+      },
+      {
+        "name": "reldens.removePlayerBefore",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/scene.js",
+            "line": 662,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.restoreObjectAfter",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/objects/server/object/type/enemy-object.js",
+            "line": 396,
+            "payload": "{enemyObject: this, room}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.roomLoginOnAuth",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/login.js",
+            "line": 94,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.roomLoginOnCreate",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/login.js",
+            "line": 58,
+            "payload": "{roomLogin: this, options}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.roomsDefinition",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/manager.js",
+            "line": 93,
+            "payload": "this.defineExtraRooms"
+          }
+        ]
+      },
+      {
+        "name": "reldens.roomsMessageActionsByRoom",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/manager.js",
+            "line": 184,
+            "payload": "roomMessageActions, roomName"
+          }
+        ]
+      },
+      {
+        "name": "reldens.roomsMessageActionsGlobal",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/manager.js",
+            "line": 99,
+            "payload": "globalMessageActions"
+          }
+        ]
+      },
+      {
+        "name": "reldens.runBattlePveAfter",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/actions/server/pve.js",
+            "line": 82,
+            "payload": "{playerSchema, target, roomScene, attackResult}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.runGameOver",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 510,
+            "payload": "{message, defaultBehavior, roomEvents: this}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.runPlayerAnimation",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/users/client/player-engine.js",
+            "line": 333,
+            "payload": "this, playerId, playerState, playerSprite"
+          }
+        ]
+      },
+      {
+        "name": "reldens.savePlayerStatsUpdateClient",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/scene.js",
+            "line": 762,
+            "payload": "client, playerSchema, this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.sceneRoomOnCreate",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/rooms/server/scene.js",
+            "line": 116,
+            "payload": "this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.serverBeforeDefineRooms",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/manager.js",
+            "line": 413,
+            "payload": "{serverManager: this}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.serverBeforeListen",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/manager.js",
+            "line": 275,
+            "payload": "{serverManager: this}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.serverBeforeLoginManager",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/manager.js",
+            "line": 447,
+            "payload": "{serverManager: this}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.serverConfigFeaturesReady",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/manager.js",
+            "line": 471,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.serverConfigReady",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/manager.js",
+            "line": 506,
+            "payload": "{serverManager: this, configProcessor: this.configManager}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.serverReady",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/manager.js",
+            "line": 280,
+            "payload": "{serverManager: this}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.setAudio",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/audio/client/manager.js",
+            "line": 80,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.setSceneOnPlayers",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/server/login-manager.js",
+            "line": 387,
+            "payload": "this, user, userData"
+          }
+        ]
+      },
+      {
+        "name": "reldens.setupActions",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/objects/server/object/type/enemy-object.js",
+            "line": 226,
+            "payload": "{enemyObject: this}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.setupAdminManagers",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager.js",
+            "line": 161,
+            "payload": "{adminManager: this}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.setupAdminRouter",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager.js",
+            "line": 157,
+            "payload": "{adminManager: this}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.setupAdminRoutes",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager.js",
+            "line": 159,
+            "payload": "{adminManager: this}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.setupEntitiesRoutes",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/admin-manager/router.js",
+            "line": 145,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.startChangedScene",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 452,
+            "payload": "{message, roomEvents: this}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.startEngineScene",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/room-events.js",
+            "line": 773,
+            "payload": "this, player, room, previousScene"
+          }
+        ]
+      },
+      {
+        "name": "reldens.startGameAfter",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-manager.js",
+            "line": 154,
+            "payload": "this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.startGameBefore",
+        "sync": true,
+        "async": false,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-manager.js",
+            "line": 138,
+            "payload": "this"
+          }
+        ]
+      },
+      {
+        "name": "reldens.startObjectHitObject",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 381,
+            "payload": "{bodyA, bodyB}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.startObjectHitWall",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 441,
+            "payload": "{objectBody}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.startPlayerHitChangePoint",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 330,
+            "payload": "{collisionsManager: this, playerBody, changePoint}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.startPlayerHitObjectBegin",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 262,
+            "payload": "{playerBody, otherBody}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.startPlayerHitWallEnd",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/world/server/collisions-manager.js",
+            "line": 307,
+            "payload": "{playerBody, wallBody}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.teamJoinInviteRejected",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/team-message-actions.js",
+            "line": 61,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.teamLeave",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/team-leave.js",
+            "line": 31,
+            "payload": "{data, room, playerSchema, teamsPlugin}"
+          }
+        ]
+      },
+      {
+        "name": "reldens.teamLeaveBeforeSendUpdate",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/team-leave.js",
+            "line": 80,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.templateReloader.templatesChanged",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "@reldens/cms",
+            "file": "lib/template-reloader.js",
+            "line": 213,
+            "payload": "{"
+          }
+        ]
+      },
+      {
+        "name": "reldens.tryClanStart",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/try-clan-invite.js",
+            "line": 69,
+            "payload": "event"
+          }
+        ]
+      },
+      {
+        "name": "reldens.tryTeamStart",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/teams/server/message-actions/try-team-start.js",
+            "line": 47,
+            "payload": "event"
+          }
+        ]
+      },
+      {
+        "name": "reldens.updateGameSizeAfter",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-engine.js",
+            "line": 100,
+            "payload": "this, newWidth, newHeight"
+          }
+        ]
+      },
+      {
+        "name": "reldens.updateGameSizeBefore",
+        "sync": false,
+        "async": true,
+        "sites": [
+          {
+            "origin": "reldens",
+            "file": "lib/game/client/game-engine.js",
+            "line": 88,
+            "payload": "this, newWidth, newHeight"
+          }
+        ]
+      }
+    ]
+  },
+  "constantsFiles": [
+    "lib/actions/constants.js",
+    "lib/ads/constants.js",
+    "lib/audio/constants.js",
+    "lib/chat/constants.js",
+    "lib/config/constants.js",
+    "lib/game/constants.js",
+    "lib/inventory/constants.js",
+    "lib/objects/constants.js",
+    "lib/rewards/constants.js",
+    "lib/rooms/constants.js",
+    "lib/scores/constants.js",
+    "lib/snippets/constants.js",
+    "lib/teams/constants.js",
+    "lib/users/constants.js",
+    "lib/world/constants.js"
+  ]
+}

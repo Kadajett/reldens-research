@@ -13,6 +13,9 @@
 
 import { GameManager } from 'reldens/client';
 import { ClientPlugin } from '../../src/client/plugin';
+import { pluginDefinition } from '../../src/client/plugin-definition';
+
+console.info('[example-03] plugin definition validated:', pluginDefinition.name);
 
 // Logger settings have to be set on window before the game manager is imported at
 // runtime; with a bundler the import above is hoisted, so read them here and let

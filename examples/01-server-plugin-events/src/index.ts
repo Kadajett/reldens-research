@@ -7,10 +7,17 @@
  * generates entities and restarts into the game. See README.md.
  */
 import { ServerManager } from 'reldens/server';
+import { ServerManagerConfigSchema } from '@reldens-tutorials/schemas';
 import { ServerPlugin } from './plugin';
+import { pluginDefinition } from './plugin-definition';
 import { resolveReldensModulePath } from './reldens-module-path';
 
-const appServer = new ServerManager({
+console.info('[example-01] plugin definition validated:', pluginDefinition.name);
+
+// The config is validated before Reldens sees it. Reldens itself never checks this
+// object - a bad reldensModulePath, for example, surfaces minutes later as a Parcel
+// error - so the schema turns those into immediate, located failures.
+const config = ServerManagerConfigSchema.parse({
     projectRoot: __dirname + '/..',
     projectThemeName: 'default',
     reldensModulePath: resolveReldensModulePath(),
@@ -18,6 +25,8 @@ const appServer = new ServerManager({
     cssSourceMaps: '1' === process.env['RELDENS_CSS_SOURCEMAPS'],
     customPlugin: ServerPlugin
 });
+
+const appServer = new ServerManager(config);
 
 // Uncomment to have every event log its listeners as it fires. Set it to a comma
 // separated list of event keys to narrow it down; 'all' is extremely noisy.

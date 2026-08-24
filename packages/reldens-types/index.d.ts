@@ -33,13 +33,11 @@ declare module 'reldens/server' {
         customPlugin?: new () => { setup(props: { events: ReldensEventsManager }): unknown };
         /**
          * Runtime class overrides merged into `server/customClasses/*` config.
-         * Known buckets: `objects` (keyed by object class key), `roomsClass` (keyed by roomClassPath).
+         * The precise bucket shapes (all eleven of them) live in
+         * @reldens-tutorials/schemas' ServerCustomClassesSchema - kept loose here so
+         * the zod-parsed config assigns cleanly.
          */
-        customClasses?: {
-            objects?: Record<string, unknown>;
-            roomsClass?: Record<string, unknown>;
-            [bucket: string]: Record<string, unknown> | undefined;
-        };
+        customClasses?: Record<string, any>;
         [key: string]: any;
     }
 
