@@ -21,7 +21,7 @@ No validation library is attached. This file is copyable into any project that h
 
 ## Fields
 
-Every field maps to a property [`ItemBase`](/packages/reldens-items-types/docs/api/index) reads in its constructor. Only `key` is required.
+Every field maps to a property [`ItemBase`](/packages/reldens-items-types/docs/api/index) reads in its constructor ([source](https://github.com/damian-pastorini/reldens-items/blob/HEAD/lib/item/type/item-base.js)). Only `key` is required.
 
 | Field | Type | Meaning |
 |---|---|---|
@@ -39,7 +39,7 @@ The full field list is on [`itemDataSchema`](/examples/07-typed-items-trade/docs
 
 ## The six item types
 
-`type` is a number from `ItemsConst.TYPES`. The `SINGLE*` types collapse quantity into one inventory slot; the others get one instance each.
+`type` is a number from [`ItemsConst.TYPES`](https://github.com/damian-pastorini/reldens-items/blob/HEAD/lib/constants.js). The `SINGLE*` types collapse quantity into one inventory slot; the others get one instance each. Which class each id maps to is in [`item-types.js`](https://github.com/damian-pastorini/reldens-items/blob/HEAD/lib/item/item-types.js).
 
 | Name | Id | Slot key | Stacks? | Use for |
 |---|---|---|---|---|

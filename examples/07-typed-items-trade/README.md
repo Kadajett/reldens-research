@@ -53,3 +53,9 @@ npm run verify # optional: zod-check the catalog with @reldens-community/items-t
 npm test       # the same check as a repeatable test
 npm run typecheck
 ```
+
+## Links
+
+- Engine: [`@reldens/items-system`](https://github.com/damian-pastorini/reldens-items) (`damian-pastorini/reldens-items`)
+- Platform: [Reldens](https://github.com/damian-pastorini/reldens)
+- This examples repo: [`Kadajett/reldens-research`](https://github.com/Kadajett/reldens-research)

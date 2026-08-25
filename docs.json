@@ -411,5 +411,25 @@
         ]
       }
     ]
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Examples repo",
+        "href": "https://github.com/Kadajett/reldens-research",
+        "icon": "github"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Reldens on GitHub",
+      "href": "https://github.com/damian-pastorini/reldens"
+    }
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/Kadajett/reldens-research",
+      "website": "https://www.reldens.com"
+    }
   }
 }

@@ -46,10 +46,12 @@ if(0 === rewards.length){ return true; } // rewards.length is undefined -> never
 
 `0 === undefined` is `false`, so the fast path never fires. The trade survives only because the fallback `fetchAllBy` returns an empty array. The fix is `rewards.count()`.
 
+See it in the source: [`rewards-processor.js#L23`](https://github.com/damian-pastorini/reldens-items/blob/HEAD/lib/exchange/rewards-processor.js#L23) against [`rewards-collection.js#L18`](https://github.com/damian-pastorini/reldens-items/blob/HEAD/lib/exchange/rewards-collection.js#L18).
+
 <Warning>
 This is an upstream defect, not something this example can configure around. It is filed for the maintainer. If you add real rewards, exercise that path carefully.
 </Warning>
 
 <Info>
-Two sibling defects live in the same package: `GroupsDataGenerator.appendGroup` passes `addGroup` arguments in the wrong order, and `SingleEquipment` omits the `static isSingleInstance()` override so the manager stacks it like a normal item.
+Two sibling defects live in the same package: [`GroupsDataGenerator.appendGroup`](https://github.com/damian-pastorini/reldens-items/blob/HEAD/lib/groups-data-generator.js#L39) passes `addGroup` arguments in the wrong order, and [`SingleEquipment`](https://github.com/damian-pastorini/reldens-items/blob/HEAD/lib/item/type/single-equipment.js) omits the `static isSingleInstance()` override so [the manager](https://github.com/damian-pastorini/reldens-items/blob/HEAD/lib/manager.js#L82) stacks it like a normal item.
 </Info>
