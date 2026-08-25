@@ -791,13 +791,15 @@ export const RELDENS_EVENT_PAYLOAD_INFO: Record<string, EventPayloadInfo> = {
     "reldens.beforeTeamDisband": {
         "style": "object",
         "requiredKeys": [
-            "continueDisband",
             "playerSchema",
             "room",
             "singleRemoveId",
             "teamsPlugin"
         ],
-        "sometimesKeys": [],
+        "sometimesKeys": [
+            "continueDisband",
+            "continueLeave"
+        ],
         "hasSpreadOrComputed": false,
         "sites": [
             "reldens:lib/teams/server/message-actions/team-leave.js:L99",
@@ -831,7 +833,12 @@ export const RELDENS_EVENT_PAYLOAD_INFO: Record<string, EventPayloadInfo> = {
         ]
     },
     "reldens.buildAdminContentsAfter": {
-        "style": "none",
+        "style": "object",
+        "requiredKeys": [
+            "adminManager"
+        ],
+        "sometimesKeys": [],
+        "hasSpreadOrComputed": true,
         "sites": [
             "@reldens/cms:lib/admin-manager/contents-builder.js:L45"
         ]
@@ -911,7 +918,7 @@ export const RELDENS_EVENT_PAYLOAD_INFO: Record<string, EventPayloadInfo> = {
     "reldens.clanLeaveAfterSendUpdate": {
         "style": "object",
         "requiredKeys": [
-            "continueDisband",
+            "continueLeave",
             "playerSchema",
             "singleRemoveId",
             "teamsPlugin"
@@ -1066,8 +1073,7 @@ export const RELDENS_EVENT_PAYLOAD_INFO: Record<string, EventPayloadInfo> = {
     "reldens.createEngineSceneDone": {
         "style": "object",
         "requiredKeys": [
-            "key",
-            "player",
+            "currentScene",
             "previousScene",
             "roomEvents"
         ],
@@ -1081,7 +1087,7 @@ export const RELDENS_EVENT_PAYLOAD_INFO: Record<string, EventPayloadInfo> = {
         "style": "object",
         "requiredKeys": [
             "continueProcess",
-            "serverManager"
+            "options"
         ],
         "sometimesKeys": [],
         "hasSpreadOrComputed": false,

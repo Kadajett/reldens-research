@@ -1,0 +1,28 @@
+{
+  "name": "@reldens-tutorials/live-validation",
+  "private": true,
+  "version": "0.1.0",
+  "description": "E2E harness: boots a real Reldens server and drives real gameplay, admin and browser sessions so every extracted event and message is validated live through zod.parse.",
+  "main": "index.js",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.json",
+    "start": "node index.js",
+    "harness": "tsx src/harness.ts",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:reset": "docker compose down -v && docker compose up -d"
+  },
+  "dependencies": {
+    "reldens": "^4.0.0-beta.39.8",
+    "colyseus.js": "0.16.22",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@reldens-tutorials/schemas": "*",
+    "@reldens-tutorials/types": "*"
+  },
+  "browserslist": ["> 0.5%, last 2 versions, not dead"],
+  "targets": {"main": false},
+  "alias": {"process": false}
+}

@@ -1,21 +1,24 @@
 {
-  "name": "@reldens-tutorials/schemas",
-  "private": true,
-  "version": "0.1.0",
-  "description": "Zod schemas for the Reldens public API, generated from and verified against the installed package.",
-  "type": "commonjs",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
-  "scripts": {
-    "generate": "tsx scripts/generate.ts",
-    "typecheck": "tsc --noEmit",
-    "build": "tsc -p tsconfig.json",
-    "test": "tsx --test test/*.test.ts"
-  },
-  "dependencies": {
-    "zod": "^4.4.3"
-  },
-  "devDependencies": {
-    "reldens": "^4.0.0-beta.39.8"
-  }
+    "name": "@reldens-tutorials/schemas",
+    "private": true,
+    "version": "0.1.0",
+    "description": "Zod schemas for the Reldens public API, generated from and verified against the installed package.",
+    "type": "commonjs",
+    "main": "build/index.js",
+    "types": "build/index.d.ts",
+    "scripts": {
+        "generate": "tsx scripts/generate.ts",
+        "typecheck": "tsc --noEmit",
+        "build": "tsc -p tsconfig.json",
+        "test": "tsx --test test/*.test.ts",
+        "docs:api": "node scripts/generate-event-api.cjs && typedoc"
+    },
+    "dependencies": {
+        "zod": "^4.4.3"
+    },
+    "devDependencies": {
+        "reldens": "^4.0.0-beta.39.8",
+        "typedoc": "^0.28.20",
+        "typedoc-plugin-markdown": "^4.12.0"
+    }
 }

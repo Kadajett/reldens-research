@@ -31,3 +31,9 @@ examples/*/.gitignore
 research/graphify-out/cache/
 research/graphify-out/manifest.json
 research/graphify-out/.graphify_root
+
+# harness runtime artifacts (regenerable by running the harness)
+examples/*/.browser-driver-result.json
+examples/*/.browser-probe.json
+examples/*/.harness-browser-stop
+examples/*/harness-report*.json

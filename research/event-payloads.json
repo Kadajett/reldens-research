@@ -2,10 +2,9 @@
   "generatedFrom": {
     "method": "balanced-paren scan of every emit site (research/scripts/lib/scan.mjs); object keys and class properties extracted, never guessed",
     "styleCounts": {
-      "object-literal": 145,
+      "object-literal": 146,
       "positional": 99,
-      "class-instance": 3,
-      "none": 1
+      "class-instance": 3
     },
     "eventsWithUniformObjectPayload": 127,
     "totalEvents": 231
@@ -1497,7 +1496,7 @@
             "valueExpr": "teamsPlugin"
           },
           {
-            "key": "continueDisband",
+            "key": "continueLeave",
             "computed": false,
             "valueExpr": "true"
           }
@@ -1564,8 +1563,9 @@
         "origin": "@reldens/cms",
         "file": "lib/admin-manager/contents-builder.js",
         "line": 45,
-        "style": "none",
-        "wrapped": true
+        "style": "object-literal",
+        "wrapped": true,
+        "keys": []
       }
     ],
     "reldens.changeSceneDestroyPrevious": [
@@ -1727,7 +1727,7 @@
             "valueExpr": "teamsPlugin"
           },
           {
-            "key": "continueDisband",
+            "key": "continueLeave",
             "computed": false,
             "valueExpr": "true"
           }
@@ -2236,14 +2236,9 @@
         "wrapped": false,
         "keys": [
           {
-            "key": "player",
+            "key": "currentScene",
             "computed": false,
-            "valueExpr": "player"
-          },
-          {
-            "key": "key",
-            "computed": false,
-            "valueExpr": "key"
+            "valueExpr": "currentScene"
           },
           {
             "key": "previousScene",
@@ -2268,9 +2263,9 @@
         "wrapped": false,
         "keys": [
           {
-            "key": "serverManager",
+            "key": "options",
             "computed": false,
-            "valueExpr": "this"
+            "valueExpr": "options"
           },
           {
             "key": "continueProcess",

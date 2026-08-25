@@ -157,7 +157,14 @@ export function extractEmitPayloads(root, dirs, origin) {
 
             let style = 'none';
             let detail = {};
-            if(1 === args.length && args[0].startsWith('{')){
+            const isWrapped = 'emitEvent' === match[1];
+            if(0 === args.length && isWrapped){
+                // @reldens/cms emitEvent(name) with no data still delivers
+                // {adminManager: this} (admin-manager.js:58) - the listener gets an
+                // object, not nothing.
+                style = 'object-literal';
+                detail = {keys: []};
+            } else if(1 === args.length && args[0].startsWith('{')){
                 style = 'object-literal';
                 detail = {keys: objectKeys(args[0].slice(1, -1))};
             } else if(1 === args.length && args[0].startsWith('new ')){
@@ -165,13 +172,24 @@ export function extractEmitPayloads(root, dirs, origin) {
                 detail = resolveClassInstance(text, root, file, /^new\s+([A-Za-z0-9_$.]+)/.exec(args[0])[1]);
             } else if(1 === args.length && /^[A-Za-z_$][A-Za-z0-9_$]*$/.test(args[0])){
                 const before = text.slice(0, match.index);
-                const classDeclMatch = new RegExp(
-                    '(?:let|const|var)\\s+'+args[0]+'\\s*=\\s*new\\s+([A-Za-z0-9_$.]+)'
-                ).exec(before);
-                const declMatch = new RegExp(
-                    '(?:let|const|var)\\s+'+args[0]+'\\s*=\\s*\\{'
-                ).exec(before);
-                if(classDeclMatch){
+                // The NEAREST preceding declaration wins: a file can declare the same
+                // local name in several methods (manager.js declares `let event = {...}`
+                // four times), and resolving to the first one in the file attaches the
+                // wrong payload to the later emits.
+                const lastMatch = (pattern) => {
+                    let found = null;
+                    for(const candidate of before.matchAll(pattern)){
+                        found = candidate;
+                    }
+                    return found;
+                };
+                const classDeclMatch = lastMatch(new RegExp(
+                    '(?:let|const|var)\\s+'+args[0]+'\\s*=\\s*new\\s+([A-Za-z0-9_$.]+)', 'g'
+                ));
+                const declMatch = lastMatch(new RegExp(
+                    '(?:let|const|var)\\s+'+args[0]+'\\s*=\\s*\\{', 'g'
+                ));
+                if(classDeclMatch && (!declMatch || classDeclMatch.index > declMatch.index)){
                     style = 'class-instance';
                     detail = {...resolveClassInstance(text, root, file, classDeclMatch[1]), resolvedFromLocal: args[0]};
                 } else if(declMatch){
@@ -192,7 +210,7 @@ export function extractEmitPayloads(root, dirs, origin) {
             }
 
             events[eventName] ??= [];
-            events[eventName].push({origin, file, line, style, wrapped: 'emitEvent' === match[1], ...detail});
+            events[eventName].push({origin, file, line, style, wrapped: isWrapped, ...detail});
         }
     }
     return events;

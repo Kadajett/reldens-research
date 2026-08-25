@@ -1,0 +1,569 @@
+{
+ "reldens.activateRoom": {
+  "style": "positional",
+  "args": [
+   "room",
+   "this.gameManager"
+  ],
+  "file": "lib/game/client/room-events.js:85"
+ },
+ "reldens.activatedRoom": {
+  "style": "positional",
+  "args": [
+   "sceneRoom",
+   "this"
+  ],
+  "file": "lib/game/client/game-manager.js:435"
+ },
+ "reldens.activatedRoom_": {
+  "style": "positional",
+  "args": [
+   "sceneRoom",
+   "this"
+  ],
+  "file": "lib/game/client/game-manager.js:436"
+ },
+ "reldens.afterInitEngineAndStartGame": {
+  "style": "positional",
+  "args": [
+   "this.initialGameData",
+   "joinedFirstRoom"
+  ],
+  "file": "lib/game/client/game-manager.js:361"
+ },
+ "reldens.afterSceneDynamicCreate": {
+  "style": "positional",
+  "args": [
+   "this"
+  ],
+  "file": "lib/game/client/scene-dynamic.js:104"
+ },
+ "reldens.allAudiosLoaded": {
+  "style": "positional",
+  "args": [
+   "this",
+   "audios",
+   "currentScene",
+   "audio"
+  ],
+  "file": "lib/audio/client/manager.js:365"
+ },
+ "reldens.audioLoaded": {
+  "style": "positional",
+  "args": [
+   "this",
+   "audios",
+   "currentScene",
+   "audio"
+  ],
+  "file": "lib/audio/client/manager.js:363"
+ },
+ "reldens.audioManagerDeleteAudios": {
+  "style": "positional",
+  "args": [
+   "this",
+   "room",
+   "gameManager",
+   "message"
+  ],
+  "file": "lib/audio/client/manager.js:449"
+ },
+ "reldens.audioManagerUpdateAudiosLoaded": {
+  "style": "positional",
+  "args": [
+   "this",
+   "room",
+   "gameManager",
+   "message"
+  ],
+  "file": "lib/audio/client/manager.js:432"
+ },
+ "reldens.audioManagerUpdateCategoriesLoaded": {
+  "style": "positional",
+  "args": [
+   "this",
+   "room",
+   "gameManager",
+   "message"
+  ],
+  "file": "lib/audio/client/manager.js:426"
+ },
+ "reldens.beforeCreateEngine": {
+  "style": "positional",
+  "args": [
+   "this.initialGameData",
+   "this"
+  ],
+  "file": "lib/game/client/game-manager.js:299"
+ },
+ "reldens.beforeCreateUiScene": {
+  "style": "positional",
+  "args": [
+   "this"
+  ],
+  "file": "lib/game/client/scene-preloader.js:217"
+ },
+ "reldens.beforeInitEngineAndStartGame": {
+  "style": "positional",
+  "args": [
+   "this.initialGameData",
+   "this"
+  ],
+  "file": "lib/game/client/game-manager.js:291"
+ },
+ "reldens.beforeJoinGame": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/game/client/game-manager.js:184"
+ },
+ "reldens.beforeJoinGameRoom": {
+  "style": "positional",
+  "args": [
+   "this.gameRoom"
+  ],
+  "file": "lib/game/client/game-manager.js:193"
+ },
+ "reldens.beforePreload": {
+  "style": "positional",
+  "args": [
+   "this",
+   "eventUiScene"
+  ],
+  "file": "lib/game/client/scene-preloader.js:81"
+ },
+ "reldens.beforePreloadUiScene": {
+  "style": "positional",
+  "args": [
+   "this"
+  ],
+  "file": "lib/game/client/scene-preloader.js:132"
+ },
+ "reldens.beforeReconnectGameClient": {
+  "style": "positional",
+  "args": [
+   "message",
+   "this"
+  ],
+  "file": "lib/game/client/room-events.js:422"
+ },
+ "reldens.beforeSceneDynamicCreate": {
+  "style": "positional",
+  "args": [
+   "this"
+  ],
+  "file": "lib/game/client/scene-dynamic.js:93"
+ },
+ "reldens.changeSceneDestroyPrevious": {
+  "style": "positional",
+  "args": [
+   "this"
+  ],
+  "file": "lib/game/client/scene-dynamic.js:559"
+ },
+ "reldens.chatMessageObjectCreated": {
+  "style": "positional",
+  "args": [
+   "this",
+   "message"
+  ],
+  "file": "lib/chat/client/chat-ui.js:613"
+ },
+ "reldens.clientStartAfter": {
+  "style": "positional",
+  "args": [
+   "this"
+  ],
+  "file": "lib/game/client/handlers/client-start-handler.js:52"
+ },
+ "reldens.clientStartBefore": {
+  "style": "positional",
+  "args": [
+   "this"
+  ],
+  "file": "lib/game/client/game-manager.js:125"
+ },
+ "reldens.closeUI": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/chat/client/chat-ui.js:170"
+ },
+ "reldens.createAnimationAfter": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/objects/client/animation-engine.js:223"
+ },
+ "reldens.createCurrentPlayer": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/prediction/client/room-events-override.js:41"
+ },
+ "reldens.createDynamicAnimation_": {
+  "style": "positional",
+  "args": [
+   "this",
+   "animProps"
+  ],
+  "file": "lib/objects/client/plugin.js:539"
+ },
+ "reldens.createDynamicAnimationsBefore": {
+  "style": "positional",
+  "args": [
+   "this",
+   "sceneDynamic"
+  ],
+  "file": "lib/objects/client/plugin.js:517"
+ },
+ "reldens.createEngineScene": {
+  "style": "positional",
+  "args": [
+   "player",
+   "room",
+   "previousScene",
+   "this"
+  ],
+  "file": "lib/game/client/room-events.js:861"
+ },
+ "reldens.createEngineSceneDone": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/game/client/room-events.js:877"
+ },
+ "reldens.createPlayerAnimations": {
+  "style": "positional",
+  "args": [
+   "this",
+   "avatarKey"
+  ],
+  "file": "lib/game/client/scene-preloader.js:446"
+ },
+ "reldens.createPreload": {
+  "style": "positional",
+  "args": [
+   "this",
+   "eventUiScene"
+  ],
+  "file": "lib/game/client/scene-preloader.js:206"
+ },
+ "reldens.createUiScene": {
+  "style": "positional",
+  "args": [
+   "this"
+  ],
+  "file": "lib/game/client/scene-preloader.js:227"
+ },
+ "reldens.createdMinimap": {
+  "style": "positional",
+  "args": [
+   "this"
+  ],
+  "file": "lib/game/client/minimap.js:58"
+ },
+ "reldens.createdPreloaderInstance": {
+  "style": "positional",
+  "args": [
+   "this",
+   "this.scenePreloader"
+  ],
+  "file": "lib/game/client/room-events.js:820"
+ },
+ "reldens.createdPreloaderRecurring": {
+  "style": "positional",
+  "args": [
+   "this",
+   "this.scenePreloader"
+  ],
+  "file": "lib/game/client/room-events.js:796"
+ },
+ "reldens.createdRoomsEventsInstance": {
+  "style": "positional",
+  "args": [
+   "joinedFirstRoom",
+   "this"
+  ],
+  "file": "lib/game/client/game-manager.js:358"
+ },
+ "reldens.createdUserInterface": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/objects/client/plugin.js:498"
+ },
+ "reldens.endChangedScene": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/game/client/room-events.js:460"
+ },
+ "reldens.gameEngineClearTarget": {
+  "style": "positional",
+  "args": [
+   "this",
+   "clearedTargetData"
+  ],
+  "file": "lib/game/client/game-engine.js:253"
+ },
+ "reldens.gameEngineShowTarget": {
+  "style": "positional",
+  "args": [
+   "this",
+   "target",
+   "previousTarget",
+   "targetName"
+  ],
+  "file": "lib/game/client/game-engine.js:180"
+ },
+ "reldens.gameEngineTabTarget": {
+  "style": "positional",
+  "args": [
+   "this",
+   "closerTarget",
+   "previousTarget"
+  ],
+  "file": "lib/game/client/game-engine.js:300"
+ },
+ "reldens.gameOver": {
+  "style": "positional",
+  "args": [
+   "message",
+   "this"
+  ],
+  "file": "lib/game/client/room-events.js:514"
+ },
+ "reldens.gameOverReload": {
+  "style": "positional",
+  "args": [
+   "this",
+   "defaultReload"
+  ],
+  "file": "lib/game/client/room-events.js:306"
+ },
+ "reldens.gameRoomError": {
+  "style": "positional",
+  "args": [
+   "this"
+  ],
+  "file": "lib/game/client/game-manager.js:168"
+ },
+ "reldens.initUiAfter": {
+  "style": "positional",
+  "args": [
+   "message",
+   "this"
+  ],
+  "file": "lib/game/client/room-events.js:350"
+ },
+ "reldens.initUiBefore": {
+  "style": "positional",
+  "args": [
+   "message",
+   "this"
+  ],
+  "file": "lib/game/client/room-events.js:348"
+ },
+ "reldens.joinedRoom": {
+  "style": "positional",
+  "args": [
+   "sceneRoom",
+   "this"
+  ],
+  "file": "lib/game/client/game-manager.js:446"
+ },
+ "reldens.joinedRoom_": {
+  "style": "positional",
+  "args": [
+   "sceneRoom",
+   "this"
+  ],
+  "file": "lib/game/client/game-manager.js:447"
+ },
+ "reldens.loadFeature_": {
+  "style": "positional",
+  "args": [
+   "this.featuresList[featureCode]",
+   "this"
+  ],
+  "file": "lib/features/client/manager.js:60"
+ },
+ "reldens.loadFeatures": {
+  "style": "positional",
+  "args": [
+   "this",
+   "featuresCodeList"
+  ],
+  "file": "lib/features/client/manager.js:46"
+ },
+ "reldens.objectBodyChange": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/objects/client/plugin.js:205"
+ },
+ "reldens.objectBodyChanged": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/objects/client/plugin.js:284"
+ },
+ "reldens.onPreparePlayerCreationFormSubmit": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/users/client/plugin.js:322"
+ },
+ "reldens.onPreparePlayerSelectorFormSubmit": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/users/client/plugin.js:265"
+ },
+ "reldens.onPrepareSinglePlayerSelectorFormSubmit": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/users/client/plugin.js:196"
+ },
+ "reldens.openUI": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/chat/client/chat-ui.js:156"
+ },
+ "reldens.playerAttack": {
+  "style": "positional",
+  "args": [
+   "message",
+   "this.room"
+  ],
+  "file": "lib/actions/client/receiver-wrapper.js:104"
+ },
+ "reldens.playerEngineAddPlayer": {
+  "style": "positional",
+  "args": [
+   "this",
+   "id",
+   "addPlayerData"
+  ],
+  "file": "lib/users/client/player-engine.js:171"
+ },
+ "reldens.playerLeftScene": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/game/client/room-events.js:589"
+ },
+ "reldens.playerStatsUpdateAfter": {
+  "style": "positional",
+  "args": [
+   "message",
+   "this"
+  ],
+  "file": "lib/game/client/room-events.js:620"
+ },
+ "reldens.playerStatsUpdateBefore": {
+  "style": "positional",
+  "args": [
+   "message",
+   "this"
+  ],
+  "file": "lib/game/client/room-events.js:409"
+ },
+ "reldens.playersOnAdd": {
+  "style": "positional",
+  "args": [
+   "player",
+   "key",
+   "previousScene",
+   "this"
+  ],
+  "file": "lib/game/client/room-events.js:168"
+ },
+ "reldens.playersOnAddReady": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/game/client/room-events.js:875"
+ },
+ "reldens.playersOnRemove": {
+  "style": "positional",
+  "args": [
+   "player",
+   "key",
+   "this"
+  ],
+  "file": "lib/game/client/room-events.js:281"
+ },
+ "reldens.playersQueueBefore": {
+  "style": "positional",
+  "args": [
+   "player",
+   "key",
+   "previousScene",
+   "roomEvents"
+  ],
+  "file": "lib/prediction/client/room-events-override.js:33"
+ },
+ "reldens.preloadUiScene": {
+  "style": "positional",
+  "args": [
+   "this"
+  ],
+  "file": "lib/game/client/scene-preloader.js:166"
+ },
+ "reldens.runGameOver": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/game/client/room-events.js:510"
+ },
+ "reldens.runPlayerAnimation": {
+  "style": "positional",
+  "args": [
+   "this",
+   "playerId",
+   "playerState",
+   "playerSprite"
+  ],
+  "file": "lib/users/client/player-engine.js:333"
+ },
+ "reldens.setAudio": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/audio/client/manager.js:80"
+ },
+ "reldens.startChangedScene": {
+  "style": "object-literal",
+  "args": [],
+  "file": "lib/game/client/room-events.js:452"
+ },
+ "reldens.startEngineScene": {
+  "style": "positional",
+  "args": [
+   "this",
+   "player",
+   "room",
+   "previousScene"
+  ],
+  "file": "lib/game/client/room-events.js:773"
+ },
+ "reldens.startGameAfter": {
+  "style": "positional",
+  "args": [
+   "this"
+  ],
+  "file": "lib/game/client/game-manager.js:154"
+ },
+ "reldens.startGameBefore": {
+  "style": "positional",
+  "args": [
+   "this"
+  ],
+  "file": "lib/game/client/game-manager.js:138"
+ },
+ "reldens.updateGameSizeAfter": {
+  "style": "positional",
+  "args": [
+   "this",
+   "newWidth",
+   "newHeight"
+  ],
+  "file": "lib/game/client/game-engine.js:100"
+ },
+ "reldens.updateGameSizeBefore": {
+  "style": "positional",
+  "args": [
+   "this",
+   "newWidth",
+   "newHeight"
+  ],
+  "file": "lib/game/client/game-engine.js:88"
+ }
+}
