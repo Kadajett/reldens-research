@@ -1,0 +1,26 @@
+{
+  "name": "@reldens-tutorials/typed-items-trade",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Add items to two inventories and run a trade with @reldens/items-system, then verify the plain item catalog against the @reldens-community/items-types zod schemas as an optional dev-only step.",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "verify": "tsx optional-validation/validate-catalog.ts",
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@reldens/items-system": "^0.49.0",
+    "@reldens/modifiers": "^0.34.0",
+    "@reldens/utils": "^0.54.0"
+  },
+  "devDependencies": {
+    "@reldens-community/items-types": "*",
+    "zod": "^4.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "@types/node": "^22.9.0"
+  }
+}

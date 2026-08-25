@@ -1,0 +1,8 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+        "rootDir": ".",
+        "outDir": "build"
+    },
+    "include": ["src/**/*.ts", "optional-validation/**/*.ts", "test/**/*.ts"]
+}
