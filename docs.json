@@ -289,6 +289,39 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Ecosystem API",
+        "groups": [
+          {
+            "group": "Items System",
+            "pages": [
+              "packages/reldens-items-types/docs/api/index",
+              "packages/reldens-items-types/docs/api/classes/ExchangePlatform",
+              "packages/reldens-items-types/docs/api/classes/ExchangeRequirement",
+              "packages/reldens-items-types/docs/api/classes/ExchangeReward",
+              "packages/reldens-items-types/docs/api/classes/GroupsDataGenerator",
+              "packages/reldens-items-types/docs/api/classes/Inventory",
+              "packages/reldens-items-types/docs/api/classes/ItemBase",
+              "packages/reldens-items-types/docs/api/classes/ItemEquipment",
+              "packages/reldens-items-types/docs/api/classes/ItemGroup",
+              "packages/reldens-items-types/docs/api/classes/ItemSingle",
+              "packages/reldens-items-types/docs/api/classes/ItemSingleEquipment",
+              "packages/reldens-items-types/docs/api/classes/ItemSingleUsable",
+              "packages/reldens-items-types/docs/api/classes/ItemUsable",
+              "packages/reldens-items-types/docs/api/classes/ItemsDataGenerator",
+              "packages/reldens-items-types/docs/api/classes/ItemsError",
+              "packages/reldens-items-types/docs/api/classes/ItemsManager",
+              "packages/reldens-items-types/docs/api/classes/ItemsServer",
+              "packages/reldens-items-types/docs/api/classes/ModelEntity",
+              "packages/reldens-items-types/docs/api/classes/Receiver",
+              "packages/reldens-items-types/docs/api/classes/RequirementsCollection",
+              "packages/reldens-items-types/docs/api/classes/RequirementsProcessor",
+              "packages/reldens-items-types/docs/api/classes/RewardsCollection",
+              "packages/reldens-items-types/docs/api/classes/RewardsProcessor"
+            ]
+          }
+        ]
       }
     ]
   }
