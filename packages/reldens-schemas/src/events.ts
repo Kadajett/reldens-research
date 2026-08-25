@@ -15,7 +15,7 @@
  */
 import { z } from 'zod';
 import { withSource } from './provenance';
-import { zAny, loose } from './zod-floors';
+import { zAny, zInstance, loose } from './zod-floors';
 import { RELDENS_EVENT_NAMES, RELDENS_EVENT_PROVENANCE, type ReldensEventName } from './generated/events';
 
 export { RELDENS_EVENT_NAMES, RELDENS_EVENT_PROVENANCE };
@@ -120,11 +120,11 @@ export const RoomLoginOnAuthPayloadSchema = withSource(
 
 export const JoinedSceneRoomEventSchema = withSource(
     loose({
-        roomScene: zAny,
-        client: zAny,
-        options: zAny,
-        userModel: zAny,
-        loggedPlayer: zAny,
+        roomScene: zInstance,
+        client: zInstance,
+        options: zInstance,
+        userModel: zInstance,
+        loggedPlayer: zInstance,
         isGuest: z.boolean()
     }),
     {

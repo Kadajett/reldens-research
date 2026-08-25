@@ -14,6 +14,15 @@ import { z } from 'zod';
 
 export const zAny: z.ZodType = z.custom(() => true);
 
+/**
+ * A required opaque value: any value type is accepted but the key must be PRESENT.
+ * `zAny` accepts undefined, so a required field typed `zAny` does not actually reject a
+ * missing key - use `zInstance` for a field the emit site always assigns (an instance the
+ * payload is guaranteed to carry). Like `zAny` it is z.custom, so it stays free of
+ * z.unknown()/z.any() and passes the no-unknown-any enforcement.
+ */
+export const zInstance: z.ZodType = z.custom((v) => 'undefined' !== typeof v, { message: 'Required.' });
+
 export function loose<T extends z.ZodRawShape>(shape: T){
     return z.object(shape).catchall(zAny);
 }
