@@ -70,3 +70,4 @@ examples/06-live-validation/.browser-truth.json
 .zencoder/
 skills/
 skills-lock.json
+packages/*/build/

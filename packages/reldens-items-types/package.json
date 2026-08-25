@@ -1,0 +1,26 @@
+{
+  "name": "@reldens-community/items-types",
+  "version": "0.1.0",
+  "description": "Zod schemas and inferred TypeScript types for @reldens/items-system - the Reldens items, inventory and trading engine. Hand-written from the source and drift-tested against the installed package.",
+  "type": "commonjs",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "keywords": ["reldens", "items-system", "zod", "types", "inventory", "trading", "mmorpg"],
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.json",
+    "test": "tsx --test test/*.test.ts"
+  },
+  "peerDependencies": {
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@reldens/items-system": "0.49.0",
+    "zod": "^4.4.3"
+  },
+  "reldens": {
+    "typesFor": "@reldens/items-system",
+    "verifiedAgainst": "0.49.0"
+  }
+}
