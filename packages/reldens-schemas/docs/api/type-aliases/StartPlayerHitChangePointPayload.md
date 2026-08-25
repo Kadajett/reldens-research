@@ -3,7 +3,7 @@
 ```ts
 type StartPlayerHitChangePointPayload = {
   changePoint: unknown;
-  collisionsManager: unknown;
+  collisionsManager: CollisionsManager;
   playerBody: unknown;
 };
 ```
@@ -27,7 +27,7 @@ changePoint: unknown;
 ### collisionsManager
 
 ```ts
-collisionsManager: unknown;
+collisionsManager: CollisionsManager;
 ```
 
 ***

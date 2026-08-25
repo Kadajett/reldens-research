@@ -2,12 +2,12 @@
 
 ```ts
 type RoomLoginOnAuthPayload = {
-  client: unknown;
+  client: Client;
   loginResult: unknown;
   options: unknown;
   request: unknown;
-  result: unknown;
-  roomLogin: unknown;
+  result: string;
+  roomLogin: RoomLogin;
 };
 ```
 
@@ -25,7 +25,7 @@ Custom authentication hook. Setting props.result.confirm = false denies the logi
 ### client
 
 ```ts
-client: unknown;
+client: Client;
 ```
 
 ***
@@ -57,7 +57,7 @@ request: unknown;
 ### result
 
 ```ts
-result: unknown;
+result: string;
 ```
 
 ***
@@ -65,5 +65,5 @@ result: unknown;
 ### roomLogin
 
 ```ts
-roomLogin: unknown;
+roomLogin: RoomLogin;
 ```

@@ -3,10 +3,10 @@
 ```ts
 type BeforeEnrichPlayerWithClanPayload = {
   client: unknown;
-  continueProcess: unknown;
-  playerSchema: unknown;
-  room: unknown;
-  teamsPlugin: unknown;
+  continueProcess: boolean;
+  playerSchema: PlayerState;
+  room: RoomScene;
+  teamsPlugin: TeamsPlugin;
 };
 ```
 
@@ -29,7 +29,7 @@ client: unknown;
 ### continueProcess
 
 ```ts
-continueProcess: unknown;
+continueProcess: boolean;
 ```
 
 ***
@@ -37,7 +37,7 @@ continueProcess: unknown;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: PlayerState;
 ```
 
 ***
@@ -45,7 +45,7 @@ playerSchema: unknown;
 ### room
 
 ```ts
-room: unknown;
+room: RoomScene;
 ```
 
 ***
@@ -53,5 +53,5 @@ room: unknown;
 ### teamsPlugin
 
 ```ts
-teamsPlugin: unknown;
+teamsPlugin: TeamsPlugin;
 ```

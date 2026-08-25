@@ -2,10 +2,10 @@
 
 ```ts
 type BeforeClanDisbandPayload = {
-  continueDisband: unknown;
-  playerSchema: unknown;
-  singleRemoveId: unknown;
-  teamsPlugin: unknown;
+  continueDisband: boolean;
+  playerSchema: PlayerState;
+  singleRemoveId: number | string;
+  teamsPlugin: TeamsPlugin;
 };
 ```
 
@@ -20,7 +20,7 @@ type BeforeClanDisbandPayload = {
 ### continueDisband
 
 ```ts
-continueDisband: unknown;
+continueDisband: boolean;
 ```
 
 ***
@@ -28,7 +28,7 @@ continueDisband: unknown;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: PlayerState;
 ```
 
 ***
@@ -36,7 +36,7 @@ playerSchema: unknown;
 ### singleRemoveId
 
 ```ts
-singleRemoveId: unknown;
+singleRemoveId: number | string;
 ```
 
 ***
@@ -44,5 +44,5 @@ singleRemoveId: unknown;
 ### teamsPlugin
 
 ```ts
-teamsPlugin: unknown;
+teamsPlugin: TeamsPlugin;
 ```

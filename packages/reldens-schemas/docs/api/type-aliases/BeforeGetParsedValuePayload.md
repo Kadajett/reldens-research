@@ -2,8 +2,8 @@
 
 ```ts
 type BeforeGetParsedValuePayload = {
-  config: unknown;
-  configManager: unknown;
+  config: ConfigManager;
+  configManager: ConfigManager;
 };
 ```
 
@@ -18,7 +18,7 @@ type BeforeGetParsedValuePayload = {
 ### config
 
 ```ts
-config: unknown;
+config: ConfigManager;
 ```
 
 ***
@@ -26,5 +26,5 @@ config: unknown;
 ### configManager
 
 ```ts
-configManager: unknown;
+configManager: ConfigManager;
 ```

@@ -2,8 +2,8 @@
 
 ```ts
 type ObjectBodyChangedPayload = {
-  body: unknown;
-  key: unknown;
+  body: PhysicalBody;
+  key: string;
 };
 ```
 
@@ -18,7 +18,7 @@ type ObjectBodyChangedPayload = {
 ### body
 
 ```ts
-body: unknown;
+body: PhysicalBody;
 ```
 
 ***
@@ -26,5 +26,5 @@ body: unknown;
 ### key
 
 ```ts
-key: unknown;
+key: string;
 ```

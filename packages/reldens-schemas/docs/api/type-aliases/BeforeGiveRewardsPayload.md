@@ -2,7 +2,7 @@
 
 ```ts
 type BeforeGiveRewardsPayload = {
-  continueEvent: unknown;
+  continueEvent: boolean;
   playerSchema: unknown;
   targetObject: unknown;
 };
@@ -19,7 +19,7 @@ type BeforeGiveRewardsPayload = {
 ### continueEvent
 
 ```ts
-continueEvent: unknown;
+continueEvent: boolean;
 ```
 
 ***

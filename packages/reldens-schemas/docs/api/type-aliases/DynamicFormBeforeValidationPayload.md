@@ -4,7 +4,7 @@
 type DynamicFormBeforeValidationPayload = {
   formConfig: unknown;
   formKey: unknown;
-  req: unknown;
+  req: ExpressRequest;
   submittedValues: unknown;
 };
 ```
@@ -36,7 +36,7 @@ formKey: unknown;
 ### req
 
 ```ts
-req: unknown;
+req: ExpressRequest;
 ```
 
 ***

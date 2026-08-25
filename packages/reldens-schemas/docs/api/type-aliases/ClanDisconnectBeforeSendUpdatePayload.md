@@ -3,9 +3,9 @@
 ```ts
 type ClanDisconnectBeforeSendUpdatePayload = {
   playerId: unknown;
-  playerSchema: unknown;
+  playerSchema: PlayerState;
   sendUpdate: unknown;
-  teamsPlugin: unknown;
+  teamsPlugin: TeamsPlugin;
 };
 ```
 
@@ -28,7 +28,7 @@ playerId: unknown;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: PlayerState;
 ```
 
 ***
@@ -44,5 +44,5 @@ sendUpdate: unknown;
 ### teamsPlugin
 
 ```ts
-teamsPlugin: unknown;
+teamsPlugin: TeamsPlugin;
 ```

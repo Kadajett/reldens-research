@@ -2,9 +2,9 @@
 
 ```ts
 type BeforeTeamCreatePayload = {
-  continueBeforeCreate: unknown;
+  continueBeforeCreate: boolean;
   teamProps: unknown;
-  teamsPlugin: unknown;
+  teamsPlugin: TeamsPlugin;
 };
 ```
 
@@ -19,7 +19,7 @@ type BeforeTeamCreatePayload = {
 ### continueBeforeCreate
 
 ```ts
-continueBeforeCreate: unknown;
+continueBeforeCreate: boolean;
 ```
 
 ***
@@ -35,5 +35,5 @@ teamProps: unknown;
 ### teamsPlugin
 
 ```ts
-teamsPlugin: unknown;
+teamsPlugin: TeamsPlugin;
 ```

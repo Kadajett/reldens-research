@@ -3,9 +3,9 @@
 ```ts
 type RunBattlePveAfterPayload = {
   attackResult: unknown;
-  playerSchema: unknown;
-  roomScene: unknown;
-  target: unknown;
+  playerSchema: Player;
+  roomScene: RoomScene;
+  target: Player;
 };
 ```
 
@@ -28,7 +28,7 @@ attackResult: unknown;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: Player;
 ```
 
 ***
@@ -36,7 +36,7 @@ playerSchema: unknown;
 ### roomScene
 
 ```ts
-roomScene: unknown;
+roomScene: RoomScene;
 ```
 
 ***
@@ -44,5 +44,5 @@ roomScene: unknown;
 ### target
 
 ```ts
-target: unknown;
+target: Player;
 ```

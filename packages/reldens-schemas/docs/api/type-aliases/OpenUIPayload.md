@@ -7,7 +7,7 @@ type OpenUIPayload = {
   dialogContainer?: unknown;
   minimap?: unknown;
   openButton: unknown;
-  ui: unknown;
+  ui: ChatUi;
   uiScene?: unknown;
 };
 ```
@@ -63,7 +63,7 @@ openButton: unknown;
 ### ui
 
 ```ts
-ui: unknown;
+ui: ChatUi;
 ```
 
 ***

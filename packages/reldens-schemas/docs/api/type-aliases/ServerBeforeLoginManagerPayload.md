@@ -2,7 +2,7 @@
 
 ```ts
 type ServerBeforeLoginManagerPayload = {
-  serverManager: unknown;
+  serverManager: ServerManager;
 };
 ```
 
@@ -17,5 +17,5 @@ type ServerBeforeLoginManagerPayload = {
 ### serverManager
 
 ```ts
-serverManager: unknown;
+serverManager: ServerManager;
 ```

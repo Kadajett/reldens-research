@@ -3,9 +3,9 @@
 ```ts
 type GuestInvalidChangePointPayload = {
   changePoint: unknown;
-  collisionsManager: unknown;
+  collisionsManager: CollisionsManager;
   contactClient: unknown;
-  isGuest: unknown;
+  isGuest: boolean;
   playerBody: unknown;
   playerSchema: unknown;
 };
@@ -30,7 +30,7 @@ changePoint: unknown;
 ### collisionsManager
 
 ```ts
-collisionsManager: unknown;
+collisionsManager: CollisionsManager;
 ```
 
 ***
@@ -46,7 +46,7 @@ contactClient: unknown;
 ### isGuest
 
 ```ts
-isGuest: unknown;
+isGuest: boolean;
 ```
 
 ***

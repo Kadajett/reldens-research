@@ -4,11 +4,11 @@
 type AfterRunAdditionalRespawnSetupPayload = {
   clonedObjProps: unknown;
   multipleObj: unknown;
-  objClass: unknown;
-  objectIndex: unknown;
+  objClass: Function;
+  objectIndex: string;
   objInstance: unknown;
   respawnArea: unknown;
-  roomRespawn: unknown;
+  roomRespawn: RoomRespawn;
 };
 ```
 
@@ -39,7 +39,7 @@ multipleObj: unknown;
 ### objClass
 
 ```ts
-objClass: unknown;
+objClass: Function;
 ```
 
 ***
@@ -47,7 +47,7 @@ objClass: unknown;
 ### objectIndex
 
 ```ts
-objectIndex: unknown;
+objectIndex: string;
 ```
 
 ***
@@ -71,5 +71,5 @@ respawnArea: unknown;
 ### roomRespawn
 
 ```ts
-roomRespawn: unknown;
+roomRespawn: RoomRespawn;
 ```

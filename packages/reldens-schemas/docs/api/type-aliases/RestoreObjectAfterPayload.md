@@ -2,8 +2,8 @@
 
 ```ts
 type RestoreObjectAfterPayload = {
-  enemyObject: unknown;
-  room: unknown;
+  enemyObject: EnemyObject;
+  room: RoomScene;
 };
 ```
 
@@ -18,7 +18,7 @@ type RestoreObjectAfterPayload = {
 ### enemyObject
 
 ```ts
-enemyObject: unknown;
+enemyObject: EnemyObject;
 ```
 
 ***
@@ -26,5 +26,5 @@ enemyObject: unknown;
 ### room
 
 ```ts
-room: unknown;
+room: RoomScene;
 ```

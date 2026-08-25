@@ -6,11 +6,11 @@ type TeamLeaveBeforeSendUpdatePayload = {
   currentTeam: unknown;
   isOwnerDisbanding: unknown;
   playerId: unknown;
-  playerSchema: unknown;
-  room: unknown;
+  playerSchema: PlayerState;
+  room: RoomScene;
   sendUpdate: unknown;
-  singleRemoveId: unknown;
-  teamsPlugin: unknown;
+  singleRemoveId: number | string | boolean;
+  teamsPlugin: TeamsPlugin;
 };
 ```
 
@@ -57,7 +57,7 @@ playerId: unknown;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: PlayerState;
 ```
 
 ***
@@ -65,7 +65,7 @@ playerSchema: unknown;
 ### room
 
 ```ts
-room: unknown;
+room: RoomScene;
 ```
 
 ***
@@ -81,7 +81,7 @@ sendUpdate: unknown;
 ### singleRemoveId
 
 ```ts
-singleRemoveId: unknown;
+singleRemoveId: number | string | boolean;
 ```
 
 ***
@@ -89,5 +89,5 @@ singleRemoveId: unknown;
 ### teamsPlugin
 
 ```ts
-teamsPlugin: unknown;
+teamsPlugin: TeamsPlugin;
 ```

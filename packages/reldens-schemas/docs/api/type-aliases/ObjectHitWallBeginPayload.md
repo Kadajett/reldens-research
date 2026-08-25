@@ -2,7 +2,7 @@
 
 ```ts
 type ObjectHitWallBeginPayload = {
-  continue: unknown;
+  continue: boolean;
   objectBody: unknown;
   wall: unknown;
 };
@@ -19,7 +19,7 @@ type ObjectHitWallBeginPayload = {
 ### continue
 
 ```ts
-continue: unknown;
+continue: boolean;
 ```
 
 ***

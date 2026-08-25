@@ -11,6 +11,36 @@ const info = S.RELDENS_EVENT_PAYLOAD_INFO;
 const prov = S.RELDENS_EVENT_PROVENANCE;
 const handVerified = S.EVENT_PAYLOADS || {};
 const zod = require('zod');
+const { resolvePayloadTypes } = require('./resolve-payload-types.cjs');
+
+// event -> key -> {type, expr}, read from the reldens emit-site expressions
+const resolved = resolvePayloadTypes();
+const referencedClasses = new Set();
+
+const TS_BUILTINS = new Set(['Function', 'Array', 'Promise', 'Map', 'Set', 'Date', 'RegExp',
+    'Error', 'Object', 'Boolean', 'Number', 'String', 'Symbol', 'WeakMap', 'WeakSet']);
+
+// normalise a source-read type to a valid TS type: builtins map through, generic and
+// namespaced types (Phaser.Scene) collapse to unknown since we do not model them
+function normalizeType(t){
+    if(!t){ return 'unknown'; }
+    if(/^Array(<.*>)?$/.test(t)){ return 'unknown[]'; }
+    if('function' === t){ return 'Function'; }
+    const base = t.replace(/\[\]$/, '');
+    if(base.includes('.') || base.includes('<')){ return 'unknown'; }
+    return t;
+}
+
+// the value TYPE for one payload key: a concrete reldens class or primitive read
+// from the source, or unknown when the source does not establish it
+function keyType(name, key){
+    const t = normalizeType(resolved[name] && resolved[name][key] && resolved[name][key].type);
+    for(const cls of t.match(/[A-Z]\w+/g) || []){ if(!TS_BUILTINS.has(cls)){ referencedClasses.add(cls); } }
+    return t;
+}
+function keyExpr(name, key){
+    return (resolved[name] && resolved[name][key] && resolved[name][key].expr) || null;
+}
 
 function zoneOf(name){
     const sites = (info[name] && info[name].sites) || [];
@@ -42,8 +72,13 @@ function payloadType(name){
     const i = info[name];
     if('object' === i.style){
         const lines = [];
-        for(const key of i.requiredKeys){ lines.push('    '+JSON.stringify(key)+': unknown;'); }
-        for(const key of i.sometimesKeys){ lines.push('    '+JSON.stringify(key)+'?: unknown;'); }
+        const field = (key, opt) => {
+            const expr = keyExpr(name, key);
+            const note = expr ? '  // '+expr : '';
+            lines.push('    '+JSON.stringify(key)+(opt ? '?' : '')+': '+keyType(name, key)+';'+note);
+        };
+        for(const key of i.requiredKeys){ field(key, false); }
+        for(const key of i.sometimesKeys){ field(key, true); }
         return lines.length ? '{\n'+lines.join('\n')+'\n}' : 'Record<string, unknown>';
     }
     if('class' === i.style){
@@ -102,8 +137,18 @@ function jsdoc(name){
 
 const names = Object.keys(info).sort();
 const header = '/* GENERATED - do not edit. Source: scripts/generate-event-api.cjs\n'
-    + ' * One documented payload type per Reldens event, for TypeDoc. */\n\n';
+    + ' * One documented payload type per Reldens event, for TypeDoc. A key\'s type is\n'
+    + ' * the class or primitive read from the reldens emit site (the source expression\n'
+    + ' * follows each field as a comment); unknown means the source did not establish it. */\n\n';
+// generating the body populates referencedClasses via keyType()
 const body = names.map((name) => jsdoc(name)+'\nexport type '+pascal(name)+'Payload = '+payloadType(name)+';\n').join('\n');
+const aliasList = [...referencedClasses].sort();
+const aliasBlock = aliasList.length
+    ? '/**\n * Reldens runtime classes referenced by the payloads below. They are modelled as\n'
+        + ' * opaque (unknown): the emit site proves the value IS one of these, but this\n'
+        + ' * package does not model their internal shape.\n */\n'
+        + aliasList.map((c) => 'export type '+c+' = unknown;').join('\n') + '\n\n'
+    : '';
 const out = join(__dirname, '..', 'docs-gen', 'event-api.ts');
-writeFileSync(out, header+body);
-console.log('wrote', out, '-', names.length, 'events');
+writeFileSync(out, header+aliasBlock+body);
+console.log('wrote', out, '-', names.length, 'events,', aliasList.length, 'referenced classes');

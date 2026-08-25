@@ -8,7 +8,7 @@ type AdminEditPropertiesPopulationPayload = {
   entityId: unknown;
   loadedEntity: unknown;
   renderedEditProperties: unknown;
-  req: unknown;
+  req: ExpressRequest;
 };
 ```
 
@@ -71,5 +71,5 @@ renderedEditProperties: unknown;
 ### req
 
 ```ts
-req: unknown;
+req: ExpressRequest;
 ```

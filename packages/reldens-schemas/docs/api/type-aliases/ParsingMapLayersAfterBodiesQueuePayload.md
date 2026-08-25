@@ -3,7 +3,7 @@
 ```ts
 type ParsingMapLayersAfterBodiesQueuePayload = {
   layer: unknown;
-  world: unknown;
+  world: P2world;
 };
 ```
 
@@ -26,5 +26,5 @@ layer: unknown;
 ### world
 
 ```ts
-world: unknown;
+world: P2world;
 ```

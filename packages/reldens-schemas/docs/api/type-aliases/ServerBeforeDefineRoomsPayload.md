@@ -2,7 +2,7 @@
 
 ```ts
 type ServerBeforeDefineRoomsPayload = {
-  serverManager: unknown;
+  serverManager: ServerManager;
 };
 ```
 
@@ -17,5 +17,5 @@ type ServerBeforeDefineRoomsPayload = {
 ### serverManager
 
 ```ts
-serverManager: unknown;
+serverManager: ServerManager;
 ```

@@ -2,7 +2,7 @@
 
 ```ts
 type CreateGameServerPayload = {
-  continueProcess: unknown;
+  continueProcess: boolean;
   options: unknown;
 };
 ```
@@ -18,7 +18,7 @@ type CreateGameServerPayload = {
 ### continueProcess
 
 ```ts
-continueProcess: unknown;
+continueProcess: boolean;
 ```
 
 ***

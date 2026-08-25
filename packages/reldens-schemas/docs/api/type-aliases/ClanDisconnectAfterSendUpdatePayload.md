@@ -2,9 +2,9 @@
 
 ```ts
 type ClanDisconnectAfterSendUpdatePayload = {
-  continueLeave: unknown;
-  playerSchema: unknown;
-  teamsPlugin: unknown;
+  continueLeave: boolean;
+  playerSchema: PlayerState;
+  teamsPlugin: TeamsPlugin;
 };
 ```
 
@@ -19,7 +19,7 @@ type ClanDisconnectAfterSendUpdatePayload = {
 ### continueLeave
 
 ```ts
-continueLeave: unknown;
+continueLeave: boolean;
 ```
 
 ***
@@ -27,7 +27,7 @@ continueLeave: unknown;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: PlayerState;
 ```
 
 ***
@@ -35,5 +35,5 @@ playerSchema: unknown;
 ### teamsPlugin
 
 ```ts
-teamsPlugin: unknown;
+teamsPlugin: TeamsPlugin;
 ```

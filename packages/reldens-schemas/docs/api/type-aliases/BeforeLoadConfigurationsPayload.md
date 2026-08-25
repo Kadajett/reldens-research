@@ -2,7 +2,7 @@
 
 ```ts
 type BeforeLoadConfigurationsPayload = {
-  configManager: unknown;
+  configManager: ConfigManager;
 };
 ```
 
@@ -17,5 +17,5 @@ type BeforeLoadConfigurationsPayload = {
 ### configManager
 
 ```ts
-configManager: unknown;
+configManager: ConfigManager;
 ```

@@ -3,7 +3,7 @@
 ```ts
 type PlayerHitObjectEndPayload = {
   playerBody: unknown;
-  result: unknown;
+  result: string;
 };
 ```
 
@@ -26,5 +26,5 @@ playerBody: unknown;
 ### result
 
 ```ts
-result: unknown;
+result: string;
 ```

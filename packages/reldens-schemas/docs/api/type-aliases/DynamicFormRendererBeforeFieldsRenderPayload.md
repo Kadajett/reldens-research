@@ -7,7 +7,7 @@ type DynamicFormRendererBeforeFieldsRenderPayload = {
   enhancedData: unknown;
   fieldsToRender: unknown;
   formConfig: unknown;
-  req: unknown;
+  req: ExpressRequest;
   systemVariables: unknown;
 };
 ```
@@ -63,7 +63,7 @@ formConfig: unknown;
 ### req
 
 ```ts
-req: unknown;
+req: ExpressRequest;
 ```
 
 ***

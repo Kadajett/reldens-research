@@ -2,10 +2,10 @@
 
 ```ts
 type ClanLeaveAfterSendUpdatePayload = {
-  continueLeave: unknown;
-  playerSchema: unknown;
-  singleRemoveId: unknown;
-  teamsPlugin: unknown;
+  continueLeave: boolean;
+  playerSchema: PlayerState;
+  singleRemoveId: number | string;
+  teamsPlugin: TeamsPlugin;
 };
 ```
 
@@ -20,7 +20,7 @@ type ClanLeaveAfterSendUpdatePayload = {
 ### continueLeave
 
 ```ts
-continueLeave: unknown;
+continueLeave: boolean;
 ```
 
 ***
@@ -28,7 +28,7 @@ continueLeave: unknown;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: PlayerState;
 ```
 
 ***
@@ -36,7 +36,7 @@ playerSchema: unknown;
 ### singleRemoveId
 
 ```ts
-singleRemoveId: unknown;
+singleRemoveId: number | string;
 ```
 
 ***
@@ -44,5 +44,5 @@ singleRemoveId: unknown;
 ### teamsPlugin
 
 ```ts
-teamsPlugin: unknown;
+teamsPlugin: TeamsPlugin;
 ```

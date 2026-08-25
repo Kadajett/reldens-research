@@ -2,10 +2,10 @@
 
 ```ts
 type OnSavePlayerStatsBeforePayload = {
-  client: unknown;
+  client: Client;
   objectState: unknown;
   playerSchema: unknown;
-  room: unknown;
+  room: RoomScene;
 };
 ```
 
@@ -20,7 +20,7 @@ type OnSavePlayerStatsBeforePayload = {
 ### client
 
 ```ts
-client: unknown;
+client: Client;
 ```
 
 ***
@@ -44,5 +44,5 @@ playerSchema: unknown;
 ### room
 
 ```ts
-room: unknown;
+room: RoomScene;
 ```

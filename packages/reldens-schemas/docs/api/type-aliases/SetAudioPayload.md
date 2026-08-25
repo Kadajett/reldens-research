@@ -2,9 +2,9 @@
 
 ```ts
 type SetAudioPayload = {
-  audioManager: unknown;
-  categoryKey: unknown;
-  enabled: unknown;
+  audioManager: AudioManager;
+  categoryKey: string;
+  enabled: boolean;
 };
 ```
 
@@ -19,7 +19,7 @@ type SetAudioPayload = {
 ### audioManager
 
 ```ts
-audioManager: unknown;
+audioManager: AudioManager;
 ```
 
 ***
@@ -27,7 +27,7 @@ audioManager: unknown;
 ### categoryKey
 
 ```ts
-categoryKey: unknown;
+categoryKey: string;
 ```
 
 ***
@@ -35,5 +35,5 @@ categoryKey: unknown;
 ### enabled
 
 ```ts
-enabled: unknown;
+enabled: boolean;
 ```

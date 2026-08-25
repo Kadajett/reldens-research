@@ -5,7 +5,7 @@ type AdminListPropertiesPopulationPayload = {
   adminManager: unknown;
   driverResource: unknown;
   listProperties: unknown;
-  req: unknown;
+  req: ExpressRequest;
 };
 ```
 
@@ -44,5 +44,5 @@ listProperties: unknown;
 ### req
 
 ```ts
-req: unknown;
+req: ExpressRequest;
 ```

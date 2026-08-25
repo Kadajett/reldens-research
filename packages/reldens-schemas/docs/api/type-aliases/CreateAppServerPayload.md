@@ -2,8 +2,8 @@
 
 ```ts
 type CreateAppServerPayload = {
-  continueProcess: unknown;
-  serverManager: unknown;
+  continueProcess: boolean;
+  serverManager: ServerManager;
 };
 ```
 
@@ -18,7 +18,7 @@ type CreateAppServerPayload = {
 ### continueProcess
 
 ```ts
-continueProcess: unknown;
+continueProcess: boolean;
 ```
 
 ***
@@ -26,5 +26,5 @@ continueProcess: unknown;
 ### serverManager
 
 ```ts
-serverManager: unknown;
+serverManager: ServerManager;
 ```

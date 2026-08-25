@@ -5,8 +5,8 @@ type AdminIsAuthenticatedPayload = {
   adminManager: unknown;
   allowContinue: unknown;
   next: unknown;
-  req: unknown;
-  res: unknown;
+  req: ExpressRequest;
+  res: ExpressResponse;
 };
 ```
 
@@ -45,7 +45,7 @@ next: unknown;
 ### req
 
 ```ts
-req: unknown;
+req: ExpressRequest;
 ```
 
 ***
@@ -53,5 +53,5 @@ req: unknown;
 ### res
 
 ```ts
-res: unknown;
+res: ExpressResponse;
 ```

@@ -3,7 +3,7 @@
 ```ts
 type RemovePlayerBeforePayload = {
   playerSchema: unknown;
-  room: unknown;
+  room: RoomScene;
   stateObject: unknown;
 };
 ```
@@ -27,7 +27,7 @@ playerSchema: unknown;
 ### room
 
 ```ts
-room: unknown;
+room: RoomScene;
 ```
 
 ***

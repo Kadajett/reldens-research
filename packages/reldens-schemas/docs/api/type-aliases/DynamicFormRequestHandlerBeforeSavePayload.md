@@ -5,8 +5,8 @@ type DynamicFormRequestHandlerBeforeSavePayload = {
   formConfig: unknown;
   formKey: unknown;
   preparedValues: unknown;
-  req: unknown;
-  res: unknown;
+  req: ExpressRequest;
+  res: ExpressResponse;
 };
 ```
 
@@ -45,7 +45,7 @@ preparedValues: unknown;
 ### req
 
 ```ts
-req: unknown;
+req: ExpressRequest;
 ```
 
 ***
@@ -53,5 +53,5 @@ req: unknown;
 ### res
 
 ```ts
-res: unknown;
+res: ExpressResponse;
 ```

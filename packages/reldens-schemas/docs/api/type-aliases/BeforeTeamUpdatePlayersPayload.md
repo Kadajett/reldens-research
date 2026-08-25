@@ -2,9 +2,9 @@
 
 ```ts
 type BeforeTeamUpdatePlayersPayload = {
-  continueBeforeJoinUpdate: unknown;
+  continueBeforeJoinUpdate: boolean;
   currentTeam: unknown;
-  teamsPlugin: unknown;
+  teamsPlugin: TeamsPlugin;
 };
 ```
 
@@ -19,7 +19,7 @@ type BeforeTeamUpdatePlayersPayload = {
 ### continueBeforeJoinUpdate
 
 ```ts
-continueBeforeJoinUpdate: unknown;
+continueBeforeJoinUpdate: boolean;
 ```
 
 ***
@@ -35,5 +35,5 @@ currentTeam: unknown;
 ### teamsPlugin
 
 ```ts
-teamsPlugin: unknown;
+teamsPlugin: TeamsPlugin;
 ```

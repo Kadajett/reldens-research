@@ -1,5 +1,42 @@
 /* GENERATED - do not edit. Source: scripts/generate-event-api.cjs
- * One documented payload type per Reldens event, for TypeDoc. */
+ * One documented payload type per Reldens event, for TypeDoc. A key's type is
+ * the class or primitive read from the reldens emit site (the source expression
+ * follows each field as a comment); unknown means the source did not establish it. */
+
+/**
+ * Reldens runtime classes referenced by the payloads below. They are modelled as
+ * opaque (unknown): the emit site proves the value IS one of these, but this
+ * package does not model their internal shape.
+ */
+export type AnimationEngine = unknown;
+export type AudioManager = unknown;
+export type ChatUi = unknown;
+export type Client = unknown;
+export type CollisionsManager = unknown;
+export type ConfigManager = unknown;
+export type EnemyObject = unknown;
+export type ExpressRequest = unknown;
+export type ExpressResponse = unknown;
+export type FeaturesManager = unknown;
+export type GameManager = unknown;
+export type HTMLFormElement = unknown;
+export type HTMLInputElement = unknown;
+export type HTMLSelectElement = unknown;
+export type ObjectsManager = unknown;
+export type ObjectsPlugin = unknown;
+export type P2world = unknown;
+export type PhysicalBody = unknown;
+export type Player = unknown;
+export type PlayerState = unknown;
+export type RoomEvents = unknown;
+export type RoomLogin = unknown;
+export type RoomRespawn = unknown;
+export type RoomScene = unknown;
+export type SceneDynamic = unknown;
+export type ServerManager = unknown;
+export type TeamsPlugin = unknown;
+export type UsersModel = unknown;
+export type UsersPlugin = unknown;
 
 /**
  * `reldens.actionsPrepareEventsListeners`
@@ -46,9 +83,9 @@ export type ActivatedRoom_Payload = [sceneRoom: unknown, self: unknown];
  */
 export type AdminAfterEntityDeletePayload = {
     "adminManager": unknown;
-    "driverResource": unknown;
-    "idProperty": unknown;
-    "ids": unknown;
+    "driverResource": unknown;  // driverResource
+    "idProperty": unknown;  // idProperty
+    "ids": unknown;  // ids
 };
 
 /**
@@ -60,11 +97,11 @@ export type AdminAfterEntityDeletePayload = {
  */
 export type AdminAfterEntitySavePayload = {
     "adminManager": unknown;
-    "driverResource": unknown;
-    "entityData": unknown;
-    "entityPath": unknown;
-    "req": unknown;
-    "res": unknown;
+    "driverResource": unknown;  // driverResource
+    "entityData": unknown;  // saveResult
+    "entityPath": unknown;  // entityPath
+    "req": ExpressRequest;  // req
+    "res": ExpressResponse;  // res
 };
 
 /**
@@ -76,10 +113,10 @@ export type AdminAfterEntitySavePayload = {
  */
 export type AdminBeforeEntityEditPayload = {
     "adminManager": unknown;
-    "driverResource": unknown;
-    "entityPath": unknown;
-    "req": unknown;
-    "res": unknown;
+    "driverResource": unknown;  // driverResource
+    "entityPath": unknown;  // entityPath
+    "req": ExpressRequest;  // req
+    "res": ExpressResponse;  // res
 };
 
 /**
@@ -91,8 +128,8 @@ export type AdminBeforeEntityEditPayload = {
  */
 export type AdminBeforeEntityLoadPayload = {
     "adminManager": unknown;
-    "driverResource": unknown;
-    "entityId": unknown;
+    "driverResource": unknown;  // driverResource
+    "entityId": unknown;  // id
 };
 
 /**
@@ -104,10 +141,10 @@ export type AdminBeforeEntityLoadPayload = {
  */
 export type AdminBeforeEntitySavePayload = {
     "adminManager": unknown;
-    "driverResource": unknown;
-    "entityPath": unknown;
-    "req": unknown;
-    "res": unknown;
+    "driverResource": unknown;  // driverResource
+    "entityPath": unknown;  // entityPath
+    "req": ExpressRequest;  // req
+    "res": ExpressResponse;  // res
 };
 
 /**
@@ -118,16 +155,16 @@ export type AdminBeforeEntitySavePayload = {
  * - Emitted at: lib/admin-manager/router-contents.js:L266
  */
 export type AdminBeforeFieldRenderPayload = {
-    "adminContentsRender": unknown;
-    "adminFilesContents": unknown;
+    "adminContentsRender": unknown;  // this.adminContentsRender.bind(this)
+    "adminFilesContents": unknown;  // this.adminFilesContents
     "adminManager": unknown;
-    "driverResource": unknown;
-    "loadedEntity": unknown;
-    "property": unknown;
-    "propertyKey": unknown;
-    "renderedEditProperties": unknown;
-    "req": unknown;
-    "templateData": unknown;
+    "driverResource": unknown;  // driverResource
+    "loadedEntity": unknown;  // loadedEntity
+    "property": string;  // property
+    "propertyKey": string;  // propertyKey
+    "renderedEditProperties": unknown;  // renderedEditProperties
+    "req": ExpressRequest;  // req
+    "templateData": unknown;  // templateData
 };
 
 /**
@@ -139,12 +176,12 @@ export type AdminBeforeFieldRenderPayload = {
  */
 export type AdminEditPropertiesPopulationPayload = {
     "adminManager": unknown;
-    "driverResource": unknown;
-    "entityData": unknown;
-    "entityId": unknown;
-    "loadedEntity": unknown;
-    "renderedEditProperties": unknown;
-    "req": unknown;
+    "driverResource": unknown;  // driverResource
+    "entityData": unknown;  // loadedEntity
+    "entityId": unknown;  // driverResource.id()
+    "loadedEntity": unknown;  // loadedEntity
+    "renderedEditProperties": unknown;  // renderedEditProperties
+    "req": ExpressRequest;  // req
 };
 
 /**
@@ -156,10 +193,10 @@ export type AdminEditPropertiesPopulationPayload = {
  */
 export type AdminIsAuthenticatedPayload = {
     "adminManager": unknown;
-    "allowContinue": unknown;
-    "next": unknown;
-    "req": unknown;
-    "res": unknown;
+    "allowContinue": unknown;  // allowContinue
+    "next": unknown;  // next
+    "req": ExpressRequest;  // req
+    "res": ExpressResponse;  // res
 };
 
 /**
@@ -171,9 +208,9 @@ export type AdminIsAuthenticatedPayload = {
  */
 export type AdminListPropertiesPopulationPayload = {
     "adminManager": unknown;
-    "driverResource": unknown;
-    "listProperties": unknown;
-    "req": unknown;
+    "driverResource": unknown;  // driverResource
+    "listProperties": unknown;  // listProperties
+    "req": ExpressRequest;  // req
 };
 
 /**
@@ -185,8 +222,8 @@ export type AdminListPropertiesPopulationPayload = {
  */
 export type AdminSideBarBeforeRenderPayload = {
     "adminManager": unknown;
-    "navigationContents": unknown;
-    "navigationView": unknown;
+    "navigationContents": unknown;  // navigationContents
+    "navigationView": unknown;  // navigationView
 };
 
 /**
@@ -198,7 +235,7 @@ export type AdminSideBarBeforeRenderPayload = {
  */
 export type AdminSideBarBeforeSubItemsPayload = {
     "adminManager": unknown;
-    "navigationContents": unknown;
+    "navigationContents": unknown;  // navigationContents
 };
 
 /**
@@ -210,11 +247,11 @@ export type AdminSideBarBeforeSubItemsPayload = {
  */
 export type AdminViewPropertiesPopulationPayload = {
     "adminManager": unknown;
-    "driverResource": unknown;
-    "idProperty": unknown;
-    "loadedEntity": unknown;
-    "renderedViewProperties": unknown;
-    "req": unknown;
+    "driverResource": unknown;  // driverResource
+    "idProperty": unknown;  // idProperty
+    "loadedEntity": unknown;  // loadedEntity
+    "renderedViewProperties": unknown;  // renderedViewProperties
+    "req": ExpressRequest;  // req
 };
 
 /**
@@ -225,9 +262,9 @@ export type AdminViewPropertiesPopulationPayload = {
  * - Emitted at: lib/template-engine.js:L188
  */
 export type AfterContentProcessPayload = {
-    "processedContent": unknown;
-    "renderContext": unknown;
-    "variables": unknown;
+    "processedContent": unknown;  // processedTemplate
+    "renderContext": unknown;  // renderContext
+    "variables": unknown;  // enhancedData
 };
 
 /**
@@ -238,7 +275,7 @@ export type AfterContentProcessPayload = {
  * - Emitted at: lib/admin/server/subscribers/create-admin-subscriber.js:L75
  */
 export type AfterCreateAdminManagerPayload = {
-    "serverManager": unknown;
+    "serverManager": ServerManager|false;  // serverManager
 };
 
 /**
@@ -249,10 +286,10 @@ export type AfterCreateAdminManagerPayload = {
  * - Emitted at: lib/snippets/server/initial-game-data-enricher.js:L39
  */
 export type AfterEnrichPlayerWithLocalePayload = {
-    "client": unknown;
-    "roomGame": unknown;
-    "superInitialGameData": unknown;
-    "userModel": unknown;
+    "client": Client;  // client
+    "roomGame": unknown;  // roomGame
+    "superInitialGameData": unknown;  // superInitialGameData
+    "userModel": unknown;  // userModel
 };
 
 /**
@@ -263,10 +300,10 @@ export type AfterEnrichPlayerWithLocalePayload = {
  * - Emitted at: lib/rewards/server/subscribers/rewards-subscriber.js:L79
  */
 export type AfterGiveRewardsPayload = {
-    "itemRewards": unknown;
-    "playerSchema": unknown;
-    "targetObject": unknown;
-    "winningRewards": unknown;
+    "itemRewards": unknown[];  // itemRewards
+    "playerSchema": unknown;  // playerSchema
+    "targetObject": unknown;  // targetObject
+    "winningRewards": unknown;  // winningRewards
 };
 
 /**
@@ -286,8 +323,8 @@ export type AfterInitEngineAndStartGamePayload = [initialGameData: unknown, join
  * - Emitted at: lib/teams/server/message-actions/clan-join.js:L72
  */
 export type AfterPlayerJoinedClanPayload = {
-    "clan": unknown;
-    "playerJoining": unknown;
+    "clan": unknown;  // clanToJoin
+    "playerJoining": PlayerState;  // playerSchema
 };
 
 /**
@@ -298,8 +335,8 @@ export type AfterPlayerJoinedClanPayload = {
  * - Emitted at: lib/teams/server/message-actions/team-join.js:L85
  */
 export type AfterPlayerJoinedTeamPayload = {
-    "currentTeam": unknown;
-    "playerJoining": unknown;
+    "currentTeam": unknown;  // currentTeam
+    "playerJoining": PlayerState;  // playerSchema
 };
 
 /**
@@ -328,13 +365,13 @@ export type AfterProcessRewardsDropsBeforeBroadcastPayload = [dropsMappedData: u
  * - Emitted at: lib/respawn/server/room-respawn.js:L137
  */
 export type AfterRunAdditionalRespawnSetupPayload = {
-    "clonedObjProps": unknown;
-    "multipleObj": unknown;
-    "objClass": unknown;
-    "objInstance": unknown;
-    "objectIndex": unknown;
-    "respawnArea": unknown;
-    "roomRespawn": unknown;
+    "clonedObjProps": unknown;  // clonedObjProps
+    "multipleObj": unknown;  // multipleObj
+    "objClass": Function;  // objClass
+    "objInstance": unknown;  // objInstance
+    "objectIndex": string;  // objectIndex
+    "respawnArea": unknown;  // respawnArea
+    "roomRespawn": RoomRespawn;  // this
 };
 
 /**
@@ -345,9 +382,9 @@ export type AfterRunAdditionalRespawnSetupPayload = {
  * - Emitted at: lib/objects/server/manager.js:L144
  */
 export type AfterRunAdditionalSetupPayload = {
-    "objectData": unknown;
-    "objectInstance": unknown;
-    "objectsManager": unknown;
+    "objectData": unknown;  // objectData
+    "objectInstance": unknown;  // objectInstance
+    "objectsManager": ObjectsManager;  // this
 };
 
 /**
@@ -367,8 +404,8 @@ export type AfterSceneDynamicCreatePayload = [self: unknown];
  * - Emitted at: lib/teams/server/message-actions/team-leave.js:L95
  */
 export type AfterTeamLeavePayload = {
-    "currentTeam": unknown;
-    "leavingPlayerName": unknown;
+    "currentTeam": unknown;  // currentTeam
+    "leavingPlayerName": unknown;  // leavingPlayerName
 };
 
 /**
@@ -379,8 +416,8 @@ export type AfterTeamLeavePayload = {
  * - Emitted at: lib/template-engine.js:L168
  */
 export type AfterVariablesCreatedPayload = {
-    "renderContext": unknown;
-    "variables": unknown;
+    "renderContext": unknown;  // renderContext
+    "variables": unknown;  // systemVariables
 };
 
 /**
@@ -450,10 +487,10 @@ export type BattleEndedPayload = {
  * - Emitted at: lib/teams/server/message-actions/clan-leave.js:L97
  */
 export type BeforeClanDisbandPayload = {
-    "continueDisband": unknown;
-    "playerSchema": unknown;
-    "singleRemoveId": unknown;
-    "teamsPlugin": unknown;
+    "continueDisband": boolean;  // true
+    "playerSchema": PlayerState;  // playerSchema
+    "singleRemoveId": number|string;  // singleRemoveId
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**
@@ -464,9 +501,9 @@ export type BeforeClanDisbandPayload = {
  * - Emitted at: lib/teams/server/message-actions/clan-join.js:L42
  */
 export type BeforeClanJoinPayload = {
-    "clanToJoin": unknown;
-    "continueBeforeJoin": unknown;
-    "teamsPlugin": unknown;
+    "clanToJoin": unknown;  // clanToJoin
+    "continueBeforeJoin": boolean;  // true
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**
@@ -477,9 +514,9 @@ export type BeforeClanJoinPayload = {
  * - Emitted at: lib/teams/server/message-actions/clan-join.js:L66
  */
 export type BeforeClanUpdatePlayersPayload = {
-    "clanToJoin": unknown;
-    "continueBeforeJoinUpdate": unknown;
-    "teamsPlugin": unknown;
+    "clanToJoin": unknown;  // clanToJoin
+    "continueBeforeJoinUpdate": boolean;  // true
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**
@@ -490,9 +527,9 @@ export type BeforeClanUpdatePlayersPayload = {
  * - Emitted at: lib/template-engine.js:L175
  */
 export type BeforeContentProcessPayload = {
-    "content": unknown;
-    "renderContext": unknown;
-    "variables": unknown;
+    "content": string;  // template
+    "renderContext": unknown;  // renderContext
+    "variables": unknown;  // enhancedData
 };
 
 /**
@@ -503,7 +540,7 @@ export type BeforeContentProcessPayload = {
  * - Emitted at: lib/admin/server/subscribers/create-admin-subscriber.js:L40
  */
 export type BeforeCreateAdminManagerPayload = {
-    "serverManager": unknown;
+    "serverManager": ServerManager|false;  // serverManager
 };
 
 /**
@@ -532,11 +569,11 @@ export type BeforeCreateUiScenePayload = [self: unknown];
  * - Emitted at: lib/teams/server/event-handlers/create-player-clan-handler.js:L49
  */
 export type BeforeEnrichPlayerWithClanPayload = {
-    "client": unknown;
-    "continueProcess": unknown;
-    "playerSchema": unknown;
-    "room": unknown;
-    "teamsPlugin": unknown;
+    "client": unknown;  // client
+    "continueProcess": boolean;  // true
+    "playerSchema": PlayerState;  // playerSchema
+    "room": RoomScene;  // room
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**
@@ -547,11 +584,11 @@ export type BeforeEnrichPlayerWithClanPayload = {
  * - Emitted at: lib/teams/server/event-handlers/create-player-clan-handler.js:L71
  */
 export type BeforeEnrichPlayerWithClanUpdatePayload = {
-    "client": unknown;
-    "continueProcess": unknown;
-    "playerSchema": unknown;
-    "room": unknown;
-    "teamsPlugin": unknown;
+    "client": unknown;  // client
+    "continueProcess": boolean;  // true
+    "playerSchema": PlayerState;  // playerSchema
+    "room": RoomScene;  // room
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**
@@ -571,8 +608,8 @@ export type BeforeEnrichUserWithLocalePayload = [startEvent: unknown];
  * - Emitted at: lib/config/server/manager.js:L102
  */
 export type BeforeGetParsedValuePayload = {
-    "config": unknown;
-    "configManager": unknown;
+    "config": ConfigManager;  // config
+    "configManager": ConfigManager;  // this
 };
 
 /**
@@ -583,9 +620,9 @@ export type BeforeGetParsedValuePayload = {
  * - Emitted at: lib/rewards/server/subscribers/rewards-subscriber.js:L52
  */
 export type BeforeGiveRewardsPayload = {
-    "continueEvent": unknown;
-    "playerSchema": unknown;
-    "targetObject": unknown;
+    "continueEvent": boolean;  // true
+    "playerSchema": unknown;  // playerSchema
+    "targetObject": unknown;  // targetObject
 };
 
 /**
@@ -608,8 +645,8 @@ export type BeforeInitEngineAndStartGamePayload = [initialGameData: unknown, sel
  * - Emitted at: lib/game/server/manager.js:L394
  */
 export type BeforeInitializeManagersPayload = {
-    "continueProcess": unknown;
-    "serverManager": unknown;
+    "continueProcess": boolean;  // true
+    "serverManager": ServerManager;  // this
 };
 
 /**
@@ -623,9 +660,9 @@ export type BeforeInitializeManagersPayload = {
  * - Emitted at: lib/game/client/game-manager.js:L184
  */
 export type BeforeJoinGamePayload = {
-    "formData": unknown;
-    "gameManager": unknown;
-    "isNewUser": unknown;
+    "formData": unknown;  // formData
+    "gameManager": GameManager;  // this
+    "isNewUser": boolean;  // isNewUser
 };
 
 /**
@@ -645,7 +682,7 @@ export type BeforeJoinGameRoomPayload = [gameRoom: unknown];
  * - Emitted at: lib/config/server/manager.js:L57
  */
 export type BeforeLoadConfigurationsPayload = {
-    "configManager": unknown;
+    "configManager": ConfigManager;  // this
 };
 
 /**
@@ -683,11 +720,11 @@ export type BeforeReconnectGameClientPayload = [message: unknown, self: unknown]
  * - Emitted at: lib/rewards/server/reward-message-actions.js:L61
  */
 export type BeforeRemovingDroppedRewardPayload = {
-    "client": unknown;
-    "continueEvent": unknown;
-    "playerSchema": unknown;
-    "room": unknown;
-    "roomObject": unknown;
+    "client": unknown;  // client
+    "continueEvent": boolean;  // true
+    "playerSchema": unknown;  // playerSchema
+    "room": unknown;  // room
+    "roomObject": unknown;  // roomObject
 };
 
 /**
@@ -707,11 +744,11 @@ export type BeforeSceneDynamicCreatePayload = [self: unknown];
  * - Emitted at: lib/rooms/server/scene.js:L449
  */
 export type BeforeSceneExecuteMessagesPayload = {
-    "canContinue": unknown;
-    "client": unknown;
-    "messageData": unknown;
-    "playerSchema": unknown;
-    "room": unknown;
+    "canContinue": boolean;  // true
+    "client": Client;  // client
+    "messageData": unknown;  // messageData
+    "playerSchema": unknown;  // playerSchema
+    "room": RoomScene;  // this
 };
 
 /**
@@ -722,7 +759,7 @@ export type BeforeSceneExecuteMessagesPayload = {
  * - Emitted at: lib/admin/server/subscribers/create-admin-subscriber.js:L73
  */
 export type BeforeSetupAdminManagerPayload = {
-    "serverManager": unknown;
+    "serverManager": ServerManager|false;  // serverManager
 };
 
 /**
@@ -742,9 +779,9 @@ export type BeforeSuperInitialGameDataPayload = [superInitialGameData: unknown, 
  * - Emitted at: lib/teams/server/message-actions/team-join.js:L63
  */
 export type BeforeTeamCreatePayload = {
-    "continueBeforeCreate": unknown;
-    "teamProps": unknown;
-    "teamsPlugin": unknown;
+    "continueBeforeCreate": boolean;  // true
+    "teamProps": unknown;  // teamProps
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**
@@ -755,11 +792,11 @@ export type BeforeTeamCreatePayload = {
  * - Emitted at: lib/teams/server/message-actions/team-leave.js:L99, lib/teams/server/message-actions/team-leave.js:L107
  */
 export type BeforeTeamDisbandPayload = {
-    "playerSchema": unknown;
-    "room": unknown;
-    "singleRemoveId": unknown;
-    "teamsPlugin": unknown;
-    "continueDisband"?: unknown;
+    "playerSchema": PlayerState;  // playerSchema
+    "room": RoomScene;  // room
+    "singleRemoveId": number|string|boolean;  // singleRemoveId
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
+    "continueDisband"?: boolean;  // true
     "continueLeave"?: unknown;
 };
 
@@ -771,9 +808,9 @@ export type BeforeTeamDisbandPayload = {
  * - Emitted at: lib/teams/server/message-actions/team-join.js:L70
  */
 export type BeforeTeamJoinPayload = {
-    "continueBeforeJoin": unknown;
-    "currentTeam": unknown;
-    "teamsPlugin": unknown;
+    "continueBeforeJoin": boolean;  // true
+    "currentTeam": unknown;  // currentTeam
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**
@@ -784,9 +821,9 @@ export type BeforeTeamJoinPayload = {
  * - Emitted at: lib/teams/server/message-actions/team-join.js:L79
  */
 export type BeforeTeamUpdatePlayersPayload = {
-    "continueBeforeJoinUpdate": unknown;
-    "currentTeam": unknown;
-    "teamsPlugin": unknown;
+    "continueBeforeJoinUpdate": boolean;  // true
+    "currentTeam": unknown;  // currentTeam
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**
@@ -826,9 +863,9 @@ export type ChatMessageObjectCreatedPayload = [self: unknown, message: unknown];
  * - Emitted at: lib/teams/server/message-actions/clan-disconnect.js:L72
  */
 export type ClanDisconnectAfterSendUpdatePayload = {
-    "continueLeave": unknown;
-    "playerSchema": unknown;
-    "teamsPlugin": unknown;
+    "continueLeave": boolean;  // true
+    "playerSchema": PlayerState;  // playerSchema
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**
@@ -839,10 +876,10 @@ export type ClanDisconnectAfterSendUpdatePayload = {
  * - Emitted at: lib/teams/server/message-actions/clan-disconnect.js:L56
  */
 export type ClanDisconnectBeforeSendUpdatePayload = {
-    "playerId": unknown;
-    "playerSchema": unknown;
-    "sendUpdate": unknown;
-    "teamsPlugin": unknown;
+    "playerId": unknown;  // playerId
+    "playerSchema": PlayerState;  // playerSchema
+    "sendUpdate": unknown;  // sendUpdate
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**
@@ -853,9 +890,9 @@ export type ClanDisconnectBeforeSendUpdatePayload = {
  * - Emitted at: lib/teams/server/clan-message-actions.js:L75
  */
 export type ClanJoinInviteRejectedPayload = {
-    "clanInvite": unknown;
-    "clientSendingInvite": unknown;
-    "playerRejectingName": unknown;
+    "clanInvite": unknown;  // clanInvite
+    "clientSendingInvite": unknown;  // clientSendingInvite
+    "playerRejectingName": unknown;  // playerRejectingName
 };
 
 /**
@@ -866,9 +903,9 @@ export type ClanJoinInviteRejectedPayload = {
  * - Emitted at: lib/teams/server/message-actions/clan-leave.js:L29
  */
 export type ClanLeavePayload = {
-    "message": unknown;
-    "playerSchema": unknown;
-    "teamsPlugin": unknown;
+    "message": unknown;  // message
+    "playerSchema": PlayerState;  // playerSchema
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**
@@ -879,10 +916,10 @@ export type ClanLeavePayload = {
  * - Emitted at: lib/teams/server/message-actions/clan-leave.js:L106
  */
 export type ClanLeaveAfterSendUpdatePayload = {
-    "continueLeave": unknown;
-    "playerSchema": unknown;
-    "singleRemoveId": unknown;
-    "teamsPlugin": unknown;
+    "continueLeave": boolean;  // true
+    "playerSchema": PlayerState;  // playerSchema
+    "singleRemoveId": number|string;  // singleRemoveId
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**
@@ -893,13 +930,13 @@ export type ClanLeaveAfterSendUpdatePayload = {
  * - Emitted at: lib/teams/server/message-actions/clan-leave.js:L81
  */
 export type ClanLeaveBeforeSendUpdatePayload = {
-    "currentClan": unknown;
-    "disbandClan": unknown;
-    "playerId": unknown;
-    "playerSchema": unknown;
-    "sendUpdate": unknown;
-    "singleRemoveId": unknown;
-    "teamsPlugin": unknown;
+    "currentClan": unknown;  // currentClan
+    "disbandClan": unknown;  // disbandClan
+    "playerId": unknown;  // playerId
+    "playerSchema": PlayerState;  // playerSchema
+    "sendUpdate": unknown;  // sendUpdate
+    "singleRemoveId": number|string;  // singleRemoveId
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**
@@ -928,14 +965,14 @@ export type ClientStartBeforePayload = [self: unknown];
  * - Emitted at: lib/chat/client/chat-ui.js:L170, lib/game/client/user-interface.js:L193, lib/game/client/ui-factory.js:L75, lib/game/client/settings-ui.js:L62, lib/game/client/instructions-ui.js:L53, lib/game/client/minimap-ui.js:L98, lib/users/client/player-stats-ui.js:L59
  */
 export type CloseUIPayload = {
-    "closeButton": unknown;
-    "ui": unknown;
+    "closeButton": unknown;  // this.chatCloseButton
+    "ui": ChatUi;  // this
     "box"?: unknown;
-    "dialogBox"?: unknown;
-    "dialogContainer"?: unknown;
+    "dialogBox"?: unknown;  // this.uiChat
+    "dialogContainer"?: unknown;  // this.uiChat.getChildByProperty('id', ChatConst.CHAT_UI)
     "minimap"?: unknown;
-    "openButton"?: unknown;
-    "uiScene"?: unknown;
+    "openButton"?: unknown;  // this.chatOpenButton
+    "uiScene"?: unknown;  // this.uiScene
 };
 
 /**
@@ -946,7 +983,7 @@ export type CloseUIPayload = {
  * - Emitted at: lib/manager.js:L390
  */
 export type CmsManagerInitializeServicesPayload = {
-    "manager": unknown;
+    "manager": unknown;  // this
 };
 
 /**
@@ -957,7 +994,7 @@ export type CmsManagerInitializeServicesPayload = {
  * - Emitted at: lib/objects/client/animation-engine.js:L223
  */
 export type CreateAnimationAfterPayload = {
-    "animationEngine": unknown;
+    "animationEngine": AnimationEngine;  // this
 };
 
 /**
@@ -968,8 +1005,8 @@ export type CreateAnimationAfterPayload = {
  * - Emitted at: lib/game/server/manager.js:L339
  */
 export type CreateAppServerPayload = {
-    "continueProcess": unknown;
-    "serverManager": unknown;
+    "continueProcess": boolean;  // true
+    "serverManager": ServerManager;  // this
 };
 
 /**
@@ -980,10 +1017,10 @@ export type CreateAppServerPayload = {
  * - Emitted at: lib/prediction/client/room-events-override.js:L41, lib/game/client/room-events.js:L232
  */
 export type CreateCurrentPlayerPayload = {
-    "key": unknown;
-    "player": unknown;
-    "previousScene": unknown;
-    "roomEvents": unknown;
+    "key": string;  // key
+    "player": unknown;  // player
+    "previousScene": string|boolean;  // previousScene
+    "roomEvents": RoomEvents;  // roomEvents
 };
 
 /**
@@ -1021,9 +1058,9 @@ export type CreateEngineScenePayload = [player: unknown, room: unknown, previous
  * - Emitted at: lib/game/client/room-events.js:L877
  */
 export type CreateEngineSceneDonePayload = {
-    "currentScene": unknown;
-    "previousScene": unknown;
-    "roomEvents": unknown;
+    "currentScene": SceneDynamic;  // currentScene
+    "previousScene": string|boolean;  // previousScene
+    "roomEvents": RoomEvents;  // this
 };
 
 /**
@@ -1034,8 +1071,8 @@ export type CreateEngineSceneDonePayload = {
  * - Emitted at: lib/game/server/manager.js:L378
  */
 export type CreateGameServerPayload = {
-    "continueProcess": unknown;
-    "options": unknown;
+    "continueProcess": boolean;  // true
+    "options": unknown;  // options
 };
 
 /**
@@ -1199,10 +1236,10 @@ export type CreatedRoomsEventsInstancePayload = [joinedFirstRoom: unknown, self:
  * - Emitted at: lib/objects/client/plugin.js:L498
  */
 export type CreatedUserInterfacePayload = {
-    "ObjectsPlugin": unknown;
-    "gameManager": unknown;
-    "id": unknown;
-    "userInterface": unknown;
+    "ObjectsPlugin": ObjectsPlugin;  // this
+    "gameManager": GameManager;  // gameManager
+    "id": unknown;  // animProps.id
+    "userInterface": unknown;  // roomEvents.objectsUi[animProps.id]
 };
 
 /**
@@ -1213,18 +1250,18 @@ export type CreatedUserInterfacePayload = {
  * - Emitted at: lib/world/server/p2world.js:L686
  */
 export type CreatedWorldObjectPayload = {
-    "bodyMass": unknown;
-    "bodyObject": unknown;
-    "collision": unknown;
-    "hasState": unknown;
-    "objectIndex": unknown;
-    "p2world": unknown;
-    "pathFinder": unknown;
-    "posX": unknown;
-    "posY": unknown;
-    "roomObject": unknown;
-    "tileH": unknown;
-    "tileW": unknown;
+    "bodyMass": unknown;  // bodyMass
+    "bodyObject": unknown;  // bodyObject
+    "collision": unknown;  // collision
+    "hasState": unknown;  // hasState
+    "objectIndex": string;  // objectIndex
+    "p2world": P2world;  // this
+    "pathFinder": unknown;  // pathFinder
+    "posX": number;  // posX
+    "posY": number;  // posY
+    "roomObject": unknown;  // roomObject
+    "tileH": number;  // tileH
+    "tileW": number;  // tileW
 };
 
 /**
@@ -1244,10 +1281,10 @@ export type DefineRoomsInGameServerDonePayload = [self: unknown];
  * - Emitted at: lib/rooms/server/scene.js:L175
  */
 export type DisconnectLoggedBeforePayload = {
-    "client": unknown;
-    "player": unknown;
-    "room": unknown;
-    "userModel": unknown;
+    "client": Client;  // client
+    "player": unknown;  // player
+    "room": RoomScene;  // this
+    "userModel": UsersModel;  // userModel
 };
 
 /**
@@ -1258,9 +1295,9 @@ export type DisconnectLoggedBeforePayload = {
  * - Emitted at: lib/dynamic-form.js:L295
  */
 export type DynamicFormAfterSavePayload = {
-    "formConfig": unknown;
-    "preparedValues": unknown;
-    "result": unknown;
+    "formConfig": unknown;  // formConfig
+    "preparedValues": unknown;  // preparedValues
+    "result": string;  // result
 };
 
 /**
@@ -1271,11 +1308,11 @@ export type DynamicFormAfterSavePayload = {
  * - Emitted at: lib/dynamic-form.js:L64
  */
 export type DynamicFormAfterValidationPayload = {
-    "formConfig": unknown;
-    "formKey": unknown;
-    "req": unknown;
-    "submittedValues": unknown;
-    "validationResult": unknown;
+    "formConfig": unknown;  // formConfig
+    "formKey": unknown;  // formKey
+    "req": ExpressRequest;  // req
+    "submittedValues": unknown;  // submittedValues
+    "validationResult": unknown;  // {isValid: true, formConfig}
 };
 
 /**
@@ -1286,8 +1323,8 @@ export type DynamicFormAfterValidationPayload = {
  * - Emitted at: lib/dynamic-form.js:L281
  */
 export type DynamicFormBeforeSavePayload = {
-    "formConfig": unknown;
-    "preparedValues": unknown;
+    "formConfig": unknown;  // formConfig
+    "preparedValues": unknown;  // preparedValues
 };
 
 /**
@@ -1298,10 +1335,10 @@ export type DynamicFormBeforeSavePayload = {
  * - Emitted at: lib/dynamic-form.js:L42
  */
 export type DynamicFormBeforeValidationPayload = {
-    "formConfig": unknown;
-    "formKey": unknown;
-    "req": unknown;
-    "submittedValues": unknown;
+    "formConfig": unknown;  // formConfig
+    "formKey": unknown;  // formKey
+    "req": ExpressRequest;  // req
+    "submittedValues": unknown;  // submittedValues
 };
 
 /**
@@ -1312,14 +1349,14 @@ export type DynamicFormBeforeValidationPayload = {
  * - Emitted at: lib/dynamic-form-renderer.js:L43
  */
 export type DynamicFormRendererAfterFieldsRenderPayload = {
-    "attributes": unknown;
-    "domain": unknown;
-    "enhancedData": unknown;
-    "fieldsToRender": unknown;
-    "formConfig": unknown;
-    "formFields": unknown;
-    "req": unknown;
-    "systemVariables": unknown;
+    "attributes": unknown;  // attributes
+    "domain": unknown;  // domain
+    "enhancedData": unknown;  // enhancedData
+    "fieldsToRender": unknown;  // fieldsToRender
+    "formConfig": unknown;  // formConfig
+    "formFields": unknown;  // formFields
+    "req": ExpressRequest;  // req
+    "systemVariables": unknown;  // systemVariables
 };
 
 /**
@@ -1330,13 +1367,13 @@ export type DynamicFormRendererAfterFieldsRenderPayload = {
  * - Emitted at: lib/dynamic-form-renderer.js:L33
  */
 export type DynamicFormRendererBeforeFieldsRenderPayload = {
-    "attributes": unknown;
-    "domain": unknown;
-    "enhancedData": unknown;
-    "fieldsToRender": unknown;
-    "formConfig": unknown;
-    "req": unknown;
-    "systemVariables": unknown;
+    "attributes": unknown;  // attributes
+    "domain": unknown;  // domain
+    "enhancedData": unknown;  // enhancedData
+    "fieldsToRender": unknown;  // fieldsToRender
+    "formConfig": unknown;  // formConfig
+    "req": ExpressRequest;  // req
+    "systemVariables": unknown;  // systemVariables
 };
 
 /**
@@ -1347,11 +1384,11 @@ export type DynamicFormRendererBeforeFieldsRenderPayload = {
  * - Emitted at: lib/dynamic-form-request-handler.js:L65
  */
 export type DynamicFormRequestHandlerAfterSavePayload = {
-    "formConfig": unknown;
-    "formKey": unknown;
-    "req": unknown;
-    "res": unknown;
-    "submissionResult": unknown;
+    "formConfig": unknown;  // validation.formConfig
+    "formKey": unknown;  // formKey
+    "req": ExpressRequest;  // req
+    "res": ExpressResponse;  // res
+    "submissionResult": unknown;  // submissionResult
 };
 
 /**
@@ -1362,11 +1399,11 @@ export type DynamicFormRequestHandlerAfterSavePayload = {
  * - Emitted at: lib/dynamic-form-request-handler.js:L51
  */
 export type DynamicFormRequestHandlerBeforeSavePayload = {
-    "formConfig": unknown;
-    "formKey": unknown;
-    "preparedValues": unknown;
-    "req": unknown;
-    "res": unknown;
+    "formConfig": unknown;  // validation.formConfig
+    "formKey": unknown;  // formKey
+    "preparedValues": unknown;  // preparedValues
+    "req": ExpressRequest;  // req
+    "res": ExpressResponse;  // res
 };
 
 /**
@@ -1377,10 +1414,10 @@ export type DynamicFormRequestHandlerBeforeSavePayload = {
  * - Emitted at: lib/dynamic-form-request-handler.js:L37
  */
 export type DynamicFormRequestHandlerBeforeValidationPayload = {
-    "formKey": unknown;
-    "req": unknown;
-    "res": unknown;
-    "submittedValues": unknown;
+    "formKey": unknown;  // formKey
+    "req": ExpressRequest;  // req
+    "res": ExpressResponse;  // res
+    "submittedValues": unknown;  // submittedValues
 };
 
 /**
@@ -1391,8 +1428,8 @@ export type DynamicFormRequestHandlerBeforeValidationPayload = {
  * - Emitted at: lib/game/client/room-events.js:L460
  */
 export type EndChangedScenePayload = {
-    "message": unknown;
-    "roomEvents": unknown;
+    "message": unknown;  // message
+    "roomEvents": RoomEvents;  // this
 };
 
 /**
@@ -1403,9 +1440,9 @@ export type EndChangedScenePayload = {
  * - Emitted at: lib/world/server/collisions-manager.js:L399
  */
 export type EndObjectHitObjectPayload = {
-    "bodyA": unknown;
-    "bodyB": unknown;
-    "priorityObject": unknown;
+    "bodyA": unknown;  // bodyA
+    "bodyB": unknown;  // bodyB
+    "priorityObject": unknown;  // priorityObject
 };
 
 /**
@@ -1416,7 +1453,7 @@ export type EndObjectHitObjectPayload = {
  * - Emitted at: lib/world/server/collisions-manager.js:L446
  */
 export type EndObjectHitWallPayload = {
-    "objectBody": unknown;
+    "objectBody": unknown;  // objectBody
 };
 
 /**
@@ -1427,11 +1464,11 @@ export type EndObjectHitWallPayload = {
  * - Emitted at: lib/world/server/collisions-manager.js:L364
  */
 export type EndPlayerHitChangePointPayload = {
-    "changeData": unknown;
-    "changePoint": unknown;
-    "collisionsManager": unknown;
-    "playerBody": unknown;
-    "playerSchema": unknown;
+    "changeData": unknown;  // changeData
+    "changePoint": unknown;  // changePoint
+    "collisionsManager": CollisionsManager;  // this
+    "playerBody": unknown;  // playerBody
+    "playerSchema": unknown;  // playerSchema
 };
 
 /**
@@ -1442,8 +1479,8 @@ export type EndPlayerHitChangePointPayload = {
  * - Emitted at: lib/world/server/collisions-manager.js:L269
  */
 export type EndPlayerHitObjectBeginPayload = {
-    "otherBody": unknown;
-    "playerBody": unknown;
+    "otherBody": unknown;  // otherBody
+    "playerBody": unknown;  // playerBody
 };
 
 /**
@@ -1454,8 +1491,8 @@ export type EndPlayerHitObjectBeginPayload = {
  * - Emitted at: lib/world/server/collisions-manager.js:L319
  */
 export type EndPlayerHitWallEndPayload = {
-    "playerBody": unknown;
-    "wallBody": unknown;
+    "playerBody": unknown;  // playerBody
+    "wallBody": unknown;  // wallBody
 };
 
 /**
@@ -1467,7 +1504,7 @@ export type EndPlayerHitWallEndPayload = {
  */
 export type EventBuildSideBarBeforePayload = {
     "adminManager": unknown;
-    "navigationContents": unknown;
+    "navigationContents": unknown;  // navigationContents
 };
 
 /**
@@ -1478,8 +1515,8 @@ export type EventBuildSideBarBeforePayload = {
  * - Emitted at: lib/features/server/manager.js:L89
  */
 export type FeaturesManagerLoadFeaturesAfterPayload = {
-    "featuresCollection": unknown;
-    "featuresManager": unknown;
+    "featuresCollection": unknown;  // featuresCollection
+    "featuresManager": FeaturesManager;  // this
 };
 
 /**
@@ -1490,13 +1527,13 @@ export type FeaturesManagerLoadFeaturesAfterPayload = {
  * - Emitted at: lib/template-engine/forms-transformer.js:L74
  */
 export type FormsTransformerAfterRenderPayload = {
-    "domain": unknown;
-    "enhancedData": unknown;
-    "formConfig": unknown;
-    "formContent": unknown;
-    "formKey": unknown;
-    "req": unknown;
-    "systemVariables": unknown;
+    "domain": unknown;  // domain
+    "enhancedData": unknown;  // enhancedData
+    "formConfig": unknown;  // formConfig
+    "formContent": unknown;  // formContent
+    "formKey": unknown;  // formKey
+    "req": ExpressRequest;  // req
+    "systemVariables": unknown;  // systemVariables
 };
 
 /**
@@ -1507,14 +1544,14 @@ export type FormsTransformerAfterRenderPayload = {
  * - Emitted at: lib/template-engine/forms-transformer.js:L52
  */
 export type FormsTransformerBeforeRenderPayload = {
-    "domain": unknown;
-    "enhancedData": unknown;
-    "fieldsToRender": unknown;
-    "formAttributes": unknown;
-    "formConfig": unknown;
-    "formKey": unknown;
-    "req": unknown;
-    "systemVariables": unknown;
+    "domain": unknown;  // domain
+    "enhancedData": unknown;  // enhancedData
+    "fieldsToRender": unknown;  // fieldsToRender
+    "formAttributes": unknown;  // tag.attributes
+    "formConfig": unknown;  // formConfig
+    "formKey": unknown;  // formKey
+    "req": ExpressRequest;  // req
+    "systemVariables": unknown;  // systemVariables
 };
 
 /**
@@ -1579,12 +1616,12 @@ export type GameRoomErrorPayload = [self: unknown];
  * - Emitted at: lib/world/server/collisions-manager.js:L344
  */
 export type GuestInvalidChangePointPayload = {
-    "changePoint": unknown;
-    "collisionsManager": unknown;
-    "contactClient": unknown;
-    "isGuest": unknown;
-    "playerBody": unknown;
-    "playerSchema": unknown;
+    "changePoint": unknown;  // changePoint
+    "collisionsManager": CollisionsManager;  // this
+    "contactClient": unknown;  // contactClient
+    "isGuest": boolean;  // isGuest
+    "playerBody": unknown;  // playerBody
+    "playerSchema": unknown;  // playerSchema
 };
 
 /**
@@ -1749,10 +1786,10 @@ export type LoginSuccessPayload = [self: unknown, user: unknown, userData: unkno
  * - Emitted at: lib/manager.js:L563
  */
 export type ManagerInitializeAdminManagerPayload = {
-    "adminFilesContents": unknown;
-    "authenticationCallback": unknown;
-    "manager": unknown;
-    "translations": unknown;
+    "adminFilesContents": unknown;  // adminFilesContents
+    "authenticationCallback": unknown;  // authenticationCallback
+    "manager": unknown;  // this
+    "translations": unknown;  // translations
 };
 
 /**
@@ -1763,9 +1800,9 @@ export type ManagerInitializeAdminManagerPayload = {
  * - Emitted at: lib/objects/client/plugin.js:L205
  */
 export type ObjectBodyChangePayload = {
-    "body": unknown;
-    "changes": unknown;
-    "key": unknown;
+    "body": PhysicalBody;  // body
+    "changes": unknown;  // {[propertyKey]: newValue}
+    "key": string;  // key
 };
 
 /**
@@ -1776,8 +1813,8 @@ export type ObjectBodyChangePayload = {
  * - Emitted at: lib/objects/client/plugin.js:L284, lib/objects/client/plugin.js:L300
  */
 export type ObjectBodyChangedPayload = {
-    "body": unknown;
-    "key": unknown;
+    "body": PhysicalBody;  // body
+    "key": string;  // key
 };
 
 /**
@@ -1788,8 +1825,8 @@ export type ObjectBodyChangedPayload = {
  * - Emitted at: lib/world/server/collisions-manager.js:L412
  */
 export type ObjectHitObjectEndPayload = {
-    "bodyA": unknown;
-    "bodyB": unknown;
+    "bodyA": unknown;  // bodyA
+    "bodyB": unknown;  // bodyB
 };
 
 /**
@@ -1800,9 +1837,9 @@ export type ObjectHitObjectEndPayload = {
  * - Emitted at: lib/world/server/collisions-manager.js:L424
  */
 export type ObjectHitWallBeginPayload = {
-    "continue": unknown;
-    "objectBody": unknown;
-    "wall": unknown;
+    "continue": boolean;  // true
+    "objectBody": unknown;  // objectBody
+    "wall": unknown;  // wall
 };
 
 /**
@@ -1822,9 +1859,9 @@ export type OnJoinRoomGamePayload = [client: unknown, options: unknown, userMode
  * - Emitted at: lib/users/client/plugin.js:L322
  */
 export type OnPreparePlayerCreationFormSubmitPayload = {
-    "form": unknown;
-    "gameManager": unknown;
-    "usersPlugin": unknown;
+    "form": HTMLFormElement;  // form
+    "gameManager": GameManager;  // gameManager
+    "usersPlugin": UsersPlugin;  // this
 };
 
 /**
@@ -1835,11 +1872,11 @@ export type OnPreparePlayerCreationFormSubmitPayload = {
  * - Emitted at: lib/users/client/plugin.js:L265
  */
 export type OnPreparePlayerSelectorFormSubmitPayload = {
-    "form": unknown;
-    "gameManager": unknown;
-    "select": unknown;
-    "selectedPlayer": unknown;
-    "usersPlugin": unknown;
+    "form": HTMLFormElement;  // form
+    "gameManager": GameManager;  // gameManager
+    "select": HTMLSelectElement;  // select
+    "selectedPlayer": unknown;  // selectedPlayer
+    "usersPlugin": UsersPlugin;  // this
 };
 
 /**
@@ -1850,11 +1887,11 @@ export type OnPreparePlayerSelectorFormSubmitPayload = {
  * - Emitted at: lib/users/client/plugin.js:L196
  */
 export type OnPrepareSinglePlayerSelectorFormSubmitPayload = {
-    "form": unknown;
-    "gameManager": unknown;
-    "player": unknown;
-    "selectElement": unknown;
-    "usersPlugin": unknown;
+    "form": HTMLFormElement;  // form
+    "gameManager": GameManager;  // gameManager
+    "player": unknown;  // player
+    "selectElement": HTMLInputElement;  // selectElement
+    "usersPlugin": UsersPlugin;  // this
 };
 
 /**
@@ -1865,9 +1902,9 @@ export type OnPrepareSinglePlayerSelectorFormSubmitPayload = {
  * - Emitted at: lib/rooms/server/login.js:L298
  */
 export type OnRoomDisposePayload = {
-    "result": unknown;
-    "roomId": unknown;
-    "roomName": unknown;
+    "result": string;  // result
+    "roomId": unknown;  // this.roomId
+    "roomName": unknown;  // this.roomName
 };
 
 /**
@@ -1878,11 +1915,11 @@ export type OnRoomDisposePayload = {
  * - Emitted at: lib/rooms/server/scene.js:L719
  */
 export type OnSavePlayerStateBeforePayload = {
-    "playerId": unknown;
-    "playerSchema": unknown;
-    "room": unknown;
-    "updatePatch": unknown;
-    "updateReady": unknown;
+    "playerId": unknown;  // playerId
+    "playerSchema": unknown;  // playerSchema
+    "room": RoomScene;  // this
+    "updatePatch": unknown;  // updatePatch
+    "updateReady": unknown;  // updateReady
 };
 
 /**
@@ -1893,10 +1930,10 @@ export type OnSavePlayerStateBeforePayload = {
  * - Emitted at: lib/rooms/server/scene.js:L748
  */
 export type OnSavePlayerStatsBeforePayload = {
-    "client": unknown;
-    "objectState": unknown;
-    "playerSchema": unknown;
-    "room": unknown;
+    "client": Client;  // client
+    "objectState": unknown;  // objectState
+    "playerSchema": unknown;  // playerSchema
+    "room": RoomScene;  // this
 };
 
 /**
@@ -1907,13 +1944,13 @@ export type OnSavePlayerStatsBeforePayload = {
  * - Emitted at: lib/chat/client/chat-ui.js:L156, lib/game/client/user-interface.js:L155, lib/game/client/ui-factory.js:L56, lib/game/client/settings-ui.js:L51, lib/game/client/instructions-ui.js:L44, lib/game/client/minimap-ui.js:L77, lib/users/client/player-stats-ui.js:L49
  */
 export type OpenUIPayload = {
-    "openButton": unknown;
-    "ui": unknown;
+    "openButton": unknown;  // this.chatOpenButton
+    "ui": ChatUi;  // this
     "box"?: unknown;
-    "dialogBox"?: unknown;
-    "dialogContainer"?: unknown;
+    "dialogBox"?: unknown;  // this.uiChat
+    "dialogContainer"?: unknown;  // this.uiChat.getChildByProperty('id', ChatConst.CHAT_UI)
     "minimap"?: unknown;
-    "uiScene"?: unknown;
+    "uiScene"?: unknown;  // this.uiScene
 };
 
 /**
@@ -1924,8 +1961,8 @@ export type OpenUIPayload = {
  * - Emitted at: lib/world/server/p2world.js:L245
  */
 export type ParsingMapLayerAfterPayload = {
-    "layer": unknown;
-    "world": unknown;
+    "layer": unknown;  // layer
+    "world": P2world;  // this
 };
 
 /**
@@ -1936,8 +1973,8 @@ export type ParsingMapLayerAfterPayload = {
  * - Emitted at: lib/world/server/p2world.js:L243
  */
 export type ParsingMapLayerBeforePayload = {
-    "layer": unknown;
-    "world": unknown;
+    "layer": unknown;  // layer
+    "world": P2world;  // this
 };
 
 /**
@@ -1948,8 +1985,8 @@ export type ParsingMapLayerBeforePayload = {
  * - Emitted at: lib/world/server/p2world.js:L254
  */
 export type ParsingMapLayersAfterBodiesQueuePayload = {
-    "layer": unknown;
-    "world": unknown;
+    "layer": unknown;  // layer
+    "world": P2world;  // this
 };
 
 /**
@@ -1993,8 +2030,8 @@ export type PlayerEngineAddPlayerPayload = [self: unknown, id: unknown, addPlaye
  * - Emitted at: lib/world/server/collisions-manager.js:L281
  */
 export type PlayerHitObjectEndPayload = {
-    "playerBody": unknown;
-    "result": unknown;
+    "playerBody": unknown;  // playerBody
+    "result": string;  // result
 };
 
 /**
@@ -2005,8 +2042,8 @@ export type PlayerHitObjectEndPayload = {
  * - Emitted at: lib/world/server/collisions-manager.js:L237
  */
 export type PlayerHitPlayerPayload = {
-    "bodyA": unknown;
-    "bodyB": unknown;
+    "bodyA": unknown;  // bodyA
+    "bodyB": unknown;  // bodyB
 };
 
 /**
@@ -2017,8 +2054,8 @@ export type PlayerHitPlayerPayload = {
  * - Emitted at: lib/world/server/collisions-manager.js:L251
  */
 export type PlayerHitPlayerEndPayload = {
-    "bodyA": unknown;
-    "bodyB": unknown;
+    "bodyA": unknown;  // bodyA
+    "bodyB": unknown;  // bodyB
 };
 
 /**
@@ -2029,8 +2066,8 @@ export type PlayerHitPlayerEndPayload = {
  * - Emitted at: lib/world/server/collisions-manager.js:L296
  */
 export type PlayerHitWallBeginPayload = {
-    "playerBody": unknown;
-    "wallBody": unknown;
+    "playerBody": unknown;  // playerBody
+    "wallBody": unknown;  // wallBody
 };
 
 /**
@@ -2041,8 +2078,8 @@ export type PlayerHitWallBeginPayload = {
  * - Emitted at: lib/game/client/room-events.js:L589
  */
 export type PlayerLeftScenePayload = {
-    "code": unknown;
-    "roomEvents": unknown;
+    "code": number;  // code
+    "roomEvents": RoomEvents;  // this
 };
 
 /**
@@ -2125,9 +2162,9 @@ export type PlayersOnAddPayload = [player: unknown, key: unknown, previousScene:
  * - Emitted at: lib/game/client/room-events.js:L875
  */
 export type PlayersOnAddReadyPayload = {
-    "player": unknown;
-    "previousScene": unknown;
-    "roomEvents": unknown;
+    "player": unknown;  // currentScene.player
+    "previousScene": string|boolean;  // previousScene
+    "roomEvents": RoomEvents;  // this
 };
 
 /**
@@ -2201,9 +2238,9 @@ export type RegistrationInvalidParamsPayload = [self: unknown, user: unknown, us
  * - Emitted at: lib/rooms/server/scene.js:L662
  */
 export type RemovePlayerBeforePayload = {
-    "playerSchema": unknown;
-    "room": unknown;
-    "stateObject": unknown;
+    "playerSchema": unknown;  // playerSchema
+    "room": RoomScene;  // this
+    "stateObject": unknown;  // stateObject
 };
 
 /**
@@ -2214,8 +2251,8 @@ export type RemovePlayerBeforePayload = {
  * - Emitted at: lib/objects/server/object/type/enemy-object.js:L396
  */
 export type RestoreObjectAfterPayload = {
-    "enemyObject": unknown;
-    "room": unknown;
+    "enemyObject": EnemyObject;  // this
+    "room": RoomScene;  // room
 };
 
 /**
@@ -2229,12 +2266,12 @@ export type RestoreObjectAfterPayload = {
  * - Emitted at: lib/rooms/server/login.js:L94
  */
 export type RoomLoginOnAuthPayload = {
-    "client": unknown;
-    "loginResult": unknown;
-    "options": unknown;
-    "request": unknown;
-    "result": unknown;
-    "roomLogin": unknown;
+    "client": Client;  // client
+    "loginResult": unknown;  // loginResult
+    "options": unknown;  // options
+    "request": unknown;  // request
+    "result": string;  // result
+    "roomLogin": RoomLogin;  // this
 };
 
 /**
@@ -2245,8 +2282,8 @@ export type RoomLoginOnAuthPayload = {
  * - Emitted at: lib/rooms/server/login.js:L58
  */
 export type RoomLoginOnCreatePayload = {
-    "options": unknown;
-    "roomLogin": unknown;
+    "options": unknown;  // options
+    "roomLogin": RoomLogin;  // this
 };
 
 /**
@@ -2284,10 +2321,10 @@ export type RoomsMessageActionsGlobalPayload = Record<string, unknown>;
  * - Emitted at: lib/actions/server/pve.js:L82
  */
 export type RunBattlePveAfterPayload = {
-    "attackResult": unknown;
-    "playerSchema": unknown;
-    "roomScene": unknown;
-    "target": unknown;
+    "attackResult": unknown;  // attackResult
+    "playerSchema": Player;  // playerSchema
+    "roomScene": RoomScene;  // roomScene
+    "target": Player;  // target
 };
 
 /**
@@ -2298,9 +2335,9 @@ export type RunBattlePveAfterPayload = {
  * - Emitted at: lib/game/client/room-events.js:L510
  */
 export type RunGameOverPayload = {
-    "defaultBehavior": unknown;
-    "message": unknown;
-    "roomEvents": unknown;
+    "defaultBehavior": unknown;  // defaultBehavior
+    "message": unknown;  // message
+    "roomEvents": RoomEvents;  // this
 };
 
 /**
@@ -2338,7 +2375,7 @@ export type SceneRoomOnCreatePayload = [self: unknown];
  * - Emitted at: lib/game/server/manager.js:L413
  */
 export type ServerBeforeDefineRoomsPayload = {
-    "serverManager": unknown;
+    "serverManager": ServerManager;  // this
 };
 
 /**
@@ -2349,7 +2386,7 @@ export type ServerBeforeDefineRoomsPayload = {
  * - Emitted at: lib/game/server/manager.js:L275
  */
 export type ServerBeforeListenPayload = {
-    "serverManager": unknown;
+    "serverManager": ServerManager;  // this
 };
 
 /**
@@ -2360,7 +2397,7 @@ export type ServerBeforeListenPayload = {
  * - Emitted at: lib/game/server/manager.js:L447
  */
 export type ServerBeforeLoginManagerPayload = {
-    "serverManager": unknown;
+    "serverManager": ServerManager;  // this
 };
 
 /**
@@ -2371,8 +2408,8 @@ export type ServerBeforeLoginManagerPayload = {
  * - Emitted at: lib/game/server/manager.js:L471
  */
 export type ServerConfigFeaturesReadyPayload = {
-    "configProcessor": unknown;
-    "serverManager": unknown;
+    "configProcessor": ConfigManager;  // this.configManager
+    "serverManager": ServerManager;  // this
 };
 
 /**
@@ -2383,8 +2420,8 @@ export type ServerConfigFeaturesReadyPayload = {
  * - Emitted at: lib/game/server/manager.js:L506
  */
 export type ServerConfigReadyPayload = {
-    "configProcessor": unknown;
-    "serverManager": unknown;
+    "configProcessor": ConfigManager;  // this.configManager
+    "serverManager": ServerManager;  // this
 };
 
 /**
@@ -2395,7 +2432,7 @@ export type ServerConfigReadyPayload = {
  * - Emitted at: lib/game/server/manager.js:L280
  */
 export type ServerReadyPayload = {
-    "serverManager": unknown;
+    "serverManager": ServerManager;  // this
 };
 
 /**
@@ -2406,9 +2443,9 @@ export type ServerReadyPayload = {
  * - Emitted at: lib/audio/client/manager.js:L80
  */
 export type SetAudioPayload = {
-    "audioManager": unknown;
-    "categoryKey": unknown;
-    "enabled": unknown;
+    "audioManager": AudioManager;  // this
+    "categoryKey": string;  // audioKey
+    "enabled": boolean;  // enabled
 };
 
 /**
@@ -2428,7 +2465,7 @@ export type SetSceneOnPlayersPayload = [self: unknown, user: unknown, userData: 
  * - Emitted at: lib/objects/server/object/type/enemy-object.js:L226
  */
 export type SetupActionsPayload = {
-    "enemyObject": unknown;
+    "enemyObject": EnemyObject;  // this
 };
 
 /**
@@ -2439,7 +2476,7 @@ export type SetupActionsPayload = {
  * - Emitted at: lib/admin-manager.js:L161
  */
 export type SetupAdminManagersPayload = {
-    "adminManager": unknown;
+    "adminManager": unknown;  // this
 };
 
 /**
@@ -2450,7 +2487,7 @@ export type SetupAdminManagersPayload = {
  * - Emitted at: lib/admin-manager.js:L157
  */
 export type SetupAdminRouterPayload = {
-    "adminManager": unknown;
+    "adminManager": unknown;  // this
 };
 
 /**
@@ -2461,7 +2498,7 @@ export type SetupAdminRouterPayload = {
  * - Emitted at: lib/admin-manager.js:L159
  */
 export type SetupAdminRoutesPayload = {
-    "adminManager": unknown;
+    "adminManager": unknown;  // this
 };
 
 /**
@@ -2473,9 +2510,9 @@ export type SetupAdminRoutesPayload = {
  */
 export type SetupEntitiesRoutesPayload = {
     "adminManager": unknown;
-    "driverResource": unknown;
-    "entityPath": unknown;
-    "entityRoute": unknown;
+    "driverResource": unknown;  // driverResource
+    "entityPath": unknown;  // entityPath
+    "entityRoute": string;  // entityRoute
 };
 
 /**
@@ -2486,8 +2523,8 @@ export type SetupEntitiesRoutesPayload = {
  * - Emitted at: lib/game/client/room-events.js:L452
  */
 export type StartChangedScenePayload = {
-    "message": unknown;
-    "roomEvents": unknown;
+    "message": unknown;  // message
+    "roomEvents": RoomEvents;  // this
 };
 
 /**
@@ -2525,8 +2562,8 @@ export type StartGameBeforePayload = [self: unknown];
  * - Emitted at: lib/world/server/collisions-manager.js:L381
  */
 export type StartObjectHitObjectPayload = {
-    "bodyA": unknown;
-    "bodyB": unknown;
+    "bodyA": unknown;  // bodyA
+    "bodyB": unknown;  // bodyB
 };
 
 /**
@@ -2537,7 +2574,7 @@ export type StartObjectHitObjectPayload = {
  * - Emitted at: lib/world/server/collisions-manager.js:L441
  */
 export type StartObjectHitWallPayload = {
-    "objectBody": unknown;
+    "objectBody": unknown;  // objectBody
 };
 
 /**
@@ -2548,9 +2585,9 @@ export type StartObjectHitWallPayload = {
  * - Emitted at: lib/world/server/collisions-manager.js:L330
  */
 export type StartPlayerHitChangePointPayload = {
-    "changePoint": unknown;
-    "collisionsManager": unknown;
-    "playerBody": unknown;
+    "changePoint": unknown;  // changePoint
+    "collisionsManager": CollisionsManager;  // this
+    "playerBody": unknown;  // playerBody
 };
 
 /**
@@ -2561,8 +2598,8 @@ export type StartPlayerHitChangePointPayload = {
  * - Emitted at: lib/world/server/collisions-manager.js:L262
  */
 export type StartPlayerHitObjectBeginPayload = {
-    "otherBody": unknown;
-    "playerBody": unknown;
+    "otherBody": unknown;  // otherBody
+    "playerBody": unknown;  // playerBody
 };
 
 /**
@@ -2573,8 +2610,8 @@ export type StartPlayerHitObjectBeginPayload = {
  * - Emitted at: lib/world/server/collisions-manager.js:L307
  */
 export type StartPlayerHitWallEndPayload = {
-    "playerBody": unknown;
-    "wallBody": unknown;
+    "playerBody": unknown;  // playerBody
+    "wallBody": unknown;  // wallBody
 };
 
 /**
@@ -2585,8 +2622,8 @@ export type StartPlayerHitWallEndPayload = {
  * - Emitted at: lib/teams/server/team-message-actions.js:L61
  */
 export type TeamJoinInviteRejectedPayload = {
-    "playerRejectingName": unknown;
-    "playerSendingInvite": unknown;
+    "playerRejectingName": unknown;  // playerRejectingName
+    "playerSendingInvite": unknown;  // playerSendingInvite
 };
 
 /**
@@ -2597,10 +2634,10 @@ export type TeamJoinInviteRejectedPayload = {
  * - Emitted at: lib/teams/server/message-actions/team-leave.js:L31
  */
 export type TeamLeavePayload = {
-    "data": unknown;
-    "playerSchema": unknown;
-    "room": unknown;
-    "teamsPlugin": unknown;
+    "data": unknown;  // data
+    "playerSchema": PlayerState;  // playerSchema
+    "room": RoomScene;  // room
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**
@@ -2611,15 +2648,15 @@ export type TeamLeavePayload = {
  * - Emitted at: lib/teams/server/message-actions/team-leave.js:L80
  */
 export type TeamLeaveBeforeSendUpdatePayload = {
-    "areLessPlayerThanRequired": unknown;
-    "currentTeam": unknown;
-    "isOwnerDisbanding": unknown;
-    "playerId": unknown;
-    "playerSchema": unknown;
-    "room": unknown;
-    "sendUpdate": unknown;
-    "singleRemoveId": unknown;
-    "teamsPlugin": unknown;
+    "areLessPlayerThanRequired": unknown;  // areLessPlayerThanRequired
+    "currentTeam": unknown;  // currentTeam
+    "isOwnerDisbanding": unknown;  // isOwnerDisbanding
+    "playerId": unknown;  // playerId
+    "playerSchema": PlayerState;  // playerSchema
+    "room": RoomScene;  // room
+    "sendUpdate": unknown;  // sendUpdate
+    "singleRemoveId": number|string|boolean;  // singleRemoveId
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**
@@ -2630,8 +2667,8 @@ export type TeamLeaveBeforeSendUpdatePayload = {
  * - Emitted at: lib/template-reloader.js:L213
  */
 export type TemplateReloaderTemplatesChangedPayload = {
-    "changedFiles": unknown;
-    "reloader": unknown;
+    "changedFiles": unknown;  // this.getChangedFiles()
+    "reloader": unknown;  // this
 };
 
 /**
@@ -2642,12 +2679,12 @@ export type TemplateReloaderTemplatesChangedPayload = {
  * - Emitted at: lib/teams/server/message-actions/try-clan-invite.js:L69
  */
 export type TryClanStartPayload = {
-    "client": unknown;
-    "continueStart": unknown;
-    "data": unknown;
-    "playerSchema": unknown;
-    "room": unknown;
-    "teamsPlugin": unknown;
+    "client": unknown;  // client
+    "continueStart": boolean;  // true
+    "data": unknown;  // data
+    "playerSchema": PlayerState;  // playerSchema
+    "room": RoomScene;  // room
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**
@@ -2658,12 +2695,12 @@ export type TryClanStartPayload = {
  * - Emitted at: lib/teams/server/message-actions/try-team-start.js:L47
  */
 export type TryTeamStartPayload = {
-    "client": unknown;
-    "continueStart": unknown;
-    "data": unknown;
-    "playerSchema": unknown;
-    "room": unknown;
-    "teamsPlugin": unknown;
+    "client": unknown;  // client
+    "continueStart": boolean;  // true
+    "data": unknown;  // data
+    "playerSchema": PlayerState;  // playerSchema
+    "room": RoomScene;  // room
+    "teamsPlugin": TeamsPlugin;  // teamsPlugin
 };
 
 /**

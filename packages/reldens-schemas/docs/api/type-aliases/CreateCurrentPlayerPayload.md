@@ -2,10 +2,10 @@
 
 ```ts
 type CreateCurrentPlayerPayload = {
-  key: unknown;
+  key: string;
   player: unknown;
-  previousScene: unknown;
-  roomEvents: unknown;
+  previousScene: string | boolean;
+  roomEvents: RoomEvents;
 };
 ```
 
@@ -20,7 +20,7 @@ type CreateCurrentPlayerPayload = {
 ### key
 
 ```ts
-key: unknown;
+key: string;
 ```
 
 ***
@@ -36,7 +36,7 @@ player: unknown;
 ### previousScene
 
 ```ts
-previousScene: unknown;
+previousScene: string | boolean;
 ```
 
 ***
@@ -44,5 +44,5 @@ previousScene: unknown;
 ### roomEvents
 
 ```ts
-roomEvents: unknown;
+roomEvents: RoomEvents;
 ```

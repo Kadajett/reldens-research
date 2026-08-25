@@ -2,7 +2,7 @@
 
 ```ts
 type ServerReadyPayload = {
-  serverManager: unknown;
+  serverManager: ServerManager;
 };
 ```
 
@@ -17,5 +17,5 @@ type ServerReadyPayload = {
 ### serverManager
 
 ```ts
-serverManager: unknown;
+serverManager: ServerManager;
 ```

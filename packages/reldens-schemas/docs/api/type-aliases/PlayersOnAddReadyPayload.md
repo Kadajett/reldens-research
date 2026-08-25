@@ -3,8 +3,8 @@
 ```ts
 type PlayersOnAddReadyPayload = {
   player: unknown;
-  previousScene: unknown;
-  roomEvents: unknown;
+  previousScene: string | boolean;
+  roomEvents: RoomEvents;
 };
 ```
 
@@ -27,7 +27,7 @@ player: unknown;
 ### previousScene
 
 ```ts
-previousScene: unknown;
+previousScene: string | boolean;
 ```
 
 ***
@@ -35,5 +35,5 @@ previousScene: unknown;
 ### roomEvents
 
 ```ts
-roomEvents: unknown;
+roomEvents: RoomEvents;
 ```

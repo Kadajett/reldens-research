@@ -2,10 +2,10 @@
 
 ```ts
 type DisconnectLoggedBeforePayload = {
-  client: unknown;
+  client: Client;
   player: unknown;
-  room: unknown;
-  userModel: unknown;
+  room: RoomScene;
+  userModel: UsersModel;
 };
 ```
 
@@ -20,7 +20,7 @@ type DisconnectLoggedBeforePayload = {
 ### client
 
 ```ts
-client: unknown;
+client: Client;
 ```
 
 ***
@@ -36,7 +36,7 @@ player: unknown;
 ### room
 
 ```ts
-room: unknown;
+room: RoomScene;
 ```
 
 ***
@@ -44,5 +44,5 @@ room: unknown;
 ### userModel
 
 ```ts
-userModel: unknown;
+userModel: UsersModel;
 ```

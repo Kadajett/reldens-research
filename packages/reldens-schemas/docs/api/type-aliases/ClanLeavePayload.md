@@ -3,8 +3,8 @@
 ```ts
 type ClanLeavePayload = {
   message: unknown;
-  playerSchema: unknown;
-  teamsPlugin: unknown;
+  playerSchema: PlayerState;
+  teamsPlugin: TeamsPlugin;
 };
 ```
 
@@ -27,7 +27,7 @@ message: unknown;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: PlayerState;
 ```
 
 ***
@@ -35,5 +35,5 @@ playerSchema: unknown;
 ### teamsPlugin
 
 ```ts
-teamsPlugin: unknown;
+teamsPlugin: TeamsPlugin;
 ```

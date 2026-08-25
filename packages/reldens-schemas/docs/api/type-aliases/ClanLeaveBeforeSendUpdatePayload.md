@@ -5,10 +5,10 @@ type ClanLeaveBeforeSendUpdatePayload = {
   currentClan: unknown;
   disbandClan: unknown;
   playerId: unknown;
-  playerSchema: unknown;
+  playerSchema: PlayerState;
   sendUpdate: unknown;
-  singleRemoveId: unknown;
-  teamsPlugin: unknown;
+  singleRemoveId: number | string;
+  teamsPlugin: TeamsPlugin;
 };
 ```
 
@@ -47,7 +47,7 @@ playerId: unknown;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: PlayerState;
 ```
 
 ***
@@ -63,7 +63,7 @@ sendUpdate: unknown;
 ### singleRemoveId
 
 ```ts
-singleRemoveId: unknown;
+singleRemoveId: number | string;
 ```
 
 ***
@@ -71,5 +71,5 @@ singleRemoveId: unknown;
 ### teamsPlugin
 
 ```ts
-teamsPlugin: unknown;
+teamsPlugin: TeamsPlugin;
 ```

@@ -2,9 +2,9 @@
 
 ```ts
 type CreatedUserInterfacePayload = {
-  gameManager: unknown;
+  gameManager: GameManager;
   id: unknown;
-  ObjectsPlugin: unknown;
+  ObjectsPlugin: ObjectsPlugin;
   userInterface: unknown;
 };
 ```
@@ -20,7 +20,7 @@ type CreatedUserInterfacePayload = {
 ### gameManager
 
 ```ts
-gameManager: unknown;
+gameManager: GameManager;
 ```
 
 ***
@@ -36,7 +36,7 @@ id: unknown;
 ### ObjectsPlugin
 
 ```ts
-ObjectsPlugin: unknown;
+ObjectsPlugin: ObjectsPlugin;
 ```
 
 ***

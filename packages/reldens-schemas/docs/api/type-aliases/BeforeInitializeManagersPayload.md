@@ -2,8 +2,8 @@
 
 ```ts
 type BeforeInitializeManagersPayload = {
-  continueProcess: unknown;
-  serverManager: unknown;
+  continueProcess: boolean;
+  serverManager: ServerManager;
 };
 ```
 
@@ -21,7 +21,7 @@ The registration deadline for server custom classes. RoomsManager reads server/c
 ### continueProcess
 
 ```ts
-continueProcess: unknown;
+continueProcess: boolean;
 ```
 
 ***
@@ -29,5 +29,5 @@ continueProcess: unknown;
 ### serverManager
 
 ```ts
-serverManager: unknown;
+serverManager: ServerManager;
 ```

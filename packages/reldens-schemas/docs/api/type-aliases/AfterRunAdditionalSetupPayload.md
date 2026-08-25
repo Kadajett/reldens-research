@@ -4,7 +4,7 @@
 type AfterRunAdditionalSetupPayload = {
   objectData: unknown;
   objectInstance: unknown;
-  objectsManager: unknown;
+  objectsManager: ObjectsManager;
 };
 ```
 
@@ -35,5 +35,5 @@ objectInstance: unknown;
 ### objectsManager
 
 ```ts
-objectsManager: unknown;
+objectsManager: ObjectsManager;
 ```

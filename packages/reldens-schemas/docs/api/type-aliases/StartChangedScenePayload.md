@@ -3,7 +3,7 @@
 ```ts
 type StartChangedScenePayload = {
   message: unknown;
-  roomEvents: unknown;
+  roomEvents: RoomEvents;
 };
 ```
 
@@ -26,5 +26,5 @@ message: unknown;
 ### roomEvents
 
 ```ts
-roomEvents: unknown;
+roomEvents: RoomEvents;
 ```

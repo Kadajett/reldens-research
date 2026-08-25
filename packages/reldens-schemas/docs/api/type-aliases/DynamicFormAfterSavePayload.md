@@ -4,7 +4,7 @@
 type DynamicFormAfterSavePayload = {
   formConfig: unknown;
   preparedValues: unknown;
-  result: unknown;
+  result: string;
 };
 ```
 
@@ -35,5 +35,5 @@ preparedValues: unknown;
 ### result
 
 ```ts
-result: unknown;
+result: string;
 ```

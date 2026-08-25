@@ -2,8 +2,8 @@
 
 ```ts
 type ServerConfigReadyPayload = {
-  configProcessor: unknown;
-  serverManager: unknown;
+  configProcessor: ConfigManager;
+  serverManager: ServerManager;
 };
 ```
 
@@ -18,7 +18,7 @@ type ServerConfigReadyPayload = {
 ### configProcessor
 
 ```ts
-configProcessor: unknown;
+configProcessor: ConfigManager;
 ```
 
 ***
@@ -26,5 +26,5 @@ configProcessor: unknown;
 ### serverManager
 
 ```ts
-serverManager: unknown;
+serverManager: ServerManager;
 ```

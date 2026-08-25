@@ -2,7 +2,7 @@
 
 ```ts
 type OnRoomDisposePayload = {
-  result: unknown;
+  result: string;
   roomId: unknown;
   roomName: unknown;
 };
@@ -19,7 +19,7 @@ type OnRoomDisposePayload = {
 ### result
 
 ```ts
-result: unknown;
+result: string;
 ```
 
 ***

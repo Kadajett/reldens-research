@@ -2,11 +2,11 @@
 
 ```ts
 type BeforeSceneExecuteMessagesPayload = {
-  canContinue: unknown;
-  client: unknown;
+  canContinue: boolean;
+  client: Client;
   messageData: unknown;
   playerSchema: unknown;
-  room: unknown;
+  room: RoomScene;
 };
 ```
 
@@ -21,7 +21,7 @@ type BeforeSceneExecuteMessagesPayload = {
 ### canContinue
 
 ```ts
-canContinue: unknown;
+canContinue: boolean;
 ```
 
 ***
@@ -29,7 +29,7 @@ canContinue: unknown;
 ### client
 
 ```ts
-client: unknown;
+client: Client;
 ```
 
 ***
@@ -53,5 +53,5 @@ playerSchema: unknown;
 ### room
 
 ```ts
-room: unknown;
+room: RoomScene;
 ```

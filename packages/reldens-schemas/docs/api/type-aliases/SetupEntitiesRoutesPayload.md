@@ -5,7 +5,7 @@ type SetupEntitiesRoutesPayload = {
   adminManager: unknown;
   driverResource: unknown;
   entityPath: unknown;
-  entityRoute: unknown;
+  entityRoute: string;
 };
 ```
 
@@ -44,5 +44,5 @@ entityPath: unknown;
 ### entityRoute
 
 ```ts
-entityRoute: unknown;
+entityRoute: string;
 ```

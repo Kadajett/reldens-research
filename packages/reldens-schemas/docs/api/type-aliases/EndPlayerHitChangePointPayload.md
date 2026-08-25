@@ -4,7 +4,7 @@
 type EndPlayerHitChangePointPayload = {
   changeData: unknown;
   changePoint: unknown;
-  collisionsManager: unknown;
+  collisionsManager: CollisionsManager;
   playerBody: unknown;
   playerSchema: unknown;
 };
@@ -37,7 +37,7 @@ changePoint: unknown;
 ### collisionsManager
 
 ```ts
-collisionsManager: unknown;
+collisionsManager: CollisionsManager;
 ```
 
 ***

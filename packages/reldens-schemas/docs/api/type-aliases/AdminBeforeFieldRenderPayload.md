@@ -7,10 +7,10 @@ type AdminBeforeFieldRenderPayload = {
   adminManager: unknown;
   driverResource: unknown;
   loadedEntity: unknown;
-  property: unknown;
-  propertyKey: unknown;
+  property: string;
+  propertyKey: string;
   renderedEditProperties: unknown;
-  req: unknown;
+  req: ExpressRequest;
   templateData: unknown;
 };
 ```
@@ -66,7 +66,7 @@ loadedEntity: unknown;
 ### property
 
 ```ts
-property: unknown;
+property: string;
 ```
 
 ***
@@ -74,7 +74,7 @@ property: unknown;
 ### propertyKey
 
 ```ts
-propertyKey: unknown;
+propertyKey: string;
 ```
 
 ***
@@ -90,7 +90,7 @@ renderedEditProperties: unknown;
 ### req
 
 ```ts
-req: unknown;
+req: ExpressRequest;
 ```
 
 ***

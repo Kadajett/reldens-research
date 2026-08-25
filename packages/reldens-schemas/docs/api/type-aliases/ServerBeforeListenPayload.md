@@ -2,7 +2,7 @@
 
 ```ts
 type ServerBeforeListenPayload = {
-  serverManager: unknown;
+  serverManager: ServerManager;
 };
 ```
 
@@ -17,5 +17,5 @@ type ServerBeforeListenPayload = {
 ### serverManager
 
 ```ts
-serverManager: unknown;
+serverManager: ServerManager;
 ```

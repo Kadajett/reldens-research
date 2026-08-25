@@ -4,8 +4,8 @@
 type DynamicFormRequestHandlerAfterSavePayload = {
   formConfig: unknown;
   formKey: unknown;
-  req: unknown;
-  res: unknown;
+  req: ExpressRequest;
+  res: ExpressResponse;
   submissionResult: unknown;
 };
 ```
@@ -37,7 +37,7 @@ formKey: unknown;
 ### req
 
 ```ts
-req: unknown;
+req: ExpressRequest;
 ```
 
 ***
@@ -45,7 +45,7 @@ req: unknown;
 ### res
 
 ```ts
-res: unknown;
+res: ExpressResponse;
 ```
 
 ***

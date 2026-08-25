@@ -2,7 +2,7 @@
 
 ```ts
 type SetupActionsPayload = {
-  enemyObject: unknown;
+  enemyObject: EnemyObject;
 };
 ```
 
@@ -17,5 +17,5 @@ type SetupActionsPayload = {
 ### enemyObject
 
 ```ts
-enemyObject: unknown;
+enemyObject: EnemyObject;
 ```

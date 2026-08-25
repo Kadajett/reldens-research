@@ -3,7 +3,7 @@
 ```ts
 type AfterPlayerJoinedClanPayload = {
   clan: unknown;
-  playerJoining: unknown;
+  playerJoining: PlayerState;
 };
 ```
 
@@ -26,5 +26,5 @@ clan: unknown;
 ### playerJoining
 
 ```ts
-playerJoining: unknown;
+playerJoining: PlayerState;
 ```

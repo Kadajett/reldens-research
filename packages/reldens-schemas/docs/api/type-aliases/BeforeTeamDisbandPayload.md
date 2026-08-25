@@ -2,12 +2,12 @@
 
 ```ts
 type BeforeTeamDisbandPayload = {
-  continueDisband?: unknown;
+  continueDisband?: boolean;
   continueLeave?: unknown;
-  playerSchema: unknown;
-  room: unknown;
-  singleRemoveId: unknown;
-  teamsPlugin: unknown;
+  playerSchema: PlayerState;
+  room: RoomScene;
+  singleRemoveId: number | string | boolean;
+  teamsPlugin: TeamsPlugin;
 };
 ```
 
@@ -22,7 +22,7 @@ type BeforeTeamDisbandPayload = {
 ### continueDisband?
 
 ```ts
-optional continueDisband?: unknown;
+optional continueDisband?: boolean;
 ```
 
 ***
@@ -38,7 +38,7 @@ optional continueLeave?: unknown;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: PlayerState;
 ```
 
 ***
@@ -46,7 +46,7 @@ playerSchema: unknown;
 ### room
 
 ```ts
-room: unknown;
+room: RoomScene;
 ```
 
 ***
@@ -54,7 +54,7 @@ room: unknown;
 ### singleRemoveId
 
 ```ts
-singleRemoveId: unknown;
+singleRemoveId: number | string | boolean;
 ```
 
 ***
@@ -62,5 +62,5 @@ singleRemoveId: unknown;
 ### teamsPlugin
 
 ```ts
-teamsPlugin: unknown;
+teamsPlugin: TeamsPlugin;
 ```

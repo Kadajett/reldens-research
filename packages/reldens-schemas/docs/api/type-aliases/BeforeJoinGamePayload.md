@@ -3,8 +3,8 @@
 ```ts
 type BeforeJoinGamePayload = {
   formData: unknown;
-  gameManager: unknown;
-  isNewUser: unknown;
+  gameManager: GameManager;
+  isNewUser: boolean;
 };
 ```
 
@@ -30,7 +30,7 @@ formData: unknown;
 ### gameManager
 
 ```ts
-gameManager: unknown;
+gameManager: GameManager;
 ```
 
 ***
@@ -38,5 +38,5 @@ gameManager: unknown;
 ### isNewUser
 
 ```ts
-isNewUser: unknown;
+isNewUser: boolean;
 ```

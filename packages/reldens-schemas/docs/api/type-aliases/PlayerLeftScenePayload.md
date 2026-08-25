@@ -2,8 +2,8 @@
 
 ```ts
 type PlayerLeftScenePayload = {
-  code: unknown;
-  roomEvents: unknown;
+  code: number;
+  roomEvents: RoomEvents;
 };
 ```
 
@@ -18,7 +18,7 @@ type PlayerLeftScenePayload = {
 ### code
 
 ```ts
-code: unknown;
+code: number;
 ```
 
 ***
@@ -26,5 +26,5 @@ code: unknown;
 ### roomEvents
 
 ```ts
-roomEvents: unknown;
+roomEvents: RoomEvents;
 ```

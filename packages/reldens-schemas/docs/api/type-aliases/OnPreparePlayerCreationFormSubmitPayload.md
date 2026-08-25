@@ -2,9 +2,9 @@
 
 ```ts
 type OnPreparePlayerCreationFormSubmitPayload = {
-  form: unknown;
-  gameManager: unknown;
-  usersPlugin: unknown;
+  form: HTMLFormElement;
+  gameManager: GameManager;
+  usersPlugin: UsersPlugin;
 };
 ```
 
@@ -19,7 +19,7 @@ type OnPreparePlayerCreationFormSubmitPayload = {
 ### form
 
 ```ts
-form: unknown;
+form: HTMLFormElement;
 ```
 
 ***
@@ -27,7 +27,7 @@ form: unknown;
 ### gameManager
 
 ```ts
-gameManager: unknown;
+gameManager: GameManager;
 ```
 
 ***
@@ -35,5 +35,5 @@ gameManager: unknown;
 ### usersPlugin
 
 ```ts
-usersPlugin: unknown;
+usersPlugin: UsersPlugin;
 ```

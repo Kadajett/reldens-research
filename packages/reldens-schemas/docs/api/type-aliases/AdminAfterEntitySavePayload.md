@@ -6,8 +6,8 @@ type AdminAfterEntitySavePayload = {
   driverResource: unknown;
   entityData: unknown;
   entityPath: unknown;
-  req: unknown;
-  res: unknown;
+  req: ExpressRequest;
+  res: ExpressResponse;
 };
 ```
 
@@ -54,7 +54,7 @@ entityPath: unknown;
 ### req
 
 ```ts
-req: unknown;
+req: ExpressRequest;
 ```
 
 ***
@@ -62,5 +62,5 @@ req: unknown;
 ### res
 
 ```ts
-res: unknown;
+res: ExpressResponse;
 ```

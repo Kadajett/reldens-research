@@ -2,7 +2,7 @@
 
 ```ts
 type CreateAnimationAfterPayload = {
-  animationEngine: unknown;
+  animationEngine: AnimationEngine;
 };
 ```
 
@@ -17,5 +17,5 @@ type CreateAnimationAfterPayload = {
 ### animationEngine
 
 ```ts
-animationEngine: unknown;
+animationEngine: AnimationEngine;
 ```

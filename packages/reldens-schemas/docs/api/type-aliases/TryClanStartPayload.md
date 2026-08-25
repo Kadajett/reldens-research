@@ -3,11 +3,11 @@
 ```ts
 type TryClanStartPayload = {
   client: unknown;
-  continueStart: unknown;
+  continueStart: boolean;
   data: unknown;
-  playerSchema: unknown;
-  room: unknown;
-  teamsPlugin: unknown;
+  playerSchema: PlayerState;
+  room: RoomScene;
+  teamsPlugin: TeamsPlugin;
 };
 ```
 
@@ -30,7 +30,7 @@ client: unknown;
 ### continueStart
 
 ```ts
-continueStart: unknown;
+continueStart: boolean;
 ```
 
 ***
@@ -46,7 +46,7 @@ data: unknown;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: PlayerState;
 ```
 
 ***
@@ -54,7 +54,7 @@ playerSchema: unknown;
 ### room
 
 ```ts
-room: unknown;
+room: RoomScene;
 ```
 
 ***
@@ -62,5 +62,5 @@ room: unknown;
 ### teamsPlugin
 
 ```ts
-teamsPlugin: unknown;
+teamsPlugin: TeamsPlugin;
 ```

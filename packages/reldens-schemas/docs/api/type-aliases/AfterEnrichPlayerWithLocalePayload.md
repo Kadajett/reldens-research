@@ -2,7 +2,7 @@
 
 ```ts
 type AfterEnrichPlayerWithLocalePayload = {
-  client: unknown;
+  client: Client;
   roomGame: unknown;
   superInitialGameData: unknown;
   userModel: unknown;
@@ -20,7 +20,7 @@ type AfterEnrichPlayerWithLocalePayload = {
 ### client
 
 ```ts
-client: unknown;
+client: Client;
 ```
 
 ***

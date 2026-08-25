@@ -3,7 +3,7 @@
 ```ts
 type BeforeRemovingDroppedRewardPayload = {
   client: unknown;
-  continueEvent: unknown;
+  continueEvent: boolean;
   playerSchema: unknown;
   room: unknown;
   roomObject: unknown;
@@ -29,7 +29,7 @@ client: unknown;
 ### continueEvent
 
 ```ts
-continueEvent: unknown;
+continueEvent: boolean;
 ```
 
 ***

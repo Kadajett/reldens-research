@@ -2,7 +2,7 @@
 
 ```ts
 type BeforeContentProcessPayload = {
-  content: unknown;
+  content: string;
   renderContext: unknown;
   variables: unknown;
 };
@@ -19,7 +19,7 @@ type BeforeContentProcessPayload = {
 ### content
 
 ```ts
-content: unknown;
+content: string;
 ```
 
 ***

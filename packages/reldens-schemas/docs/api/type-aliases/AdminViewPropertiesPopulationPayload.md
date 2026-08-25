@@ -7,7 +7,7 @@ type AdminViewPropertiesPopulationPayload = {
   idProperty: unknown;
   loadedEntity: unknown;
   renderedViewProperties: unknown;
-  req: unknown;
+  req: ExpressRequest;
 };
 ```
 
@@ -62,5 +62,5 @@ renderedViewProperties: unknown;
 ### req
 
 ```ts
-req: unknown;
+req: ExpressRequest;
 ```

@@ -2,7 +2,7 @@
 
 ```ts
 type AfterGiveRewardsPayload = {
-  itemRewards: unknown;
+  itemRewards: unknown[];
   playerSchema: unknown;
   targetObject: unknown;
   winningRewards: unknown;
@@ -20,7 +20,7 @@ type AfterGiveRewardsPayload = {
 ### itemRewards
 
 ```ts
-itemRewards: unknown;
+itemRewards: unknown[];
 ```
 
 ***

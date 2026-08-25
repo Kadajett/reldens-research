@@ -7,7 +7,7 @@ type FormsTransformerAfterRenderPayload = {
   formConfig: unknown;
   formContent: unknown;
   formKey: unknown;
-  req: unknown;
+  req: ExpressRequest;
   systemVariables: unknown;
 };
 ```
@@ -63,7 +63,7 @@ formKey: unknown;
 ### req
 
 ```ts
-req: unknown;
+req: ExpressRequest;
 ```
 
 ***

@@ -6,14 +6,14 @@ type CreatedWorldObjectPayload = {
   bodyObject: unknown;
   collision: unknown;
   hasState: unknown;
-  objectIndex: unknown;
-  p2world: unknown;
+  objectIndex: string;
+  p2world: P2world;
   pathFinder: unknown;
-  posX: unknown;
-  posY: unknown;
+  posX: number;
+  posY: number;
   roomObject: unknown;
-  tileH: unknown;
-  tileW: unknown;
+  tileH: number;
+  tileW: number;
 };
 ```
 
@@ -60,7 +60,7 @@ hasState: unknown;
 ### objectIndex
 
 ```ts
-objectIndex: unknown;
+objectIndex: string;
 ```
 
 ***
@@ -68,7 +68,7 @@ objectIndex: unknown;
 ### p2world
 
 ```ts
-p2world: unknown;
+p2world: P2world;
 ```
 
 ***
@@ -84,7 +84,7 @@ pathFinder: unknown;
 ### posX
 
 ```ts
-posX: unknown;
+posX: number;
 ```
 
 ***
@@ -92,7 +92,7 @@ posX: unknown;
 ### posY
 
 ```ts
-posY: unknown;
+posY: number;
 ```
 
 ***
@@ -108,7 +108,7 @@ roomObject: unknown;
 ### tileH
 
 ```ts
-tileH: unknown;
+tileH: number;
 ```
 
 ***
@@ -116,5 +116,5 @@ tileH: unknown;
 ### tileW
 
 ```ts
-tileW: unknown;
+tileW: number;
 ```

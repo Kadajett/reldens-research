@@ -8,7 +8,7 @@ type DynamicFormRendererAfterFieldsRenderPayload = {
   fieldsToRender: unknown;
   formConfig: unknown;
   formFields: unknown;
-  req: unknown;
+  req: ExpressRequest;
   systemVariables: unknown;
 };
 ```
@@ -72,7 +72,7 @@ formFields: unknown;
 ### req
 
 ```ts
-req: unknown;
+req: ExpressRequest;
 ```
 
 ***

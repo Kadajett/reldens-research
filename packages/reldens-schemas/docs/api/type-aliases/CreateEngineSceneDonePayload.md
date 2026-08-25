@@ -2,9 +2,9 @@
 
 ```ts
 type CreateEngineSceneDonePayload = {
-  currentScene: unknown;
-  previousScene: unknown;
-  roomEvents: unknown;
+  currentScene: SceneDynamic;
+  previousScene: string | boolean;
+  roomEvents: RoomEvents;
 };
 ```
 
@@ -19,7 +19,7 @@ type CreateEngineSceneDonePayload = {
 ### currentScene
 
 ```ts
-currentScene: unknown;
+currentScene: SceneDynamic;
 ```
 
 ***
@@ -27,7 +27,7 @@ currentScene: unknown;
 ### previousScene
 
 ```ts
-previousScene: unknown;
+previousScene: string | boolean;
 ```
 
 ***
@@ -35,5 +35,5 @@ previousScene: unknown;
 ### roomEvents
 
 ```ts
-roomEvents: unknown;
+roomEvents: RoomEvents;
 ```

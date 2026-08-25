@@ -4,7 +4,7 @@
 type OnSavePlayerStateBeforePayload = {
   playerId: unknown;
   playerSchema: unknown;
-  room: unknown;
+  room: RoomScene;
   updatePatch: unknown;
   updateReady: unknown;
 };
@@ -37,7 +37,7 @@ playerSchema: unknown;
 ### room
 
 ```ts
-room: unknown;
+room: RoomScene;
 ```
 
 ***

@@ -8,7 +8,7 @@ type CloseUIPayload = {
   dialogContainer?: unknown;
   minimap?: unknown;
   openButton?: unknown;
-  ui: unknown;
+  ui: ChatUi;
   uiScene?: unknown;
 };
 ```
@@ -72,7 +72,7 @@ optional openButton?: unknown;
 ### ui
 
 ```ts
-ui: unknown;
+ui: ChatUi;
 ```
 
 ***
