@@ -320,6 +320,79 @@
               "packages/reldens-items-types/docs/api/classes/RewardsCollection",
               "packages/reldens-items-types/docs/api/classes/RewardsProcessor"
             ]
+          },
+          {
+            "group": "Skills",
+            "pages": [
+              "packages/reldens-skills-types/docs/api/index",
+              "packages/reldens-skills-types/docs/api/classes/Attack",
+              "packages/reldens-skills-types/docs/api/classes/ClassPath",
+              "packages/reldens-skills-types/docs/api/classes/Effect",
+              "packages/reldens-skills-types/docs/api/classes/Level",
+              "packages/reldens-skills-types/docs/api/classes/LevelsSet",
+              "packages/reldens-skills-types/docs/api/classes/PhysicalAttack",
+              "packages/reldens-skills-types/docs/api/classes/PhysicalEffect",
+              "packages/reldens-skills-types/docs/api/classes/Receiver",
+              "packages/reldens-skills-types/docs/api/classes/Skill",
+              "packages/reldens-skills-types/docs/api/classes/SkillsServer"
+            ]
+          },
+          {
+            "group": "Modifiers",
+            "pages": [
+              "packages/reldens-modifiers-types/docs/api/index",
+              "packages/reldens-modifiers-types/docs/api/classes/Calculator",
+              "packages/reldens-modifiers-types/docs/api/classes/Condition",
+              "packages/reldens-modifiers-types/docs/api/classes/Modifier",
+              "packages/reldens-modifiers-types/docs/api/classes/PropertyManager"
+            ]
+          },
+          {
+            "group": "Storage",
+            "pages": [
+              "packages/reldens-storage-types/docs/api/index",
+              "packages/reldens-storage-types/docs/api/classes/BaseDataServer",
+              "packages/reldens-storage-types/docs/api/classes/BaseDriver",
+              "packages/reldens-storage-types/docs/api/classes/EntitiesGenerator",
+              "packages/reldens-storage-types/docs/api/classes/MikroOrmDataServer",
+              "packages/reldens-storage-types/docs/api/classes/MikroOrmDriver",
+              "packages/reldens-storage-types/docs/api/classes/MySQLTablesProvider",
+              "packages/reldens-storage-types/docs/api/classes/ObjectionJsDataServer",
+              "packages/reldens-storage-types/docs/api/classes/ObjectionJsDriver",
+              "packages/reldens-storage-types/docs/api/classes/PrismaClientLoader",
+              "packages/reldens-storage-types/docs/api/classes/PrismaDataServer",
+              "packages/reldens-storage-types/docs/api/classes/PrismaDriver",
+              "packages/reldens-storage-types/docs/api/classes/PrismaSchemaGenerator",
+              "packages/reldens-storage-types/docs/api/classes/TypeMapper"
+            ]
+          },
+          {
+            "group": "Utils",
+            "pages": [
+              "packages/reldens-utils-types/docs/api/index",
+              "packages/reldens-utils-types/docs/api/classes/EnvVar",
+              "packages/reldens-utils-types/docs/api/classes/ErrorManager",
+              "packages/reldens-utils-types/docs/api/classes/EventsManager",
+              "packages/reldens-utils-types/docs/api/classes/InteractionArea",
+              "packages/reldens-utils-types/docs/api/classes/Logger",
+              "packages/reldens-utils-types/docs/api/classes/PageRangeProvider",
+              "packages/reldens-utils-types/docs/api/classes/SchemaValidator",
+              "packages/reldens-utils-types/docs/api/classes/Shortcuts",
+              "packages/reldens-utils-types/docs/api/classes/ValidatorInterface"
+            ]
+          },
+          {
+            "group": "Server Utils",
+            "pages": [
+              "packages/reldens-server-utils-types/docs/api/index",
+              "packages/reldens-server-utils-types/docs/api/classes/AppServerFactory",
+              "packages/reldens-server-utils-types/docs/api/classes/Encryptor",
+              "packages/reldens-server-utils-types/docs/api/classes/FileHandler",
+              "packages/reldens-server-utils-types/docs/api/classes/Http2CdnServer",
+              "packages/reldens-server-utils-types/docs/api/classes/ServerDefaultConfigurations",
+              "packages/reldens-server-utils-types/docs/api/classes/ServerFactoryUtils",
+              "packages/reldens-server-utils-types/docs/api/classes/UploaderFactory"
+            ]
           }
         ]
       }

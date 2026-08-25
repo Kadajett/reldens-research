@@ -1,0 +1,35 @@
+{
+  "name": "@reldens-community/server-utils-types",
+  "version": "0.1.0",
+  "description": "Zod schemas and inferred TypeScript types for @reldens/server-utils - the Reldens server-side utilities (Express factory, file handling, uploads, encryption, HTTP2 CDN). Hand-written from the source and drift-tested against the installed package.",
+  "type": "commonjs",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "keywords": [
+    "reldens",
+    "server-utils",
+    "zod",
+    "types",
+    "inventory",
+    "trading",
+    "mmorpg"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.json",
+    "test": "tsx --test test/*.test.ts",
+    "docs:api": "typedoc"
+  },
+  "peerDependencies": {
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@reldens/server-utils": "0.46.0",
+    "zod": "^4.4.3"
+  },
+  "reldens": {
+    "typesFor": "@reldens/server-utils",
+    "verifiedAgainst": "0.46.0"
+  }
+}

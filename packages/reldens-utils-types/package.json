@@ -1,18 +1,18 @@
 {
-  "name": "@reldens-community/storage-types",
+  "name": "@reldens-community/utils-types",
   "version": "0.1.0",
-  "description": "Zod schemas and inferred TypeScript types for @reldens/storage - the Reldens storage layer (Objection.js / MikroORM / Prisma). Hand-written from the source and drift-tested against the installed package.",
+  "description": "Zod schemas and inferred TypeScript types for @reldens/utils - the Reldens cross-cutting utilities (events, logging, validation, helpers). Hand-written from the source and drift-tested against the installed package.",
   "type": "commonjs",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "keywords": [
     "reldens",
-    "storage",
+    "utils",
     "zod",
     "types",
-    "storage",
-    "database",
-    "orm"
+    "inventory",
+    "trading",
+    "mmorpg"
   ],
   "license": "MIT",
   "scripts": {
@@ -25,11 +25,11 @@
     "zod": "^4.0.0"
   },
   "devDependencies": {
-    "@reldens/storage": "0.91.0",
+    "@reldens/utils": "0.54.0",
     "zod": "^4.4.3"
   },
   "reldens": {
-    "typesFor": "@reldens/storage",
-    "verifiedAgainst": "0.91.0"
+    "typesFor": "@reldens/utils",
+    "verifiedAgainst": "0.54.0"
   }
 }

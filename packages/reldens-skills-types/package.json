@@ -5,12 +5,21 @@
   "type": "commonjs",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "keywords": ["reldens", "skills", "zod", "types", "skills", "abilities", "mmorpg"],
+  "keywords": [
+    "reldens",
+    "skills",
+    "zod",
+    "types",
+    "skills",
+    "abilities",
+    "mmorpg"
+  ],
   "license": "MIT",
   "scripts": {
     "typecheck": "tsc --noEmit",
     "build": "tsc -p tsconfig.json",
-    "test": "tsx --test test/*.test.ts"
+    "test": "tsx --test test/*.test.ts",
+    "docs:api": "typedoc"
   },
   "peerDependencies": {
     "zod": "^4.0.0"

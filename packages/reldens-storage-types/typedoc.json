@@ -1,0 +1,16 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["docs-gen/api.ts"],
+  "tsconfig": "docs-gen/tsconfig.json",
+  "plugin": ["typedoc-plugin-markdown"],
+  "out": "docs/api",
+  "readme": "none",
+  "githubPages": false,
+  "hideGenerator": true,
+  "excludeExternals": true,
+  "disableSources": true,
+  "sort": ["source-order"],
+  "hidePageHeader": true,
+  "hideBreadcrumbs": true,
+  "useCodeBlocks": true
+}
