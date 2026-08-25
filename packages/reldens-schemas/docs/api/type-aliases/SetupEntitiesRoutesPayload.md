@@ -2,9 +2,9 @@
 
 ```ts
 type SetupEntitiesRoutesPayload = {
-  adminManager: unknown;
-  driverResource: unknown;
-  entityPath: unknown;
+  adminManager: AdminManager;
+  driverResource: object;
+  entityPath: string;
   entityRoute: string;
 };
 ```
@@ -20,7 +20,7 @@ type SetupEntitiesRoutesPayload = {
 ### adminManager
 
 ```ts
-adminManager: unknown;
+adminManager: AdminManager;
 ```
 
 ***
@@ -28,7 +28,7 @@ adminManager: unknown;
 ### driverResource
 
 ```ts
-driverResource: unknown;
+driverResource: object;
 ```
 
 ***
@@ -36,7 +36,7 @@ driverResource: unknown;
 ### entityPath
 
 ```ts
-entityPath: unknown;
+entityPath: string;
 ```
 
 ***

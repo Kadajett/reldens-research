@@ -1,7 +1,7 @@
 # Type Alias: InitUiBeforePayload
 
 ```ts
-type InitUiBeforePayload = [unknown, unknown];
+type InitUiBeforePayload = [object, RoomEvents];
 ```
 
 `reldens.initUiBefore`

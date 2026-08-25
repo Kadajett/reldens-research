@@ -1,7 +1,7 @@
 # Type Alias: PlayerAttackPayload
 
 ```ts
-type PlayerAttackPayload = [unknown, unknown];
+type PlayerAttackPayload = [object, RoomScene];
 ```
 
 `reldens.playerAttack`

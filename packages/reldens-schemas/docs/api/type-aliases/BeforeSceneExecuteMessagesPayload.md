@@ -4,8 +4,8 @@
 type BeforeSceneExecuteMessagesPayload = {
   canContinue: boolean;
   client: Client;
-  messageData: unknown;
-  playerSchema: unknown;
+  messageData: object;
+  playerSchema: PlayerState;
   room: RoomScene;
 };
 ```
@@ -37,7 +37,7 @@ client: Client;
 ### messageData
 
 ```ts
-messageData: unknown;
+messageData: object;
 ```
 
 ***
@@ -45,7 +45,7 @@ messageData: unknown;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: PlayerState;
 ```
 
 ***

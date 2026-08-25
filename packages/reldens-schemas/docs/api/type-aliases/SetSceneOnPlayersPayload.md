@@ -1,7 +1,7 @@
 # Type Alias: SetSceneOnPlayersPayload
 
 ```ts
-type SetSceneOnPlayersPayload = [unknown, unknown, unknown];
+type SetSceneOnPlayersPayload = [LoginManager, UsersModel, object];
 ```
 
 `reldens.setSceneOnPlayers`

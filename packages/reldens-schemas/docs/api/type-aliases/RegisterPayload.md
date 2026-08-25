@@ -1,7 +1,9 @@
 # Type Alias: RegisterPayload
 
 ```ts
-type RegisterPayload = [unknown, unknown, unknown];
+type RegisterPayload = [LoginManager, object, {
+  error: string;
+}];
 ```
 
 `reldens.register`

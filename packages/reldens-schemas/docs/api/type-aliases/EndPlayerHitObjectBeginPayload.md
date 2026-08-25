@@ -2,8 +2,8 @@
 
 ```ts
 type EndPlayerHitObjectBeginPayload = {
-  otherBody: unknown;
-  playerBody: unknown;
+  otherBody: object;
+  playerBody: object;
 };
 ```
 
@@ -18,7 +18,7 @@ type EndPlayerHitObjectBeginPayload = {
 ### otherBody
 
 ```ts
-otherBody: unknown;
+otherBody: object;
 ```
 
 ***
@@ -26,5 +26,5 @@ otherBody: unknown;
 ### playerBody
 
 ```ts
-playerBody: unknown;
+playerBody: object;
 ```

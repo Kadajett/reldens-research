@@ -1,7 +1,7 @@
 # Type Alias: GameRoomErrorPayload
 
 ```ts
-type GameRoomErrorPayload = [unknown];
+type GameRoomErrorPayload = [GameManager];
 ```
 
 `reldens.gameRoomError`

@@ -2,7 +2,7 @@
 
 ```ts
 type BuildAdminContentsAfterPayload = {
-  adminManager: unknown;
+  adminManager: AdminManager;
 };
 ```
 
@@ -17,5 +17,5 @@ type BuildAdminContentsAfterPayload = {
 ### adminManager
 
 ```ts
-adminManager: unknown;
+adminManager: AdminManager;
 ```

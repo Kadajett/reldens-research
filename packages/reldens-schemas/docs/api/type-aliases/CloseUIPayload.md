@@ -2,14 +2,14 @@
 
 ```ts
 type CloseUIPayload = {
-  box?: unknown;
-  closeButton: unknown;
-  dialogBox?: unknown;
-  dialogContainer?: unknown;
-  minimap?: unknown;
-  openButton?: unknown;
+  box?: object;
+  closeButton: boolean;
+  dialogBox?: object;
+  dialogContainer?: object;
+  minimap?: Minimap;
+  openButton?: boolean;
   ui: ChatUi;
-  uiScene?: unknown;
+  uiScene?: object;
 };
 ```
 
@@ -24,7 +24,7 @@ type CloseUIPayload = {
 ### box?
 
 ```ts
-optional box?: unknown;
+optional box?: object;
 ```
 
 ***
@@ -32,7 +32,7 @@ optional box?: unknown;
 ### closeButton
 
 ```ts
-closeButton: unknown;
+closeButton: boolean;
 ```
 
 ***
@@ -40,7 +40,7 @@ closeButton: unknown;
 ### dialogBox?
 
 ```ts
-optional dialogBox?: unknown;
+optional dialogBox?: object;
 ```
 
 ***
@@ -48,7 +48,7 @@ optional dialogBox?: unknown;
 ### dialogContainer?
 
 ```ts
-optional dialogContainer?: unknown;
+optional dialogContainer?: object;
 ```
 
 ***
@@ -56,7 +56,7 @@ optional dialogContainer?: unknown;
 ### minimap?
 
 ```ts
-optional minimap?: unknown;
+optional minimap?: Minimap;
 ```
 
 ***
@@ -64,7 +64,7 @@ optional minimap?: unknown;
 ### openButton?
 
 ```ts
-optional openButton?: unknown;
+optional openButton?: boolean;
 ```
 
 ***
@@ -80,5 +80,5 @@ ui: ChatUi;
 ### uiScene?
 
 ```ts
-optional uiScene?: unknown;
+optional uiScene?: object;
 ```

@@ -2,10 +2,10 @@
 
 ```ts
 type BattleEndedPayload = {
-  actionData: unknown;
-  playerSchema: unknown;
-  pve: unknown;
-  room: unknown;
+  actionData: object;
+  playerSchema: PlayerState;
+  pve: Pve;
+  room: RoomScene;
 };
 ```
 
@@ -20,7 +20,7 @@ type BattleEndedPayload = {
 ### actionData
 
 ```ts
-actionData: unknown;
+actionData: object;
 ```
 
 ***
@@ -28,7 +28,7 @@ actionData: unknown;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: PlayerState;
 ```
 
 ***
@@ -36,7 +36,7 @@ playerSchema: unknown;
 ### pve
 
 ```ts
-pve: unknown;
+pve: Pve;
 ```
 
 ***
@@ -44,5 +44,5 @@ pve: unknown;
 ### room
 
 ```ts
-room: unknown;
+room: RoomScene;
 ```

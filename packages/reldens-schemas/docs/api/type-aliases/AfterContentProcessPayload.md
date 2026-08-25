@@ -2,9 +2,9 @@
 
 ```ts
 type AfterContentProcessPayload = {
-  processedContent: unknown;
-  renderContext: unknown;
-  variables: unknown;
+  processedContent: string;
+  renderContext: object;
+  variables: object;
 };
 ```
 
@@ -19,7 +19,7 @@ type AfterContentProcessPayload = {
 ### processedContent
 
 ```ts
-processedContent: unknown;
+processedContent: string;
 ```
 
 ***
@@ -27,7 +27,7 @@ processedContent: unknown;
 ### renderContext
 
 ```ts
-renderContext: unknown;
+renderContext: object;
 ```
 
 ***
@@ -35,5 +35,5 @@ renderContext: unknown;
 ### variables
 
 ```ts
-variables: unknown;
+variables: object;
 ```

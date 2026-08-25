@@ -3,9 +3,9 @@
 ```ts
 type AfterEnrichPlayerWithLocalePayload = {
   client: Client;
-  roomGame: unknown;
-  superInitialGameData: unknown;
-  userModel: unknown;
+  roomGame: RoomGame;
+  superInitialGameData: object;
+  userModel: UsersModel;
 };
 ```
 
@@ -28,7 +28,7 @@ client: Client;
 ### roomGame
 
 ```ts
-roomGame: unknown;
+roomGame: RoomGame;
 ```
 
 ***
@@ -36,7 +36,7 @@ roomGame: unknown;
 ### superInitialGameData
 
 ```ts
-superInitialGameData: unknown;
+superInitialGameData: object;
 ```
 
 ***
@@ -44,5 +44,5 @@ superInitialGameData: unknown;
 ### userModel
 
 ```ts
-userModel: unknown;
+userModel: UsersModel;
 ```

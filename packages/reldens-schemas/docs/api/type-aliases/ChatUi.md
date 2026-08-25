@@ -1,5 +1,5 @@
 # Type Alias: ChatUi
 
 ```ts
-type ChatUi = unknown;
+type ChatUi = object;
 ```

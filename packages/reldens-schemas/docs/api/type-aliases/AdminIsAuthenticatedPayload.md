@@ -2,11 +2,14 @@
 
 ```ts
 type AdminIsAuthenticatedPayload = {
-  adminManager: unknown;
-  allowContinue: unknown;
-  next: unknown;
-  req: ExpressRequest;
-  res: ExpressResponse;
+  adminManager: AdminManager;
+  allowContinue: {
+     callback: null;
+     result: boolean;
+  };
+  next: object;
+  req: object;
+  res: object;
 };
 ```
 
@@ -21,7 +24,7 @@ type AdminIsAuthenticatedPayload = {
 ### adminManager
 
 ```ts
-adminManager: unknown;
+adminManager: AdminManager;
 ```
 
 ***
@@ -29,7 +32,22 @@ adminManager: unknown;
 ### allowContinue
 
 ```ts
-allowContinue: unknown;
+allowContinue: {
+  callback: null;
+  result: boolean;
+};
+```
+
+#### callback
+
+```ts
+callback: null;
+```
+
+#### result
+
+```ts
+result: boolean;
 ```
 
 ***
@@ -37,7 +55,7 @@ allowContinue: unknown;
 ### next
 
 ```ts
-next: unknown;
+next: object;
 ```
 
 ***
@@ -45,7 +63,7 @@ next: unknown;
 ### req
 
 ```ts
-req: ExpressRequest;
+req: object;
 ```
 
 ***
@@ -53,5 +71,5 @@ req: ExpressRequest;
 ### res
 
 ```ts
-res: ExpressResponse;
+res: object;
 ```

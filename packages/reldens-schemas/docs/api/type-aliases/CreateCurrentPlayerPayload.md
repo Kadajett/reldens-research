@@ -3,7 +3,7 @@
 ```ts
 type CreateCurrentPlayerPayload = {
   key: string;
-  player: unknown;
+  player: PlayerState;
   previousScene: string | boolean;
   roomEvents: RoomEvents;
 };
@@ -28,7 +28,7 @@ key: string;
 ### player
 
 ```ts
-player: unknown;
+player: PlayerState;
 ```
 
 ***

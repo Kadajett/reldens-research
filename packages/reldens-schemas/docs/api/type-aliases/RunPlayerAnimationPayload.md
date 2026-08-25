@@ -1,7 +1,7 @@
 # Type Alias: RunPlayerAnimationPayload
 
 ```ts
-type RunPlayerAnimationPayload = [unknown, unknown, unknown, unknown];
+type RunPlayerAnimationPayload = [PlayerEngine, number, PlayerState, object];
 ```
 
 `reldens.runPlayerAnimation`

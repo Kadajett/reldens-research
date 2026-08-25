@@ -2,11 +2,11 @@
 
 ```ts
 type PlayerDeathPayload = {
-  affectedProperty: unknown;
-  attackerPlayer: unknown;
-  room: unknown;
-  targetClient: unknown;
-  targetSchema: unknown;
+  affectedProperty: object;
+  attackerPlayer: PlayerState;
+  room: RoomScene;
+  targetClient: Client;
+  targetSchema: PlayerState;
 };
 ```
 
@@ -21,7 +21,7 @@ type PlayerDeathPayload = {
 ### affectedProperty
 
 ```ts
-affectedProperty: unknown;
+affectedProperty: object;
 ```
 
 ***
@@ -29,7 +29,7 @@ affectedProperty: unknown;
 ### attackerPlayer
 
 ```ts
-attackerPlayer: unknown;
+attackerPlayer: PlayerState;
 ```
 
 ***
@@ -37,7 +37,7 @@ attackerPlayer: unknown;
 ### room
 
 ```ts
-room: unknown;
+room: RoomScene;
 ```
 
 ***
@@ -45,7 +45,7 @@ room: unknown;
 ### targetClient
 
 ```ts
-targetClient: unknown;
+targetClient: Client;
 ```
 
 ***
@@ -53,5 +53,5 @@ targetClient: unknown;
 ### targetSchema
 
 ```ts
-targetSchema: unknown;
+targetSchema: PlayerState;
 ```

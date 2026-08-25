@@ -1,7 +1,7 @@
 # Type Alias: BeforeInitEngineAndStartGamePayload
 
 ```ts
-type BeforeInitEngineAndStartGamePayload = [unknown, unknown];
+type BeforeInitEngineAndStartGamePayload = [object, GameManager];
 ```
 
 `reldens.beforeInitEngineAndStartGame`

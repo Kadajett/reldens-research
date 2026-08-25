@@ -1,7 +1,7 @@
 # Type Alias: StartGameBeforePayload
 
 ```ts
-type StartGameBeforePayload = [unknown];
+type StartGameBeforePayload = [GameManager];
 ```
 
 `reldens.startGameBefore`

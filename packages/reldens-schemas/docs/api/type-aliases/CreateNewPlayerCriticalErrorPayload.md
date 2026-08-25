@@ -1,7 +1,10 @@
 # Type Alias: CreateNewPlayerCriticalErrorPayload
 
 ```ts
-type CreateNewPlayerCriticalErrorPayload = [unknown, unknown, unknown, unknown];
+type CreateNewPlayerCriticalErrorPayload = [LoginManager, object, object, {
+  error: boolean;
+  message: string;
+}];
 ```
 
 `reldens.createNewPlayerCriticalError`

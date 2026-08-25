@@ -2,7 +2,7 @@
 
 ```ts
 type TeamLeavePayload = {
-  data: unknown;
+  data: object;
   playerSchema: PlayerState;
   room: RoomScene;
   teamsPlugin: TeamsPlugin;
@@ -20,7 +20,7 @@ type TeamLeavePayload = {
 ### data
 
 ```ts
-data: unknown;
+data: object;
 ```
 
 ***

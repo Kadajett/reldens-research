@@ -45,7 +45,7 @@ declare module 'reldens/server' {
             skillsList?: Record<string, CustomClassConstructor>;
             classPath?: Record<string, CustomClassConstructor>;
         };
-        [bucket: string]: unknown;
+        [bucket: string]: object | undefined;
     }
 
     /**
@@ -77,7 +77,7 @@ declare module 'reldens/server' {
         jsSourceMaps?: boolean;
         cssSourceMaps?: boolean;
         /** A class (not an instance). Reldens does `new customPlugin()` then calls `setup({events})`. */
-        customPlugin?: new () => { setup(props: { events: ReldensEventsManager }): unknown };
+        customPlugin?: new () => { setup(props: { events: ReldensEventsManager }): void };
         /**
          * Runtime class overrides merged into `server/customClasses/*` config.
          * The precise bucket shapes (all eleven of them) live in

@@ -1,5 +1,5 @@
 # Type Alias: PlayerState
 
 ```ts
-type PlayerState = unknown;
+type PlayerState = object;
 ```

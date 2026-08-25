@@ -1,7 +1,7 @@
 # Type Alias: PlayerStatsUpdateAfterPayload
 
 ```ts
-type PlayerStatsUpdateAfterPayload = [unknown, unknown];
+type PlayerStatsUpdateAfterPayload = [object, RoomEvents];
 ```
 
 `reldens.playerStatsUpdateAfter`

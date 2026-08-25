@@ -1,7 +1,7 @@
 # Type Alias: PlayerPersistDataAfterPayload
 
 ```ts
-type PlayerPersistDataAfterPayload = [unknown, unknown, unknown, unknown, unknown];
+type PlayerPersistDataAfterPayload = [Client, UsersModel, PlayerState, object, RoomScene];
 ```
 
 `reldens.playerPersistDataAfter`

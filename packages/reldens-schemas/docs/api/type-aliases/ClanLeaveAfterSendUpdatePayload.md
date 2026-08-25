@@ -4,7 +4,7 @@
 type ClanLeaveAfterSendUpdatePayload = {
   continueLeave: boolean;
   playerSchema: PlayerState;
-  singleRemoveId: number | string;
+  singleRemoveId: number;
   teamsPlugin: TeamsPlugin;
 };
 ```
@@ -36,7 +36,7 @@ playerSchema: PlayerState;
 ### singleRemoveId
 
 ```ts
-singleRemoveId: number | string;
+singleRemoveId: number;
 ```
 
 ***

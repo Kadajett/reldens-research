@@ -1,5 +1,5 @@
 # Type Alias: ConfigManager
 
 ```ts
-type ConfigManager = unknown;
+type ConfigManager = object;
 ```

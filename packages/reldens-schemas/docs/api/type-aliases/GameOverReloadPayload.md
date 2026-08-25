@@ -1,7 +1,9 @@
 # Type Alias: GameOverReloadPayload
 
 ```ts
-type GameOverReloadPayload = [unknown, unknown];
+type GameOverReloadPayload = [RoomEvents, {
+  confirmed: boolean;
+}];
 ```
 
 `reldens.gameOverReload`

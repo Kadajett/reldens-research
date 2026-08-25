@@ -2,11 +2,11 @@
 
 ```ts
 type AdminBeforeEntitySavePayload = {
-  adminManager: unknown;
-  driverResource: unknown;
-  entityPath: unknown;
-  req: ExpressRequest;
-  res: ExpressResponse;
+  adminManager: AdminManager;
+  driverResource: object;
+  entityPath: string;
+  req: object;
+  res: object;
 };
 ```
 
@@ -21,7 +21,7 @@ type AdminBeforeEntitySavePayload = {
 ### adminManager
 
 ```ts
-adminManager: unknown;
+adminManager: AdminManager;
 ```
 
 ***
@@ -29,7 +29,7 @@ adminManager: unknown;
 ### driverResource
 
 ```ts
-driverResource: unknown;
+driverResource: object;
 ```
 
 ***
@@ -37,7 +37,7 @@ driverResource: unknown;
 ### entityPath
 
 ```ts
-entityPath: unknown;
+entityPath: string;
 ```
 
 ***
@@ -45,7 +45,7 @@ entityPath: unknown;
 ### req
 
 ```ts
-req: ExpressRequest;
+req: object;
 ```
 
 ***
@@ -53,5 +53,5 @@ req: ExpressRequest;
 ### res
 
 ```ts
-res: ExpressResponse;
+res: object;
 ```

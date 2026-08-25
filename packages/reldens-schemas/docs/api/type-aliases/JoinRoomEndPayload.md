@@ -2,12 +2,12 @@
 
 ```ts
 type JoinRoomEndPayload = {
-  client: unknown;
-  isGuest: unknown;
-  loggedPlayer: unknown;
-  options: unknown;
-  roomScene: unknown;
-  userModel: unknown;
+  client: Client;
+  isGuest: boolean;
+  loggedPlayer: object;
+  options: object;
+  roomScene: RoomScene;
+  userModel: UsersModel;
 };
 ```
 
@@ -25,7 +25,7 @@ Payload of reldens.joinRoomEnd - one of the platform's three dedicated payload c
 ### client
 
 ```ts
-client: unknown;
+client: Client;
 ```
 
 ***
@@ -33,7 +33,7 @@ client: unknown;
 ### isGuest
 
 ```ts
-isGuest: unknown;
+isGuest: boolean;
 ```
 
 ***
@@ -41,7 +41,7 @@ isGuest: unknown;
 ### loggedPlayer
 
 ```ts
-loggedPlayer: unknown;
+loggedPlayer: object;
 ```
 
 ***
@@ -49,7 +49,7 @@ loggedPlayer: unknown;
 ### options
 
 ```ts
-options: unknown;
+options: object;
 ```
 
 ***
@@ -57,7 +57,7 @@ options: unknown;
 ### roomScene
 
 ```ts
-roomScene: unknown;
+roomScene: RoomScene;
 ```
 
 ***
@@ -65,5 +65,5 @@ roomScene: unknown;
 ### userModel
 
 ```ts
-userModel: unknown;
+userModel: UsersModel;
 ```

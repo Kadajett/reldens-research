@@ -1,7 +1,7 @@
 # Type Alias: CreatedPlayerSchemaPayload
 
 ```ts
-type CreatedPlayerSchemaPayload = [unknown, unknown, unknown, unknown];
+type CreatedPlayerSchemaPayload = [Client, UsersModel, PlayerState, RoomScene];
 ```
 
 `reldens.createdPlayerSchema`

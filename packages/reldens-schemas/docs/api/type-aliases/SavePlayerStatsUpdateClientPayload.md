@@ -1,7 +1,7 @@
 # Type Alias: SavePlayerStatsUpdateClientPayload
 
 ```ts
-type SavePlayerStatsUpdateClientPayload = [unknown, unknown, unknown];
+type SavePlayerStatsUpdateClientPayload = [Client, PlayerState, RoomScene];
 ```
 
 `reldens.savePlayerStatsUpdateClient`

@@ -2,7 +2,7 @@
 
 ```ts
 type CmsManagerInitializeServicesPayload = {
-  manager: unknown;
+  manager: Manager;
 };
 ```
 
@@ -17,5 +17,5 @@ type CmsManagerInitializeServicesPayload = {
 ### manager
 
 ```ts
-manager: unknown;
+manager: Manager;
 ```

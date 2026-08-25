@@ -1,7 +1,7 @@
 # Type Alias: ChangeSceneDestroyPreviousPayload
 
 ```ts
-type ChangeSceneDestroyPreviousPayload = [unknown];
+type ChangeSceneDestroyPreviousPayload = [SceneDynamic];
 ```
 
 `reldens.changeSceneDestroyPrevious`

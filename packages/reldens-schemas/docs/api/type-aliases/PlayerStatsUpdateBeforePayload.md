@@ -1,7 +1,7 @@
 # Type Alias: PlayerStatsUpdateBeforePayload
 
 ```ts
-type PlayerStatsUpdateBeforePayload = [unknown, unknown];
+type PlayerStatsUpdateBeforePayload = [object, RoomEvents];
 ```
 
 `reldens.playerStatsUpdateBefore`

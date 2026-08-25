@@ -2,12 +2,12 @@
 
 ```ts
 type AdminViewPropertiesPopulationPayload = {
-  adminManager: unknown;
-  driverResource: unknown;
-  idProperty: unknown;
-  loadedEntity: unknown;
-  renderedViewProperties: unknown;
-  req: ExpressRequest;
+  adminManager: AdminManager;
+  driverResource: object;
+  idProperty: string;
+  loadedEntity: object;
+  renderedViewProperties: object;
+  req: object;
 };
 ```
 
@@ -22,7 +22,7 @@ type AdminViewPropertiesPopulationPayload = {
 ### adminManager
 
 ```ts
-adminManager: unknown;
+adminManager: AdminManager;
 ```
 
 ***
@@ -30,7 +30,7 @@ adminManager: unknown;
 ### driverResource
 
 ```ts
-driverResource: unknown;
+driverResource: object;
 ```
 
 ***
@@ -38,7 +38,7 @@ driverResource: unknown;
 ### idProperty
 
 ```ts
-idProperty: unknown;
+idProperty: string;
 ```
 
 ***
@@ -46,7 +46,7 @@ idProperty: unknown;
 ### loadedEntity
 
 ```ts
-loadedEntity: unknown;
+loadedEntity: object;
 ```
 
 ***
@@ -54,7 +54,7 @@ loadedEntity: unknown;
 ### renderedViewProperties
 
 ```ts
-renderedViewProperties: unknown;
+renderedViewProperties: object;
 ```
 
 ***
@@ -62,5 +62,5 @@ renderedViewProperties: unknown;
 ### req
 
 ```ts
-req: ExpressRequest;
+req: object;
 ```

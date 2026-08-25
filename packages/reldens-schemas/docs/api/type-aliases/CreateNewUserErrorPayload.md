@@ -1,7 +1,7 @@
 # Type Alias: CreateNewUserErrorPayload
 
 ```ts
-type CreateNewUserErrorPayload = [unknown, unknown, unknown];
+type CreateNewUserErrorPayload = [LoginManager, object, object];
 ```
 
 `reldens.createNewUserError`

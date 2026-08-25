@@ -2,8 +2,8 @@
 
 ```ts
 type AfterRunAdditionalSetupPayload = {
-  objectData: unknown;
-  objectInstance: unknown;
+  objectData: object;
+  objectInstance: object;
   objectsManager: ObjectsManager;
 };
 ```
@@ -19,7 +19,7 @@ type AfterRunAdditionalSetupPayload = {
 ### objectData
 
 ```ts
-objectData: unknown;
+objectData: object;
 ```
 
 ***
@@ -27,7 +27,7 @@ objectData: unknown;
 ### objectInstance
 
 ```ts
-objectInstance: unknown;
+objectInstance: object;
 ```
 
 ***

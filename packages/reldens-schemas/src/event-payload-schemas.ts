@@ -17,62 +17,31 @@
  */
 import { z } from 'zod';
 import { RELDENS_EVENT_PAYLOAD_INFO, type EventPayloadInfo } from './generated/event-payloads';
+import { GENERATED_PAYLOAD_SCHEMAS } from './generated/payload-field-schemas';
+import { zAny } from './zod-floors';
 import { EVENT_PAYLOADS } from './events';
+
+export { zAny };
 
 export { RELDENS_EVENT_PAYLOAD_INFO };
 export type { EventPayloadInfo };
 
-const generatedSchemas = new Map<string, z.ZodType>();
-
-function buildSchema(name: string, info: EventPayloadInfo): z.ZodType | null {
-    if('object' === info.style){
-        const shape: Record<string, z.ZodType> = {};
-        for(const key of info.requiredKeys){
-            shape[key] = z.unknown();
-        }
-        for(const key of info.sometimesKeys){
-            shape[key] = z.unknown().optional();
-        }
-        return z.looseObject(shape).meta({
-            description: 'Keys extracted from '+info.sites.join('; ')
-                +(info.hasSpreadOrComputed ? '. Site uses spreads or computed keys, so extra keys are expected.' : ''),
-            reldensPayloadInfo: info
-        });
-    }
-    if('class' === info.style){
-        const shape: Record<string, z.ZodType> = {};
-        for(const property of info.properties){
-            shape[property] = z.unknown();
-        }
-        return z.looseObject(shape).meta({
-            description: 'Instance of '+info.className+' ('+(info.classFile ?? 'unresolved')
-                +'); properties are the constructor assignments.',
-            reldensPayloadInfo: info
-        });
-    }
-    return null;
-}
-
-for(const [name, info] of Object.entries(RELDENS_EVENT_PAYLOAD_INFO)){
-    const schema = buildSchema(name, info);
-    if(schema){
-        generatedSchemas.set(name, schema);
-    }
-}
-
 /**
  * The strongest available schema for an event's payload:
- * hand-verified > generated keys > unknown.
+ * hand-verified (typed values) > generated-from-source (typed, zAny floor) > zAny.
+ * Never z.unknown(): a value the source cannot type still gets zAny, which requires
+ * the key to be present without asserting a shape.
  */
 export function payloadSchemaFor(name: string): z.ZodType {
     return (EVENT_PAYLOADS as Record<string, z.ZodType>)[name]
-        ?? generatedSchemas.get(name)
-        ?? z.unknown();
+        ?? GENERATED_PAYLOAD_SCHEMAS[name]
+        ?? zAny;
 }
 
-/** True when a schema exists that actually constrains the payload. */
+/** True when a schema exists that actually constrains the payload's keys/arity
+ *  (i.e. it is more than the bare zAny floor). */
 export function hasPayloadSchema(name: string): boolean {
-    return Object.hasOwn(EVENT_PAYLOADS, name) || generatedSchemas.has(name);
+    return Object.hasOwn(EVENT_PAYLOADS, name) || Object.hasOwn(GENERATED_PAYLOAD_SCHEMAS, name);
 }
 
 /** Human-readable description of what a listener receives. */

@@ -1,7 +1,7 @@
 # Type Alias: GameOverPayload
 
 ```ts
-type GameOverPayload = [unknown, unknown];
+type GameOverPayload = [object, RoomEvents];
 ```
 
 `reldens.gameOver`

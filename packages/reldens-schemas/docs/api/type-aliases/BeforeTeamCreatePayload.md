@@ -3,7 +3,7 @@
 ```ts
 type BeforeTeamCreatePayload = {
   continueBeforeCreate: boolean;
-  teamProps: unknown;
+  teamProps: object;
   teamsPlugin: TeamsPlugin;
 };
 ```
@@ -27,7 +27,7 @@ continueBeforeCreate: boolean;
 ### teamProps
 
 ```ts
-teamProps: unknown;
+teamProps: object;
 ```
 
 ***

@@ -1,7 +1,7 @@
 # Type Alias: AfterInitEngineAndStartGamePayload
 
 ```ts
-type AfterInitEngineAndStartGamePayload = [unknown, unknown];
+type AfterInitEngineAndStartGamePayload = [object, Room];
 ```
 
 `reldens.afterInitEngineAndStartGame`

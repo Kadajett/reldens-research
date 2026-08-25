@@ -1,7 +1,7 @@
 # Type Alias: RoomsMessageActionsByRoomPayload
 
 ```ts
-type RoomsMessageActionsByRoomPayload = [unknown, unknown];
+type RoomsMessageActionsByRoomPayload = [object, string];
 ```
 
 `reldens.roomsMessageActionsByRoom`

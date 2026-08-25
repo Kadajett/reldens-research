@@ -2,7 +2,7 @@
 
 ```ts
 type RoomLoginOnCreatePayload = {
-  options: unknown;
+  options: object;
   roomLogin: RoomLogin;
 };
 ```
@@ -18,7 +18,7 @@ type RoomLoginOnCreatePayload = {
 ### options
 
 ```ts
-options: unknown;
+options: object;
 ```
 
 ***

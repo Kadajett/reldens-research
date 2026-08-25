@@ -1,7 +1,7 @@
 # Type Alias: CreateEngineScenePayload
 
 ```ts
-type CreateEngineScenePayload = [unknown, unknown, unknown, unknown];
+type CreateEngineScenePayload = [PlayerState, Room, string | boolean, RoomEvents];
 ```
 
 `reldens.createEngineScene`

@@ -15,6 +15,7 @@
  */
 import { z } from 'zod';
 import { withSource } from './provenance';
+import { zAny, loose } from './zod-floors';
 import { RELDENS_EVENT_NAMES, RELDENS_EVENT_PROVENANCE, type ReldensEventName } from './generated/events';
 
 export { RELDENS_EVENT_NAMES, RELDENS_EVENT_PROVENANCE };
@@ -55,12 +56,12 @@ export function emitSiteOf(name: string): string | null {
 // ---------------------------------------------------------------------------
 
 export const BeforeInitializeManagersPayloadSchema = withSource(
-    z.looseObject({
-        serverManager: z.looseObject({
-            configManager: z.looseObject({
-                configList: z.looseObject({
-                    server: z.looseObject({
-                        customClasses: z.record(z.string(), z.unknown())
+    loose({
+        serverManager: loose({
+            configManager: loose({
+                configList: loose({
+                    server: loose({
+                        customClasses: z.record(z.string(), zAny)
                     })
                 })
             })
@@ -79,11 +80,11 @@ export const BeforeInitializeManagersPayloadSchema = withSource(
 );
 
 export const BeforeJoinGamePayloadSchema = withSource(
-    z.looseObject({
-        gameManager: z.looseObject({
-            config: z.looseObject({
-                client: z.looseObject({
-                    customClasses: z.record(z.string(), z.unknown())
+    loose({
+        gameManager: loose({
+            config: loose({
+                client: loose({
+                    customClasses: z.record(z.string(), zAny)
                 })
             })
         })
@@ -101,9 +102,9 @@ export const BeforeJoinGamePayloadSchema = withSource(
 );
 
 export const RoomLoginOnAuthPayloadSchema = withSource(
-    z.looseObject({
-        loginResult: z.looseObject({user: z.looseObject({role_id: z.number().optional()})}),
-        result: z.looseObject({confirm: z.boolean().optional()})
+    loose({
+        loginResult: loose({user: loose({role_id: z.number().optional()})}),
+        result: loose({confirm: z.boolean().optional()})
     }),
     {
         confidence: 'EXTRACTED',
@@ -118,12 +119,12 @@ export const RoomLoginOnAuthPayloadSchema = withSource(
 );
 
 export const JoinedSceneRoomEventSchema = withSource(
-    z.looseObject({
-        roomScene: z.unknown(),
-        client: z.unknown(),
-        options: z.unknown(),
-        userModel: z.unknown(),
-        loggedPlayer: z.unknown(),
+    loose({
+        roomScene: zAny,
+        client: zAny,
+        options: zAny,
+        userModel: zAny,
+        loggedPlayer: zAny,
         isGuest: z.boolean()
     }),
     {

@@ -1,7 +1,7 @@
 # Type Alias: ClientStartAfterPayload
 
 ```ts
-type ClientStartAfterPayload = [unknown];
+type ClientStartAfterPayload = [ClientStartHandler];
 ```
 
 `reldens.clientStartAfter`

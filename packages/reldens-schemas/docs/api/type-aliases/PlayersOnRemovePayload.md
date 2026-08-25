@@ -1,7 +1,7 @@
 # Type Alias: PlayersOnRemovePayload
 
 ```ts
-type PlayersOnRemovePayload = [unknown, unknown, unknown];
+type PlayersOnRemovePayload = [PlayerState, string, RoomEvents];
 ```
 
 `reldens.playersOnRemove`

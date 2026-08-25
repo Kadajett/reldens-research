@@ -1,7 +1,7 @@
 # Type Alias: CreatedRoomsEventsInstancePayload
 
 ```ts
-type CreatedRoomsEventsInstancePayload = [unknown, unknown];
+type CreatedRoomsEventsInstancePayload = [Room, GameManager];
 ```
 
 `reldens.createdRoomsEventsInstance`

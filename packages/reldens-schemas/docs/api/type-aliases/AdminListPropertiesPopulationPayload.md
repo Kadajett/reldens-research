@@ -2,10 +2,10 @@
 
 ```ts
 type AdminListPropertiesPopulationPayload = {
-  adminManager: unknown;
-  driverResource: unknown;
-  listProperties: unknown;
-  req: ExpressRequest;
+  adminManager: AdminManager;
+  driverResource: object;
+  listProperties: object;
+  req: object;
 };
 ```
 
@@ -20,7 +20,7 @@ type AdminListPropertiesPopulationPayload = {
 ### adminManager
 
 ```ts
-adminManager: unknown;
+adminManager: AdminManager;
 ```
 
 ***
@@ -28,7 +28,7 @@ adminManager: unknown;
 ### driverResource
 
 ```ts
-driverResource: unknown;
+driverResource: object;
 ```
 
 ***
@@ -36,7 +36,7 @@ driverResource: unknown;
 ### listProperties
 
 ```ts
-listProperties: unknown;
+listProperties: object;
 ```
 
 ***
@@ -44,5 +44,5 @@ listProperties: unknown;
 ### req
 
 ```ts
-req: ExpressRequest;
+req: object;
 ```

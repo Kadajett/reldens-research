@@ -1,7 +1,10 @@
 # Type Alias: PlayerNewNamePayload
 
 ```ts
-type PlayerNewNamePayload = [unknown, unknown, unknown];
+type PlayerNewNamePayload = [LoginManager, object, {
+  error: boolean;
+  message: string;
+}];
 ```
 
 `reldens.playerNewName`

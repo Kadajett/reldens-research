@@ -1,5 +1,5 @@
 # Type Alias: EnemyObject
 
 ```ts
-type EnemyObject = unknown;
+type EnemyObject = object;
 ```

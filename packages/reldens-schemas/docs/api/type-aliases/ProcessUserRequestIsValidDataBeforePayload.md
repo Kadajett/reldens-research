@@ -1,7 +1,7 @@
 # Type Alias: ProcessUserRequestIsValidDataBeforePayload
 
 ```ts
-type ProcessUserRequestIsValidDataBeforePayload = [unknown, unknown];
+type ProcessUserRequestIsValidDataBeforePayload = [LoginManager, object];
 ```
 
 `reldens.processUserRequestIsValidDataBefore`

@@ -1,7 +1,9 @@
 # Type Alias: CreatedNewPlayerPayload
 
 ```ts
-type CreatedNewPlayerPayload = [unknown, unknown, unknown, unknown];
+type CreatedNewPlayerPayload = [object, object, LoginManager, {
+  error: boolean;
+}];
 ```
 
 `reldens.createdNewPlayer`

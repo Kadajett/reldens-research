@@ -2,9 +2,11 @@
 
 ```ts
 type OnRoomDisposePayload = {
-  result: string;
-  roomId: unknown;
-  roomName: unknown;
+  result: {
+     confirm: boolean;
+  };
+  roomId: number;
+  roomName: string;
 };
 ```
 
@@ -19,7 +21,15 @@ type OnRoomDisposePayload = {
 ### result
 
 ```ts
-result: string;
+result: {
+  confirm: boolean;
+};
+```
+
+#### confirm
+
+```ts
+confirm: boolean;
 ```
 
 ***
@@ -27,7 +37,7 @@ result: string;
 ### roomId
 
 ```ts
-roomId: unknown;
+roomId: number;
 ```
 
 ***
@@ -35,5 +45,5 @@ roomId: unknown;
 ### roomName
 
 ```ts
-roomName: unknown;
+roomName: string;
 ```

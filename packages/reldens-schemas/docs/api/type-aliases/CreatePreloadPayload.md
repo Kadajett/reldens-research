@@ -1,7 +1,7 @@
 # Type Alias: CreatePreloadPayload
 
 ```ts
-type CreatePreloadPayload = [unknown, unknown];
+type CreatePreloadPayload = [ScenePreloader, object];
 ```
 
 `reldens.createPreload`

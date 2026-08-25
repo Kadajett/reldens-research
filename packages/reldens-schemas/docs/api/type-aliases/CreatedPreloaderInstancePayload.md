@@ -1,7 +1,7 @@
 # Type Alias: CreatedPreloaderInstancePayload
 
 ```ts
-type CreatedPreloaderInstancePayload = [unknown, unknown];
+type CreatedPreloaderInstancePayload = [RoomEvents, ScenePreloader];
 ```
 
 `reldens.createdPreloaderInstance`

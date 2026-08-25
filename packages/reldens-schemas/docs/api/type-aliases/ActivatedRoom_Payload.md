@@ -1,7 +1,7 @@
 # Type Alias: ActivatedRoom\_Payload
 
 ```ts
-type ActivatedRoom_Payload = [unknown, unknown];
+type ActivatedRoom_Payload = [Room, GameManager];
 ```
 
 `reldens.activatedRoom_`

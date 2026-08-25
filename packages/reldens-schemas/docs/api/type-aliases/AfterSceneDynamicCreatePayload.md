@@ -1,7 +1,7 @@
 # Type Alias: AfterSceneDynamicCreatePayload
 
 ```ts
-type AfterSceneDynamicCreatePayload = [unknown];
+type AfterSceneDynamicCreatePayload = [SceneDynamic];
 ```
 
 `reldens.afterSceneDynamicCreate`

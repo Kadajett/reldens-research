@@ -1,5 +1,5 @@
 # Type Alias: UsersPlugin
 
 ```ts
-type UsersPlugin = unknown;
+type UsersPlugin = object;
 ```

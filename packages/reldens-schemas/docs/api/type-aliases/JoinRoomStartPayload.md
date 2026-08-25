@@ -1,7 +1,7 @@
 # Type Alias: JoinRoomStartPayload
 
 ```ts
-type JoinRoomStartPayload = [unknown, unknown, unknown, unknown];
+type JoinRoomStartPayload = [RoomScene, Client, object, UsersModel];
 ```
 
 `reldens.joinRoomStart`

@@ -11,8 +11,38 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { dirname, join } from 'node:path';
 
+import { z } from 'zod';
 import { RELDENS_EVENT_PAYLOAD_INFO } from '../src/generated/event-payloads';
 import { RELDENS_SERVER_MESSAGE_INFO } from '../src/generated/server-messages';
+
+/** A value that satisfies `schema`, built by walking its zod definition. Used to
+ *  prove a generated schema accepts the shape it describes (fields are now typed,
+ *  so a single sentinel no longer fits every field). */
+function sampleFor(schema: z.ZodType): unknown {
+    const def = (schema as unknown as {def: {type: string; [k: string]: unknown}}).def;
+    switch(def.type){
+        case 'string': return '';
+        case 'number': return 0;
+        case 'boolean': return false;
+        case 'null': return null;
+        case 'array': return [];
+        case 'custom': return {};
+        case 'literal': return (def.values as unknown[])?.[0] ?? (def as {value?: unknown}).value;
+        case 'optional': case 'nullable': return sampleFor(def.innerType as z.ZodType);
+        case 'union': return sampleFor((def.options as z.ZodType[])[0]);
+        case 'tuple': return (def.items as z.ZodType[]).map(sampleFor);
+        case 'object': {
+            const out: Record<string, unknown> = {};
+            for(const [key, field] of Object.entries(def.shape as Record<string, z.ZodType>)){
+                const fieldDef = (field as unknown as {def: {type: string}}).def;
+                if('optional' === fieldDef.type){ continue; }
+                out[key] = sampleFor(field);
+            }
+            return out;
+        }
+        default: return {};
+    }
+}
 
 const reldensRoot = dirname(require.resolve('reldens/package.json'));
 const scanPath = join(__dirname, '..', '..', '..', 'research', 'scripts', 'lib', 'scan.mjs');
@@ -154,18 +184,17 @@ test('every schemable payload schema accepts a payload built from its own keys',
             continue;
         }
         assert.ok(hasPayloadSchema(eventName), eventName+' should have a schema');
-        const payload: Record<string, unknown> = {};
-        for(const key of info.requiredKeys){
-            payload[key] = Symbol('value');
-        }
-        const result = payloadSchemaFor(eventName).safeParse(payload);
+        const schema = payloadSchemaFor(eventName);
+        // a value satisfying each field's now-typed schema (not a bare sentinel)
+        const payload = sampleFor(schema) as Record<string, unknown>;
+        const result = schema.safeParse(payload);
         assert.ok(result.success, eventName+': '+JSON.stringify(result.error?.issues?.[0]));
         // And dropping a required key must fail.
-        if(0 < info.requiredKeys.length){
+        if(0 < info.requiredKeys.length && Object.hasOwn(payload, info.requiredKeys[0]!)){
             const broken = {...payload};
             delete broken[info.requiredKeys[0]!];
             assert.ok(
-                !payloadSchemaFor(eventName).safeParse(broken).success,
+                !schema.safeParse(broken).success,
                 eventName+': schema should demand "'+info.requiredKeys[0]+'"'
             );
         }
@@ -174,14 +203,18 @@ test('every schemable payload schema accepts a payload built from its own keys',
     assert.ok(100 < checked, 'expected 100+ schemable events, got '+checked);
 });
 
-test('positional events are never given an object schema', async () => {
+test('positional events get a tuple schema, never an object schema', async () => {
     const { payloadSchemaFor, POSITIONAL_EVENTS } = await import('../src/event-payload-schemas');
+    const { RELDENS_EVENT_PAYLOAD_INFO } = await import('../src/generated/event-payloads');
     const { EVENT_PAYLOADS } = await import('../src/events');
     for(const eventName of POSITIONAL_EVENTS){
         if(Object.hasOwn(EVENT_PAYLOADS, eventName)){
             continue; // hand-verified overrides are allowed to know better
         }
-        // unknown accepts anything, including non-objects - that is the point.
-        assert.ok(payloadSchemaFor(eventName).safeParse(42).success, eventName);
+        const schema = payloadSchemaFor(eventName);
+        // a positional listener receives separate args - the schema is a tuple of them,
+        // so it accepts the argument LIST and rejects a lone non-array value
+        assert.ok(schema.safeParse(sampleFor(schema)).success, eventName+' should accept its arg list');
+        assert.ok(!schema.safeParse(42).success, eventName+' should reject a non-array');
     }
 });

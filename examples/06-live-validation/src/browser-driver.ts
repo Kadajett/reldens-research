@@ -320,11 +320,20 @@ async function fightAndDie(cdp: Cdp): Promise<void> {
         for(const id of enemies ?? []){
             await roomSend(cdp, `{act:'action', type:'attackShort', target:{id:'${id}', type:'obj'}}`);
             await sleep(200);
-            if(await recSeen(cdp, 'reldens.gameOver')){ return; }
+            if(await recSeen(cdp, 'reldens.gameOver')){ return lingerAfterDeath(cdp); }
         }
         // roam with real keys to aggro more enemies and keep trading damage
         await holdKey(cdp, dirs[round % 4], 900);
-        if(await recSeen(cdp, 'reldens.gameOver')){ return; }
+        if(await recSeen(cdp, 'reldens.gameOver')){ return lingerAfterDeath(cdp); }
+    }
+}
+
+// after death the client shows the game-over box and auto-revives; stay connected
+// and keep reporting so gameOverReload and any respawn scene events are captured
+async function lingerAfterDeath(cdp: Cdp): Promise<void> {
+    for(let i = 0; i < 12; i++){
+        await cdp.evaluate(`window.__harnessReport && window.__harnessReport()`).catch(() => undefined);
+        await sleep(1500);
     }
 }
 

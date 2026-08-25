@@ -2,10 +2,10 @@
 
 ```ts
 type DynamicFormBeforeValidationPayload = {
-  formConfig: unknown;
-  formKey: unknown;
-  req: ExpressRequest;
-  submittedValues: unknown;
+  formConfig: object;
+  formKey: string;
+  req: object;
+  submittedValues: object;
 };
 ```
 
@@ -20,7 +20,7 @@ type DynamicFormBeforeValidationPayload = {
 ### formConfig
 
 ```ts
-formConfig: unknown;
+formConfig: object;
 ```
 
 ***
@@ -28,7 +28,7 @@ formConfig: unknown;
 ### formKey
 
 ```ts
-formKey: unknown;
+formKey: string;
 ```
 
 ***
@@ -36,7 +36,7 @@ formKey: unknown;
 ### req
 
 ```ts
-req: ExpressRequest;
+req: object;
 ```
 
 ***
@@ -44,5 +44,5 @@ req: ExpressRequest;
 ### submittedValues
 
 ```ts
-submittedValues: unknown;
+submittedValues: object;
 ```

@@ -2,12 +2,12 @@
 
 ```ts
 type GuestInvalidChangePointPayload = {
-  changePoint: unknown;
+  changePoint: object;
   collisionsManager: CollisionsManager;
-  contactClient: unknown;
+  contactClient: Client;
   isGuest: boolean;
-  playerBody: unknown;
-  playerSchema: unknown;
+  playerBody: object;
+  playerSchema: PlayerState;
 };
 ```
 
@@ -22,7 +22,7 @@ type GuestInvalidChangePointPayload = {
 ### changePoint
 
 ```ts
-changePoint: unknown;
+changePoint: object;
 ```
 
 ***
@@ -38,7 +38,7 @@ collisionsManager: CollisionsManager;
 ### contactClient
 
 ```ts
-contactClient: unknown;
+contactClient: Client;
 ```
 
 ***
@@ -54,7 +54,7 @@ isGuest: boolean;
 ### playerBody
 
 ```ts
-playerBody: unknown;
+playerBody: object;
 ```
 
 ***
@@ -62,5 +62,5 @@ playerBody: unknown;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: PlayerState;
 ```

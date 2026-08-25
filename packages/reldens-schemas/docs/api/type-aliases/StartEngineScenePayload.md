@@ -1,7 +1,7 @@
 # Type Alias: StartEngineScenePayload
 
 ```ts
-type StartEngineScenePayload = [unknown, unknown, unknown, unknown];
+type StartEngineScenePayload = [RoomEvents, PlayerState, Room, string | boolean];
 ```
 
 `reldens.startEngineScene`

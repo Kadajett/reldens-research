@@ -1,7 +1,7 @@
 # Type Alias: SceneRoomOnCreatePayload
 
 ```ts
-type SceneRoomOnCreatePayload = [unknown];
+type SceneRoomOnCreatePayload = [RoomScene];
 ```
 
 `reldens.sceneRoomOnCreate`

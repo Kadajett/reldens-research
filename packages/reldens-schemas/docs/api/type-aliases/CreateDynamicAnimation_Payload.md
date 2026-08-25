@@ -1,7 +1,7 @@
 # Type Alias: CreateDynamicAnimation\_Payload
 
 ```ts
-type CreateDynamicAnimation_Payload = [unknown, unknown];
+type CreateDynamicAnimation_Payload = [ObjectsPlugin, object];
 ```
 
 `reldens.createDynamicAnimation_`

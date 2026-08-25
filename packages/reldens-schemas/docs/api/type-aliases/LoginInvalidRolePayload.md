@@ -1,7 +1,9 @@
 # Type Alias: LoginInvalidRolePayload
 
 ```ts
-type LoginInvalidRolePayload = [unknown, unknown, unknown, unknown];
+type LoginInvalidRolePayload = [LoginManager, UsersModel, object, {
+  error: string;
+}];
 ```
 
 `reldens.loginInvalidRole`

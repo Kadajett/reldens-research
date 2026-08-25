@@ -1,7 +1,7 @@
 # Type Alias: RoomsDefinitionPayload
 
 ```ts
-type RoomsDefinitionPayload = [unknown];
+type RoomsDefinitionPayload = [object[]];
 ```
 
 `reldens.roomsDefinition`

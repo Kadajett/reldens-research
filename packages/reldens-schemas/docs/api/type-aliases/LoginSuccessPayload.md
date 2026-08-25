@@ -1,7 +1,7 @@
 # Type Alias: LoginSuccessPayload
 
 ```ts
-type LoginSuccessPayload = [unknown, unknown, unknown, unknown];
+type LoginSuccessPayload = [LoginManager, UsersModel, object, object];
 ```
 
 `reldens.loginSuccess`

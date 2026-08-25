@@ -2,10 +2,10 @@
 
 ```ts
 type OnPreparePlayerSelectorFormSubmitPayload = {
-  form: HTMLFormElement;
-  gameManager: GameManager;
-  select: HTMLSelectElement;
-  selectedPlayer: unknown;
+  form: object;
+  gameManager: object;
+  select: object;
+  selectedPlayer: object;
   usersPlugin: UsersPlugin;
 };
 ```
@@ -21,7 +21,7 @@ type OnPreparePlayerSelectorFormSubmitPayload = {
 ### form
 
 ```ts
-form: HTMLFormElement;
+form: object;
 ```
 
 ***
@@ -29,7 +29,7 @@ form: HTMLFormElement;
 ### gameManager
 
 ```ts
-gameManager: GameManager;
+gameManager: object;
 ```
 
 ***
@@ -37,7 +37,7 @@ gameManager: GameManager;
 ### select
 
 ```ts
-select: HTMLSelectElement;
+select: object;
 ```
 
 ***
@@ -45,7 +45,7 @@ select: HTMLSelectElement;
 ### selectedPlayer
 
 ```ts
-selectedPlayer: unknown;
+selectedPlayer: object;
 ```
 
 ***

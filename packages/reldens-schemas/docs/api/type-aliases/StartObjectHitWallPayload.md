@@ -2,7 +2,7 @@
 
 ```ts
 type StartObjectHitWallPayload = {
-  objectBody: unknown;
+  objectBody: object;
 };
 ```
 
@@ -17,5 +17,5 @@ type StartObjectHitWallPayload = {
 ### objectBody
 
 ```ts
-objectBody: unknown;
+objectBody: object;
 ```

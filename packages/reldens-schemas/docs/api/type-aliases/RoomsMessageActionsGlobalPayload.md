@@ -1,7 +1,7 @@
 # Type Alias: RoomsMessageActionsGlobalPayload
 
 ```ts
-type RoomsMessageActionsGlobalPayload = Record<string, unknown>;
+type RoomsMessageActionsGlobalPayload = object;
 ```
 
 `reldens.roomsMessageActionsGlobal`

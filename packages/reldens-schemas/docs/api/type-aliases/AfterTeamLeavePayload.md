@@ -2,8 +2,8 @@
 
 ```ts
 type AfterTeamLeavePayload = {
-  currentTeam: unknown;
-  leavingPlayerName: unknown;
+  currentTeam: object;
+  leavingPlayerName: string;
 };
 ```
 
@@ -18,7 +18,7 @@ type AfterTeamLeavePayload = {
 ### currentTeam
 
 ```ts
-currentTeam: unknown;
+currentTeam: object;
 ```
 
 ***
@@ -26,5 +26,5 @@ currentTeam: unknown;
 ### leavingPlayerName
 
 ```ts
-leavingPlayerName: unknown;
+leavingPlayerName: string;
 ```

@@ -1,5 +1,5 @@
 # Type Alias: TeamsPlugin
 
 ```ts
-type TeamsPlugin = unknown;
+type TeamsPlugin = object;
 ```

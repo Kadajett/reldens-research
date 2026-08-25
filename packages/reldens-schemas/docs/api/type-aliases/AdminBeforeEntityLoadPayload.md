@@ -2,9 +2,9 @@
 
 ```ts
 type AdminBeforeEntityLoadPayload = {
-  adminManager: unknown;
-  driverResource: unknown;
-  entityId: unknown;
+  adminManager: AdminManager;
+  driverResource: object;
+  entityId: string;
 };
 ```
 
@@ -19,7 +19,7 @@ type AdminBeforeEntityLoadPayload = {
 ### adminManager
 
 ```ts
-adminManager: unknown;
+adminManager: AdminManager;
 ```
 
 ***
@@ -27,7 +27,7 @@ adminManager: unknown;
 ### driverResource
 
 ```ts
-driverResource: unknown;
+driverResource: object;
 ```
 
 ***
@@ -35,5 +35,5 @@ driverResource: unknown;
 ### entityId
 
 ```ts
-entityId: unknown;
+entityId: string;
 ```

@@ -2,9 +2,9 @@
 
 ```ts
 type EndObjectHitObjectPayload = {
-  bodyA: unknown;
-  bodyB: unknown;
-  priorityObject: unknown;
+  bodyA: object;
+  bodyB: object;
+  priorityObject: object;
 };
 ```
 
@@ -19,7 +19,7 @@ type EndObjectHitObjectPayload = {
 ### bodyA
 
 ```ts
-bodyA: unknown;
+bodyA: object;
 ```
 
 ***
@@ -27,7 +27,7 @@ bodyA: unknown;
 ### bodyB
 
 ```ts
-bodyB: unknown;
+bodyB: object;
 ```
 
 ***
@@ -35,5 +35,5 @@ bodyB: unknown;
 ### priorityObject
 
 ```ts
-priorityObject: unknown;
+priorityObject: object;
 ```

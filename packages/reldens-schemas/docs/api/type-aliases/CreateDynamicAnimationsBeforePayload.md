@@ -1,7 +1,7 @@
 # Type Alias: CreateDynamicAnimationsBeforePayload
 
 ```ts
-type CreateDynamicAnimationsBeforePayload = [unknown, unknown];
+type CreateDynamicAnimationsBeforePayload = [ObjectsPlugin, SceneDynamic];
 ```
 
 `reldens.createDynamicAnimationsBefore`

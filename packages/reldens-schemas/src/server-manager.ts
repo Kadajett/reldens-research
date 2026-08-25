@@ -8,6 +8,7 @@
  * is loose about extra keys and strict about the ones that matter.
  */
 import { z } from 'zod';
+import { zAny, loose } from './zod-floors';
 import { withSource } from './provenance';
 import { CustomClassesSchema } from './custom-classes';
 
@@ -29,7 +30,7 @@ export const PluginConstructorSchema = withSource(
 );
 
 export const ServerManagerConfigSchema = withSource(
-    z.looseObject({
+    loose({
         projectRoot: withSource(z.string().min(1), {
             confidence: 'EXTRACTED',
             sources: [

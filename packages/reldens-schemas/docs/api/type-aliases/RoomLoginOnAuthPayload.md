@@ -3,10 +3,12 @@
 ```ts
 type RoomLoginOnAuthPayload = {
   client: Client;
-  loginResult: unknown;
-  options: unknown;
-  request: unknown;
-  result: string;
+  loginResult: object;
+  options: object;
+  request: object;
+  result: {
+     confirm: boolean;
+  };
   roomLogin: RoomLogin;
 };
 ```
@@ -33,7 +35,7 @@ client: Client;
 ### loginResult
 
 ```ts
-loginResult: unknown;
+loginResult: object;
 ```
 
 ***
@@ -41,7 +43,7 @@ loginResult: unknown;
 ### options
 
 ```ts
-options: unknown;
+options: object;
 ```
 
 ***
@@ -49,7 +51,7 @@ options: unknown;
 ### request
 
 ```ts
-request: unknown;
+request: object;
 ```
 
 ***
@@ -57,7 +59,15 @@ request: unknown;
 ### result
 
 ```ts
-result: string;
+result: {
+  confirm: boolean;
+};
+```
+
+#### confirm
+
+```ts
+confirm: boolean;
 ```
 
 ***

@@ -2,8 +2,8 @@
 
 ```ts
 type TemplateReloaderTemplatesChangedPayload = {
-  changedFiles: unknown;
-  reloader: unknown;
+  changedFiles: object;
+  reloader: TemplateReloader;
 };
 ```
 
@@ -18,7 +18,7 @@ type TemplateReloaderTemplatesChangedPayload = {
 ### changedFiles
 
 ```ts
-changedFiles: unknown;
+changedFiles: object;
 ```
 
 ***
@@ -26,5 +26,5 @@ changedFiles: unknown;
 ### reloader
 
 ```ts
-reloader: unknown;
+reloader: TemplateReloader;
 ```

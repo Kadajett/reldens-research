@@ -2,9 +2,9 @@
 
 ```ts
 type ClanJoinInviteRejectedPayload = {
-  clanInvite: unknown;
-  clientSendingInvite: unknown;
-  playerRejectingName: unknown;
+  clanInvite: object;
+  clientSendingInvite: Client;
+  playerRejectingName: string;
 };
 ```
 
@@ -19,7 +19,7 @@ type ClanJoinInviteRejectedPayload = {
 ### clanInvite
 
 ```ts
-clanInvite: unknown;
+clanInvite: object;
 ```
 
 ***
@@ -27,7 +27,7 @@ clanInvite: unknown;
 ### clientSendingInvite
 
 ```ts
-clientSendingInvite: unknown;
+clientSendingInvite: Client;
 ```
 
 ***
@@ -35,5 +35,5 @@ clientSendingInvite: unknown;
 ### playerRejectingName
 
 ```ts
-playerRejectingName: unknown;
+playerRejectingName: string;
 ```

@@ -1,7 +1,7 @@
 # Type Alias: ProcessForgotPasswordPayload
 
 ```ts
-type ProcessForgotPasswordPayload = [unknown, unknown, unknown];
+type ProcessForgotPasswordPayload = [LoginManager, object, object];
 ```
 
 `reldens.processForgotPassword`

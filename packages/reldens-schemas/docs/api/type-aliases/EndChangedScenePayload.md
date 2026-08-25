@@ -2,7 +2,7 @@
 
 ```ts
 type EndChangedScenePayload = {
-  message: unknown;
+  message: object;
   roomEvents: RoomEvents;
 };
 ```
@@ -18,7 +18,7 @@ type EndChangedScenePayload = {
 ### message
 
 ```ts
-message: unknown;
+message: object;
 ```
 
 ***

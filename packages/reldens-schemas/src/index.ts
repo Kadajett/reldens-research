@@ -26,6 +26,7 @@ export * from './env';
 export * from './room-state';
 export * from './demo-plugins';
 export * from './event-payload-schemas';
+export * from './typed-payloads';
 export * from './server-message-schemas';
 
 export { RELDENS_CONSTANTS } from './generated/constants';

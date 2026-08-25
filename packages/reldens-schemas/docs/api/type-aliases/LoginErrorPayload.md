@@ -1,7 +1,7 @@
 # Type Alias: LoginErrorPayload
 
 ```ts
-type LoginErrorPayload = [unknown, unknown, unknown, unknown];
+type LoginErrorPayload = [LoginManager, UsersModel, object, object];
 ```
 
 `reldens.loginError`

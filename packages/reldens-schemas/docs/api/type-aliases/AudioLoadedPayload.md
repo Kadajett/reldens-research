@@ -1,7 +1,7 @@
 # Type Alias: AudioLoadedPayload
 
 ```ts
-type AudioLoadedPayload = [unknown, unknown, unknown, unknown];
+type AudioLoadedPayload = [AudioManager, object, SceneDynamic, object];
 ```
 
 `reldens.audioLoaded`

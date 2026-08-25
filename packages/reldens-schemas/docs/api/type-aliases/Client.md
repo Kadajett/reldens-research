@@ -1,5 +1,5 @@
 # Type Alias: Client
 
 ```ts
-type Client = unknown;
+type Client = object;
 ```

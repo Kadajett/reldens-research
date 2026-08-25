@@ -2,8 +2,8 @@
 
 ```ts
 type ObjectHitObjectEndPayload = {
-  bodyA: unknown;
-  bodyB: unknown;
+  bodyA: object;
+  bodyB: object;
 };
 ```
 
@@ -18,7 +18,7 @@ type ObjectHitObjectEndPayload = {
 ### bodyA
 
 ```ts
-bodyA: unknown;
+bodyA: object;
 ```
 
 ***
@@ -26,5 +26,5 @@ bodyA: unknown;
 ### bodyB
 
 ```ts
-bodyB: unknown;
+bodyB: object;
 ```

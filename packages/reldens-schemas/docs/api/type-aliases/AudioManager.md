@@ -1,5 +1,5 @@
 # Type Alias: AudioManager
 
 ```ts
-type AudioManager = unknown;
+type AudioManager = object;
 ```

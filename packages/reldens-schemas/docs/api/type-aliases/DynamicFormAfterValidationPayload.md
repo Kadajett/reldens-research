@@ -2,11 +2,13 @@
 
 ```ts
 type DynamicFormAfterValidationPayload = {
-  formConfig: unknown;
-  formKey: unknown;
-  req: ExpressRequest;
-  submittedValues: unknown;
-  validationResult: unknown;
+  formConfig: object;
+  formKey: string;
+  req: object;
+  submittedValues: object;
+  validationResult: {
+     isValid: boolean;
+  };
 };
 ```
 
@@ -21,7 +23,7 @@ type DynamicFormAfterValidationPayload = {
 ### formConfig
 
 ```ts
-formConfig: unknown;
+formConfig: object;
 ```
 
 ***
@@ -29,7 +31,7 @@ formConfig: unknown;
 ### formKey
 
 ```ts
-formKey: unknown;
+formKey: string;
 ```
 
 ***
@@ -37,7 +39,7 @@ formKey: unknown;
 ### req
 
 ```ts
-req: ExpressRequest;
+req: object;
 ```
 
 ***
@@ -45,7 +47,7 @@ req: ExpressRequest;
 ### submittedValues
 
 ```ts
-submittedValues: unknown;
+submittedValues: object;
 ```
 
 ***
@@ -53,5 +55,13 @@ submittedValues: unknown;
 ### validationResult
 
 ```ts
-validationResult: unknown;
+validationResult: {
+  isValid: boolean;
+};
+```
+
+#### isValid
+
+```ts
+isValid: boolean;
 ```

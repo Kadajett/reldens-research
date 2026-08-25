@@ -1,5 +1,5 @@
 # Type Alias: HTMLInputElement
 
 ```ts
-type HTMLInputElement = unknown;
+type HTMLInputElement = object;
 ```

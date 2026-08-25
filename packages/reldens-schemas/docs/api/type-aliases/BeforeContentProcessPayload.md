@@ -3,8 +3,8 @@
 ```ts
 type BeforeContentProcessPayload = {
   content: string;
-  renderContext: unknown;
-  variables: unknown;
+  renderContext: object;
+  variables: object;
 };
 ```
 
@@ -27,7 +27,7 @@ content: string;
 ### renderContext
 
 ```ts
-renderContext: unknown;
+renderContext: object;
 ```
 
 ***
@@ -35,5 +35,5 @@ renderContext: unknown;
 ### variables
 
 ```ts
-variables: unknown;
+variables: object;
 ```

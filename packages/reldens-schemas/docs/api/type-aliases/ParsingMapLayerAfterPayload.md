@@ -2,7 +2,7 @@
 
 ```ts
 type ParsingMapLayerAfterPayload = {
-  layer: unknown;
+  layer: object;
   world: P2world;
 };
 ```
@@ -18,7 +18,7 @@ type ParsingMapLayerAfterPayload = {
 ### layer
 
 ```ts
-layer: unknown;
+layer: object;
 ```
 
 ***

@@ -1,7 +1,7 @@
 # Type Alias: PlayersQueueBeforePayload
 
 ```ts
-type PlayersQueueBeforePayload = [unknown, unknown, unknown, unknown];
+type PlayersQueueBeforePayload = [PlayerState, string, string | boolean, RoomEvents];
 ```
 
 `reldens.playersQueueBefore`

@@ -2,8 +2,8 @@
 
 ```ts
 type PlayerHitWallBeginPayload = {
-  playerBody: unknown;
-  wallBody: unknown;
+  playerBody: object;
+  wallBody: object;
 };
 ```
 
@@ -18,7 +18,7 @@ type PlayerHitWallBeginPayload = {
 ### playerBody
 
 ```ts
-playerBody: unknown;
+playerBody: object;
 ```
 
 ***
@@ -26,5 +26,5 @@ playerBody: unknown;
 ### wallBody
 
 ```ts
-wallBody: unknown;
+wallBody: object;
 ```

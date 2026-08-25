@@ -2,16 +2,16 @@
 
 ```ts
 type CreatedWorldObjectPayload = {
-  bodyMass: unknown;
-  bodyObject: unknown;
-  collision: unknown;
-  hasState: unknown;
-  objectIndex: string;
+  bodyMass: number;
+  bodyObject: object;
+  collision: boolean;
+  hasState: boolean;
+  objectIndex: number;
   p2world: P2world;
-  pathFinder: unknown;
+  pathFinder: object;
   posX: number;
   posY: number;
-  roomObject: unknown;
+  roomObject: object;
   tileH: number;
   tileW: number;
 };
@@ -28,7 +28,7 @@ type CreatedWorldObjectPayload = {
 ### bodyMass
 
 ```ts
-bodyMass: unknown;
+bodyMass: number;
 ```
 
 ***
@@ -36,7 +36,7 @@ bodyMass: unknown;
 ### bodyObject
 
 ```ts
-bodyObject: unknown;
+bodyObject: object;
 ```
 
 ***
@@ -44,7 +44,7 @@ bodyObject: unknown;
 ### collision
 
 ```ts
-collision: unknown;
+collision: boolean;
 ```
 
 ***
@@ -52,7 +52,7 @@ collision: unknown;
 ### hasState
 
 ```ts
-hasState: unknown;
+hasState: boolean;
 ```
 
 ***
@@ -60,7 +60,7 @@ hasState: unknown;
 ### objectIndex
 
 ```ts
-objectIndex: string;
+objectIndex: number;
 ```
 
 ***
@@ -76,7 +76,7 @@ p2world: P2world;
 ### pathFinder
 
 ```ts
-pathFinder: unknown;
+pathFinder: object;
 ```
 
 ***
@@ -100,7 +100,7 @@ posY: number;
 ### roomObject
 
 ```ts
-roomObject: unknown;
+roomObject: object;
 ```
 
 ***

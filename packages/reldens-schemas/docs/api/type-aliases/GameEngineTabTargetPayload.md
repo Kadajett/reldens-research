@@ -1,7 +1,7 @@
 # Type Alias: GameEngineTabTargetPayload
 
 ```ts
-type GameEngineTabTargetPayload = [unknown, unknown, unknown];
+type GameEngineTabTargetPayload = [GameEngine, object, object];
 ```
 
 `reldens.gameEngineTabTarget`

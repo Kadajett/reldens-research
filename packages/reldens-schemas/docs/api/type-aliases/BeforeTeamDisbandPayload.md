@@ -3,10 +3,10 @@
 ```ts
 type BeforeTeamDisbandPayload = {
   continueDisband?: boolean;
-  continueLeave?: unknown;
+  continueLeave?: boolean;
   playerSchema: PlayerState;
   room: RoomScene;
-  singleRemoveId: number | string | boolean;
+  singleRemoveId: number;
   teamsPlugin: TeamsPlugin;
 };
 ```
@@ -30,7 +30,7 @@ optional continueDisband?: boolean;
 ### continueLeave?
 
 ```ts
-optional continueLeave?: unknown;
+optional continueLeave?: boolean;
 ```
 
 ***
@@ -54,7 +54,7 @@ room: RoomScene;
 ### singleRemoveId
 
 ```ts
-singleRemoveId: number | string | boolean;
+singleRemoveId: number;
 ```
 
 ***

@@ -3,8 +3,8 @@
 ```ts
 type OnPrepareSinglePlayerSelectorFormSubmitPayload = {
   form: HTMLFormElement;
-  gameManager: GameManager;
-  player: unknown;
+  gameManager: object;
+  player: object;
   selectElement: HTMLInputElement;
   usersPlugin: UsersPlugin;
 };
@@ -29,7 +29,7 @@ form: HTMLFormElement;
 ### gameManager
 
 ```ts
-gameManager: GameManager;
+gameManager: object;
 ```
 
 ***
@@ -37,7 +37,7 @@ gameManager: GameManager;
 ### player
 
 ```ts
-player: unknown;
+player: object;
 ```
 
 ***

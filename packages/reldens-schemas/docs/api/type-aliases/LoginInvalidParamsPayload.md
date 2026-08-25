@@ -1,7 +1,9 @@
 # Type Alias: LoginInvalidParamsPayload
 
 ```ts
-type LoginInvalidParamsPayload = [unknown, unknown, unknown, unknown];
+type LoginInvalidParamsPayload = [LoginManager, UsersModel, object, {
+  error: string;
+}];
 ```
 
 `reldens.loginInvalidParams`

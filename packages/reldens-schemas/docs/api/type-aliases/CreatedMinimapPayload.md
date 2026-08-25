@@ -1,7 +1,7 @@
 # Type Alias: CreatedMinimapPayload
 
 ```ts
-type CreatedMinimapPayload = [unknown];
+type CreatedMinimapPayload = [Minimap];
 ```
 
 `reldens.createdMinimap`

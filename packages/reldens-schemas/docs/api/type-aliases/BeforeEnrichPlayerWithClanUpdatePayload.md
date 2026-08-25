@@ -2,7 +2,7 @@
 
 ```ts
 type BeforeEnrichPlayerWithClanUpdatePayload = {
-  client: unknown;
+  client: object;
   continueProcess: boolean;
   playerSchema: PlayerState;
   room: RoomScene;
@@ -21,7 +21,7 @@ type BeforeEnrichPlayerWithClanUpdatePayload = {
 ### client
 
 ```ts
-client: unknown;
+client: object;
 ```
 
 ***

@@ -1,7 +1,10 @@
 # Type Alias: PlayerNewNameUnavailablePayload
 
 ```ts
-type PlayerNewNameUnavailablePayload = [unknown, unknown, unknown, unknown];
+type PlayerNewNameUnavailablePayload = [LoginManager, object, boolean, {
+  error: boolean;
+  message: string;
+}];
 ```
 
 `reldens.playerNewNameUnavailable`

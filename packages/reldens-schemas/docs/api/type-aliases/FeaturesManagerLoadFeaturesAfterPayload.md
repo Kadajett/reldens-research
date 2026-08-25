@@ -2,7 +2,7 @@
 
 ```ts
 type FeaturesManagerLoadFeaturesAfterPayload = {
-  featuresCollection: unknown;
+  featuresCollection: object;
   featuresManager: FeaturesManager;
 };
 ```
@@ -18,7 +18,7 @@ type FeaturesManagerLoadFeaturesAfterPayload = {
 ### featuresCollection
 
 ```ts
-featuresCollection: unknown;
+featuresCollection: object;
 ```
 
 ***

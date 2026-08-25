@@ -1,7 +1,7 @@
 # Type Alias: BeforeJoinGameRoomPayload
 
 ```ts
-type BeforeJoinGameRoomPayload = [unknown];
+type BeforeJoinGameRoomPayload = [Room];
 ```
 
 `reldens.beforeJoinGameRoom`

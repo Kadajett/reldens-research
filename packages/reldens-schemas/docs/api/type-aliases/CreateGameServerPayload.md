@@ -3,7 +3,7 @@
 ```ts
 type CreateGameServerPayload = {
   continueProcess: boolean;
-  options: unknown;
+  options: object;
 };
 ```
 
@@ -26,5 +26,5 @@ continueProcess: boolean;
 ### options
 
 ```ts
-options: unknown;
+options: object;
 ```

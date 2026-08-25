@@ -1,7 +1,7 @@
 # Type Alias: GameEngineShowTargetPayload
 
 ```ts
-type GameEngineShowTargetPayload = [unknown, unknown, unknown, unknown];
+type GameEngineShowTargetPayload = [GameEngine, object, object, string];
 ```
 
 `reldens.gameEngineShowTarget`

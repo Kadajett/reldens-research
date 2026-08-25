@@ -1,7 +1,7 @@
 # Type Alias: AudioManagerDeleteAudiosPayload
 
 ```ts
-type AudioManagerDeleteAudiosPayload = [unknown, unknown, unknown, unknown];
+type AudioManagerDeleteAudiosPayload = [AudioManager, Room, GameManager, object];
 ```
 
 `reldens.audioManagerDeleteAudios`

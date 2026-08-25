@@ -2,10 +2,10 @@
 
 ```ts
 type DynamicFormRequestHandlerBeforeValidationPayload = {
-  formKey: unknown;
-  req: ExpressRequest;
-  res: ExpressResponse;
-  submittedValues: unknown;
+  formKey: string;
+  req: object;
+  res: object;
+  submittedValues: object;
 };
 ```
 
@@ -20,7 +20,7 @@ type DynamicFormRequestHandlerBeforeValidationPayload = {
 ### formKey
 
 ```ts
-formKey: unknown;
+formKey: string;
 ```
 
 ***
@@ -28,7 +28,7 @@ formKey: unknown;
 ### req
 
 ```ts
-req: ExpressRequest;
+req: object;
 ```
 
 ***
@@ -36,7 +36,7 @@ req: ExpressRequest;
 ### res
 
 ```ts
-res: ExpressResponse;
+res: object;
 ```
 
 ***
@@ -44,5 +44,5 @@ res: ExpressResponse;
 ### submittedValues
 
 ```ts
-submittedValues: unknown;
+submittedValues: object;
 ```

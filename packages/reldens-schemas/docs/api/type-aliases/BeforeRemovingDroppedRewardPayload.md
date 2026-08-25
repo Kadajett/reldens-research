@@ -2,11 +2,11 @@
 
 ```ts
 type BeforeRemovingDroppedRewardPayload = {
-  client: unknown;
+  client: object;
   continueEvent: boolean;
-  playerSchema: unknown;
-  room: unknown;
-  roomObject: unknown;
+  playerSchema: object;
+  room: object;
+  roomObject: object;
 };
 ```
 
@@ -21,7 +21,7 @@ type BeforeRemovingDroppedRewardPayload = {
 ### client
 
 ```ts
-client: unknown;
+client: object;
 ```
 
 ***
@@ -37,7 +37,7 @@ continueEvent: boolean;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: object;
 ```
 
 ***
@@ -45,7 +45,7 @@ playerSchema: unknown;
 ### room
 
 ```ts
-room: unknown;
+room: object;
 ```
 
 ***
@@ -53,5 +53,5 @@ room: unknown;
 ### roomObject
 
 ```ts
-roomObject: unknown;
+roomObject: object;
 ```

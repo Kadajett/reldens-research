@@ -1,7 +1,7 @@
 # Type Alias: PreloadUiScenePayload
 
 ```ts
-type PreloadUiScenePayload = [unknown];
+type PreloadUiScenePayload = [ScenePreloader];
 ```
 
 `reldens.preloadUiScene`

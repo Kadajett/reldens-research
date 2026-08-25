@@ -1,7 +1,7 @@
 # Type Alias: CreateNewUserAfterPayload
 
 ```ts
-type CreateNewUserAfterPayload = [unknown, unknown, unknown];
+type CreateNewUserAfterPayload = [UsersModel, LoginManager, object];
 ```
 
 `reldens.createNewUserAfter`

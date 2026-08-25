@@ -1,7 +1,7 @@
 # Type Alias: CreatePlayerAnimationsPayload
 
 ```ts
-type CreatePlayerAnimationsPayload = [unknown, unknown];
+type CreatePlayerAnimationsPayload = [ScenePreloader, string];
 ```
 
 `reldens.createPlayerAnimations`

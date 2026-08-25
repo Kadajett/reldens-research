@@ -1,7 +1,7 @@
 # Type Alias: AudioManagerUpdateCategoriesLoadedPayload
 
 ```ts
-type AudioManagerUpdateCategoriesLoadedPayload = [unknown, unknown, unknown, unknown];
+type AudioManagerUpdateCategoriesLoadedPayload = [AudioManager, Room, GameManager, object];
 ```
 
 `reldens.audioManagerUpdateCategoriesLoaded`

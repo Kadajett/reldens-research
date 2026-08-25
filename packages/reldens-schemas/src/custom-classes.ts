@@ -16,6 +16,7 @@
  *   - fixed:   the bucket path is complete and holds a map or a single class.
  */
 import { z } from 'zod';
+import { zAny, loose } from './zod-floors';
 import { withSource } from './provenance';
 import { CUSTOM_CLASS_BUCKET_PROVENANCE, CUSTOM_CLASS_BUCKETS } from './generated/custom-classes';
 
@@ -33,7 +34,7 @@ const keyedBucket = z.record(z.string().min(1), ClassRefSchema);
 export const CustomClassBucketSchema = z.enum(CUSTOM_CLASS_BUCKETS);
 
 export const ServerCustomClassesSchema = withSource(
-    z.looseObject({
+    loose({
         objects: withSource(keyedBucket, {
             confidence: 'EXTRACTED',
             sources: [{
@@ -72,7 +73,7 @@ export const ServerCustomClassesSchema = withSource(
                 +'Not a map - one class for the whole game.'
         }).optional(),
 
-        inventory: z.looseObject({
+        inventory: loose({
             items: withSource(keyedBucket, {
                 confidence: 'EXTRACTED',
                 sources: [
@@ -92,7 +93,7 @@ export const ServerCustomClassesSchema = withSource(
             }).optional()
         }).optional(),
 
-        skills: z.looseObject({
+        skills: loose({
             skillsList: withSource(keyedBucket, {
                 confidence: 'EXTRACTED',
                 sources: [{file: 'lib/actions/server/data-loader.js', line: 62}],
@@ -117,7 +118,7 @@ export const ServerCustomClassesSchema = withSource(
 );
 
 export const ClientCustomClassesSchema = withSource(
-    z.looseObject({
+    loose({
         objects: withSource(z.record(z.string().min(1), ClassRefSchema), {
             confidence: 'EXTRACTED',
             sources: [{
@@ -129,7 +130,7 @@ export const ClientCustomClassesSchema = withSource(
                 +'(also the name of its sprite folder under assets/).'
         }).optional(),
 
-        inventory: z.looseObject({
+        inventory: loose({
             items: withSource(z.record(z.string().min(1), ClassRefSchema), {
                 confidence: 'EXTRACTED',
                 sources: [{file: 'lib/inventory/client/plugin.js', line: 230}]
@@ -140,7 +141,7 @@ export const ClientCustomClassesSchema = withSource(
             }).optional()
         }).optional(),
 
-        message: z.looseObject({
+        message: loose({
             listeners: withSource(z.record(z.string().min(1), ClassRefSchema), {
                 confidence: 'EXTRACTED',
                 sources: [{

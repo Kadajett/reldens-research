@@ -2,7 +2,7 @@
 
 ```ts
 type AfterCreateAdminManagerPayload = {
-  serverManager: ServerManager | false;
+  serverManager: ServerManager;
 };
 ```
 
@@ -17,5 +17,5 @@ type AfterCreateAdminManagerPayload = {
 ### serverManager
 
 ```ts
-serverManager: ServerManager | false;
+serverManager: ServerManager;
 ```

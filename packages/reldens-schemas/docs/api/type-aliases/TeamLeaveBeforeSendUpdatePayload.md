@@ -2,14 +2,14 @@
 
 ```ts
 type TeamLeaveBeforeSendUpdatePayload = {
-  areLessPlayerThanRequired: unknown;
-  currentTeam: unknown;
-  isOwnerDisbanding: unknown;
-  playerId: unknown;
+  areLessPlayerThanRequired: boolean;
+  currentTeam: object;
+  isOwnerDisbanding: boolean;
+  playerId: number;
   playerSchema: PlayerState;
   room: RoomScene;
-  sendUpdate: unknown;
-  singleRemoveId: number | string | boolean;
+  sendUpdate: object;
+  singleRemoveId: number;
   teamsPlugin: TeamsPlugin;
 };
 ```
@@ -25,7 +25,7 @@ type TeamLeaveBeforeSendUpdatePayload = {
 ### areLessPlayerThanRequired
 
 ```ts
-areLessPlayerThanRequired: unknown;
+areLessPlayerThanRequired: boolean;
 ```
 
 ***
@@ -33,7 +33,7 @@ areLessPlayerThanRequired: unknown;
 ### currentTeam
 
 ```ts
-currentTeam: unknown;
+currentTeam: object;
 ```
 
 ***
@@ -41,7 +41,7 @@ currentTeam: unknown;
 ### isOwnerDisbanding
 
 ```ts
-isOwnerDisbanding: unknown;
+isOwnerDisbanding: boolean;
 ```
 
 ***
@@ -49,7 +49,7 @@ isOwnerDisbanding: unknown;
 ### playerId
 
 ```ts
-playerId: unknown;
+playerId: number;
 ```
 
 ***
@@ -73,7 +73,7 @@ room: RoomScene;
 ### sendUpdate
 
 ```ts
-sendUpdate: unknown;
+sendUpdate: object;
 ```
 
 ***
@@ -81,7 +81,7 @@ sendUpdate: unknown;
 ### singleRemoveId
 
 ```ts
-singleRemoveId: number | string | boolean;
+singleRemoveId: number;
 ```
 
 ***

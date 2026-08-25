@@ -1,7 +1,7 @@
 # Type Alias: PlayerEngineAddPlayerPayload
 
 ```ts
-type PlayerEngineAddPlayerPayload = [unknown, unknown, unknown];
+type PlayerEngineAddPlayerPayload = [PlayerEngine, string, object];
 ```
 
 `reldens.playerEngineAddPlayer`

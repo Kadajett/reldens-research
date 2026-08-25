@@ -3,7 +3,7 @@
 ```ts
 type BeforeTeamJoinPayload = {
   continueBeforeJoin: boolean;
-  currentTeam: unknown;
+  currentTeam: object;
   teamsPlugin: TeamsPlugin;
 };
 ```
@@ -27,7 +27,7 @@ continueBeforeJoin: boolean;
 ### currentTeam
 
 ```ts
-currentTeam: unknown;
+currentTeam: object;
 ```
 
 ***

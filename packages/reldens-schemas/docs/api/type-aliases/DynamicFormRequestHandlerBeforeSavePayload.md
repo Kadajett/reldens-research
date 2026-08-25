@@ -2,11 +2,11 @@
 
 ```ts
 type DynamicFormRequestHandlerBeforeSavePayload = {
-  formConfig: unknown;
-  formKey: unknown;
-  preparedValues: unknown;
-  req: ExpressRequest;
-  res: ExpressResponse;
+  formConfig: object;
+  formKey: string;
+  preparedValues: object;
+  req: object;
+  res: object;
 };
 ```
 
@@ -21,7 +21,7 @@ type DynamicFormRequestHandlerBeforeSavePayload = {
 ### formConfig
 
 ```ts
-formConfig: unknown;
+formConfig: object;
 ```
 
 ***
@@ -29,7 +29,7 @@ formConfig: unknown;
 ### formKey
 
 ```ts
-formKey: unknown;
+formKey: string;
 ```
 
 ***
@@ -37,7 +37,7 @@ formKey: unknown;
 ### preparedValues
 
 ```ts
-preparedValues: unknown;
+preparedValues: object;
 ```
 
 ***
@@ -45,7 +45,7 @@ preparedValues: unknown;
 ### req
 
 ```ts
-req: ExpressRequest;
+req: object;
 ```
 
 ***
@@ -53,5 +53,5 @@ req: ExpressRequest;
 ### res
 
 ```ts
-res: ExpressResponse;
+res: object;
 ```

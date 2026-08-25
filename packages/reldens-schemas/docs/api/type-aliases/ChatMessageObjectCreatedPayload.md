@@ -1,7 +1,7 @@
 # Type Alias: ChatMessageObjectCreatedPayload
 
 ```ts
-type ChatMessageObjectCreatedPayload = [unknown, unknown];
+type ChatMessageObjectCreatedPayload = [ChatUi, object];
 ```
 
 `reldens.chatMessageObjectCreated`

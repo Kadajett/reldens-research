@@ -1,7 +1,7 @@
 # Type Alias: BeforeSuperInitialGameDataPayload
 
 ```ts
-type BeforeSuperInitialGameDataPayload = [unknown, unknown, unknown, unknown];
+type BeforeSuperInitialGameDataPayload = [object, RoomGame, Client, UsersModel];
 ```
 
 `reldens.beforeSuperInitialGameData`

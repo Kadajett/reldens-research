@@ -1,7 +1,7 @@
 # Type Alias: PlayersOnAddPayload
 
 ```ts
-type PlayersOnAddPayload = [unknown, unknown, unknown, unknown];
+type PlayersOnAddPayload = [PlayerState, string, string | boolean, RoomEvents];
 ```
 
 `reldens.playersOnAdd`

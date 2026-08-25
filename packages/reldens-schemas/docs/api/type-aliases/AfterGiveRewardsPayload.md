@@ -2,10 +2,10 @@
 
 ```ts
 type AfterGiveRewardsPayload = {
-  itemRewards: unknown[];
-  playerSchema: unknown;
-  targetObject: unknown;
-  winningRewards: unknown;
+  itemRewards: object[];
+  playerSchema: object;
+  targetObject: object;
+  winningRewards: object;
 };
 ```
 
@@ -20,7 +20,7 @@ type AfterGiveRewardsPayload = {
 ### itemRewards
 
 ```ts
-itemRewards: unknown[];
+itemRewards: object[];
 ```
 
 ***
@@ -28,7 +28,7 @@ itemRewards: unknown[];
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: object;
 ```
 
 ***
@@ -36,7 +36,7 @@ playerSchema: unknown;
 ### targetObject
 
 ```ts
-targetObject: unknown;
+targetObject: object;
 ```
 
 ***
@@ -44,5 +44,5 @@ targetObject: unknown;
 ### winningRewards
 
 ```ts
-winningRewards: unknown;
+winningRewards: object;
 ```

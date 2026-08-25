@@ -2,9 +2,11 @@
 
 ```ts
 type RemovePlayerBeforePayload = {
-  playerSchema: unknown;
+  playerSchema: PlayerState;
   room: RoomScene;
-  stateObject: unknown;
+  stateObject: {
+     isRemoveReady: boolean;
+  };
 };
 ```
 
@@ -19,7 +21,7 @@ type RemovePlayerBeforePayload = {
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: PlayerState;
 ```
 
 ***
@@ -35,5 +37,13 @@ room: RoomScene;
 ### stateObject
 
 ```ts
-stateObject: unknown;
+stateObject: {
+  isRemoveReady: boolean;
+};
+```
+
+#### isRemoveReady
+
+```ts
+isRemoveReady: boolean;
 ```

@@ -2,13 +2,13 @@
 
 ```ts
 type FormsTransformerAfterRenderPayload = {
-  domain: unknown;
-  enhancedData: unknown;
-  formConfig: unknown;
-  formContent: unknown;
-  formKey: unknown;
-  req: ExpressRequest;
-  systemVariables: unknown;
+  domain: string;
+  enhancedData: object;
+  formConfig: object;
+  formContent: string;
+  formKey: string;
+  req: object;
+  systemVariables: object;
 };
 ```
 
@@ -23,7 +23,7 @@ type FormsTransformerAfterRenderPayload = {
 ### domain
 
 ```ts
-domain: unknown;
+domain: string;
 ```
 
 ***
@@ -31,7 +31,7 @@ domain: unknown;
 ### enhancedData
 
 ```ts
-enhancedData: unknown;
+enhancedData: object;
 ```
 
 ***
@@ -39,7 +39,7 @@ enhancedData: unknown;
 ### formConfig
 
 ```ts
-formConfig: unknown;
+formConfig: object;
 ```
 
 ***
@@ -47,7 +47,7 @@ formConfig: unknown;
 ### formContent
 
 ```ts
-formContent: unknown;
+formContent: string;
 ```
 
 ***
@@ -55,7 +55,7 @@ formContent: unknown;
 ### formKey
 
 ```ts
-formKey: unknown;
+formKey: string;
 ```
 
 ***
@@ -63,7 +63,7 @@ formKey: unknown;
 ### req
 
 ```ts
-req: ExpressRequest;
+req: object;
 ```
 
 ***
@@ -71,5 +71,5 @@ req: ExpressRequest;
 ### systemVariables
 
 ```ts
-systemVariables: unknown;
+systemVariables: object;
 ```

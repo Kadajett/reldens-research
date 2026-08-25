@@ -1,7 +1,7 @@
 # Type Alias: DefineRoomsInGameServerDonePayload
 
 ```ts
-type DefineRoomsInGameServerDonePayload = [unknown];
+type DefineRoomsInGameServerDonePayload = [RoomsManager];
 ```
 
 `reldens.defineRoomsInGameServerDone`

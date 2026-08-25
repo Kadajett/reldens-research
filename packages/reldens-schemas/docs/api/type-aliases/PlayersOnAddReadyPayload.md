@@ -2,7 +2,7 @@
 
 ```ts
 type PlayersOnAddReadyPayload = {
-  player: unknown;
+  player: PlayerEngine;
   previousScene: string | boolean;
   roomEvents: RoomEvents;
 };
@@ -19,7 +19,7 @@ type PlayersOnAddReadyPayload = {
 ### player
 
 ```ts
-player: unknown;
+player: PlayerEngine;
 ```
 
 ***

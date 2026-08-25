@@ -1,7 +1,7 @@
 # Type Alias: BeforeSceneDynamicCreatePayload
 
 ```ts
-type BeforeSceneDynamicCreatePayload = [unknown];
+type BeforeSceneDynamicCreatePayload = [SceneDynamic];
 ```
 
 `reldens.beforeSceneDynamicCreate`

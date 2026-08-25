@@ -2,9 +2,9 @@
 
 ```ts
 type AdminSideBarBeforeRenderPayload = {
-  adminManager: unknown;
-  navigationContents: unknown;
-  navigationView: unknown;
+  adminManager: AdminManager;
+  navigationContents: object;
+  navigationView: string;
 };
 ```
 
@@ -19,7 +19,7 @@ type AdminSideBarBeforeRenderPayload = {
 ### adminManager
 
 ```ts
-adminManager: unknown;
+adminManager: AdminManager;
 ```
 
 ***
@@ -27,7 +27,7 @@ adminManager: unknown;
 ### navigationContents
 
 ```ts
-navigationContents: unknown;
+navigationContents: object;
 ```
 
 ***
@@ -35,5 +35,5 @@ navigationContents: unknown;
 ### navigationView
 
 ```ts
-navigationView: unknown;
+navigationView: string;
 ```

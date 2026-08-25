@@ -1,7 +1,7 @@
 # Type Alias: OnJoinRoomGamePayload
 
 ```ts
-type OnJoinRoomGamePayload = [unknown, unknown, unknown, unknown];
+type OnJoinRoomGamePayload = [Client, object, UsersModel, RoomGame];
 ```
 
 `reldens.onJoinRoomGame`

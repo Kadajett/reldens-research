@@ -7,6 +7,7 @@
  * types - except where a hand-verified schema in protocol.ts already pins them
  * (UI, CLOSE_UI, START_GAME, ...), which win via serverMessageSchemaFor.
  */
+import { zAny, loose } from './zod-floors';
 import { z } from 'zod';
 import { RELDENS_SERVER_MESSAGE_INFO, type ServerMessageInfo } from './generated/server-messages';
 import {
@@ -37,15 +38,15 @@ for(const [act, info] of Object.entries(RELDENS_SERVER_MESSAGE_INFO)){
     const shape: Record<string, z.ZodType> = {act: z.literal(act)};
     for(const key of info.requiredKeys){
         if('act' !== key){
-            shape[key] = z.unknown();
+            shape[key] = zAny;
         }
     }
     for(const key of info.sometimesKeys){
         if('act' !== key){
-            shape[key] = z.unknown().optional();
+            shape[key] = zAny.optional();
         }
     }
-    generated.set(act, z.looseObject(shape).meta({
+    generated.set(act, loose(shape).meta({
         description: 'Sent via '+info.channels.join('/')+' at '+info.sites.join('; '),
         reldensMessageInfo: info
     }));
@@ -57,7 +58,7 @@ export function serverMessageSchemaFor(act: string): z.ZodType | null {
 }
 
 /** Validates any inbound server message by its act field; unknown acts pass through. */
-export const AnyServerMessageSchema = z.looseObject({act: z.string().optional()})
+export const AnyServerMessageSchema = loose({act: z.string().optional()})
     .check((ctx) => {
         const act = ctx.value.act;
         if(!act){

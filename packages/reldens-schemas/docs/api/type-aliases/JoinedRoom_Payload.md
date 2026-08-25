@@ -1,7 +1,7 @@
 # Type Alias: JoinedRoom\_Payload
 
 ```ts
-type JoinedRoom_Payload = [unknown, unknown];
+type JoinedRoom_Payload = [Room, GameManager];
 ```
 
 `reldens.joinedRoom_`

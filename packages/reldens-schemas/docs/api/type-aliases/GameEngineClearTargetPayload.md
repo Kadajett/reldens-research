@@ -1,7 +1,7 @@
 # Type Alias: GameEngineClearTargetPayload
 
 ```ts
-type GameEngineClearTargetPayload = [unknown, unknown];
+type GameEngineClearTargetPayload = [GameEngine, object];
 ```
 
 `reldens.gameEngineClearTarget`

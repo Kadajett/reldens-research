@@ -2,7 +2,7 @@
 
 ```ts
 type BeforeJoinGamePayload = {
-  formData: unknown;
+  formData: object;
   gameManager: GameManager;
   isNewUser: boolean;
 };
@@ -22,7 +22,7 @@ The registration deadline for client custom classes. The scene preloader reads c
 ### formData
 
 ```ts
-formData: unknown;
+formData: object;
 ```
 
 ***

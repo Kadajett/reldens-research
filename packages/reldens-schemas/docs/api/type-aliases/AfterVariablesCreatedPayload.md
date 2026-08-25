@@ -2,8 +2,8 @@
 
 ```ts
 type AfterVariablesCreatedPayload = {
-  renderContext: unknown;
-  variables: unknown;
+  renderContext: object;
+  variables: object;
 };
 ```
 
@@ -18,7 +18,7 @@ type AfterVariablesCreatedPayload = {
 ### renderContext
 
 ```ts
-renderContext: unknown;
+renderContext: object;
 ```
 
 ***
@@ -26,5 +26,5 @@ renderContext: unknown;
 ### variables
 
 ```ts
-variables: unknown;
+variables: object;
 ```

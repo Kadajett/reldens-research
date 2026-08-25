@@ -1,5 +1,5 @@
 # Type Alias: ServerManager
 
 ```ts
-type ServerManager = unknown;
+type ServerManager = object;
 ```

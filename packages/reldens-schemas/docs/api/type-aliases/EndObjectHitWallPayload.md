@@ -2,7 +2,7 @@
 
 ```ts
 type EndObjectHitWallPayload = {
-  objectBody: unknown;
+  objectBody: object;
 };
 ```
 
@@ -17,5 +17,5 @@ type EndObjectHitWallPayload = {
 ### objectBody
 
 ```ts
-objectBody: unknown;
+objectBody: object;
 ```

@@ -1,7 +1,9 @@
 # Type Alias: GuestLoginInvalidParamsPayload
 
 ```ts
-type GuestLoginInvalidParamsPayload = [unknown, unknown, unknown, unknown];
+type GuestLoginInvalidParamsPayload = [LoginManager, UsersModel, object, {
+  error: string;
+}];
 ```
 
 `reldens.guestLoginInvalidParams`

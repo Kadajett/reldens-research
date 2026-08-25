@@ -2,7 +2,7 @@
 
 ```ts
 type BeforeClanJoinPayload = {
-  clanToJoin: unknown;
+  clanToJoin: object;
   continueBeforeJoin: boolean;
   teamsPlugin: TeamsPlugin;
 };
@@ -19,7 +19,7 @@ type BeforeClanJoinPayload = {
 ### clanToJoin
 
 ```ts
-clanToJoin: unknown;
+clanToJoin: object;
 ```
 
 ***

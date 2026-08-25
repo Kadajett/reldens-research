@@ -1,5 +1,5 @@
 # Type Alias: GameManager
 
 ```ts
-type GameManager = unknown;
+type GameManager = object;
 ```

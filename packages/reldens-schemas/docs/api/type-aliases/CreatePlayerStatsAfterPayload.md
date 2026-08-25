@@ -1,7 +1,7 @@
 # Type Alias: CreatePlayerStatsAfterPayload
 
 ```ts
-type CreatePlayerStatsAfterPayload = [unknown, unknown, unknown, unknown];
+type CreatePlayerStatsAfterPayload = [Client, UsersModel, PlayerState, RoomScene];
 ```
 
 `reldens.createPlayerStatsAfter`

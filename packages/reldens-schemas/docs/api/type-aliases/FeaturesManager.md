@@ -1,5 +1,5 @@
 # Type Alias: FeaturesManager
 
 ```ts
-type FeaturesManager = unknown;
+type FeaturesManager = object;
 ```

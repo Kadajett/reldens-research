@@ -1,7 +1,7 @@
 # Type Alias: BeforeEnrichUserWithLocalePayload
 
 ```ts
-type BeforeEnrichUserWithLocalePayload = [unknown];
+type BeforeEnrichUserWithLocalePayload = [object];
 ```
 
 `reldens.beforeEnrichUserWithLocale`

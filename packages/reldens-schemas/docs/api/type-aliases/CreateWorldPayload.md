@@ -1,7 +1,7 @@
 # Type Alias: CreateWorldPayload
 
 ```ts
-type CreateWorldPayload = [unknown, unknown, unknown];
+type CreateWorldPayload = [object, ObjectsManager, RoomScene];
 ```
 
 `reldens.createWorld`

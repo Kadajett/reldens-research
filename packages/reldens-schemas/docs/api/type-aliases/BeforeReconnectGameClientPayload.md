@@ -1,7 +1,7 @@
 # Type Alias: BeforeReconnectGameClientPayload
 
 ```ts
-type BeforeReconnectGameClientPayload = [unknown, unknown];
+type BeforeReconnectGameClientPayload = [object, RoomEvents];
 ```
 
 `reldens.beforeReconnectGameClient`

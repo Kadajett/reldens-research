@@ -1,7 +1,7 @@
 # Type Alias: UpdateGameSizeBeforePayload
 
 ```ts
-type UpdateGameSizeBeforePayload = [unknown, unknown, unknown];
+type UpdateGameSizeBeforePayload = [GameEngine, number, number];
 ```
 
 `reldens.updateGameSizeBefore`

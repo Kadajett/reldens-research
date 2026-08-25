@@ -1,7 +1,7 @@
 # Type Alias: ActionsPrepareEventsListenersPayload
 
 ```ts
-type ActionsPrepareEventsListenersPayload = [unknown, unknown];
+type ActionsPrepareEventsListenersPayload = [object, string];
 ```
 
 `reldens.actionsPrepareEventsListeners`

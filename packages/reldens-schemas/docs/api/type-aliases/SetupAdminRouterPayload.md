@@ -2,7 +2,7 @@
 
 ```ts
 type SetupAdminRouterPayload = {
-  adminManager: unknown;
+  adminManager: AdminManager;
 };
 ```
 
@@ -17,5 +17,5 @@ type SetupAdminRouterPayload = {
 ### adminManager
 
 ```ts
-adminManager: unknown;
+adminManager: AdminManager;
 ```

@@ -2,9 +2,9 @@
 
 ```ts
 type DynamicFormAfterSavePayload = {
-  formConfig: unknown;
-  preparedValues: unknown;
-  result: string;
+  formConfig: object;
+  preparedValues: object;
+  result: object;
 };
 ```
 
@@ -19,7 +19,7 @@ type DynamicFormAfterSavePayload = {
 ### formConfig
 
 ```ts
-formConfig: unknown;
+formConfig: object;
 ```
 
 ***
@@ -27,7 +27,7 @@ formConfig: unknown;
 ### preparedValues
 
 ```ts
-preparedValues: unknown;
+preparedValues: object;
 ```
 
 ***
@@ -35,5 +35,5 @@ preparedValues: unknown;
 ### result
 
 ```ts
-result: string;
+result: object;
 ```

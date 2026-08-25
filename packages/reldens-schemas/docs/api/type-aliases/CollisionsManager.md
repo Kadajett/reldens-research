@@ -1,5 +1,5 @@
 # Type Alias: CollisionsManager
 
 ```ts
-type CollisionsManager = unknown;
+type CollisionsManager = object;
 ```

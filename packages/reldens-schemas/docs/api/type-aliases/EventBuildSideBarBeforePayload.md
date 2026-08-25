@@ -2,8 +2,8 @@
 
 ```ts
 type EventBuildSideBarBeforePayload = {
-  adminManager: unknown;
-  navigationContents: unknown;
+  adminManager: AdminManager;
+  navigationContents: object;
 };
 ```
 
@@ -18,7 +18,7 @@ type EventBuildSideBarBeforePayload = {
 ### adminManager
 
 ```ts
-adminManager: unknown;
+adminManager: AdminManager;
 ```
 
 ***
@@ -26,5 +26,5 @@ adminManager: unknown;
 ### navigationContents
 
 ```ts
-navigationContents: unknown;
+navigationContents: object;
 ```

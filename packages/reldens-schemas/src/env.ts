@@ -15,6 +15,7 @@
  * read site does.
  */
 import { z } from 'zod';
+import { zAny, loose } from './zod-floors';
 import { withSource } from './provenance';
 import { RELDENS_ENV_VARS, RELDENS_ENV_PROVENANCE, type ReldensEnvVar } from './generated/env';
 
@@ -45,7 +46,7 @@ export const StorageDriverSchema = withSource(
  * never fails on a variable this schema has no opinion about.
  */
 export const ReldensEnvSchema = withSource(
-    z.looseObject({
+    loose({
         RELDENS_APP_HOST: z.string().optional(),
         RELDENS_APP_PORT: port().optional(),
         RELDENS_PUBLIC_URL: z.string().optional(),

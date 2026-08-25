@@ -1,7 +1,9 @@
 # Type Alias: InvalidDataPayload
 
 ```ts
-type InvalidDataPayload = [unknown, unknown, unknown];
+type InvalidDataPayload = [LoginManager, object, {
+  error: string;
+}];
 ```
 
 `reldens.invalidData`

@@ -3,9 +3,9 @@
 ```ts
 type CreatedUserInterfacePayload = {
   gameManager: GameManager;
-  id: unknown;
+  id: string;
   ObjectsPlugin: ObjectsPlugin;
-  userInterface: unknown;
+  userInterface: object;
 };
 ```
 
@@ -28,7 +28,7 @@ gameManager: GameManager;
 ### id
 
 ```ts
-id: unknown;
+id: string;
 ```
 
 ***
@@ -44,5 +44,5 @@ ObjectsPlugin: ObjectsPlugin;
 ### userInterface
 
 ```ts
-userInterface: unknown;
+userInterface: object;
 ```

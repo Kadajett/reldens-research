@@ -1,7 +1,7 @@
 # Type Alias: AfterProcessRewardsDropsBeforeBroadcastPayload
 
 ```ts
-type AfterProcessRewardsDropsBeforeBroadcastPayload = [unknown, unknown];
+type AfterProcessRewardsDropsBeforeBroadcastPayload = [object, boolean];
 ```
 
 `reldens.afterProcessRewardsDropsBeforeBroadcast`

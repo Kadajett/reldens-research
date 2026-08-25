@@ -3,8 +3,8 @@
 ```ts
 type BeforeGiveRewardsPayload = {
   continueEvent: boolean;
-  playerSchema: unknown;
-  targetObject: unknown;
+  playerSchema: object;
+  targetObject: object;
 };
 ```
 
@@ -27,7 +27,7 @@ continueEvent: boolean;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: object;
 ```
 
 ***
@@ -35,5 +35,5 @@ playerSchema: unknown;
 ### targetObject
 
 ```ts
-targetObject: unknown;
+targetObject: object;
 ```

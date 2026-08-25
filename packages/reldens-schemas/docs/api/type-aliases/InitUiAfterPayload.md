@@ -1,7 +1,7 @@
 # Type Alias: InitUiAfterPayload
 
 ```ts
-type InitUiAfterPayload = [unknown, unknown];
+type InitUiAfterPayload = [object, RoomEvents];
 ```
 
 `reldens.initUiAfter`

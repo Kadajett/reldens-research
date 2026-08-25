@@ -1,7 +1,7 @@
 # Type Alias: BeforePreloadPayload
 
 ```ts
-type BeforePreloadPayload = [unknown, unknown];
+type BeforePreloadPayload = [ScenePreloader, object];
 ```
 
 `reldens.beforePreload`

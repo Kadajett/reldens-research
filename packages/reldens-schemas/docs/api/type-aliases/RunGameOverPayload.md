@@ -2,8 +2,8 @@
 
 ```ts
 type RunGameOverPayload = {
-  defaultBehavior: unknown;
-  message: unknown;
+  defaultBehavior: boolean;
+  message: object;
   roomEvents: RoomEvents;
 };
 ```
@@ -19,7 +19,7 @@ type RunGameOverPayload = {
 ### defaultBehavior
 
 ```ts
-defaultBehavior: unknown;
+defaultBehavior: boolean;
 ```
 
 ***
@@ -27,7 +27,7 @@ defaultBehavior: unknown;
 ### message
 
 ```ts
-message: unknown;
+message: object;
 ```
 
 ***

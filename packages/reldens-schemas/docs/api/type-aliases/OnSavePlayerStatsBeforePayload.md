@@ -3,8 +3,10 @@
 ```ts
 type OnSavePlayerStatsBeforePayload = {
   client: Client;
-  objectState: unknown;
-  playerSchema: unknown;
+  objectState: {
+     updateReady: boolean;
+  };
+  playerSchema: PlayerState;
   room: RoomScene;
 };
 ```
@@ -28,7 +30,15 @@ client: Client;
 ### objectState
 
 ```ts
-objectState: unknown;
+objectState: {
+  updateReady: boolean;
+};
+```
+
+#### updateReady
+
+```ts
+updateReady: boolean;
 ```
 
 ***
@@ -36,7 +46,7 @@ objectState: unknown;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: PlayerState;
 ```
 
 ***

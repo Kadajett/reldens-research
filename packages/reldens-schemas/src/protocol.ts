@@ -14,6 +14,7 @@
  */
 import { z } from 'zod';
 import { withSource } from './provenance';
+import { zAny, loose } from './zod-floors';
 import { RELDENS_CONSTANTS } from './generated/constants';
 
 const Game = RELDENS_CONSTANTS.GameConst;
@@ -50,7 +51,7 @@ export const StopMessageSchema = z.strictObject({
 });
 
 export const PointerMessageSchema = withSource(
-    z.looseObject({
+    loose({
         [ACTION_KEY]: z.literal(Game['POINTER']),
         x: z.number(),
         y: z.number(),
@@ -65,9 +66,9 @@ export const PointerMessageSchema = withSource(
 );
 
 export const CreatePlayerMessageSchema = withSource(
-    z.looseObject({
+    loose({
         [ACTION_KEY]: z.literal(Game['CREATE_PLAYER']),
-        formData: z.looseObject({
+        formData: loose({
             'new-player-name': z.string().min(1),
             selectedScene: z.string().optional()
         })
@@ -88,7 +89,7 @@ export const ClientJoinedMessageSchema = z.strictObject({
 });
 
 export const ObjectInteractionMessageSchema = withSource(
-    z.looseObject({
+    loose({
         [ACTION_KEY]: z.literal(Objects['OBJECT_INTERACTION']),
         id: z.union([z.string(), z.number()])
     }),
@@ -113,10 +114,10 @@ export const TargetTypeSchema = withSource(
 );
 
 export const ActionMessageSchema = withSource(
-    z.looseObject({
+    loose({
         [ACTION_KEY]: z.literal(Actions['ACTION']),
         type: z.string().min(1),
-        target: z.looseObject({
+        target: loose({
             id: z.union([z.string(), z.number()]),
             type: TargetTypeSchema
         }).optional()
@@ -147,10 +148,10 @@ export const ClientToServerMessageSchema = z.union([
 // ---------------------------------------------------------------- server -> client
 
 export const StartGameMessageSchema = withSource(
-    z.looseObject({
+    loose({
         [ACTION_KEY]: z.literal(Game['START_GAME']),
-        gameConfig: z.unknown().optional(),
-        player: z.unknown().optional()
+        gameConfig: zAny.optional(),
+        player: zAny.optional()
     }),
     {
         confidence: 'EXTRACTED',
@@ -160,15 +161,15 @@ export const StartGameMessageSchema = withSource(
     }
 );
 
-export const CreatePlayerResultMessageSchema = z.looseObject({
+export const CreatePlayerResultMessageSchema = loose({
     [ACTION_KEY]: z.literal(Game['CREATE_PLAYER_RESULT']),
-    player: z.unknown().optional(),
-    error: z.unknown().optional(),
+    player: zAny.optional(),
+    error: zAny.optional(),
     message: z.string().optional()
 });
 
 export const UiMessageSchema = withSource(
-    z.looseObject({
+    loose({
         [ACTION_KEY]: z.literal(Game['UI']),
         id: z.union([z.string(), z.number()]),
         content: z.string()
@@ -184,7 +185,7 @@ export const UiMessageSchema = withSource(
     }
 );
 
-export const CloseUiMessageSchema = z.looseObject({
+export const CloseUiMessageSchema = loose({
     [ACTION_KEY]: z.literal(Game['CLOSE_UI_ACTION']),
     id: z.union([z.string(), z.number()])
 });
@@ -207,13 +208,13 @@ export const CombatSideSchema = withSource(
     }
 );
 
-export const BattleEndedMessageSchema = z.looseObject({
+export const BattleEndedMessageSchema = loose({
     [ACTION_KEY]: z.literal(Actions['BATTLE_ENDED']),
-    [Actions['DATA_OBJECT_KEY_TARGET']]: z.unknown().optional()
+    [Actions['DATA_OBJECT_KEY_TARGET']]: zAny.optional()
 });
 
 export const LifebarUpdateMessageSchema = withSource(
-    z.looseObject({
+    loose({
         [ACTION_KEY]: z.string(),
         [Actions['DATA_OWNER_TYPE']]: CombatSideSchema.optional(),
         [Actions['DATA_OWNER_KEY']]: z.union([z.string(), z.number()]).optional()
@@ -255,7 +256,7 @@ export const WellKnownRoomSchema = withSource(
 
 /** Options passed when joining the lobby room. */
 export const LoginOptionsSchema = withSource(
-    z.looseObject({
+    loose({
         username: z.string().min(1),
         password: z.string(),
         isNewUser: z.boolean().optional(),

@@ -18,6 +18,7 @@
  * `reldens.beforeInitializeManagers` rather than in `setup` itself.
  */
 import { z } from 'zod';
+import { zAny, loose } from './zod-floors';
 import { withSource } from './provenance';
 
 /** The shared events manager. Structural, because the real class is untyped CommonJS. */
@@ -75,7 +76,7 @@ export const CustomClientPluginSetupPropsSchema = withSource(
 );
 
 export const ServerFeaturePluginSetupPropsSchema = withSource(
-    z.looseObject({
+    loose({
         events: EventsManagerSchema,
         dataServer: z.union([z.custom<Record<string, any>>((v) => Boolean(v) && 'object' === typeof v), z.literal(false)]),
         config: z.custom<Record<string, any>>((value) => Boolean(value) && 'object' === typeof value),

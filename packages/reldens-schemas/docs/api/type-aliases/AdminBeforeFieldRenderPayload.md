@@ -2,16 +2,16 @@
 
 ```ts
 type AdminBeforeFieldRenderPayload = {
-  adminContentsRender: unknown;
-  adminFilesContents: unknown;
-  adminManager: unknown;
-  driverResource: unknown;
-  loadedEntity: unknown;
-  property: string;
+  adminContentsRender: object;
+  adminFilesContents: object;
+  adminManager: AdminManager;
+  driverResource: object;
+  loadedEntity: object;
+  property: object;
   propertyKey: string;
-  renderedEditProperties: unknown;
-  req: ExpressRequest;
-  templateData: unknown;
+  renderedEditProperties: object;
+  req: object;
+  templateData: object;
 };
 ```
 
@@ -26,7 +26,7 @@ type AdminBeforeFieldRenderPayload = {
 ### adminContentsRender
 
 ```ts
-adminContentsRender: unknown;
+adminContentsRender: object;
 ```
 
 ***
@@ -34,7 +34,7 @@ adminContentsRender: unknown;
 ### adminFilesContents
 
 ```ts
-adminFilesContents: unknown;
+adminFilesContents: object;
 ```
 
 ***
@@ -42,7 +42,7 @@ adminFilesContents: unknown;
 ### adminManager
 
 ```ts
-adminManager: unknown;
+adminManager: AdminManager;
 ```
 
 ***
@@ -50,7 +50,7 @@ adminManager: unknown;
 ### driverResource
 
 ```ts
-driverResource: unknown;
+driverResource: object;
 ```
 
 ***
@@ -58,7 +58,7 @@ driverResource: unknown;
 ### loadedEntity
 
 ```ts
-loadedEntity: unknown;
+loadedEntity: object;
 ```
 
 ***
@@ -66,7 +66,7 @@ loadedEntity: unknown;
 ### property
 
 ```ts
-property: string;
+property: object;
 ```
 
 ***
@@ -82,7 +82,7 @@ propertyKey: string;
 ### renderedEditProperties
 
 ```ts
-renderedEditProperties: unknown;
+renderedEditProperties: object;
 ```
 
 ***
@@ -90,7 +90,7 @@ renderedEditProperties: unknown;
 ### req
 
 ```ts
-req: ExpressRequest;
+req: object;
 ```
 
 ***
@@ -98,5 +98,5 @@ req: ExpressRequest;
 ### templateData
 
 ```ts
-templateData: unknown;
+templateData: object;
 ```

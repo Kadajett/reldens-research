@@ -1,7 +1,7 @@
 # Type Alias: CreatePlayerBeforePayload
 
 ```ts
-type CreatePlayerBeforePayload = [unknown, unknown, unknown];
+type CreatePlayerBeforePayload = [Client, UsersModel, RoomScene];
 ```
 
 `reldens.createPlayerBefore`

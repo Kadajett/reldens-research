@@ -1,7 +1,7 @@
 # Type Alias: PlayerSceneUnavailablePayload
 
 ```ts
-type PlayerSceneUnavailablePayload = [unknown, unknown, unknown];
+type PlayerSceneUnavailablePayload = [LoginManager, object, object];
 ```
 
 `reldens.playerSceneUnavailable`

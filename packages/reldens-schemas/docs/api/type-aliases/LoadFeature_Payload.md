@@ -1,7 +1,7 @@
 # Type Alias: LoadFeature\_Payload
 
 ```ts
-type LoadFeature_Payload = [unknown, unknown];
+type LoadFeature_Payload = [object, FeaturesManager];
 ```
 
 `reldens.loadFeature_`

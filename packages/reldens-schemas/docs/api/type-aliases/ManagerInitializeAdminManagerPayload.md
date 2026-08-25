@@ -2,10 +2,10 @@
 
 ```ts
 type ManagerInitializeAdminManagerPayload = {
-  adminFilesContents: unknown;
-  authenticationCallback: unknown;
-  manager: unknown;
-  translations: unknown;
+  adminFilesContents: object;
+  authenticationCallback: object;
+  manager: Manager;
+  translations: object;
 };
 ```
 
@@ -20,7 +20,7 @@ type ManagerInitializeAdminManagerPayload = {
 ### adminFilesContents
 
 ```ts
-adminFilesContents: unknown;
+adminFilesContents: object;
 ```
 
 ***
@@ -28,7 +28,7 @@ adminFilesContents: unknown;
 ### authenticationCallback
 
 ```ts
-authenticationCallback: unknown;
+authenticationCallback: object;
 ```
 
 ***
@@ -36,7 +36,7 @@ authenticationCallback: unknown;
 ### manager
 
 ```ts
-manager: unknown;
+manager: Manager;
 ```
 
 ***
@@ -44,5 +44,5 @@ manager: unknown;
 ### translations
 
 ```ts
-translations: unknown;
+translations: object;
 ```

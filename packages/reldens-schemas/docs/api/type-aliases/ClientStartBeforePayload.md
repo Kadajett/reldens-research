@@ -1,7 +1,7 @@
 # Type Alias: ClientStartBeforePayload
 
 ```ts
-type ClientStartBeforePayload = [unknown];
+type ClientStartBeforePayload = [GameManager];
 ```
 
 `reldens.clientStartBefore`

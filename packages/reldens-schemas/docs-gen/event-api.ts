@@ -1,42 +1,52 @@
 /* GENERATED - do not edit. Source: scripts/generate-event-api.cjs
- * One documented payload type per Reldens event, for TypeDoc. A key's type is
- * the class or primitive read from the reldens emit site (the source expression
- * follows each field as a comment); unknown means the source did not establish it. */
+ * One documented payload type per Reldens event, for TypeDoc, rendered from the
+ * SAME zod schema the package validates with. A value the emit site proves is a
+ * reldens class instance is named as that class; a value the source does not type
+ * is `unknown`. There are no invented shapes. */
 
 /**
- * Reldens runtime classes referenced by the payloads below. They are modelled as
- * opaque (unknown): the emit site proves the value IS one of these, but this
- * package does not model their internal shape.
+ * Reldens runtime classes the payloads below reference. The emit site proves a
+ * value IS an instance of one of these; the class is named for documentation but
+ * its internal shape is not modelled here, so each is an opaque object type.
  */
-export type AnimationEngine = unknown;
-export type AudioManager = unknown;
-export type ChatUi = unknown;
-export type Client = unknown;
-export type CollisionsManager = unknown;
-export type ConfigManager = unknown;
-export type EnemyObject = unknown;
-export type ExpressRequest = unknown;
-export type ExpressResponse = unknown;
-export type FeaturesManager = unknown;
-export type GameManager = unknown;
-export type HTMLFormElement = unknown;
-export type HTMLInputElement = unknown;
-export type HTMLSelectElement = unknown;
-export type ObjectsManager = unknown;
-export type ObjectsPlugin = unknown;
-export type P2world = unknown;
-export type PhysicalBody = unknown;
-export type Player = unknown;
-export type PlayerState = unknown;
-export type RoomEvents = unknown;
-export type RoomLogin = unknown;
-export type RoomRespawn = unknown;
-export type RoomScene = unknown;
-export type SceneDynamic = unknown;
-export type ServerManager = unknown;
-export type TeamsPlugin = unknown;
-export type UsersModel = unknown;
-export type UsersPlugin = unknown;
+export type AdminManager = object;
+export type AnimationEngine = object;
+export type AudioManager = object;
+export type ChatUi = object;
+export type Client = object;
+export type ClientStartHandler = object;
+export type CollisionsManager = object;
+export type ConfigManager = object;
+export type EnemyObject = object;
+export type FeaturesManager = object;
+export type GameEngine = object;
+export type GameManager = object;
+export type HTMLFormElement = object;
+export type HTMLInputElement = object;
+export type LoginManager = object;
+export type Manager = object;
+export type Minimap = object;
+export type ObjectsManager = object;
+export type ObjectsPlugin = object;
+export type P2world = object;
+export type Pve = object;
+export type Player = object;
+export type PlayerEngine = object;
+export type PlayerState = object;
+export type Room = object;
+export type RoomEvents = object;
+export type RoomGame = object;
+export type RoomLogin = object;
+export type RoomRespawn = object;
+export type RoomScene = object;
+export type RoomsManager = object;
+export type SceneDynamic = object;
+export type ScenePreloader = object;
+export type ServerManager = object;
+export type TeamsPlugin = object;
+export type TemplateReloader = object;
+export type UsersModel = object;
+export type UsersPlugin = object;
 
 /**
  * `reldens.actionsPrepareEventsListeners`
@@ -45,7 +55,7 @@ export type UsersPlugin = unknown;
  * - Payload: positional arguments `(actionsPlugin, classPath)`
  * - Emitted at: lib/actions/server/event-listeners.js:L55
  */
-export type ActionsPrepareEventsListenersPayload = [actionsPlugin: unknown, classPath: unknown];
+export type ActionsPrepareEventsListenersPayload = [actionsPlugin: object, classPath: string];
 
 /**
  * `reldens.activateRoom`
@@ -54,7 +64,7 @@ export type ActionsPrepareEventsListenersPayload = [actionsPlugin: unknown, clas
  * - Payload: positional arguments `(room, this.gameManager)`
  * - Emitted at: lib/game/client/room-events.js:L85
  */
-export type ActivateRoomPayload = [room: unknown, gameManager: unknown];
+export type ActivateRoomPayload = [room: Room, gameManager: GameManager];
 
 /**
  * `reldens.activatedRoom`
@@ -63,7 +73,7 @@ export type ActivateRoomPayload = [room: unknown, gameManager: unknown];
  * - Payload: positional arguments `(sceneRoom, this)`
  * - Emitted at: lib/game/client/game-manager.js:L435
  */
-export type ActivatedRoomPayload = [sceneRoom: unknown, self: unknown];
+export type ActivatedRoomPayload = [sceneRoom: Room, gameManager: GameManager];
 
 /**
  * `reldens.activatedRoom_`
@@ -72,7 +82,7 @@ export type ActivatedRoomPayload = [sceneRoom: unknown, self: unknown];
  * - Payload: positional arguments `(sceneRoom, this)`
  * - Emitted at: lib/game/client/game-manager.js:L436
  */
-export type ActivatedRoom_Payload = [sceneRoom: unknown, self: unknown];
+export type ActivatedRoom_Payload = [sceneRoom: Room, gameManager: GameManager];
 
 /**
  * `reldens.adminAfterEntityDelete`
@@ -81,12 +91,7 @@ export type ActivatedRoom_Payload = [sceneRoom: unknown, self: unknown];
  * - Payload: one object with keys `adminManager, driverResource, idProperty, ids` (site adds spread/computed keys)
  * - Emitted at: lib/admin-manager/router-contents.js:L305
  */
-export type AdminAfterEntityDeletePayload = {
-    "adminManager": unknown;
-    "driverResource": unknown;  // driverResource
-    "idProperty": unknown;  // idProperty
-    "ids": unknown;  // ids
-};
+export type AdminAfterEntityDeletePayload = { adminManager: AdminManager; driverResource: object; idProperty: string; ids: number[]; };
 
 /**
  * `reldens.adminAfterEntitySave`
@@ -95,14 +100,7 @@ export type AdminAfterEntityDeletePayload = {
  * - Payload: one object with keys `adminManager, driverResource, entityData, entityPath, req, res` (site adds spread/computed keys)
  * - Emitted at: lib/admin-manager/router-contents.js:L351
  */
-export type AdminAfterEntitySavePayload = {
-    "adminManager": unknown;
-    "driverResource": unknown;  // driverResource
-    "entityData": unknown;  // saveResult
-    "entityPath": unknown;  // entityPath
-    "req": ExpressRequest;  // req
-    "res": ExpressResponse;  // res
-};
+export type AdminAfterEntitySavePayload = { adminManager: AdminManager; driverResource: object; entityData: object; entityPath: string; req: object; res: object; };
 
 /**
  * `reldens.adminBeforeEntityEdit`
@@ -111,13 +109,7 @@ export type AdminAfterEntitySavePayload = {
  * - Payload: one object with keys `adminManager, driverResource, entityPath, req, res` (site adds spread/computed keys)
  * - Emitted at: lib/admin-manager/router.js:L128
  */
-export type AdminBeforeEntityEditPayload = {
-    "adminManager": unknown;
-    "driverResource": unknown;  // driverResource
-    "entityPath": unknown;  // entityPath
-    "req": ExpressRequest;  // req
-    "res": ExpressResponse;  // res
-};
+export type AdminBeforeEntityEditPayload = { adminManager: AdminManager; driverResource: object; entityPath: string; req: object; res: object; };
 
 /**
  * `reldens.adminBeforeEntityLoad`
@@ -126,11 +118,7 @@ export type AdminBeforeEntityEditPayload = {
  * - Payload: one object with keys `adminManager, driverResource, entityId` (site adds spread/computed keys)
  * - Emitted at: lib/admin-manager/router-contents.js:L490
  */
-export type AdminBeforeEntityLoadPayload = {
-    "adminManager": unknown;
-    "driverResource": unknown;  // driverResource
-    "entityId": unknown;  // id
-};
+export type AdminBeforeEntityLoadPayload = { adminManager: AdminManager; driverResource: object; entityId: string; };
 
 /**
  * `reldens.adminBeforeEntitySave`
@@ -139,13 +127,7 @@ export type AdminBeforeEntityLoadPayload = {
  * - Payload: one object with keys `adminManager, driverResource, entityPath, req, res` (site adds spread/computed keys)
  * - Emitted at: lib/admin-manager/router.js:L162, lib/admin-manager/router.js:L192
  */
-export type AdminBeforeEntitySavePayload = {
-    "adminManager": unknown;
-    "driverResource": unknown;  // driverResource
-    "entityPath": unknown;  // entityPath
-    "req": ExpressRequest;  // req
-    "res": ExpressResponse;  // res
-};
+export type AdminBeforeEntitySavePayload = { adminManager: AdminManager; driverResource: object; entityPath: string; req: object; res: object; };
 
 /**
  * `reldens.adminBeforeFieldRender`
@@ -154,18 +136,7 @@ export type AdminBeforeEntitySavePayload = {
  * - Payload: one object with keys `adminContentsRender, adminFilesContents, adminManager, driverResource, loadedEntity, property, propertyKey, renderedEditProperties, req, templateData` (site adds spread/computed keys)
  * - Emitted at: lib/admin-manager/router-contents.js:L266
  */
-export type AdminBeforeFieldRenderPayload = {
-    "adminContentsRender": unknown;  // this.adminContentsRender.bind(this)
-    "adminFilesContents": unknown;  // this.adminFilesContents
-    "adminManager": unknown;
-    "driverResource": unknown;  // driverResource
-    "loadedEntity": unknown;  // loadedEntity
-    "property": string;  // property
-    "propertyKey": string;  // propertyKey
-    "renderedEditProperties": unknown;  // renderedEditProperties
-    "req": ExpressRequest;  // req
-    "templateData": unknown;  // templateData
-};
+export type AdminBeforeFieldRenderPayload = { adminContentsRender: object; adminFilesContents: object; adminManager: AdminManager; driverResource: object; loadedEntity: object; property: object; propertyKey: string; renderedEditProperties: object; req: object; templateData: object; };
 
 /**
  * `reldens.adminEditPropertiesPopulation`
@@ -174,15 +145,7 @@ export type AdminBeforeFieldRenderPayload = {
  * - Payload: one object with keys `adminManager, driverResource, entityData, entityId, loadedEntity, renderedEditProperties, req` (site adds spread/computed keys)
  * - Emitted at: lib/admin-manager/router-contents.js:L229
  */
-export type AdminEditPropertiesPopulationPayload = {
-    "adminManager": unknown;
-    "driverResource": unknown;  // driverResource
-    "entityData": unknown;  // loadedEntity
-    "entityId": unknown;  // driverResource.id()
-    "loadedEntity": unknown;  // loadedEntity
-    "renderedEditProperties": unknown;  // renderedEditProperties
-    "req": ExpressRequest;  // req
-};
+export type AdminEditPropertiesPopulationPayload = { adminManager: AdminManager; driverResource: object; entityData: object; entityId: string; loadedEntity: object; renderedEditProperties: object; req: object; };
 
 /**
  * `reldens.adminIsAuthenticated`
@@ -191,13 +154,7 @@ export type AdminEditPropertiesPopulationPayload = {
  * - Payload: one object with keys `adminManager, allowContinue, next, req, res` (site adds spread/computed keys)
  * - Emitted at: lib/admin-manager/router.js:L207
  */
-export type AdminIsAuthenticatedPayload = {
-    "adminManager": unknown;
-    "allowContinue": unknown;  // allowContinue
-    "next": unknown;  // next
-    "req": ExpressRequest;  // req
-    "res": ExpressResponse;  // res
-};
+export type AdminIsAuthenticatedPayload = { adminManager: AdminManager; allowContinue: { result: boolean; callback: null; }; next: object; req: object; res: object; };
 
 /**
  * `reldens.adminListPropertiesPopulation`
@@ -206,12 +163,7 @@ export type AdminIsAuthenticatedPayload = {
  * - Payload: one object with keys `adminManager, driverResource, listProperties, req` (site adds spread/computed keys)
  * - Emitted at: lib/admin-manager/router-contents.js:L112
  */
-export type AdminListPropertiesPopulationPayload = {
-    "adminManager": unknown;
-    "driverResource": unknown;  // driverResource
-    "listProperties": unknown;  // listProperties
-    "req": ExpressRequest;  // req
-};
+export type AdminListPropertiesPopulationPayload = { adminManager: AdminManager; driverResource: object; listProperties: object; req: object; };
 
 /**
  * `reldens.adminSideBarBeforeRender`
@@ -220,11 +172,7 @@ export type AdminListPropertiesPopulationPayload = {
  * - Payload: one object with keys `adminManager, navigationContents, navigationView` (site adds spread/computed keys)
  * - Emitted at: lib/admin-manager/contents-builder.js:L106
  */
-export type AdminSideBarBeforeRenderPayload = {
-    "adminManager": unknown;
-    "navigationContents": unknown;  // navigationContents
-    "navigationView": unknown;  // navigationView
-};
+export type AdminSideBarBeforeRenderPayload = { adminManager: AdminManager; navigationContents: object; navigationView: string; };
 
 /**
  * `reldens.adminSideBarBeforeSubItems`
@@ -233,10 +181,7 @@ export type AdminSideBarBeforeRenderPayload = {
  * - Payload: one object with keys `adminManager, navigationContents` (site adds spread/computed keys)
  * - Emitted at: lib/admin-manager/contents-builder.js:L92
  */
-export type AdminSideBarBeforeSubItemsPayload = {
-    "adminManager": unknown;
-    "navigationContents": unknown;  // navigationContents
-};
+export type AdminSideBarBeforeSubItemsPayload = { adminManager: AdminManager; navigationContents: object; };
 
 /**
  * `reldens.adminViewPropertiesPopulation`
@@ -245,14 +190,7 @@ export type AdminSideBarBeforeSubItemsPayload = {
  * - Payload: one object with keys `adminManager, driverResource, idProperty, loadedEntity, renderedViewProperties, req` (site adds spread/computed keys)
  * - Emitted at: lib/admin-manager/router-contents.js:L202
  */
-export type AdminViewPropertiesPopulationPayload = {
-    "adminManager": unknown;
-    "driverResource": unknown;  // driverResource
-    "idProperty": unknown;  // idProperty
-    "loadedEntity": unknown;  // loadedEntity
-    "renderedViewProperties": unknown;  // renderedViewProperties
-    "req": ExpressRequest;  // req
-};
+export type AdminViewPropertiesPopulationPayload = { adminManager: AdminManager; driverResource: object; idProperty: string; loadedEntity: object; renderedViewProperties: object; req: object; };
 
 /**
  * `reldens.afterContentProcess`
@@ -261,11 +199,7 @@ export type AdminViewPropertiesPopulationPayload = {
  * - Payload: one object with keys `processedContent, renderContext, variables`
  * - Emitted at: lib/template-engine.js:L188
  */
-export type AfterContentProcessPayload = {
-    "processedContent": unknown;  // processedTemplate
-    "renderContext": unknown;  // renderContext
-    "variables": unknown;  // enhancedData
-};
+export type AfterContentProcessPayload = { processedContent: string; renderContext: object; variables: object; };
 
 /**
  * `reldens.afterCreateAdminManager`
@@ -274,9 +208,7 @@ export type AfterContentProcessPayload = {
  * - Payload: one object with keys `serverManager`
  * - Emitted at: lib/admin/server/subscribers/create-admin-subscriber.js:L75
  */
-export type AfterCreateAdminManagerPayload = {
-    "serverManager": ServerManager|false;  // serverManager
-};
+export type AfterCreateAdminManagerPayload = { serverManager: ServerManager; };
 
 /**
  * `reldens.afterEnrichPlayerWithLocale`
@@ -285,12 +217,7 @@ export type AfterCreateAdminManagerPayload = {
  * - Payload: one object with keys `client, roomGame, superInitialGameData, userModel`
  * - Emitted at: lib/snippets/server/initial-game-data-enricher.js:L39
  */
-export type AfterEnrichPlayerWithLocalePayload = {
-    "client": Client;  // client
-    "roomGame": unknown;  // roomGame
-    "superInitialGameData": unknown;  // superInitialGameData
-    "userModel": unknown;  // userModel
-};
+export type AfterEnrichPlayerWithLocalePayload = { client: Client; roomGame: RoomGame; superInitialGameData: object; userModel: UsersModel; };
 
 /**
  * `reldens.afterGiveRewards`
@@ -299,12 +226,7 @@ export type AfterEnrichPlayerWithLocalePayload = {
  * - Payload: one object with keys `itemRewards, playerSchema, targetObject, winningRewards`
  * - Emitted at: lib/rewards/server/subscribers/rewards-subscriber.js:L79
  */
-export type AfterGiveRewardsPayload = {
-    "itemRewards": unknown[];  // itemRewards
-    "playerSchema": unknown;  // playerSchema
-    "targetObject": unknown;  // targetObject
-    "winningRewards": unknown;  // winningRewards
-};
+export type AfterGiveRewardsPayload = { itemRewards: object[]; playerSchema: object; targetObject: object; winningRewards: object; };
 
 /**
  * `reldens.afterInitEngineAndStartGame`
@@ -313,7 +235,7 @@ export type AfterGiveRewardsPayload = {
  * - Payload: positional arguments `(this.initialGameData, joinedFirstRoom)`
  * - Emitted at: lib/game/client/game-manager.js:L361
  */
-export type AfterInitEngineAndStartGamePayload = [initialGameData: unknown, joinedFirstRoom: unknown];
+export type AfterInitEngineAndStartGamePayload = [initialGameData: object, joinedFirstRoom: Room];
 
 /**
  * `reldens.afterPlayerJoinedClan`
@@ -322,10 +244,7 @@ export type AfterInitEngineAndStartGamePayload = [initialGameData: unknown, join
  * - Payload: one object with keys `clan, playerJoining`
  * - Emitted at: lib/teams/server/message-actions/clan-join.js:L72
  */
-export type AfterPlayerJoinedClanPayload = {
-    "clan": unknown;  // clanToJoin
-    "playerJoining": PlayerState;  // playerSchema
-};
+export type AfterPlayerJoinedClanPayload = { clan: object; playerJoining: PlayerState; };
 
 /**
  * `reldens.afterPlayerJoinedTeam`
@@ -334,10 +253,7 @@ export type AfterPlayerJoinedClanPayload = {
  * - Payload: one object with keys `currentTeam, playerJoining`
  * - Emitted at: lib/teams/server/message-actions/team-join.js:L85
  */
-export type AfterPlayerJoinedTeamPayload = {
-    "currentTeam": unknown;  // currentTeam
-    "playerJoining": PlayerState;  // playerSchema
-};
+export type AfterPlayerJoinedTeamPayload = { currentTeam: object; playerJoining: PlayerState; };
 
 /**
  * `reldens.afterProcessPlayerDropsBeforeBroadcast`
@@ -346,7 +262,7 @@ export type AfterPlayerJoinedTeamPayload = {
  * - Payload: positional arguments `(dropsMappedData, eventResult)`
  * - Emitted at: lib/inventory/server/subscribers/player-death-subscriber.js:L103
  */
-export type AfterProcessPlayerDropsBeforeBroadcastPayload = [dropsMappedData: unknown, eventResult: unknown];
+export type AfterProcessPlayerDropsBeforeBroadcastPayload = [dropsMappedData: object, eventResult: boolean];
 
 /**
  * `reldens.afterProcessRewardsDropsBeforeBroadcast`
@@ -355,7 +271,7 @@ export type AfterProcessPlayerDropsBeforeBroadcastPayload = [dropsMappedData: un
  * - Payload: positional arguments `(dropsMappedData, eventResult)`
  * - Emitted at: lib/rewards/server/rewards-drops-processor.js:L49
  */
-export type AfterProcessRewardsDropsBeforeBroadcastPayload = [dropsMappedData: unknown, eventResult: unknown];
+export type AfterProcessRewardsDropsBeforeBroadcastPayload = [dropsMappedData: object, eventResult: boolean];
 
 /**
  * `reldens.afterRunAdditionalRespawnSetup`
@@ -364,15 +280,7 @@ export type AfterProcessRewardsDropsBeforeBroadcastPayload = [dropsMappedData: u
  * - Payload: one object with keys `clonedObjProps, multipleObj, objClass, objInstance, objectIndex, respawnArea, roomRespawn`
  * - Emitted at: lib/respawn/server/room-respawn.js:L137
  */
-export type AfterRunAdditionalRespawnSetupPayload = {
-    "clonedObjProps": unknown;  // clonedObjProps
-    "multipleObj": unknown;  // multipleObj
-    "objClass": Function;  // objClass
-    "objInstance": unknown;  // objInstance
-    "objectIndex": string;  // objectIndex
-    "respawnArea": unknown;  // respawnArea
-    "roomRespawn": RoomRespawn;  // this
-};
+export type AfterRunAdditionalRespawnSetupPayload = { clonedObjProps: object; multipleObj: object; objClass: object; objInstance: object; objectIndex: number; respawnArea: object; roomRespawn: RoomRespawn; };
 
 /**
  * `reldens.afterRunAdditionalSetup`
@@ -381,11 +289,7 @@ export type AfterRunAdditionalRespawnSetupPayload = {
  * - Payload: one object with keys `objectData, objectInstance, objectsManager`
  * - Emitted at: lib/objects/server/manager.js:L144
  */
-export type AfterRunAdditionalSetupPayload = {
-    "objectData": unknown;  // objectData
-    "objectInstance": unknown;  // objectInstance
-    "objectsManager": ObjectsManager;  // this
-};
+export type AfterRunAdditionalSetupPayload = { objectData: object; objectInstance: object; objectsManager: ObjectsManager; };
 
 /**
  * `reldens.afterSceneDynamicCreate`
@@ -394,7 +298,7 @@ export type AfterRunAdditionalSetupPayload = {
  * - Payload: positional arguments `(this)`
  * - Emitted at: lib/game/client/scene-dynamic.js:L104
  */
-export type AfterSceneDynamicCreatePayload = [self: unknown];
+export type AfterSceneDynamicCreatePayload = [self: SceneDynamic];
 
 /**
  * `reldens.afterTeamLeave`
@@ -403,10 +307,7 @@ export type AfterSceneDynamicCreatePayload = [self: unknown];
  * - Payload: one object with keys `currentTeam, leavingPlayerName`
  * - Emitted at: lib/teams/server/message-actions/team-leave.js:L95
  */
-export type AfterTeamLeavePayload = {
-    "currentTeam": unknown;  // currentTeam
-    "leavingPlayerName": unknown;  // leavingPlayerName
-};
+export type AfterTeamLeavePayload = { currentTeam: object; leavingPlayerName: string; };
 
 /**
  * `reldens.afterVariablesCreated`
@@ -415,10 +316,7 @@ export type AfterTeamLeavePayload = {
  * - Payload: one object with keys `renderContext, variables`
  * - Emitted at: lib/template-engine.js:L168
  */
-export type AfterVariablesCreatedPayload = {
-    "renderContext": unknown;  // renderContext
-    "variables": unknown;  // systemVariables
-};
+export type AfterVariablesCreatedPayload = { renderContext: object; variables: object; };
 
 /**
  * `reldens.allAudiosLoaded`
@@ -427,7 +325,7 @@ export type AfterVariablesCreatedPayload = {
  * - Payload: positional arguments `(this, audios, currentScene, audio)`
  * - Emitted at: lib/audio/client/manager.js:L365
  */
-export type AllAudiosLoadedPayload = [self: unknown, audios: unknown, currentScene: unknown, audio: unknown];
+export type AllAudiosLoadedPayload = [self: AudioManager, audios: object, currentScene: SceneDynamic, audio: object];
 
 /**
  * `reldens.audioLoaded`
@@ -436,7 +334,7 @@ export type AllAudiosLoadedPayload = [self: unknown, audios: unknown, currentSce
  * - Payload: positional arguments `(this, audios, currentScene, audio)`
  * - Emitted at: lib/audio/client/manager.js:L363
  */
-export type AudioLoadedPayload = [self: unknown, audios: unknown, currentScene: unknown, audio: unknown];
+export type AudioLoadedPayload = [self: AudioManager, audios: object, currentScene: SceneDynamic, audio: object];
 
 /**
  * `reldens.audioManagerDeleteAudios`
@@ -445,7 +343,7 @@ export type AudioLoadedPayload = [self: unknown, audios: unknown, currentScene: 
  * - Payload: positional arguments `(this, room, gameManager, message)`
  * - Emitted at: lib/audio/client/manager.js:L449
  */
-export type AudioManagerDeleteAudiosPayload = [self: unknown, room: unknown, gameManager: unknown, message: unknown];
+export type AudioManagerDeleteAudiosPayload = [self: AudioManager, room: Room, gameManager: GameManager, message: object];
 
 /**
  * `reldens.audioManagerUpdateAudiosLoaded`
@@ -454,7 +352,7 @@ export type AudioManagerDeleteAudiosPayload = [self: unknown, room: unknown, gam
  * - Payload: positional arguments `(this, room, gameManager, message)`
  * - Emitted at: lib/audio/client/manager.js:L432
  */
-export type AudioManagerUpdateAudiosLoadedPayload = [self: unknown, room: unknown, gameManager: unknown, message: unknown];
+export type AudioManagerUpdateAudiosLoadedPayload = [self: AudioManager, room: Room, gameManager: GameManager, message: object];
 
 /**
  * `reldens.audioManagerUpdateCategoriesLoaded`
@@ -463,7 +361,7 @@ export type AudioManagerUpdateAudiosLoadedPayload = [self: unknown, room: unknow
  * - Payload: positional arguments `(this, room, gameManager, message)`
  * - Emitted at: lib/audio/client/manager.js:L426
  */
-export type AudioManagerUpdateCategoriesLoadedPayload = [self: unknown, room: unknown, gameManager: unknown, message: unknown];
+export type AudioManagerUpdateCategoriesLoadedPayload = [self: AudioManager, room: Room, gameManager: GameManager, message: object];
 
 /**
  * `reldens.battleEnded`
@@ -472,12 +370,7 @@ export type AudioManagerUpdateCategoriesLoadedPayload = [self: unknown, room: un
  * - Payload: a `BattleEndedEvent` instance with properties `actionData, playerSchema, pve, room`
  * - Emitted at: lib/actions/server/pve.js:L332
  */
-export type BattleEndedPayload = {
-    "actionData": unknown;
-    "playerSchema": unknown;
-    "pve": unknown;
-    "room": unknown;
-};
+export type BattleEndedPayload = { actionData: object; playerSchema: PlayerState; pve: Pve; room: RoomScene; };
 
 /**
  * `reldens.beforeClanDisband`
@@ -486,12 +379,7 @@ export type BattleEndedPayload = {
  * - Payload: one object with keys `continueDisband, playerSchema, singleRemoveId, teamsPlugin`
  * - Emitted at: lib/teams/server/message-actions/clan-leave.js:L97
  */
-export type BeforeClanDisbandPayload = {
-    "continueDisband": boolean;  // true
-    "playerSchema": PlayerState;  // playerSchema
-    "singleRemoveId": number|string;  // singleRemoveId
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type BeforeClanDisbandPayload = { continueDisband: boolean; playerSchema: PlayerState; singleRemoveId: number; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.beforeClanJoin`
@@ -500,11 +388,7 @@ export type BeforeClanDisbandPayload = {
  * - Payload: one object with keys `clanToJoin, continueBeforeJoin, teamsPlugin`
  * - Emitted at: lib/teams/server/message-actions/clan-join.js:L42
  */
-export type BeforeClanJoinPayload = {
-    "clanToJoin": unknown;  // clanToJoin
-    "continueBeforeJoin": boolean;  // true
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type BeforeClanJoinPayload = { clanToJoin: object; continueBeforeJoin: boolean; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.beforeClanUpdatePlayers`
@@ -513,11 +397,7 @@ export type BeforeClanJoinPayload = {
  * - Payload: one object with keys `clanToJoin, continueBeforeJoinUpdate, teamsPlugin`
  * - Emitted at: lib/teams/server/message-actions/clan-join.js:L66
  */
-export type BeforeClanUpdatePlayersPayload = {
-    "clanToJoin": unknown;  // clanToJoin
-    "continueBeforeJoinUpdate": boolean;  // true
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type BeforeClanUpdatePlayersPayload = { clanToJoin: object; continueBeforeJoinUpdate: boolean; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.beforeContentProcess`
@@ -526,11 +406,7 @@ export type BeforeClanUpdatePlayersPayload = {
  * - Payload: one object with keys `content, renderContext, variables`
  * - Emitted at: lib/template-engine.js:L175
  */
-export type BeforeContentProcessPayload = {
-    "content": string;  // template
-    "renderContext": unknown;  // renderContext
-    "variables": unknown;  // enhancedData
-};
+export type BeforeContentProcessPayload = { content: string; renderContext: object; variables: object; };
 
 /**
  * `reldens.beforeCreateAdminManager`
@@ -539,9 +415,7 @@ export type BeforeContentProcessPayload = {
  * - Payload: one object with keys `serverManager`
  * - Emitted at: lib/admin/server/subscribers/create-admin-subscriber.js:L40
  */
-export type BeforeCreateAdminManagerPayload = {
-    "serverManager": ServerManager|false;  // serverManager
-};
+export type BeforeCreateAdminManagerPayload = { serverManager: ServerManager; };
 
 /**
  * `reldens.beforeCreateEngine`
@@ -550,7 +424,7 @@ export type BeforeCreateAdminManagerPayload = {
  * - Payload: positional arguments `(this.initialGameData, this)`
  * - Emitted at: lib/game/client/game-manager.js:L299
  */
-export type BeforeCreateEnginePayload = [initialGameData: unknown, self: unknown];
+export type BeforeCreateEnginePayload = [initialGameData: object, gameManager: GameManager];
 
 /**
  * `reldens.beforeCreateUiScene`
@@ -559,7 +433,7 @@ export type BeforeCreateEnginePayload = [initialGameData: unknown, self: unknown
  * - Payload: positional arguments `(this)`
  * - Emitted at: lib/game/client/scene-preloader.js:L217
  */
-export type BeforeCreateUiScenePayload = [self: unknown];
+export type BeforeCreateUiScenePayload = [self: ScenePreloader];
 
 /**
  * `reldens.beforeEnrichPlayerWithClan`
@@ -568,13 +442,7 @@ export type BeforeCreateUiScenePayload = [self: unknown];
  * - Payload: one object with keys `client, continueProcess, playerSchema, room, teamsPlugin`
  * - Emitted at: lib/teams/server/event-handlers/create-player-clan-handler.js:L49
  */
-export type BeforeEnrichPlayerWithClanPayload = {
-    "client": unknown;  // client
-    "continueProcess": boolean;  // true
-    "playerSchema": PlayerState;  // playerSchema
-    "room": RoomScene;  // room
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type BeforeEnrichPlayerWithClanPayload = { client: object; continueProcess: boolean; playerSchema: PlayerState; room: RoomScene; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.beforeEnrichPlayerWithClanUpdate`
@@ -583,13 +451,7 @@ export type BeforeEnrichPlayerWithClanPayload = {
  * - Payload: one object with keys `client, continueProcess, playerSchema, room, teamsPlugin`
  * - Emitted at: lib/teams/server/event-handlers/create-player-clan-handler.js:L71
  */
-export type BeforeEnrichPlayerWithClanUpdatePayload = {
-    "client": unknown;  // client
-    "continueProcess": boolean;  // true
-    "playerSchema": PlayerState;  // playerSchema
-    "room": RoomScene;  // room
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type BeforeEnrichPlayerWithClanUpdatePayload = { client: object; continueProcess: boolean; playerSchema: PlayerState; room: RoomScene; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.beforeEnrichUserWithLocale`
@@ -598,7 +460,7 @@ export type BeforeEnrichPlayerWithClanUpdatePayload = {
  * - Payload: positional arguments `(startEvent)`
  * - Emitted at: lib/snippets/server/initial-game-data-enricher.js:L26
  */
-export type BeforeEnrichUserWithLocalePayload = [startEvent: unknown];
+export type BeforeEnrichUserWithLocalePayload = [startEvent: object];
 
 /**
  * `reldens.beforeGetParsedValue`
@@ -607,10 +469,7 @@ export type BeforeEnrichUserWithLocalePayload = [startEvent: unknown];
  * - Payload: one object with keys `config, configManager`
  * - Emitted at: lib/config/server/manager.js:L102
  */
-export type BeforeGetParsedValuePayload = {
-    "config": ConfigManager;  // config
-    "configManager": ConfigManager;  // this
-};
+export type BeforeGetParsedValuePayload = { config: object; configManager: ConfigManager; };
 
 /**
  * `reldens.beforeGiveRewards`
@@ -619,11 +478,7 @@ export type BeforeGetParsedValuePayload = {
  * - Payload: one object with keys `continueEvent, playerSchema, targetObject`
  * - Emitted at: lib/rewards/server/subscribers/rewards-subscriber.js:L52
  */
-export type BeforeGiveRewardsPayload = {
-    "continueEvent": boolean;  // true
-    "playerSchema": unknown;  // playerSchema
-    "targetObject": unknown;  // targetObject
-};
+export type BeforeGiveRewardsPayload = { continueEvent: boolean; playerSchema: object; targetObject: object; };
 
 /**
  * `reldens.beforeInitEngineAndStartGame`
@@ -632,7 +487,7 @@ export type BeforeGiveRewardsPayload = {
  * - Payload: positional arguments `(this.initialGameData, this)`
  * - Emitted at: lib/game/client/game-manager.js:L291
  */
-export type BeforeInitEngineAndStartGamePayload = [initialGameData: unknown, self: unknown];
+export type BeforeInitEngineAndStartGamePayload = [initialGameData: object, gameManager: GameManager];
 
 /**
  * `reldens.beforeInitializeManagers`
@@ -644,10 +499,7 @@ export type BeforeInitEngineAndStartGamePayload = [initialGameData: unknown, sel
  * - Payload: one object with keys `continueProcess, serverManager`
  * - Emitted at: lib/game/server/manager.js:L394
  */
-export type BeforeInitializeManagersPayload = {
-    "continueProcess": boolean;  // true
-    "serverManager": ServerManager;  // this
-};
+export type BeforeInitializeManagersPayload = { continueProcess: boolean; serverManager: ServerManager; };
 
 /**
  * `reldens.beforeJoinGame`
@@ -659,11 +511,7 @@ export type BeforeInitializeManagersPayload = {
  * - Payload: one object with keys `formData, gameManager, isNewUser`
  * - Emitted at: lib/game/client/game-manager.js:L184
  */
-export type BeforeJoinGamePayload = {
-    "formData": unknown;  // formData
-    "gameManager": GameManager;  // this
-    "isNewUser": boolean;  // isNewUser
-};
+export type BeforeJoinGamePayload = { formData: object; gameManager: GameManager; isNewUser: boolean; };
 
 /**
  * `reldens.beforeJoinGameRoom`
@@ -672,7 +520,7 @@ export type BeforeJoinGamePayload = {
  * - Payload: positional arguments `(this.gameRoom)`
  * - Emitted at: lib/game/client/game-manager.js:L193
  */
-export type BeforeJoinGameRoomPayload = [gameRoom: unknown];
+export type BeforeJoinGameRoomPayload = [gameRoom: Room];
 
 /**
  * `reldens.beforeLoadConfigurations`
@@ -681,9 +529,7 @@ export type BeforeJoinGameRoomPayload = [gameRoom: unknown];
  * - Payload: one object with keys `configManager`
  * - Emitted at: lib/config/server/manager.js:L57
  */
-export type BeforeLoadConfigurationsPayload = {
-    "configManager": ConfigManager;  // this
-};
+export type BeforeLoadConfigurationsPayload = { configManager: ConfigManager; };
 
 /**
  * `reldens.beforePreload`
@@ -692,7 +538,7 @@ export type BeforeLoadConfigurationsPayload = {
  * - Payload: positional arguments `(this, eventUiScene)`
  * - Emitted at: lib/game/client/scene-preloader.js:L81
  */
-export type BeforePreloadPayload = [self: unknown, eventUiScene: unknown];
+export type BeforePreloadPayload = [scenePreloader: ScenePreloader, eventUiScene: object];
 
 /**
  * `reldens.beforePreloadUiScene`
@@ -701,7 +547,7 @@ export type BeforePreloadPayload = [self: unknown, eventUiScene: unknown];
  * - Payload: positional arguments `(this)`
  * - Emitted at: lib/game/client/scene-preloader.js:L132
  */
-export type BeforePreloadUiScenePayload = [self: unknown];
+export type BeforePreloadUiScenePayload = [self: ScenePreloader];
 
 /**
  * `reldens.beforeReconnectGameClient`
@@ -710,7 +556,7 @@ export type BeforePreloadUiScenePayload = [self: unknown];
  * - Payload: positional arguments `(message, this)`
  * - Emitted at: lib/game/client/room-events.js:L422
  */
-export type BeforeReconnectGameClientPayload = [message: unknown, self: unknown];
+export type BeforeReconnectGameClientPayload = [message: object, self: RoomEvents];
 
 /**
  * `reldens.beforeRemovingDroppedReward`
@@ -719,13 +565,7 @@ export type BeforeReconnectGameClientPayload = [message: unknown, self: unknown]
  * - Payload: one object with keys `client, continueEvent, playerSchema, room, roomObject`
  * - Emitted at: lib/rewards/server/reward-message-actions.js:L61
  */
-export type BeforeRemovingDroppedRewardPayload = {
-    "client": unknown;  // client
-    "continueEvent": boolean;  // true
-    "playerSchema": unknown;  // playerSchema
-    "room": unknown;  // room
-    "roomObject": unknown;  // roomObject
-};
+export type BeforeRemovingDroppedRewardPayload = { client: object; continueEvent: boolean; playerSchema: object; room: object; roomObject: object; };
 
 /**
  * `reldens.beforeSceneDynamicCreate`
@@ -734,7 +574,7 @@ export type BeforeRemovingDroppedRewardPayload = {
  * - Payload: positional arguments `(this)`
  * - Emitted at: lib/game/client/scene-dynamic.js:L93
  */
-export type BeforeSceneDynamicCreatePayload = [self: unknown];
+export type BeforeSceneDynamicCreatePayload = [self: SceneDynamic];
 
 /**
  * `reldens.beforeSceneExecuteMessages`
@@ -743,13 +583,7 @@ export type BeforeSceneDynamicCreatePayload = [self: unknown];
  * - Payload: one object with keys `canContinue, client, messageData, playerSchema, room`
  * - Emitted at: lib/rooms/server/scene.js:L449
  */
-export type BeforeSceneExecuteMessagesPayload = {
-    "canContinue": boolean;  // true
-    "client": Client;  // client
-    "messageData": unknown;  // messageData
-    "playerSchema": unknown;  // playerSchema
-    "room": RoomScene;  // this
-};
+export type BeforeSceneExecuteMessagesPayload = { canContinue: boolean; client: Client; messageData: object; playerSchema: PlayerState; room: RoomScene; };
 
 /**
  * `reldens.beforeSetupAdminManager`
@@ -758,9 +592,7 @@ export type BeforeSceneExecuteMessagesPayload = {
  * - Payload: one object with keys `serverManager`
  * - Emitted at: lib/admin/server/subscribers/create-admin-subscriber.js:L73
  */
-export type BeforeSetupAdminManagerPayload = {
-    "serverManager": ServerManager|false;  // serverManager
-};
+export type BeforeSetupAdminManagerPayload = { serverManager: ServerManager; };
 
 /**
  * `reldens.beforeSuperInitialGameData`
@@ -769,7 +601,7 @@ export type BeforeSetupAdminManagerPayload = {
  * - Payload: positional arguments `(superInitialGameData, this, client, userModel)`
  * - Emitted at: lib/rooms/server/game.js:L69
  */
-export type BeforeSuperInitialGameDataPayload = [superInitialGameData: unknown, self: unknown, client: unknown, userModel: unknown];
+export type BeforeSuperInitialGameDataPayload = [superInitialGameData: object, self: RoomGame, client: Client, userModel: UsersModel];
 
 /**
  * `reldens.beforeTeamCreate`
@@ -778,11 +610,7 @@ export type BeforeSuperInitialGameDataPayload = [superInitialGameData: unknown, 
  * - Payload: one object with keys `continueBeforeCreate, teamProps, teamsPlugin`
  * - Emitted at: lib/teams/server/message-actions/team-join.js:L63
  */
-export type BeforeTeamCreatePayload = {
-    "continueBeforeCreate": boolean;  // true
-    "teamProps": unknown;  // teamProps
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type BeforeTeamCreatePayload = { continueBeforeCreate: boolean; teamProps: object; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.beforeTeamDisband`
@@ -791,14 +619,7 @@ export type BeforeTeamCreatePayload = {
  * - Payload: one object with keys `playerSchema, room, singleRemoveId, teamsPlugin` (sometimes: continueDisband, continueLeave)
  * - Emitted at: lib/teams/server/message-actions/team-leave.js:L99, lib/teams/server/message-actions/team-leave.js:L107
  */
-export type BeforeTeamDisbandPayload = {
-    "playerSchema": PlayerState;  // playerSchema
-    "room": RoomScene;  // room
-    "singleRemoveId": number|string|boolean;  // singleRemoveId
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-    "continueDisband"?: boolean;  // true
-    "continueLeave"?: unknown;
-};
+export type BeforeTeamDisbandPayload = { playerSchema: PlayerState; room: RoomScene; singleRemoveId: number; teamsPlugin: TeamsPlugin; continueDisband?: boolean; continueLeave?: boolean; };
 
 /**
  * `reldens.beforeTeamJoin`
@@ -807,11 +628,7 @@ export type BeforeTeamDisbandPayload = {
  * - Payload: one object with keys `continueBeforeJoin, currentTeam, teamsPlugin`
  * - Emitted at: lib/teams/server/message-actions/team-join.js:L70
  */
-export type BeforeTeamJoinPayload = {
-    "continueBeforeJoin": boolean;  // true
-    "currentTeam": unknown;  // currentTeam
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type BeforeTeamJoinPayload = { continueBeforeJoin: boolean; currentTeam: object; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.beforeTeamUpdatePlayers`
@@ -820,11 +637,7 @@ export type BeforeTeamJoinPayload = {
  * - Payload: one object with keys `continueBeforeJoinUpdate, currentTeam, teamsPlugin`
  * - Emitted at: lib/teams/server/message-actions/team-join.js:L79
  */
-export type BeforeTeamUpdatePlayersPayload = {
-    "continueBeforeJoinUpdate": boolean;  // true
-    "currentTeam": unknown;  // currentTeam
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type BeforeTeamUpdatePlayersPayload = { continueBeforeJoinUpdate: boolean; currentTeam: object; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.buildAdminContentsAfter`
@@ -833,9 +646,7 @@ export type BeforeTeamUpdatePlayersPayload = {
  * - Payload: one object with keys `adminManager` (site adds spread/computed keys)
  * - Emitted at: lib/admin-manager/contents-builder.js:L45
  */
-export type BuildAdminContentsAfterPayload = {
-    "adminManager": unknown;
-};
+export type BuildAdminContentsAfterPayload = { adminManager: AdminManager; };
 
 /**
  * `reldens.changeSceneDestroyPrevious`
@@ -844,7 +655,7 @@ export type BuildAdminContentsAfterPayload = {
  * - Payload: positional arguments `(this)`
  * - Emitted at: lib/game/client/scene-dynamic.js:L559
  */
-export type ChangeSceneDestroyPreviousPayload = [self: unknown];
+export type ChangeSceneDestroyPreviousPayload = [self: SceneDynamic];
 
 /**
  * `reldens.chatMessageObjectCreated`
@@ -853,7 +664,7 @@ export type ChangeSceneDestroyPreviousPayload = [self: unknown];
  * - Payload: positional arguments `(this, message)`
  * - Emitted at: lib/chat/client/chat-ui.js:L613
  */
-export type ChatMessageObjectCreatedPayload = [self: unknown, message: unknown];
+export type ChatMessageObjectCreatedPayload = [self: ChatUi, message: object];
 
 /**
  * `reldens.clanDisconnectAfterSendUpdate`
@@ -862,11 +673,7 @@ export type ChatMessageObjectCreatedPayload = [self: unknown, message: unknown];
  * - Payload: one object with keys `continueLeave, playerSchema, teamsPlugin`
  * - Emitted at: lib/teams/server/message-actions/clan-disconnect.js:L72
  */
-export type ClanDisconnectAfterSendUpdatePayload = {
-    "continueLeave": boolean;  // true
-    "playerSchema": PlayerState;  // playerSchema
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type ClanDisconnectAfterSendUpdatePayload = { continueLeave: boolean; playerSchema: PlayerState; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.clanDisconnectBeforeSendUpdate`
@@ -875,12 +682,7 @@ export type ClanDisconnectAfterSendUpdatePayload = {
  * - Payload: one object with keys `playerId, playerSchema, sendUpdate, teamsPlugin`
  * - Emitted at: lib/teams/server/message-actions/clan-disconnect.js:L56
  */
-export type ClanDisconnectBeforeSendUpdatePayload = {
-    "playerId": unknown;  // playerId
-    "playerSchema": PlayerState;  // playerSchema
-    "sendUpdate": unknown;  // sendUpdate
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type ClanDisconnectBeforeSendUpdatePayload = { playerId: number; playerSchema: PlayerState; sendUpdate: object; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.clanJoinInviteRejected`
@@ -889,11 +691,7 @@ export type ClanDisconnectBeforeSendUpdatePayload = {
  * - Payload: one object with keys `clanInvite, clientSendingInvite, playerRejectingName`
  * - Emitted at: lib/teams/server/clan-message-actions.js:L75
  */
-export type ClanJoinInviteRejectedPayload = {
-    "clanInvite": unknown;  // clanInvite
-    "clientSendingInvite": unknown;  // clientSendingInvite
-    "playerRejectingName": unknown;  // playerRejectingName
-};
+export type ClanJoinInviteRejectedPayload = { clanInvite: object; clientSendingInvite: Client; playerRejectingName: string; };
 
 /**
  * `reldens.clanLeave`
@@ -902,11 +700,7 @@ export type ClanJoinInviteRejectedPayload = {
  * - Payload: one object with keys `message, playerSchema, teamsPlugin`
  * - Emitted at: lib/teams/server/message-actions/clan-leave.js:L29
  */
-export type ClanLeavePayload = {
-    "message": unknown;  // message
-    "playerSchema": PlayerState;  // playerSchema
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type ClanLeavePayload = { message: object; playerSchema: PlayerState; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.clanLeaveAfterSendUpdate`
@@ -915,12 +709,7 @@ export type ClanLeavePayload = {
  * - Payload: one object with keys `continueLeave, playerSchema, singleRemoveId, teamsPlugin`
  * - Emitted at: lib/teams/server/message-actions/clan-leave.js:L106
  */
-export type ClanLeaveAfterSendUpdatePayload = {
-    "continueLeave": boolean;  // true
-    "playerSchema": PlayerState;  // playerSchema
-    "singleRemoveId": number|string;  // singleRemoveId
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type ClanLeaveAfterSendUpdatePayload = { continueLeave: boolean; playerSchema: PlayerState; singleRemoveId: number; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.clanLeaveBeforeSendUpdate`
@@ -929,15 +718,7 @@ export type ClanLeaveAfterSendUpdatePayload = {
  * - Payload: one object with keys `currentClan, disbandClan, playerId, playerSchema, sendUpdate, singleRemoveId, teamsPlugin`
  * - Emitted at: lib/teams/server/message-actions/clan-leave.js:L81
  */
-export type ClanLeaveBeforeSendUpdatePayload = {
-    "currentClan": unknown;  // currentClan
-    "disbandClan": unknown;  // disbandClan
-    "playerId": unknown;  // playerId
-    "playerSchema": PlayerState;  // playerSchema
-    "sendUpdate": unknown;  // sendUpdate
-    "singleRemoveId": number|string;  // singleRemoveId
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type ClanLeaveBeforeSendUpdatePayload = { currentClan: object; disbandClan: boolean; playerId: number; playerSchema: PlayerState; sendUpdate: object; singleRemoveId: number; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.clientStartAfter`
@@ -946,7 +727,7 @@ export type ClanLeaveBeforeSendUpdatePayload = {
  * - Payload: positional arguments `(this)`
  * - Emitted at: lib/game/client/handlers/client-start-handler.js:L52
  */
-export type ClientStartAfterPayload = [self: unknown];
+export type ClientStartAfterPayload = [self: ClientStartHandler];
 
 /**
  * `reldens.clientStartBefore`
@@ -955,7 +736,7 @@ export type ClientStartAfterPayload = [self: unknown];
  * - Payload: positional arguments `(this)`
  * - Emitted at: lib/game/client/game-manager.js:L125
  */
-export type ClientStartBeforePayload = [self: unknown];
+export type ClientStartBeforePayload = [self: GameManager];
 
 /**
  * `reldens.closeUI`
@@ -964,16 +745,7 @@ export type ClientStartBeforePayload = [self: unknown];
  * - Payload: one object with keys `closeButton, ui` (sometimes: box, dialogBox, dialogContainer, minimap, openButton, uiScene)
  * - Emitted at: lib/chat/client/chat-ui.js:L170, lib/game/client/user-interface.js:L193, lib/game/client/ui-factory.js:L75, lib/game/client/settings-ui.js:L62, lib/game/client/instructions-ui.js:L53, lib/game/client/minimap-ui.js:L98, lib/users/client/player-stats-ui.js:L59
  */
-export type CloseUIPayload = {
-    "closeButton": unknown;  // this.chatCloseButton
-    "ui": ChatUi;  // this
-    "box"?: unknown;
-    "dialogBox"?: unknown;  // this.uiChat
-    "dialogContainer"?: unknown;  // this.uiChat.getChildByProperty('id', ChatConst.CHAT_UI)
-    "minimap"?: unknown;
-    "openButton"?: unknown;  // this.chatOpenButton
-    "uiScene"?: unknown;  // this.uiScene
-};
+export type CloseUIPayload = { closeButton: boolean; ui: ChatUi; box?: object; dialogBox?: object; dialogContainer?: object; minimap?: Minimap; openButton?: boolean; uiScene?: object; };
 
 /**
  * `reldens.cmsManagerInitializeServices`
@@ -982,9 +754,7 @@ export type CloseUIPayload = {
  * - Payload: one object with keys `manager`
  * - Emitted at: lib/manager.js:L390
  */
-export type CmsManagerInitializeServicesPayload = {
-    "manager": unknown;  // this
-};
+export type CmsManagerInitializeServicesPayload = { manager: Manager; };
 
 /**
  * `reldens.createAnimationAfter`
@@ -993,9 +763,7 @@ export type CmsManagerInitializeServicesPayload = {
  * - Payload: one object with keys `animationEngine`
  * - Emitted at: lib/objects/client/animation-engine.js:L223
  */
-export type CreateAnimationAfterPayload = {
-    "animationEngine": AnimationEngine;  // this
-};
+export type CreateAnimationAfterPayload = { animationEngine: AnimationEngine; };
 
 /**
  * `reldens.createAppServer`
@@ -1004,10 +772,7 @@ export type CreateAnimationAfterPayload = {
  * - Payload: one object with keys `continueProcess, serverManager`
  * - Emitted at: lib/game/server/manager.js:L339
  */
-export type CreateAppServerPayload = {
-    "continueProcess": boolean;  // true
-    "serverManager": ServerManager;  // this
-};
+export type CreateAppServerPayload = { continueProcess: boolean; serverManager: ServerManager; };
 
 /**
  * `reldens.createCurrentPlayer`
@@ -1016,12 +781,7 @@ export type CreateAppServerPayload = {
  * - Payload: one object with keys `key, player, previousScene, roomEvents`
  * - Emitted at: lib/prediction/client/room-events-override.js:L41, lib/game/client/room-events.js:L232
  */
-export type CreateCurrentPlayerPayload = {
-    "key": string;  // key
-    "player": unknown;  // player
-    "previousScene": string|boolean;  // previousScene
-    "roomEvents": RoomEvents;  // roomEvents
-};
+export type CreateCurrentPlayerPayload = { key: string; player: PlayerState; previousScene: string | boolean; roomEvents: RoomEvents; };
 
 /**
  * `reldens.createDynamicAnimation_`
@@ -1030,7 +790,7 @@ export type CreateCurrentPlayerPayload = {
  * - Payload: positional arguments `(this, animProps)`
  * - Emitted at: lib/objects/client/plugin.js:L539
  */
-export type CreateDynamicAnimation_Payload = [self: unknown, animProps: unknown];
+export type CreateDynamicAnimation_Payload = [objectsPlugin: ObjectsPlugin, animProps: object];
 
 /**
  * `reldens.createDynamicAnimationsBefore`
@@ -1039,7 +799,7 @@ export type CreateDynamicAnimation_Payload = [self: unknown, animProps: unknown]
  * - Payload: positional arguments `(this, sceneDynamic)`
  * - Emitted at: lib/objects/client/plugin.js:L517
  */
-export type CreateDynamicAnimationsBeforePayload = [self: unknown, sceneDynamic: unknown];
+export type CreateDynamicAnimationsBeforePayload = [objectsPlugin: ObjectsPlugin, sceneDynamic: SceneDynamic];
 
 /**
  * `reldens.createEngineScene`
@@ -1048,7 +808,7 @@ export type CreateDynamicAnimationsBeforePayload = [self: unknown, sceneDynamic:
  * - Payload: positional arguments `(player, room, previousScene, this)`
  * - Emitted at: lib/game/client/room-events.js:L861
  */
-export type CreateEngineScenePayload = [player: unknown, room: unknown, previousScene: unknown, self: unknown];
+export type CreateEngineScenePayload = [player: PlayerState, room: Room, previousScene: string | boolean, roomEvents: RoomEvents];
 
 /**
  * `reldens.createEngineSceneDone`
@@ -1057,11 +817,7 @@ export type CreateEngineScenePayload = [player: unknown, room: unknown, previous
  * - Payload: one object with keys `currentScene, previousScene, roomEvents`
  * - Emitted at: lib/game/client/room-events.js:L877
  */
-export type CreateEngineSceneDonePayload = {
-    "currentScene": SceneDynamic;  // currentScene
-    "previousScene": string|boolean;  // previousScene
-    "roomEvents": RoomEvents;  // this
-};
+export type CreateEngineSceneDonePayload = { currentScene: SceneDynamic; previousScene: string | boolean; roomEvents: RoomEvents; };
 
 /**
  * `reldens.createGameServer`
@@ -1070,10 +826,7 @@ export type CreateEngineSceneDonePayload = {
  * - Payload: one object with keys `continueProcess, options`
  * - Emitted at: lib/game/server/manager.js:L378
  */
-export type CreateGameServerPayload = {
-    "continueProcess": boolean;  // true
-    "options": unknown;  // options
-};
+export type CreateGameServerPayload = { continueProcess: boolean; options: object; };
 
 /**
  * `reldens.createNewPlayerBefore`
@@ -1082,7 +835,7 @@ export type CreateGameServerPayload = {
  * - Payload: positional arguments `(loginData, playerData, this)`
  * - Emitted at: lib/game/server/login-manager.js:L553
  */
-export type CreateNewPlayerBeforePayload = [loginData: unknown, playerData: unknown, self: unknown];
+export type CreateNewPlayerBeforePayload = [loginData: object, playerData: object, self: LoginManager];
 
 /**
  * `reldens.createNewPlayerCriticalError`
@@ -1091,7 +844,7 @@ export type CreateNewPlayerBeforePayload = [loginData: unknown, playerData: unkn
  * - Payload: positional arguments `(this, loginData, error, result)`
  * - Emitted at: lib/game/server/login-manager.js:L572
  */
-export type CreateNewPlayerCriticalErrorPayload = [self: unknown, loginData: unknown, error: unknown, result: unknown];
+export type CreateNewPlayerCriticalErrorPayload = [self: LoginManager, loginData: object, error: object, result: { error: boolean; message: string; }];
 
 /**
  * `reldens.createNewUserAfter`
@@ -1100,7 +853,7 @@ export type CreateNewPlayerCriticalErrorPayload = [self: unknown, loginData: unk
  * - Payload: positional arguments `(newUser, this, result)`
  * - Emitted at: lib/game/server/login-manager.js:L517
  */
-export type CreateNewUserAfterPayload = [newUser: unknown, self: unknown, result: unknown];
+export type CreateNewUserAfterPayload = [newUser: UsersModel, self: LoginManager, result: object];
 
 /**
  * `reldens.createNewUserError`
@@ -1109,7 +862,7 @@ export type CreateNewUserAfterPayload = [newUser: unknown, self: unknown, result
  * - Payload: positional arguments `(this, userData, result)`
  * - Emitted at: lib/game/server/login-manager.js:L521
  */
-export type CreateNewUserErrorPayload = [self: unknown, userData: unknown, result: unknown];
+export type CreateNewUserErrorPayload = [self: LoginManager, userData: object, result: object];
 
 /**
  * `reldens.createPlayerAfter`
@@ -1118,7 +871,7 @@ export type CreateNewUserErrorPayload = [self: unknown, userData: unknown, resul
  * - Payload: positional arguments `(client, userModel, currentPlayer, this)`
  * - Emitted at: lib/rooms/server/scene.js:L250
  */
-export type CreatePlayerAfterPayload = [client: unknown, userModel: unknown, currentPlayer: unknown, self: unknown];
+export type CreatePlayerAfterPayload = [client: Client, userModel: UsersModel, currentPlayer: PlayerState, self: RoomScene];
 
 /**
  * `reldens.createPlayerAnimations`
@@ -1127,7 +880,7 @@ export type CreatePlayerAfterPayload = [client: unknown, userModel: unknown, cur
  * - Payload: positional arguments `(this, avatarKey)`
  * - Emitted at: lib/game/client/scene-preloader.js:L446
  */
-export type CreatePlayerAnimationsPayload = [self: unknown, avatarKey: unknown];
+export type CreatePlayerAnimationsPayload = [scenePreloader: ScenePreloader, avatarKey: string];
 
 /**
  * `reldens.createPlayerBefore`
@@ -1136,7 +889,7 @@ export type CreatePlayerAnimationsPayload = [self: unknown, avatarKey: unknown];
  * - Payload: positional arguments `(client, userModel, this)`
  * - Emitted at: lib/rooms/server/scene.js:L225
  */
-export type CreatePlayerBeforePayload = [client: unknown, userModel: unknown, self: unknown];
+export type CreatePlayerBeforePayload = [client: Client, userModel: UsersModel, self: RoomScene];
 
 /**
  * `reldens.createPlayerStatsAfter`
@@ -1145,7 +898,7 @@ export type CreatePlayerBeforePayload = [client: unknown, userModel: unknown, se
  * - Payload: positional arguments `(client, userModel, currentPlayer, roomScene)`
  * - Emitted at: lib/users/server/plugin.js:L308
  */
-export type CreatePlayerStatsAfterPayload = [client: unknown, userModel: unknown, currentPlayer: unknown, roomScene: unknown];
+export type CreatePlayerStatsAfterPayload = [client: Client, userModel: UsersModel, currentPlayer: PlayerState, roomScene: RoomScene];
 
 /**
  * `reldens.createPreload`
@@ -1154,7 +907,7 @@ export type CreatePlayerStatsAfterPayload = [client: unknown, userModel: unknown
  * - Payload: positional arguments `(this, eventUiScene)`
  * - Emitted at: lib/game/client/scene-preloader.js:L206
  */
-export type CreatePreloadPayload = [self: unknown, eventUiScene: unknown];
+export type CreatePreloadPayload = [scenePreloader: ScenePreloader, eventUiScene: object];
 
 /**
  * `reldens.createUiScene`
@@ -1163,7 +916,7 @@ export type CreatePreloadPayload = [self: unknown, eventUiScene: unknown];
  * - Payload: positional arguments `(this)`
  * - Emitted at: lib/game/client/scene-preloader.js:L227
  */
-export type CreateUiScenePayload = [self: unknown];
+export type CreateUiScenePayload = [self: ScenePreloader];
 
 /**
  * `reldens.createWorld`
@@ -1172,7 +925,7 @@ export type CreateUiScenePayload = [self: unknown];
  * - Payload: positional arguments `(roomData, objectsManager, this)`
  * - Emitted at: lib/rooms/server/scene.js:L503
  */
-export type CreateWorldPayload = [roomData: unknown, objectsManager: unknown, self: unknown];
+export type CreateWorldPayload = [roomData: object, objectsManager: ObjectsManager, self: RoomScene];
 
 /**
  * `reldens.createdMinimap`
@@ -1181,7 +934,7 @@ export type CreateWorldPayload = [roomData: unknown, objectsManager: unknown, se
  * - Payload: positional arguments `(this)`
  * - Emitted at: lib/game/client/minimap.js:L58
  */
-export type CreatedMinimapPayload = [self: unknown];
+export type CreatedMinimapPayload = [self: Minimap];
 
 /**
  * `reldens.createdNewPlayer`
@@ -1190,7 +943,7 @@ export type CreatedMinimapPayload = [self: unknown];
  * - Payload: positional arguments `(player, loginData, this, result)`
  * - Emitted at: lib/game/server/login-manager.js:L567
  */
-export type CreatedNewPlayerPayload = [player: unknown, loginData: unknown, self: unknown, result: unknown];
+export type CreatedNewPlayerPayload = [player: object, loginData: object, self: LoginManager, result: { error: boolean; }];
 
 /**
  * `reldens.createdPlayerSchema`
@@ -1199,7 +952,7 @@ export type CreatedNewPlayerPayload = [player: unknown, loginData: unknown, self
  * - Payload: positional arguments `(client, userModel, currentPlayer, this)`
  * - Emitted at: lib/rooms/server/scene.js:L239
  */
-export type CreatedPlayerSchemaPayload = [client: unknown, userModel: unknown, currentPlayer: unknown, self: unknown];
+export type CreatedPlayerSchemaPayload = [client: Client, userModel: UsersModel, currentPlayer: PlayerState, self: RoomScene];
 
 /**
  * `reldens.createdPreloaderInstance`
@@ -1208,7 +961,7 @@ export type CreatedPlayerSchemaPayload = [client: unknown, userModel: unknown, c
  * - Payload: positional arguments `(this, this.scenePreloader)`
  * - Emitted at: lib/game/client/room-events.js:L820
  */
-export type CreatedPreloaderInstancePayload = [self: unknown, scenePreloader: unknown];
+export type CreatedPreloaderInstancePayload = [self: RoomEvents, scenePreloader: ScenePreloader];
 
 /**
  * `reldens.createdPreloaderRecurring`
@@ -1217,7 +970,7 @@ export type CreatedPreloaderInstancePayload = [self: unknown, scenePreloader: un
  * - Payload: positional arguments `(this, this.scenePreloader)`
  * - Emitted at: lib/game/client/room-events.js:L796
  */
-export type CreatedPreloaderRecurringPayload = [self: unknown, scenePreloader: unknown];
+export type CreatedPreloaderRecurringPayload = [self: RoomEvents, scenePreloader: ScenePreloader];
 
 /**
  * `reldens.createdRoomsEventsInstance`
@@ -1226,7 +979,7 @@ export type CreatedPreloaderRecurringPayload = [self: unknown, scenePreloader: u
  * - Payload: positional arguments `(joinedFirstRoom, this)`
  * - Emitted at: lib/game/client/game-manager.js:L358
  */
-export type CreatedRoomsEventsInstancePayload = [joinedFirstRoom: unknown, self: unknown];
+export type CreatedRoomsEventsInstancePayload = [joinedFirstRoom: Room, gameManager: GameManager];
 
 /**
  * `reldens.createdUserInterface`
@@ -1235,12 +988,7 @@ export type CreatedRoomsEventsInstancePayload = [joinedFirstRoom: unknown, self:
  * - Payload: one object with keys `ObjectsPlugin, gameManager, id, userInterface`
  * - Emitted at: lib/objects/client/plugin.js:L498
  */
-export type CreatedUserInterfacePayload = {
-    "ObjectsPlugin": ObjectsPlugin;  // this
-    "gameManager": GameManager;  // gameManager
-    "id": unknown;  // animProps.id
-    "userInterface": unknown;  // roomEvents.objectsUi[animProps.id]
-};
+export type CreatedUserInterfacePayload = { ObjectsPlugin: ObjectsPlugin; gameManager: GameManager; id: string; userInterface: object; };
 
 /**
  * `reldens.createdWorldObject`
@@ -1249,20 +997,7 @@ export type CreatedUserInterfacePayload = {
  * - Payload: one object with keys `bodyMass, bodyObject, collision, hasState, objectIndex, p2world, pathFinder, posX, posY, roomObject, tileH, tileW`
  * - Emitted at: lib/world/server/p2world.js:L686
  */
-export type CreatedWorldObjectPayload = {
-    "bodyMass": unknown;  // bodyMass
-    "bodyObject": unknown;  // bodyObject
-    "collision": unknown;  // collision
-    "hasState": unknown;  // hasState
-    "objectIndex": string;  // objectIndex
-    "p2world": P2world;  // this
-    "pathFinder": unknown;  // pathFinder
-    "posX": number;  // posX
-    "posY": number;  // posY
-    "roomObject": unknown;  // roomObject
-    "tileH": number;  // tileH
-    "tileW": number;  // tileW
-};
+export type CreatedWorldObjectPayload = { bodyMass: number; bodyObject: object; collision: boolean; hasState: boolean; objectIndex: number; p2world: P2world; pathFinder: object; posX: number; posY: number; roomObject: object; tileH: number; tileW: number; };
 
 /**
  * `reldens.defineRoomsInGameServerDone`
@@ -1271,7 +1006,7 @@ export type CreatedWorldObjectPayload = {
  * - Payload: positional arguments `(this)`
  * - Emitted at: lib/rooms/server/manager.js:L117
  */
-export type DefineRoomsInGameServerDonePayload = [self: unknown];
+export type DefineRoomsInGameServerDonePayload = [self: RoomsManager];
 
 /**
  * `reldens.disconnectLoggedBefore`
@@ -1280,12 +1015,7 @@ export type DefineRoomsInGameServerDonePayload = [self: unknown];
  * - Payload: one object with keys `client, player, room, userModel`
  * - Emitted at: lib/rooms/server/scene.js:L175
  */
-export type DisconnectLoggedBeforePayload = {
-    "client": Client;  // client
-    "player": unknown;  // player
-    "room": RoomScene;  // this
-    "userModel": UsersModel;  // userModel
-};
+export type DisconnectLoggedBeforePayload = { client: Client; player: object; room: RoomScene; userModel: UsersModel; };
 
 /**
  * `reldens.dynamicForm.afterSave`
@@ -1294,11 +1024,7 @@ export type DisconnectLoggedBeforePayload = {
  * - Payload: one object with keys `formConfig, preparedValues, result`
  * - Emitted at: lib/dynamic-form.js:L295
  */
-export type DynamicFormAfterSavePayload = {
-    "formConfig": unknown;  // formConfig
-    "preparedValues": unknown;  // preparedValues
-    "result": string;  // result
-};
+export type DynamicFormAfterSavePayload = { formConfig: object; preparedValues: object; result: object; };
 
 /**
  * `reldens.dynamicForm.afterValidation`
@@ -1307,13 +1033,7 @@ export type DynamicFormAfterSavePayload = {
  * - Payload: one object with keys `formConfig, formKey, req, submittedValues, validationResult`
  * - Emitted at: lib/dynamic-form.js:L64
  */
-export type DynamicFormAfterValidationPayload = {
-    "formConfig": unknown;  // formConfig
-    "formKey": unknown;  // formKey
-    "req": ExpressRequest;  // req
-    "submittedValues": unknown;  // submittedValues
-    "validationResult": unknown;  // {isValid: true, formConfig}
-};
+export type DynamicFormAfterValidationPayload = { formConfig: object; formKey: string; req: object; submittedValues: object; validationResult: { isValid: boolean; }; };
 
 /**
  * `reldens.dynamicForm.beforeSave`
@@ -1322,10 +1042,7 @@ export type DynamicFormAfterValidationPayload = {
  * - Payload: one object with keys `formConfig, preparedValues`
  * - Emitted at: lib/dynamic-form.js:L281
  */
-export type DynamicFormBeforeSavePayload = {
-    "formConfig": unknown;  // formConfig
-    "preparedValues": unknown;  // preparedValues
-};
+export type DynamicFormBeforeSavePayload = { formConfig: object; preparedValues: object; };
 
 /**
  * `reldens.dynamicForm.beforeValidation`
@@ -1334,12 +1051,7 @@ export type DynamicFormBeforeSavePayload = {
  * - Payload: one object with keys `formConfig, formKey, req, submittedValues`
  * - Emitted at: lib/dynamic-form.js:L42
  */
-export type DynamicFormBeforeValidationPayload = {
-    "formConfig": unknown;  // formConfig
-    "formKey": unknown;  // formKey
-    "req": ExpressRequest;  // req
-    "submittedValues": unknown;  // submittedValues
-};
+export type DynamicFormBeforeValidationPayload = { formConfig: object; formKey: string; req: object; submittedValues: object; };
 
 /**
  * `reldens.dynamicFormRenderer.afterFieldsRender`
@@ -1348,16 +1060,7 @@ export type DynamicFormBeforeValidationPayload = {
  * - Payload: one object with keys `attributes, domain, enhancedData, fieldsToRender, formConfig, formFields, req, systemVariables`
  * - Emitted at: lib/dynamic-form-renderer.js:L43
  */
-export type DynamicFormRendererAfterFieldsRenderPayload = {
-    "attributes": unknown;  // attributes
-    "domain": unknown;  // domain
-    "enhancedData": unknown;  // enhancedData
-    "fieldsToRender": unknown;  // fieldsToRender
-    "formConfig": unknown;  // formConfig
-    "formFields": unknown;  // formFields
-    "req": ExpressRequest;  // req
-    "systemVariables": unknown;  // systemVariables
-};
+export type DynamicFormRendererAfterFieldsRenderPayload = { attributes: object; domain: string; enhancedData: object; fieldsToRender: object; formConfig: object; formFields: object; req: object; systemVariables: object; };
 
 /**
  * `reldens.dynamicFormRenderer.beforeFieldsRender`
@@ -1366,15 +1069,7 @@ export type DynamicFormRendererAfterFieldsRenderPayload = {
  * - Payload: one object with keys `attributes, domain, enhancedData, fieldsToRender, formConfig, req, systemVariables`
  * - Emitted at: lib/dynamic-form-renderer.js:L33
  */
-export type DynamicFormRendererBeforeFieldsRenderPayload = {
-    "attributes": unknown;  // attributes
-    "domain": unknown;  // domain
-    "enhancedData": unknown;  // enhancedData
-    "fieldsToRender": unknown;  // fieldsToRender
-    "formConfig": unknown;  // formConfig
-    "req": ExpressRequest;  // req
-    "systemVariables": unknown;  // systemVariables
-};
+export type DynamicFormRendererBeforeFieldsRenderPayload = { attributes: object; domain: string; enhancedData: object; fieldsToRender: object; formConfig: object; req: object; systemVariables: object; };
 
 /**
  * `reldens.dynamicFormRequestHandler.afterSave`
@@ -1383,13 +1078,7 @@ export type DynamicFormRendererBeforeFieldsRenderPayload = {
  * - Payload: one object with keys `formConfig, formKey, req, res, submissionResult`
  * - Emitted at: lib/dynamic-form-request-handler.js:L65
  */
-export type DynamicFormRequestHandlerAfterSavePayload = {
-    "formConfig": unknown;  // validation.formConfig
-    "formKey": unknown;  // formKey
-    "req": ExpressRequest;  // req
-    "res": ExpressResponse;  // res
-    "submissionResult": unknown;  // submissionResult
-};
+export type DynamicFormRequestHandlerAfterSavePayload = { formConfig: object; formKey: string; req: object; res: object; submissionResult: object; };
 
 /**
  * `reldens.dynamicFormRequestHandler.beforeSave`
@@ -1398,13 +1087,7 @@ export type DynamicFormRequestHandlerAfterSavePayload = {
  * - Payload: one object with keys `formConfig, formKey, preparedValues, req, res`
  * - Emitted at: lib/dynamic-form-request-handler.js:L51
  */
-export type DynamicFormRequestHandlerBeforeSavePayload = {
-    "formConfig": unknown;  // validation.formConfig
-    "formKey": unknown;  // formKey
-    "preparedValues": unknown;  // preparedValues
-    "req": ExpressRequest;  // req
-    "res": ExpressResponse;  // res
-};
+export type DynamicFormRequestHandlerBeforeSavePayload = { formConfig: object; formKey: string; preparedValues: object; req: object; res: object; };
 
 /**
  * `reldens.dynamicFormRequestHandler.beforeValidation`
@@ -1413,12 +1096,7 @@ export type DynamicFormRequestHandlerBeforeSavePayload = {
  * - Payload: one object with keys `formKey, req, res, submittedValues`
  * - Emitted at: lib/dynamic-form-request-handler.js:L37
  */
-export type DynamicFormRequestHandlerBeforeValidationPayload = {
-    "formKey": unknown;  // formKey
-    "req": ExpressRequest;  // req
-    "res": ExpressResponse;  // res
-    "submittedValues": unknown;  // submittedValues
-};
+export type DynamicFormRequestHandlerBeforeValidationPayload = { formKey: string; req: object; res: object; submittedValues: object; };
 
 /**
  * `reldens.endChangedScene`
@@ -1427,10 +1105,7 @@ export type DynamicFormRequestHandlerBeforeValidationPayload = {
  * - Payload: one object with keys `message, roomEvents`
  * - Emitted at: lib/game/client/room-events.js:L460
  */
-export type EndChangedScenePayload = {
-    "message": unknown;  // message
-    "roomEvents": RoomEvents;  // this
-};
+export type EndChangedScenePayload = { message: object; roomEvents: RoomEvents; };
 
 /**
  * `reldens.endObjectHitObject`
@@ -1439,11 +1114,7 @@ export type EndChangedScenePayload = {
  * - Payload: one object with keys `bodyA, bodyB, priorityObject`
  * - Emitted at: lib/world/server/collisions-manager.js:L399
  */
-export type EndObjectHitObjectPayload = {
-    "bodyA": unknown;  // bodyA
-    "bodyB": unknown;  // bodyB
-    "priorityObject": unknown;  // priorityObject
-};
+export type EndObjectHitObjectPayload = { bodyA: object; bodyB: object; priorityObject: object; };
 
 /**
  * `reldens.endObjectHitWall`
@@ -1452,9 +1123,7 @@ export type EndObjectHitObjectPayload = {
  * - Payload: one object with keys `objectBody`
  * - Emitted at: lib/world/server/collisions-manager.js:L446
  */
-export type EndObjectHitWallPayload = {
-    "objectBody": unknown;  // objectBody
-};
+export type EndObjectHitWallPayload = { objectBody: object; };
 
 /**
  * `reldens.endPlayerHitChangePoint`
@@ -1463,13 +1132,7 @@ export type EndObjectHitWallPayload = {
  * - Payload: one object with keys `changeData, changePoint, collisionsManager, playerBody, playerSchema`
  * - Emitted at: lib/world/server/collisions-manager.js:L364
  */
-export type EndPlayerHitChangePointPayload = {
-    "changeData": unknown;  // changeData
-    "changePoint": unknown;  // changePoint
-    "collisionsManager": CollisionsManager;  // this
-    "playerBody": unknown;  // playerBody
-    "playerSchema": unknown;  // playerSchema
-};
+export type EndPlayerHitChangePointPayload = { changeData: object; changePoint: object; collisionsManager: CollisionsManager; playerBody: object; playerSchema: PlayerState; };
 
 /**
  * `reldens.endPlayerHitObjectBegin`
@@ -1478,10 +1141,7 @@ export type EndPlayerHitChangePointPayload = {
  * - Payload: one object with keys `otherBody, playerBody`
  * - Emitted at: lib/world/server/collisions-manager.js:L269
  */
-export type EndPlayerHitObjectBeginPayload = {
-    "otherBody": unknown;  // otherBody
-    "playerBody": unknown;  // playerBody
-};
+export type EndPlayerHitObjectBeginPayload = { otherBody: object; playerBody: object; };
 
 /**
  * `reldens.endPlayerHitWallEnd`
@@ -1490,10 +1150,7 @@ export type EndPlayerHitObjectBeginPayload = {
  * - Payload: one object with keys `playerBody, wallBody`
  * - Emitted at: lib/world/server/collisions-manager.js:L319
  */
-export type EndPlayerHitWallEndPayload = {
-    "playerBody": unknown;  // playerBody
-    "wallBody": unknown;  // wallBody
-};
+export type EndPlayerHitWallEndPayload = { playerBody: object; wallBody: object; };
 
 /**
  * `reldens.eventBuildSideBarBefore`
@@ -1502,10 +1159,7 @@ export type EndPlayerHitWallEndPayload = {
  * - Payload: one object with keys `adminManager, navigationContents` (site adds spread/computed keys)
  * - Emitted at: lib/admin-manager/contents-builder.js:L69
  */
-export type EventBuildSideBarBeforePayload = {
-    "adminManager": unknown;
-    "navigationContents": unknown;  // navigationContents
-};
+export type EventBuildSideBarBeforePayload = { adminManager: AdminManager; navigationContents: object; };
 
 /**
  * `reldens.featuresManagerLoadFeaturesAfter`
@@ -1514,10 +1168,7 @@ export type EventBuildSideBarBeforePayload = {
  * - Payload: one object with keys `featuresCollection, featuresManager`
  * - Emitted at: lib/features/server/manager.js:L89
  */
-export type FeaturesManagerLoadFeaturesAfterPayload = {
-    "featuresCollection": unknown;  // featuresCollection
-    "featuresManager": FeaturesManager;  // this
-};
+export type FeaturesManagerLoadFeaturesAfterPayload = { featuresCollection: object; featuresManager: FeaturesManager; };
 
 /**
  * `reldens.formsTransformer.afterRender`
@@ -1526,15 +1177,7 @@ export type FeaturesManagerLoadFeaturesAfterPayload = {
  * - Payload: one object with keys `domain, enhancedData, formConfig, formContent, formKey, req, systemVariables`
  * - Emitted at: lib/template-engine/forms-transformer.js:L74
  */
-export type FormsTransformerAfterRenderPayload = {
-    "domain": unknown;  // domain
-    "enhancedData": unknown;  // enhancedData
-    "formConfig": unknown;  // formConfig
-    "formContent": unknown;  // formContent
-    "formKey": unknown;  // formKey
-    "req": ExpressRequest;  // req
-    "systemVariables": unknown;  // systemVariables
-};
+export type FormsTransformerAfterRenderPayload = { domain: string; enhancedData: object; formConfig: object; formContent: string; formKey: string; req: object; systemVariables: object; };
 
 /**
  * `reldens.formsTransformer.beforeRender`
@@ -1543,16 +1186,7 @@ export type FormsTransformerAfterRenderPayload = {
  * - Payload: one object with keys `domain, enhancedData, fieldsToRender, formAttributes, formConfig, formKey, req, systemVariables`
  * - Emitted at: lib/template-engine/forms-transformer.js:L52
  */
-export type FormsTransformerBeforeRenderPayload = {
-    "domain": unknown;  // domain
-    "enhancedData": unknown;  // enhancedData
-    "fieldsToRender": unknown;  // fieldsToRender
-    "formAttributes": unknown;  // tag.attributes
-    "formConfig": unknown;  // formConfig
-    "formKey": unknown;  // formKey
-    "req": ExpressRequest;  // req
-    "systemVariables": unknown;  // systemVariables
-};
+export type FormsTransformerBeforeRenderPayload = { domain: string; enhancedData: object; fieldsToRender: object; formAttributes: object; formConfig: object; formKey: string; req: object; systemVariables: object; };
 
 /**
  * `reldens.gameEngineClearTarget`
@@ -1561,7 +1195,7 @@ export type FormsTransformerBeforeRenderPayload = {
  * - Payload: positional arguments `(this, clearedTargetData)`
  * - Emitted at: lib/game/client/game-engine.js:L253
  */
-export type GameEngineClearTargetPayload = [self: unknown, clearedTargetData: unknown];
+export type GameEngineClearTargetPayload = [gameEngine: GameEngine, clearedTargetData: object];
 
 /**
  * `reldens.gameEngineShowTarget`
@@ -1570,7 +1204,7 @@ export type GameEngineClearTargetPayload = [self: unknown, clearedTargetData: un
  * - Payload: positional arguments `(this, target, previousTarget, targetName)`
  * - Emitted at: lib/game/client/game-engine.js:L180
  */
-export type GameEngineShowTargetPayload = [self: unknown, target: unknown, previousTarget: unknown, targetName: unknown];
+export type GameEngineShowTargetPayload = [gameEngine: GameEngine, target: object, previousTarget: object, targetName: string];
 
 /**
  * `reldens.gameEngineTabTarget`
@@ -1579,7 +1213,7 @@ export type GameEngineShowTargetPayload = [self: unknown, target: unknown, previ
  * - Payload: positional arguments `(this, closerTarget, previousTarget)`
  * - Emitted at: lib/game/client/game-engine.js:L300
  */
-export type GameEngineTabTargetPayload = [self: unknown, closerTarget: unknown, previousTarget: unknown];
+export type GameEngineTabTargetPayload = [gameEngine: GameEngine, closerTarget: object, previousTarget: object];
 
 /**
  * `reldens.gameOver`
@@ -1588,7 +1222,7 @@ export type GameEngineTabTargetPayload = [self: unknown, closerTarget: unknown, 
  * - Payload: positional arguments `(message, this)`
  * - Emitted at: lib/game/client/room-events.js:L514
  */
-export type GameOverPayload = [message: unknown, self: unknown];
+export type GameOverPayload = [message: object, self: RoomEvents];
 
 /**
  * `reldens.gameOverReload`
@@ -1597,7 +1231,7 @@ export type GameOverPayload = [message: unknown, self: unknown];
  * - Payload: positional arguments `(this, defaultReload)`
  * - Emitted at: lib/game/client/room-events.js:L306
  */
-export type GameOverReloadPayload = [self: unknown, defaultReload: unknown];
+export type GameOverReloadPayload = [self: RoomEvents, defaultReload: { confirmed: boolean; }];
 
 /**
  * `reldens.gameRoomError`
@@ -1606,7 +1240,7 @@ export type GameOverReloadPayload = [self: unknown, defaultReload: unknown];
  * - Payload: positional arguments `(this)`
  * - Emitted at: lib/game/client/game-manager.js:L168
  */
-export type GameRoomErrorPayload = [self: unknown];
+export type GameRoomErrorPayload = [self: GameManager];
 
 /**
  * `reldens.guestInvalidChangePoint`
@@ -1615,14 +1249,7 @@ export type GameRoomErrorPayload = [self: unknown];
  * - Payload: one object with keys `changePoint, collisionsManager, contactClient, isGuest, playerBody, playerSchema`
  * - Emitted at: lib/world/server/collisions-manager.js:L344
  */
-export type GuestInvalidChangePointPayload = {
-    "changePoint": unknown;  // changePoint
-    "collisionsManager": CollisionsManager;  // this
-    "contactClient": unknown;  // contactClient
-    "isGuest": boolean;  // isGuest
-    "playerBody": unknown;  // playerBody
-    "playerSchema": unknown;  // playerSchema
-};
+export type GuestInvalidChangePointPayload = { changePoint: object; collisionsManager: CollisionsManager; contactClient: Client; isGuest: boolean; playerBody: object; playerSchema: PlayerState; };
 
 /**
  * `reldens.guestLoginInvalidParams`
@@ -1631,7 +1258,7 @@ export type GuestInvalidChangePointPayload = {
  * - Payload: positional arguments `(this, user, userData, result)`
  * - Emitted at: lib/game/server/login-manager.js:L295
  */
-export type GuestLoginInvalidParamsPayload = [self: unknown, user: unknown, userData: unknown, result: unknown];
+export type GuestLoginInvalidParamsPayload = [self: LoginManager, user: UsersModel, userData: object, result: { error: string; }];
 
 /**
  * `reldens.initUiAfter`
@@ -1640,7 +1267,7 @@ export type GuestLoginInvalidParamsPayload = [self: unknown, user: unknown, user
  * - Payload: positional arguments `(message, this)`
  * - Emitted at: lib/game/client/room-events.js:L350
  */
-export type InitUiAfterPayload = [message: unknown, self: unknown];
+export type InitUiAfterPayload = [message: object, self: RoomEvents];
 
 /**
  * `reldens.initUiBefore`
@@ -1649,7 +1276,7 @@ export type InitUiAfterPayload = [message: unknown, self: unknown];
  * - Payload: positional arguments `(message, this)`
  * - Emitted at: lib/game/client/room-events.js:L348
  */
-export type InitUiBeforePayload = [message: unknown, self: unknown];
+export type InitUiBeforePayload = [message: object, self: RoomEvents];
 
 /**
  * `reldens.invalidData`
@@ -1658,7 +1285,7 @@ export type InitUiBeforePayload = [message: unknown, self: unknown];
  * - Payload: positional arguments `(this, userData, result)`
  * - Emitted at: lib/game/server/login-manager.js:L289
  */
-export type InvalidDataPayload = [self: unknown, userData: unknown, result: unknown];
+export type InvalidDataPayload = [self: LoginManager, userData: object, result: { error: string; }];
 
 /**
  * `reldens.joinRoomEnd`
@@ -1670,14 +1297,7 @@ export type InvalidDataPayload = [self: unknown, userData: unknown, result: unkn
  * - Payload: a `JoinedSceneRoomEvent` instance with properties `client, isGuest, loggedPlayer, options, roomScene, userModel`
  * - Emitted at: lib/rooms/server/scene.js:L156
  */
-export type JoinRoomEndPayload = {
-    "client": unknown;
-    "isGuest": unknown;
-    "loggedPlayer": unknown;
-    "options": unknown;
-    "roomScene": unknown;
-    "userModel": unknown;
-};
+export type JoinRoomEndPayload = { client: Client; isGuest: boolean; loggedPlayer: object; options: object; roomScene: RoomScene; userModel: UsersModel; };
 
 /**
  * `reldens.joinRoomInvalid`
@@ -1686,7 +1306,7 @@ export type JoinRoomEndPayload = {
  * - Payload: positional arguments `(this, client, options, userModel, isGuest)`
  * - Emitted at: lib/rooms/server/scene.js:L149
  */
-export type JoinRoomInvalidPayload = [self: unknown, client: unknown, options: unknown, userModel: unknown, isGuest: unknown];
+export type JoinRoomInvalidPayload = [self: RoomScene, client: Client, options: object, userModel: UsersModel, isGuest: boolean];
 
 /**
  * `reldens.joinRoomStart`
@@ -1695,7 +1315,7 @@ export type JoinRoomInvalidPayload = [self: unknown, client: unknown, options: u
  * - Payload: positional arguments `(this, client, options, userModel)`
  * - Emitted at: lib/rooms/server/scene.js:L136
  */
-export type JoinRoomStartPayload = [self: unknown, client: unknown, options: unknown, userModel: unknown];
+export type JoinRoomStartPayload = [self: RoomScene, client: Client, options: object, userModel: UsersModel];
 
 /**
  * `reldens.joinedRoom`
@@ -1704,7 +1324,7 @@ export type JoinRoomStartPayload = [self: unknown, client: unknown, options: unk
  * - Payload: positional arguments `(sceneRoom, this)`
  * - Emitted at: lib/game/client/game-manager.js:L446
  */
-export type JoinedRoomPayload = [sceneRoom: unknown, self: unknown];
+export type JoinedRoomPayload = [sceneRoom: Room, gameManager: GameManager];
 
 /**
  * `reldens.joinedRoom_`
@@ -1713,7 +1333,7 @@ export type JoinedRoomPayload = [sceneRoom: unknown, self: unknown];
  * - Payload: positional arguments `(sceneRoom, this)`
  * - Emitted at: lib/game/client/game-manager.js:L447
  */
-export type JoinedRoom_Payload = [sceneRoom: unknown, self: unknown];
+export type JoinedRoom_Payload = [sceneRoom: Room, gameManager: GameManager];
 
 /**
  * `reldens.loadFeature_`
@@ -1722,7 +1342,7 @@ export type JoinedRoom_Payload = [sceneRoom: unknown, self: unknown];
  * - Payload: positional arguments `(this.featuresList[featureCode], this)`
  * - Emitted at: lib/features/client/manager.js:L60
  */
-export type LoadFeature_Payload = [featuresList_featureCode: unknown, self: unknown];
+export type LoadFeature_Payload = [featuresList_featureCode: object, self: FeaturesManager];
 
 /**
  * `reldens.loadFeatures`
@@ -1731,7 +1351,7 @@ export type LoadFeature_Payload = [featuresList_featureCode: unknown, self: unkn
  * - Payload: positional arguments `(this, featuresCodeList)`
  * - Emitted at: lib/features/client/manager.js:L46
  */
-export type LoadFeaturesPayload = [self: unknown, featuresCodeList: unknown];
+export type LoadFeaturesPayload = [self: FeaturesManager, featuresCodeList: object];
 
 /**
  * `reldens.loginError`
@@ -1740,7 +1360,7 @@ export type LoadFeaturesPayload = [self: unknown, featuresCodeList: unknown];
  * - Payload: positional arguments `(this, user, userData, result)`
  * - Emitted at: lib/game/server/login-manager.js:L395
  */
-export type LoginErrorPayload = [self: unknown, user: unknown, userData: unknown, result: unknown];
+export type LoginErrorPayload = [self: LoginManager, user: UsersModel, userData: object, result: object];
 
 /**
  * `reldens.loginInvalidParams`
@@ -1749,7 +1369,7 @@ export type LoginErrorPayload = [self: unknown, user: unknown, userData: unknown
  * - Payload: positional arguments `(this, user, userData, result)`
  * - Emitted at: lib/game/server/login-manager.js:L307
  */
-export type LoginInvalidParamsPayload = [self: unknown, user: unknown, userData: unknown, result: unknown];
+export type LoginInvalidParamsPayload = [self: LoginManager, user: UsersModel, userData: object, result: { error: string; }];
 
 /**
  * `reldens.loginInvalidPassword`
@@ -1758,7 +1378,7 @@ export type LoginInvalidParamsPayload = [self: unknown, user: unknown, userData:
  * - Payload: positional arguments `(this, user, userData, result)`
  * - Emitted at: lib/game/server/login-manager.js:L380
  */
-export type LoginInvalidPasswordPayload = [self: unknown, user: unknown, userData: unknown, result: unknown];
+export type LoginInvalidPasswordPayload = [self: LoginManager, user: UsersModel, userData: object, result: { error: string; }];
 
 /**
  * `reldens.loginInvalidRole`
@@ -1767,7 +1387,7 @@ export type LoginInvalidPasswordPayload = [self: unknown, user: unknown, userDat
  * - Payload: positional arguments `(this, user, userData, result)`
  * - Emitted at: lib/game/server/login-manager.js:L374
  */
-export type LoginInvalidRolePayload = [self: unknown, user: unknown, userData: unknown, result: unknown];
+export type LoginInvalidRolePayload = [self: LoginManager, user: UsersModel, userData: object, result: { error: string; }];
 
 /**
  * `reldens.loginSuccess`
@@ -1776,7 +1396,7 @@ export type LoginInvalidRolePayload = [self: unknown, user: unknown, userData: u
  * - Payload: positional arguments `(this, user, userData, result)`
  * - Emitted at: lib/game/server/login-manager.js:L391
  */
-export type LoginSuccessPayload = [self: unknown, user: unknown, userData: unknown, result: unknown];
+export type LoginSuccessPayload = [self: LoginManager, user: UsersModel, userData: object, result: object];
 
 /**
  * `reldens.manager.initializeAdminManager`
@@ -1785,12 +1405,7 @@ export type LoginSuccessPayload = [self: unknown, user: unknown, userData: unkno
  * - Payload: one object with keys `adminFilesContents, authenticationCallback, manager, translations`
  * - Emitted at: lib/manager.js:L563
  */
-export type ManagerInitializeAdminManagerPayload = {
-    "adminFilesContents": unknown;  // adminFilesContents
-    "authenticationCallback": unknown;  // authenticationCallback
-    "manager": unknown;  // this
-    "translations": unknown;  // translations
-};
+export type ManagerInitializeAdminManagerPayload = { adminFilesContents: object; authenticationCallback: object; manager: Manager; translations: object; };
 
 /**
  * `reldens.objectBodyChange`
@@ -1799,11 +1414,7 @@ export type ManagerInitializeAdminManagerPayload = {
  * - Payload: one object with keys `body, changes, key`
  * - Emitted at: lib/objects/client/plugin.js:L205
  */
-export type ObjectBodyChangePayload = {
-    "body": PhysicalBody;  // body
-    "changes": unknown;  // {[propertyKey]: newValue}
-    "key": string;  // key
-};
+export type ObjectBodyChangePayload = { body: object; changes: object; key: string; };
 
 /**
  * `reldens.objectBodyChanged`
@@ -1812,10 +1423,7 @@ export type ObjectBodyChangePayload = {
  * - Payload: one object with keys `body, key`
  * - Emitted at: lib/objects/client/plugin.js:L284, lib/objects/client/plugin.js:L300
  */
-export type ObjectBodyChangedPayload = {
-    "body": PhysicalBody;  // body
-    "key": string;  // key
-};
+export type ObjectBodyChangedPayload = { body: object; key: string; };
 
 /**
  * `reldens.objectHitObjectEnd`
@@ -1824,10 +1432,7 @@ export type ObjectBodyChangedPayload = {
  * - Payload: one object with keys `bodyA, bodyB`
  * - Emitted at: lib/world/server/collisions-manager.js:L412
  */
-export type ObjectHitObjectEndPayload = {
-    "bodyA": unknown;  // bodyA
-    "bodyB": unknown;  // bodyB
-};
+export type ObjectHitObjectEndPayload = { bodyA: object; bodyB: object; };
 
 /**
  * `reldens.objectHitWallBegin`
@@ -1836,11 +1441,7 @@ export type ObjectHitObjectEndPayload = {
  * - Payload: one object with keys `continue, objectBody, wall`
  * - Emitted at: lib/world/server/collisions-manager.js:L424
  */
-export type ObjectHitWallBeginPayload = {
-    "continue": boolean;  // true
-    "objectBody": unknown;  // objectBody
-    "wall": unknown;  // wall
-};
+export type ObjectHitWallBeginPayload = { continue: boolean; objectBody: object; wall: object; };
 
 /**
  * `reldens.onJoinRoomGame`
@@ -1849,7 +1450,7 @@ export type ObjectHitWallBeginPayload = {
  * - Payload: positional arguments `(client, options, userModel, this)`
  * - Emitted at: lib/rooms/server/game.js:L41
  */
-export type OnJoinRoomGamePayload = [client: unknown, options: unknown, userModel: unknown, self: unknown];
+export type OnJoinRoomGamePayload = [client: Client, options: object, userModel: UsersModel, self: RoomGame];
 
 /**
  * `reldens.onPreparePlayerCreationFormSubmit`
@@ -1858,11 +1459,7 @@ export type OnJoinRoomGamePayload = [client: unknown, options: unknown, userMode
  * - Payload: one object with keys `form, gameManager, usersPlugin`
  * - Emitted at: lib/users/client/plugin.js:L322
  */
-export type OnPreparePlayerCreationFormSubmitPayload = {
-    "form": HTMLFormElement;  // form
-    "gameManager": GameManager;  // gameManager
-    "usersPlugin": UsersPlugin;  // this
-};
+export type OnPreparePlayerCreationFormSubmitPayload = { form: object; gameManager: object; usersPlugin: UsersPlugin; };
 
 /**
  * `reldens.onPreparePlayerSelectorFormSubmit`
@@ -1871,13 +1468,7 @@ export type OnPreparePlayerCreationFormSubmitPayload = {
  * - Payload: one object with keys `form, gameManager, select, selectedPlayer, usersPlugin`
  * - Emitted at: lib/users/client/plugin.js:L265
  */
-export type OnPreparePlayerSelectorFormSubmitPayload = {
-    "form": HTMLFormElement;  // form
-    "gameManager": GameManager;  // gameManager
-    "select": HTMLSelectElement;  // select
-    "selectedPlayer": unknown;  // selectedPlayer
-    "usersPlugin": UsersPlugin;  // this
-};
+export type OnPreparePlayerSelectorFormSubmitPayload = { form: object; gameManager: object; select: object; selectedPlayer: object; usersPlugin: UsersPlugin; };
 
 /**
  * `reldens.onPrepareSinglePlayerSelectorFormSubmit`
@@ -1886,13 +1477,7 @@ export type OnPreparePlayerSelectorFormSubmitPayload = {
  * - Payload: one object with keys `form, gameManager, player, selectElement, usersPlugin`
  * - Emitted at: lib/users/client/plugin.js:L196
  */
-export type OnPrepareSinglePlayerSelectorFormSubmitPayload = {
-    "form": HTMLFormElement;  // form
-    "gameManager": GameManager;  // gameManager
-    "player": unknown;  // player
-    "selectElement": HTMLInputElement;  // selectElement
-    "usersPlugin": UsersPlugin;  // this
-};
+export type OnPrepareSinglePlayerSelectorFormSubmitPayload = { form: HTMLFormElement; gameManager: object; player: object; selectElement: HTMLInputElement; usersPlugin: UsersPlugin; };
 
 /**
  * `reldens.onRoomDispose`
@@ -1901,11 +1486,7 @@ export type OnPrepareSinglePlayerSelectorFormSubmitPayload = {
  * - Payload: one object with keys `result, roomId, roomName`
  * - Emitted at: lib/rooms/server/login.js:L298
  */
-export type OnRoomDisposePayload = {
-    "result": string;  // result
-    "roomId": unknown;  // this.roomId
-    "roomName": unknown;  // this.roomName
-};
+export type OnRoomDisposePayload = { result: { confirm: boolean; }; roomId: number; roomName: string; };
 
 /**
  * `reldens.onSavePlayerStateBefore`
@@ -1914,13 +1495,7 @@ export type OnRoomDisposePayload = {
  * - Payload: one object with keys `playerId, playerSchema, room, updatePatch, updateReady`
  * - Emitted at: lib/rooms/server/scene.js:L719
  */
-export type OnSavePlayerStateBeforePayload = {
-    "playerId": unknown;  // playerId
-    "playerSchema": unknown;  // playerSchema
-    "room": RoomScene;  // this
-    "updatePatch": unknown;  // updatePatch
-    "updateReady": unknown;  // updateReady
-};
+export type OnSavePlayerStateBeforePayload = { playerId: number; playerSchema: PlayerState; room: RoomScene; updatePatch: object; updateReady: { continueUpdate: boolean; }; };
 
 /**
  * `reldens.onSavePlayerStatsBefore`
@@ -1929,12 +1504,7 @@ export type OnSavePlayerStateBeforePayload = {
  * - Payload: one object with keys `client, objectState, playerSchema, room`
  * - Emitted at: lib/rooms/server/scene.js:L748
  */
-export type OnSavePlayerStatsBeforePayload = {
-    "client": Client;  // client
-    "objectState": unknown;  // objectState
-    "playerSchema": unknown;  // playerSchema
-    "room": RoomScene;  // this
-};
+export type OnSavePlayerStatsBeforePayload = { client: Client; objectState: { updateReady: boolean; }; playerSchema: PlayerState; room: RoomScene; };
 
 /**
  * `reldens.openUI`
@@ -1943,15 +1513,7 @@ export type OnSavePlayerStatsBeforePayload = {
  * - Payload: one object with keys `openButton, ui` (sometimes: box, dialogBox, dialogContainer, minimap, uiScene)
  * - Emitted at: lib/chat/client/chat-ui.js:L156, lib/game/client/user-interface.js:L155, lib/game/client/ui-factory.js:L56, lib/game/client/settings-ui.js:L51, lib/game/client/instructions-ui.js:L44, lib/game/client/minimap-ui.js:L77, lib/users/client/player-stats-ui.js:L49
  */
-export type OpenUIPayload = {
-    "openButton": unknown;  // this.chatOpenButton
-    "ui": ChatUi;  // this
-    "box"?: unknown;
-    "dialogBox"?: unknown;  // this.uiChat
-    "dialogContainer"?: unknown;  // this.uiChat.getChildByProperty('id', ChatConst.CHAT_UI)
-    "minimap"?: unknown;
-    "uiScene"?: unknown;  // this.uiScene
-};
+export type OpenUIPayload = { openButton: boolean; ui: ChatUi; box?: object; dialogBox?: object; dialogContainer?: object; minimap?: Minimap; uiScene?: object; };
 
 /**
  * `reldens.parsingMapLayerAfter`
@@ -1960,10 +1522,7 @@ export type OpenUIPayload = {
  * - Payload: one object with keys `layer, world`
  * - Emitted at: lib/world/server/p2world.js:L245
  */
-export type ParsingMapLayerAfterPayload = {
-    "layer": unknown;  // layer
-    "world": P2world;  // this
-};
+export type ParsingMapLayerAfterPayload = { layer: object; world: P2world; };
 
 /**
  * `reldens.parsingMapLayerBefore`
@@ -1972,10 +1531,7 @@ export type ParsingMapLayerAfterPayload = {
  * - Payload: one object with keys `layer, world`
  * - Emitted at: lib/world/server/p2world.js:L243
  */
-export type ParsingMapLayerBeforePayload = {
-    "layer": unknown;  // layer
-    "world": P2world;  // this
-};
+export type ParsingMapLayerBeforePayload = { layer: object; world: P2world; };
 
 /**
  * `reldens.parsingMapLayersAfterBodiesQueue`
@@ -1984,10 +1540,7 @@ export type ParsingMapLayerBeforePayload = {
  * - Payload: one object with keys `layer, world`
  * - Emitted at: lib/world/server/p2world.js:L254
  */
-export type ParsingMapLayersAfterBodiesQueuePayload = {
-    "layer": unknown;  // layer
-    "world": P2world;  // this
-};
+export type ParsingMapLayersAfterBodiesQueuePayload = { layer: object; world: P2world; };
 
 /**
  * `reldens.playerAttack`
@@ -1996,7 +1549,7 @@ export type ParsingMapLayersAfterBodiesQueuePayload = {
  * - Payload: positional arguments `(message, this.room)`
  * - Emitted at: lib/actions/client/receiver-wrapper.js:L104
  */
-export type PlayerAttackPayload = [message: unknown, room: unknown];
+export type PlayerAttackPayload = [message: object, room: RoomScene];
 
 /**
  * `reldens.playerDeath`
@@ -2005,13 +1558,7 @@ export type PlayerAttackPayload = [message: unknown, room: unknown];
  * - Payload: a `PlayerDeathEvent` instance with properties `affectedProperty, attackerPlayer, room, targetClient, targetSchema`
  * - Emitted at: lib/actions/server/battle.js:L197
  */
-export type PlayerDeathPayload = {
-    "affectedProperty": unknown;
-    "attackerPlayer": unknown;
-    "room": unknown;
-    "targetClient": unknown;
-    "targetSchema": unknown;
-};
+export type PlayerDeathPayload = { affectedProperty: object; attackerPlayer: PlayerState; room: RoomScene; targetClient: Client; targetSchema: PlayerState; };
 
 /**
  * `reldens.playerEngineAddPlayer`
@@ -2020,7 +1567,7 @@ export type PlayerDeathPayload = {
  * - Payload: positional arguments `(this, id, addPlayerData)`
  * - Emitted at: lib/users/client/player-engine.js:L171
  */
-export type PlayerEngineAddPlayerPayload = [self: unknown, id: unknown, addPlayerData: unknown];
+export type PlayerEngineAddPlayerPayload = [playerEngine: PlayerEngine, id: string, addPlayerData: object];
 
 /**
  * `reldens.playerHitObjectEnd`
@@ -2029,10 +1576,7 @@ export type PlayerEngineAddPlayerPayload = [self: unknown, id: unknown, addPlaye
  * - Payload: one object with keys `playerBody, result`
  * - Emitted at: lib/world/server/collisions-manager.js:L281
  */
-export type PlayerHitObjectEndPayload = {
-    "playerBody": unknown;  // playerBody
-    "result": string;  // result
-};
+export type PlayerHitObjectEndPayload = { playerBody: object; result: { stopFull: boolean; continue: boolean; }; };
 
 /**
  * `reldens.playerHitPlayer`
@@ -2041,10 +1585,7 @@ export type PlayerHitObjectEndPayload = {
  * - Payload: one object with keys `bodyA, bodyB`
  * - Emitted at: lib/world/server/collisions-manager.js:L237
  */
-export type PlayerHitPlayerPayload = {
-    "bodyA": unknown;  // bodyA
-    "bodyB": unknown;  // bodyB
-};
+export type PlayerHitPlayerPayload = { bodyA: object; bodyB: object; };
 
 /**
  * `reldens.playerHitPlayerEnd`
@@ -2053,10 +1594,7 @@ export type PlayerHitPlayerPayload = {
  * - Payload: one object with keys `bodyA, bodyB`
  * - Emitted at: lib/world/server/collisions-manager.js:L251
  */
-export type PlayerHitPlayerEndPayload = {
-    "bodyA": unknown;  // bodyA
-    "bodyB": unknown;  // bodyB
-};
+export type PlayerHitPlayerEndPayload = { bodyA: object; bodyB: object; };
 
 /**
  * `reldens.playerHitWallBegin`
@@ -2065,10 +1603,7 @@ export type PlayerHitPlayerEndPayload = {
  * - Payload: one object with keys `playerBody, wallBody`
  * - Emitted at: lib/world/server/collisions-manager.js:L296
  */
-export type PlayerHitWallBeginPayload = {
-    "playerBody": unknown;  // playerBody
-    "wallBody": unknown;  // wallBody
-};
+export type PlayerHitWallBeginPayload = { playerBody: object; wallBody: object; };
 
 /**
  * `reldens.playerLeftScene`
@@ -2077,10 +1612,7 @@ export type PlayerHitWallBeginPayload = {
  * - Payload: one object with keys `code, roomEvents`
  * - Emitted at: lib/game/client/room-events.js:L589
  */
-export type PlayerLeftScenePayload = {
-    "code": number;  // code
-    "roomEvents": RoomEvents;  // this
-};
+export type PlayerLeftScenePayload = { code: number; roomEvents: RoomEvents; };
 
 /**
  * `reldens.playerNewName`
@@ -2089,7 +1621,7 @@ export type PlayerLeftScenePayload = {
  * - Payload: positional arguments `(this, loginData, result)`
  * - Emitted at: lib/game/server/login-manager.js:L536
  */
-export type PlayerNewNamePayload = [self: unknown, loginData: unknown, result: unknown];
+export type PlayerNewNamePayload = [self: LoginManager, loginData: object, result: { error: boolean; message: string; }];
 
 /**
  * `reldens.playerNewNameUnavailable`
@@ -2098,7 +1630,7 @@ export type PlayerNewNamePayload = [self: unknown, loginData: unknown, result: u
  * - Payload: positional arguments `(this, loginData, isNameAvailable, result)`
  * - Emitted at: lib/game/server/login-manager.js:L557
  */
-export type PlayerNewNameUnavailablePayload = [self: unknown, loginData: unknown, isNameAvailable: unknown, result: unknown];
+export type PlayerNewNameUnavailablePayload = [self: LoginManager, loginData: object, isNameAvailable: boolean, result: { error: boolean; message: string; }];
 
 /**
  * `reldens.playerPersistDataAfter`
@@ -2107,7 +1639,7 @@ export type PlayerNewNameUnavailablePayload = [self: unknown, loginData: unknown
  * - Payload: positional arguments `(client, userModel, currentPlayer, params, this)`
  * - Emitted at: lib/rooms/server/scene.js:L237
  */
-export type PlayerPersistDataAfterPayload = [client: unknown, userModel: unknown, currentPlayer: unknown, params: unknown, self: unknown];
+export type PlayerPersistDataAfterPayload = [client: Client, userModel: UsersModel, currentPlayer: PlayerState, params: object, self: RoomScene];
 
 /**
  * `reldens.playerPersistDataBefore`
@@ -2116,7 +1648,7 @@ export type PlayerPersistDataAfterPayload = [client: unknown, userModel: unknown
  * - Payload: positional arguments `(client, userModel, currentPlayer, params, this)`
  * - Emitted at: lib/rooms/server/scene.js:L233
  */
-export type PlayerPersistDataBeforePayload = [client: unknown, userModel: unknown, currentPlayer: unknown, params: unknown, self: unknown];
+export type PlayerPersistDataBeforePayload = [client: Client, userModel: UsersModel, currentPlayer: PlayerState, params: object, self: RoomScene];
 
 /**
  * `reldens.playerSceneUnavailable`
@@ -2125,7 +1657,7 @@ export type PlayerPersistDataBeforePayload = [client: unknown, userModel: unknow
  * - Payload: positional arguments `(this, loginData, result)`
  * - Emitted at: lib/game/server/login-manager.js:L545
  */
-export type PlayerSceneUnavailablePayload = [self: unknown, loginData: unknown, result: unknown];
+export type PlayerSceneUnavailablePayload = [self: LoginManager, loginData: object, result: object];
 
 /**
  * `reldens.playerStatsUpdateAfter`
@@ -2134,7 +1666,7 @@ export type PlayerSceneUnavailablePayload = [self: unknown, loginData: unknown, 
  * - Payload: positional arguments `(message, this)`
  * - Emitted at: lib/game/client/room-events.js:L620
  */
-export type PlayerStatsUpdateAfterPayload = [message: unknown, self: unknown];
+export type PlayerStatsUpdateAfterPayload = [message: object, self: RoomEvents];
 
 /**
  * `reldens.playerStatsUpdateBefore`
@@ -2143,7 +1675,7 @@ export type PlayerStatsUpdateAfterPayload = [message: unknown, self: unknown];
  * - Payload: positional arguments `(message, this)`
  * - Emitted at: lib/game/client/room-events.js:L409
  */
-export type PlayerStatsUpdateBeforePayload = [message: unknown, self: unknown];
+export type PlayerStatsUpdateBeforePayload = [message: object, self: RoomEvents];
 
 /**
  * `reldens.playersOnAdd`
@@ -2152,7 +1684,7 @@ export type PlayerStatsUpdateBeforePayload = [message: unknown, self: unknown];
  * - Payload: positional arguments `(player, key, previousScene, this)`
  * - Emitted at: lib/game/client/room-events.js:L168
  */
-export type PlayersOnAddPayload = [player: unknown, key: unknown, previousScene: unknown, self: unknown];
+export type PlayersOnAddPayload = [player: PlayerState, key: string, previousScene: string | boolean, roomEvents: RoomEvents];
 
 /**
  * `reldens.playersOnAddReady`
@@ -2161,11 +1693,7 @@ export type PlayersOnAddPayload = [player: unknown, key: unknown, previousScene:
  * - Payload: one object with keys `player, previousScene, roomEvents`
  * - Emitted at: lib/game/client/room-events.js:L875
  */
-export type PlayersOnAddReadyPayload = {
-    "player": unknown;  // currentScene.player
-    "previousScene": string|boolean;  // previousScene
-    "roomEvents": RoomEvents;  // this
-};
+export type PlayersOnAddReadyPayload = { player: PlayerEngine; previousScene: string | boolean; roomEvents: RoomEvents; };
 
 /**
  * `reldens.playersOnRemove`
@@ -2174,7 +1702,7 @@ export type PlayersOnAddReadyPayload = {
  * - Payload: positional arguments `(player, key, this)`
  * - Emitted at: lib/game/client/room-events.js:L281
  */
-export type PlayersOnRemovePayload = [player: unknown, key: unknown, self: unknown];
+export type PlayersOnRemovePayload = [player: PlayerState, key: string, roomEvents: RoomEvents];
 
 /**
  * `reldens.playersQueueBefore`
@@ -2183,7 +1711,7 @@ export type PlayersOnRemovePayload = [player: unknown, key: unknown, self: unkno
  * - Payload: positional arguments `(player, key, previousScene, roomEvents)`
  * - Emitted at: lib/prediction/client/room-events-override.js:L33, lib/game/client/room-events.js:L227
  */
-export type PlayersQueueBeforePayload = [player: unknown, key: unknown, previousScene: unknown, roomEvents: unknown];
+export type PlayersQueueBeforePayload = [player: PlayerState, key: string, previousScene: string | boolean, roomEvents: RoomEvents];
 
 /**
  * `reldens.preloadUiScene`
@@ -2192,7 +1720,7 @@ export type PlayersQueueBeforePayload = [player: unknown, key: unknown, previous
  * - Payload: positional arguments `(this)`
  * - Emitted at: lib/game/client/scene-preloader.js:L166
  */
-export type PreloadUiScenePayload = [self: unknown];
+export type PreloadUiScenePayload = [self: ScenePreloader];
 
 /**
  * `reldens.processForgotPassword`
@@ -2201,7 +1729,7 @@ export type PreloadUiScenePayload = [self: unknown];
  * - Payload: positional arguments `(this, userData, sendResult)`
  * - Emitted at: lib/game/server/login-manager.js:L679
  */
-export type ProcessForgotPasswordPayload = [self: unknown, userData: unknown, sendResult: unknown];
+export type ProcessForgotPasswordPayload = [self: LoginManager, userData: object, sendResult: object];
 
 /**
  * `reldens.processUserRequestIsValidDataBefore`
@@ -2210,7 +1738,7 @@ export type ProcessForgotPasswordPayload = [self: unknown, userData: unknown, se
  * - Payload: positional arguments `(this, userData)`
  * - Emitted at: lib/game/server/login-manager.js:L285
  */
-export type ProcessUserRequestIsValidDataBeforePayload = [self: unknown, userData: unknown];
+export type ProcessUserRequestIsValidDataBeforePayload = [self: LoginManager, userData: object];
 
 /**
  * `reldens.register`
@@ -2219,7 +1747,7 @@ export type ProcessUserRequestIsValidDataBeforePayload = [self: unknown, userDat
  * - Payload: positional arguments `(this, userData, result)`
  * - Emitted at: lib/game/server/login-manager.js:L501
  */
-export type RegisterPayload = [self: unknown, userData: unknown, result: unknown];
+export type RegisterPayload = [self: LoginManager, userData: object, result: { error: string; }];
 
 /**
  * `reldens.registrationInvalidParams`
@@ -2228,7 +1756,7 @@ export type RegisterPayload = [self: unknown, userData: unknown, result: unknown
  * - Payload: positional arguments `(this, user, userData, result)`
  * - Emitted at: lib/game/server/login-manager.js:L313
  */
-export type RegistrationInvalidParamsPayload = [self: unknown, user: unknown, userData: unknown, result: unknown];
+export type RegistrationInvalidParamsPayload = [self: LoginManager, user: UsersModel, userData: object, result: { error: string; }];
 
 /**
  * `reldens.removePlayerBefore`
@@ -2237,11 +1765,7 @@ export type RegistrationInvalidParamsPayload = [self: unknown, user: unknown, us
  * - Payload: one object with keys `playerSchema, room, stateObject`
  * - Emitted at: lib/rooms/server/scene.js:L662
  */
-export type RemovePlayerBeforePayload = {
-    "playerSchema": unknown;  // playerSchema
-    "room": RoomScene;  // this
-    "stateObject": unknown;  // stateObject
-};
+export type RemovePlayerBeforePayload = { playerSchema: PlayerState; room: RoomScene; stateObject: { isRemoveReady: boolean; }; };
 
 /**
  * `reldens.restoreObjectAfter`
@@ -2250,10 +1774,7 @@ export type RemovePlayerBeforePayload = {
  * - Payload: one object with keys `enemyObject, room`
  * - Emitted at: lib/objects/server/object/type/enemy-object.js:L396
  */
-export type RestoreObjectAfterPayload = {
-    "enemyObject": EnemyObject;  // this
-    "room": RoomScene;  // room
-};
+export type RestoreObjectAfterPayload = { enemyObject: EnemyObject; room: RoomScene; };
 
 /**
  * `reldens.roomLoginOnAuth`
@@ -2265,14 +1786,7 @@ export type RestoreObjectAfterPayload = {
  * - Payload: one object with keys `client, loginResult, options, request, result, roomLogin`
  * - Emitted at: lib/rooms/server/login.js:L94
  */
-export type RoomLoginOnAuthPayload = {
-    "client": Client;  // client
-    "loginResult": unknown;  // loginResult
-    "options": unknown;  // options
-    "request": unknown;  // request
-    "result": string;  // result
-    "roomLogin": RoomLogin;  // this
-};
+export type RoomLoginOnAuthPayload = { client: Client; loginResult: object; options: object; request: object; result: { confirm: boolean; }; roomLogin: RoomLogin; };
 
 /**
  * `reldens.roomLoginOnCreate`
@@ -2281,10 +1795,7 @@ export type RoomLoginOnAuthPayload = {
  * - Payload: one object with keys `options, roomLogin`
  * - Emitted at: lib/rooms/server/login.js:L58
  */
-export type RoomLoginOnCreatePayload = {
-    "options": unknown;  // options
-    "roomLogin": RoomLogin;  // this
-};
+export type RoomLoginOnCreatePayload = { options: object; roomLogin: RoomLogin; };
 
 /**
  * `reldens.roomsDefinition`
@@ -2293,7 +1804,7 @@ export type RoomLoginOnCreatePayload = {
  * - Payload: positional arguments `(this.defineExtraRooms)`
  * - Emitted at: lib/rooms/server/manager.js:L93
  */
-export type RoomsDefinitionPayload = [defineExtraRooms: unknown];
+export type RoomsDefinitionPayload = [defineExtraRooms: object[]];
 
 /**
  * `reldens.roomsMessageActionsByRoom`
@@ -2302,7 +1813,7 @@ export type RoomsDefinitionPayload = [defineExtraRooms: unknown];
  * - Payload: positional arguments `(roomMessageActions, roomName)`
  * - Emitted at: lib/rooms/server/manager.js:L184
  */
-export type RoomsMessageActionsByRoomPayload = [roomMessageActions: unknown, roomName: unknown];
+export type RoomsMessageActionsByRoomPayload = [roomMessageActions: object, roomName: string];
 
 /**
  * `reldens.roomsMessageActionsGlobal`
@@ -2311,7 +1822,7 @@ export type RoomsMessageActionsByRoomPayload = [roomMessageActions: unknown, roo
  * - Payload: one object with keys `(none required)`
  * - Emitted at: lib/rooms/server/manager.js:L99
  */
-export type RoomsMessageActionsGlobalPayload = Record<string, unknown>;
+export type RoomsMessageActionsGlobalPayload = object;
 
 /**
  * `reldens.runBattlePveAfter`
@@ -2320,12 +1831,7 @@ export type RoomsMessageActionsGlobalPayload = Record<string, unknown>;
  * - Payload: one object with keys `attackResult, playerSchema, roomScene, target`
  * - Emitted at: lib/actions/server/pve.js:L82
  */
-export type RunBattlePveAfterPayload = {
-    "attackResult": unknown;  // attackResult
-    "playerSchema": Player;  // playerSchema
-    "roomScene": RoomScene;  // roomScene
-    "target": Player;  // target
-};
+export type RunBattlePveAfterPayload = { attackResult: object; playerSchema: PlayerState; roomScene: RoomScene; target: object; };
 
 /**
  * `reldens.runGameOver`
@@ -2334,11 +1840,7 @@ export type RunBattlePveAfterPayload = {
  * - Payload: one object with keys `defaultBehavior, message, roomEvents`
  * - Emitted at: lib/game/client/room-events.js:L510
  */
-export type RunGameOverPayload = {
-    "defaultBehavior": unknown;  // defaultBehavior
-    "message": unknown;  // message
-    "roomEvents": RoomEvents;  // this
-};
+export type RunGameOverPayload = { defaultBehavior: boolean; message: object; roomEvents: RoomEvents; };
 
 /**
  * `reldens.runPlayerAnimation`
@@ -2347,7 +1849,7 @@ export type RunGameOverPayload = {
  * - Payload: positional arguments `(this, playerId, playerState, playerSprite)`
  * - Emitted at: lib/users/client/player-engine.js:L333
  */
-export type RunPlayerAnimationPayload = [self: unknown, playerId: unknown, playerState: unknown, playerSprite: unknown];
+export type RunPlayerAnimationPayload = [playerEngine: PlayerEngine, playerId: number, playerState: PlayerState, playerSprite: object];
 
 /**
  * `reldens.savePlayerStatsUpdateClient`
@@ -2356,7 +1858,7 @@ export type RunPlayerAnimationPayload = [self: unknown, playerId: unknown, playe
  * - Payload: positional arguments `(client, playerSchema, this)`
  * - Emitted at: lib/rooms/server/scene.js:L762
  */
-export type SavePlayerStatsUpdateClientPayload = [client: unknown, playerSchema: unknown, self: unknown];
+export type SavePlayerStatsUpdateClientPayload = [client: Client, playerSchema: PlayerState, self: RoomScene];
 
 /**
  * `reldens.sceneRoomOnCreate`
@@ -2365,7 +1867,7 @@ export type SavePlayerStatsUpdateClientPayload = [client: unknown, playerSchema:
  * - Payload: positional arguments `(this)`
  * - Emitted at: lib/rooms/server/scene.js:L116
  */
-export type SceneRoomOnCreatePayload = [self: unknown];
+export type SceneRoomOnCreatePayload = [self: RoomScene];
 
 /**
  * `reldens.serverBeforeDefineRooms`
@@ -2374,9 +1876,7 @@ export type SceneRoomOnCreatePayload = [self: unknown];
  * - Payload: one object with keys `serverManager`
  * - Emitted at: lib/game/server/manager.js:L413
  */
-export type ServerBeforeDefineRoomsPayload = {
-    "serverManager": ServerManager;  // this
-};
+export type ServerBeforeDefineRoomsPayload = { serverManager: ServerManager; };
 
 /**
  * `reldens.serverBeforeListen`
@@ -2385,9 +1885,7 @@ export type ServerBeforeDefineRoomsPayload = {
  * - Payload: one object with keys `serverManager`
  * - Emitted at: lib/game/server/manager.js:L275
  */
-export type ServerBeforeListenPayload = {
-    "serverManager": ServerManager;  // this
-};
+export type ServerBeforeListenPayload = { serverManager: ServerManager; };
 
 /**
  * `reldens.serverBeforeLoginManager`
@@ -2396,9 +1894,7 @@ export type ServerBeforeListenPayload = {
  * - Payload: one object with keys `serverManager`
  * - Emitted at: lib/game/server/manager.js:L447
  */
-export type ServerBeforeLoginManagerPayload = {
-    "serverManager": ServerManager;  // this
-};
+export type ServerBeforeLoginManagerPayload = { serverManager: ServerManager; };
 
 /**
  * `reldens.serverConfigFeaturesReady`
@@ -2407,10 +1903,7 @@ export type ServerBeforeLoginManagerPayload = {
  * - Payload: one object with keys `configProcessor, serverManager`
  * - Emitted at: lib/game/server/manager.js:L471
  */
-export type ServerConfigFeaturesReadyPayload = {
-    "configProcessor": ConfigManager;  // this.configManager
-    "serverManager": ServerManager;  // this
-};
+export type ServerConfigFeaturesReadyPayload = { configProcessor: ConfigManager; serverManager: ServerManager; };
 
 /**
  * `reldens.serverConfigReady`
@@ -2419,10 +1912,7 @@ export type ServerConfigFeaturesReadyPayload = {
  * - Payload: one object with keys `configProcessor, serverManager`
  * - Emitted at: lib/game/server/manager.js:L506
  */
-export type ServerConfigReadyPayload = {
-    "configProcessor": ConfigManager;  // this.configManager
-    "serverManager": ServerManager;  // this
-};
+export type ServerConfigReadyPayload = { configProcessor: ConfigManager; serverManager: ServerManager; };
 
 /**
  * `reldens.serverReady`
@@ -2431,9 +1921,7 @@ export type ServerConfigReadyPayload = {
  * - Payload: one object with keys `serverManager`
  * - Emitted at: lib/game/server/manager.js:L280
  */
-export type ServerReadyPayload = {
-    "serverManager": ServerManager;  // this
-};
+export type ServerReadyPayload = { serverManager: ServerManager; };
 
 /**
  * `reldens.setAudio`
@@ -2442,11 +1930,7 @@ export type ServerReadyPayload = {
  * - Payload: one object with keys `audioManager, categoryKey, enabled`
  * - Emitted at: lib/audio/client/manager.js:L80
  */
-export type SetAudioPayload = {
-    "audioManager": AudioManager;  // this
-    "categoryKey": string;  // audioKey
-    "enabled": boolean;  // enabled
-};
+export type SetAudioPayload = { audioManager: AudioManager; categoryKey: string; enabled: boolean; };
 
 /**
  * `reldens.setSceneOnPlayers`
@@ -2455,7 +1939,7 @@ export type SetAudioPayload = {
  * - Payload: positional arguments `(this, user, userData)`
  * - Emitted at: lib/game/server/login-manager.js:L387
  */
-export type SetSceneOnPlayersPayload = [self: unknown, user: unknown, userData: unknown];
+export type SetSceneOnPlayersPayload = [self: LoginManager, user: UsersModel, userData: object];
 
 /**
  * `reldens.setupActions`
@@ -2464,9 +1948,7 @@ export type SetSceneOnPlayersPayload = [self: unknown, user: unknown, userData: 
  * - Payload: one object with keys `enemyObject`
  * - Emitted at: lib/objects/server/object/type/enemy-object.js:L226
  */
-export type SetupActionsPayload = {
-    "enemyObject": EnemyObject;  // this
-};
+export type SetupActionsPayload = { enemyObject: EnemyObject; };
 
 /**
  * `reldens.setupAdminManagers`
@@ -2475,9 +1957,7 @@ export type SetupActionsPayload = {
  * - Payload: one object with keys `adminManager`
  * - Emitted at: lib/admin-manager.js:L161
  */
-export type SetupAdminManagersPayload = {
-    "adminManager": unknown;  // this
-};
+export type SetupAdminManagersPayload = { adminManager: AdminManager; };
 
 /**
  * `reldens.setupAdminRouter`
@@ -2486,9 +1966,7 @@ export type SetupAdminManagersPayload = {
  * - Payload: one object with keys `adminManager`
  * - Emitted at: lib/admin-manager.js:L157
  */
-export type SetupAdminRouterPayload = {
-    "adminManager": unknown;  // this
-};
+export type SetupAdminRouterPayload = { adminManager: AdminManager; };
 
 /**
  * `reldens.setupAdminRoutes`
@@ -2497,9 +1975,7 @@ export type SetupAdminRouterPayload = {
  * - Payload: one object with keys `adminManager`
  * - Emitted at: lib/admin-manager.js:L159
  */
-export type SetupAdminRoutesPayload = {
-    "adminManager": unknown;  // this
-};
+export type SetupAdminRoutesPayload = { adminManager: AdminManager; };
 
 /**
  * `reldens.setupEntitiesRoutes`
@@ -2508,12 +1984,7 @@ export type SetupAdminRoutesPayload = {
  * - Payload: one object with keys `adminManager, driverResource, entityPath, entityRoute` (site adds spread/computed keys)
  * - Emitted at: lib/admin-manager/router.js:L145
  */
-export type SetupEntitiesRoutesPayload = {
-    "adminManager": unknown;
-    "driverResource": unknown;  // driverResource
-    "entityPath": unknown;  // entityPath
-    "entityRoute": string;  // entityRoute
-};
+export type SetupEntitiesRoutesPayload = { adminManager: AdminManager; driverResource: object; entityPath: string; entityRoute: string; };
 
 /**
  * `reldens.startChangedScene`
@@ -2522,10 +1993,7 @@ export type SetupEntitiesRoutesPayload = {
  * - Payload: one object with keys `message, roomEvents`
  * - Emitted at: lib/game/client/room-events.js:L452
  */
-export type StartChangedScenePayload = {
-    "message": unknown;  // message
-    "roomEvents": RoomEvents;  // this
-};
+export type StartChangedScenePayload = { message: object; roomEvents: RoomEvents; };
 
 /**
  * `reldens.startEngineScene`
@@ -2534,7 +2002,7 @@ export type StartChangedScenePayload = {
  * - Payload: positional arguments `(this, player, room, previousScene)`
  * - Emitted at: lib/game/client/room-events.js:L773
  */
-export type StartEngineScenePayload = [self: unknown, player: unknown, room: unknown, previousScene: unknown];
+export type StartEngineScenePayload = [roomEvents: RoomEvents, player: PlayerState, room: Room, previousScene: string | boolean];
 
 /**
  * `reldens.startGameAfter`
@@ -2543,7 +2011,7 @@ export type StartEngineScenePayload = [self: unknown, player: unknown, room: unk
  * - Payload: positional arguments `(this)`
  * - Emitted at: lib/game/client/game-manager.js:L154
  */
-export type StartGameAfterPayload = [self: unknown];
+export type StartGameAfterPayload = [self: GameManager];
 
 /**
  * `reldens.startGameBefore`
@@ -2552,7 +2020,7 @@ export type StartGameAfterPayload = [self: unknown];
  * - Payload: positional arguments `(this)`
  * - Emitted at: lib/game/client/game-manager.js:L138
  */
-export type StartGameBeforePayload = [self: unknown];
+export type StartGameBeforePayload = [self: GameManager];
 
 /**
  * `reldens.startObjectHitObject`
@@ -2561,10 +2029,7 @@ export type StartGameBeforePayload = [self: unknown];
  * - Payload: one object with keys `bodyA, bodyB`
  * - Emitted at: lib/world/server/collisions-manager.js:L381
  */
-export type StartObjectHitObjectPayload = {
-    "bodyA": unknown;  // bodyA
-    "bodyB": unknown;  // bodyB
-};
+export type StartObjectHitObjectPayload = { bodyA: object; bodyB: object; };
 
 /**
  * `reldens.startObjectHitWall`
@@ -2573,9 +2038,7 @@ export type StartObjectHitObjectPayload = {
  * - Payload: one object with keys `objectBody`
  * - Emitted at: lib/world/server/collisions-manager.js:L441
  */
-export type StartObjectHitWallPayload = {
-    "objectBody": unknown;  // objectBody
-};
+export type StartObjectHitWallPayload = { objectBody: object; };
 
 /**
  * `reldens.startPlayerHitChangePoint`
@@ -2584,11 +2047,7 @@ export type StartObjectHitWallPayload = {
  * - Payload: one object with keys `changePoint, collisionsManager, playerBody`
  * - Emitted at: lib/world/server/collisions-manager.js:L330
  */
-export type StartPlayerHitChangePointPayload = {
-    "changePoint": unknown;  // changePoint
-    "collisionsManager": CollisionsManager;  // this
-    "playerBody": unknown;  // playerBody
-};
+export type StartPlayerHitChangePointPayload = { changePoint: object; collisionsManager: CollisionsManager; playerBody: object; };
 
 /**
  * `reldens.startPlayerHitObjectBegin`
@@ -2597,10 +2056,7 @@ export type StartPlayerHitChangePointPayload = {
  * - Payload: one object with keys `otherBody, playerBody`
  * - Emitted at: lib/world/server/collisions-manager.js:L262
  */
-export type StartPlayerHitObjectBeginPayload = {
-    "otherBody": unknown;  // otherBody
-    "playerBody": unknown;  // playerBody
-};
+export type StartPlayerHitObjectBeginPayload = { otherBody: object; playerBody: object; };
 
 /**
  * `reldens.startPlayerHitWallEnd`
@@ -2609,10 +2065,7 @@ export type StartPlayerHitObjectBeginPayload = {
  * - Payload: one object with keys `playerBody, wallBody`
  * - Emitted at: lib/world/server/collisions-manager.js:L307
  */
-export type StartPlayerHitWallEndPayload = {
-    "playerBody": unknown;  // playerBody
-    "wallBody": unknown;  // wallBody
-};
+export type StartPlayerHitWallEndPayload = { playerBody: object; wallBody: object; };
 
 /**
  * `reldens.teamJoinInviteRejected`
@@ -2621,10 +2074,7 @@ export type StartPlayerHitWallEndPayload = {
  * - Payload: one object with keys `playerRejectingName, playerSendingInvite`
  * - Emitted at: lib/teams/server/team-message-actions.js:L61
  */
-export type TeamJoinInviteRejectedPayload = {
-    "playerRejectingName": unknown;  // playerRejectingName
-    "playerSendingInvite": unknown;  // playerSendingInvite
-};
+export type TeamJoinInviteRejectedPayload = { playerRejectingName: string; playerSendingInvite: Client; };
 
 /**
  * `reldens.teamLeave`
@@ -2633,12 +2083,7 @@ export type TeamJoinInviteRejectedPayload = {
  * - Payload: one object with keys `data, playerSchema, room, teamsPlugin`
  * - Emitted at: lib/teams/server/message-actions/team-leave.js:L31
  */
-export type TeamLeavePayload = {
-    "data": unknown;  // data
-    "playerSchema": PlayerState;  // playerSchema
-    "room": RoomScene;  // room
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type TeamLeavePayload = { data: object; playerSchema: PlayerState; room: RoomScene; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.teamLeaveBeforeSendUpdate`
@@ -2647,17 +2092,7 @@ export type TeamLeavePayload = {
  * - Payload: one object with keys `areLessPlayerThanRequired, currentTeam, isOwnerDisbanding, playerId, playerSchema, room, sendUpdate, singleRemoveId, teamsPlugin`
  * - Emitted at: lib/teams/server/message-actions/team-leave.js:L80
  */
-export type TeamLeaveBeforeSendUpdatePayload = {
-    "areLessPlayerThanRequired": unknown;  // areLessPlayerThanRequired
-    "currentTeam": unknown;  // currentTeam
-    "isOwnerDisbanding": unknown;  // isOwnerDisbanding
-    "playerId": unknown;  // playerId
-    "playerSchema": PlayerState;  // playerSchema
-    "room": RoomScene;  // room
-    "sendUpdate": unknown;  // sendUpdate
-    "singleRemoveId": number|string|boolean;  // singleRemoveId
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type TeamLeaveBeforeSendUpdatePayload = { areLessPlayerThanRequired: boolean; currentTeam: object; isOwnerDisbanding: boolean; playerId: number; playerSchema: PlayerState; room: RoomScene; sendUpdate: object; singleRemoveId: number; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.templateReloader.templatesChanged`
@@ -2666,10 +2101,7 @@ export type TeamLeaveBeforeSendUpdatePayload = {
  * - Payload: one object with keys `changedFiles, reloader`
  * - Emitted at: lib/template-reloader.js:L213
  */
-export type TemplateReloaderTemplatesChangedPayload = {
-    "changedFiles": unknown;  // this.getChangedFiles()
-    "reloader": unknown;  // this
-};
+export type TemplateReloaderTemplatesChangedPayload = { changedFiles: object; reloader: TemplateReloader; };
 
 /**
  * `reldens.tryClanStart`
@@ -2678,14 +2110,7 @@ export type TemplateReloaderTemplatesChangedPayload = {
  * - Payload: one object with keys `client, continueStart, data, playerSchema, room, teamsPlugin`
  * - Emitted at: lib/teams/server/message-actions/try-clan-invite.js:L69
  */
-export type TryClanStartPayload = {
-    "client": unknown;  // client
-    "continueStart": boolean;  // true
-    "data": unknown;  // data
-    "playerSchema": PlayerState;  // playerSchema
-    "room": RoomScene;  // room
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type TryClanStartPayload = { client: Client; continueStart: boolean; data: object; playerSchema: PlayerState; room: RoomScene; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.tryTeamStart`
@@ -2694,14 +2119,7 @@ export type TryClanStartPayload = {
  * - Payload: one object with keys `client, continueStart, data, playerSchema, room, teamsPlugin`
  * - Emitted at: lib/teams/server/message-actions/try-team-start.js:L47
  */
-export type TryTeamStartPayload = {
-    "client": unknown;  // client
-    "continueStart": boolean;  // true
-    "data": unknown;  // data
-    "playerSchema": PlayerState;  // playerSchema
-    "room": RoomScene;  // room
-    "teamsPlugin": TeamsPlugin;  // teamsPlugin
-};
+export type TryTeamStartPayload = { client: Client; continueStart: boolean; data: object; playerSchema: PlayerState; room: RoomScene; teamsPlugin: TeamsPlugin; };
 
 /**
  * `reldens.updateGameSizeAfter`
@@ -2710,7 +2128,7 @@ export type TryTeamStartPayload = {
  * - Payload: positional arguments `(this, newWidth, newHeight)`
  * - Emitted at: lib/game/client/game-engine.js:L100
  */
-export type UpdateGameSizeAfterPayload = [self: unknown, newWidth: unknown, newHeight: unknown];
+export type UpdateGameSizeAfterPayload = [gameEngine: GameEngine, newWidth: number, newHeight: number];
 
 /**
  * `reldens.updateGameSizeBefore`
@@ -2719,4 +2137,4 @@ export type UpdateGameSizeAfterPayload = [self: unknown, newWidth: unknown, newH
  * - Payload: positional arguments `(this, newWidth, newHeight)`
  * - Emitted at: lib/game/client/game-engine.js:L88
  */
-export type UpdateGameSizeBeforePayload = [self: unknown, newWidth: unknown, newHeight: unknown];
+export type UpdateGameSizeBeforePayload = [gameEngine: GameEngine, newWidth: number, newHeight: number];

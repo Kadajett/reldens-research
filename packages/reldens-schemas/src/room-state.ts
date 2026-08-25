@@ -10,11 +10,12 @@
  * positionPlayer() writes in state.js.
  */
 import { z } from 'zod';
+import { zAny, loose } from './zod-floors';
 import { withSource } from './provenance';
 import { DirectionSchema } from './protocol';
 
 export const PlayerStateSchema = withSource(
-    z.looseObject({
+    loose({
         x: z.number(),
         y: z.number(),
         dir: z.union([DirectionSchema, z.string()]),
@@ -32,14 +33,14 @@ export const PlayerStateSchema = withSource(
     }
 );
 
-export const PlayerSchemaShape = z.looseObject({
+export const PlayerSchemaShape = loose({
     sessionId: z.string().optional(),
     player_id: z.number().optional(),
     playerName: z.string().optional(),
     state: PlayerStateSchema
 });
 
-export const BodyStateSchema = z.looseObject({
+export const BodyStateSchema = loose({
     x: z.number(),
     y: z.number(),
     dir: z.string().optional(),
@@ -47,7 +48,7 @@ export const BodyStateSchema = z.looseObject({
 });
 
 export const RoomStateSchema = withSource(
-    z.looseObject({
+    loose({
         /** The room's static data as a JSON string: tilemap, layers, change points, objects. */
         sceneData: z.string()
     }),
@@ -67,12 +68,12 @@ export const RoomStateSchema = withSource(
 
 /** Parses the sceneData JSON string into Tiled-map-shaped data. */
 export const SceneDataSchema = withSource(
-    z.looseObject({
+    loose({
         tilewidth: z.number().optional(),
         tileheight: z.number().optional(),
         width: z.number().optional(),
         height: z.number().optional(),
-        layers: z.array(z.looseObject({
+        layers: z.array(loose({
             name: z.string().optional(),
             data: z.array(z.number()).optional()
         })).optional()

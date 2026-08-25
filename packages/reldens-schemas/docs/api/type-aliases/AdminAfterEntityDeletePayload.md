@@ -2,10 +2,10 @@
 
 ```ts
 type AdminAfterEntityDeletePayload = {
-  adminManager: unknown;
-  driverResource: unknown;
-  idProperty: unknown;
-  ids: unknown;
+  adminManager: AdminManager;
+  driverResource: object;
+  idProperty: string;
+  ids: number[];
 };
 ```
 
@@ -20,7 +20,7 @@ type AdminAfterEntityDeletePayload = {
 ### adminManager
 
 ```ts
-adminManager: unknown;
+adminManager: AdminManager;
 ```
 
 ***
@@ -28,7 +28,7 @@ adminManager: unknown;
 ### driverResource
 
 ```ts
-driverResource: unknown;
+driverResource: object;
 ```
 
 ***
@@ -36,7 +36,7 @@ driverResource: unknown;
 ### idProperty
 
 ```ts
-idProperty: unknown;
+idProperty: string;
 ```
 
 ***
@@ -44,5 +44,5 @@ idProperty: unknown;
 ### ids
 
 ```ts
-ids: unknown;
+ids: number[];
 ```

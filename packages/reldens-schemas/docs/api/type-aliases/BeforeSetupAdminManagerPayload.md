@@ -2,7 +2,7 @@
 
 ```ts
 type BeforeSetupAdminManagerPayload = {
-  serverManager: ServerManager | false;
+  serverManager: ServerManager;
 };
 ```
 
@@ -17,5 +17,5 @@ type BeforeSetupAdminManagerPayload = {
 ### serverManager
 
 ```ts
-serverManager: ServerManager | false;
+serverManager: ServerManager;
 ```

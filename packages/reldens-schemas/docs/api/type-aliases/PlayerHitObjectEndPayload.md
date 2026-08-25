@@ -2,8 +2,11 @@
 
 ```ts
 type PlayerHitObjectEndPayload = {
-  playerBody: unknown;
-  result: string;
+  playerBody: object;
+  result: {
+     continue: boolean;
+     stopFull: boolean;
+  };
 };
 ```
 
@@ -18,7 +21,7 @@ type PlayerHitObjectEndPayload = {
 ### playerBody
 
 ```ts
-playerBody: unknown;
+playerBody: object;
 ```
 
 ***
@@ -26,5 +29,20 @@ playerBody: unknown;
 ### result
 
 ```ts
-result: string;
+result: {
+  continue: boolean;
+  stopFull: boolean;
+};
+```
+
+#### continue
+
+```ts
+continue: boolean;
+```
+
+#### stopFull
+
+```ts
+stopFull: boolean;
 ```

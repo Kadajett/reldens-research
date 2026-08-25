@@ -2,8 +2,8 @@
 
 ```ts
 type TeamJoinInviteRejectedPayload = {
-  playerRejectingName: unknown;
-  playerSendingInvite: unknown;
+  playerRejectingName: string;
+  playerSendingInvite: Client;
 };
 ```
 
@@ -18,7 +18,7 @@ type TeamJoinInviteRejectedPayload = {
 ### playerRejectingName
 
 ```ts
-playerRejectingName: unknown;
+playerRejectingName: string;
 ```
 
 ***
@@ -26,5 +26,5 @@ playerRejectingName: unknown;
 ### playerSendingInvite
 
 ```ts
-playerSendingInvite: unknown;
+playerSendingInvite: Client;
 ```

@@ -2,11 +2,13 @@
 
 ```ts
 type OnSavePlayerStateBeforePayload = {
-  playerId: unknown;
-  playerSchema: unknown;
+  playerId: number;
+  playerSchema: PlayerState;
   room: RoomScene;
-  updatePatch: unknown;
-  updateReady: unknown;
+  updatePatch: object;
+  updateReady: {
+     continueUpdate: boolean;
+  };
 };
 ```
 
@@ -21,7 +23,7 @@ type OnSavePlayerStateBeforePayload = {
 ### playerId
 
 ```ts
-playerId: unknown;
+playerId: number;
 ```
 
 ***
@@ -29,7 +31,7 @@ playerId: unknown;
 ### playerSchema
 
 ```ts
-playerSchema: unknown;
+playerSchema: PlayerState;
 ```
 
 ***
@@ -45,7 +47,7 @@ room: RoomScene;
 ### updatePatch
 
 ```ts
-updatePatch: unknown;
+updatePatch: object;
 ```
 
 ***
@@ -53,5 +55,13 @@ updatePatch: unknown;
 ### updateReady
 
 ```ts
-updateReady: unknown;
+updateReady: {
+  continueUpdate: boolean;
+};
+```
+
+#### continueUpdate
+
+```ts
+continueUpdate: boolean;
 ```

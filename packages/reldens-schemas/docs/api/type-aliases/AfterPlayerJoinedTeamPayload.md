@@ -2,7 +2,7 @@
 
 ```ts
 type AfterPlayerJoinedTeamPayload = {
-  currentTeam: unknown;
+  currentTeam: object;
   playerJoining: PlayerState;
 };
 ```
@@ -18,7 +18,7 @@ type AfterPlayerJoinedTeamPayload = {
 ### currentTeam
 
 ```ts
-currentTeam: unknown;
+currentTeam: object;
 ```
 
 ***

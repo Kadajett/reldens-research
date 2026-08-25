@@ -1,7 +1,7 @@
 # Type Alias: JoinRoomInvalidPayload
 
 ```ts
-type JoinRoomInvalidPayload = [unknown, unknown, unknown, unknown, unknown];
+type JoinRoomInvalidPayload = [RoomScene, Client, object, UsersModel, boolean];
 ```
 
 `reldens.joinRoomInvalid`

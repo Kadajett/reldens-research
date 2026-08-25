@@ -2,8 +2,8 @@
 
 ```ts
 type DynamicFormBeforeSavePayload = {
-  formConfig: unknown;
-  preparedValues: unknown;
+  formConfig: object;
+  preparedValues: object;
 };
 ```
 
@@ -18,7 +18,7 @@ type DynamicFormBeforeSavePayload = {
 ### formConfig
 
 ```ts
-formConfig: unknown;
+formConfig: object;
 ```
 
 ***
@@ -26,5 +26,5 @@ formConfig: unknown;
 ### preparedValues
 
 ```ts
-preparedValues: unknown;
+preparedValues: object;
 ```

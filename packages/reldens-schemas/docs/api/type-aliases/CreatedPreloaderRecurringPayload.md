@@ -1,7 +1,7 @@
 # Type Alias: CreatedPreloaderRecurringPayload
 
 ```ts
-type CreatedPreloaderRecurringPayload = [unknown, unknown];
+type CreatedPreloaderRecurringPayload = [RoomEvents, ScenePreloader];
 ```
 
 `reldens.createdPreloaderRecurring`

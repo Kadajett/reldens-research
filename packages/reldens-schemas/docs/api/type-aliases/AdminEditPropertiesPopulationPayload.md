@@ -2,13 +2,13 @@
 
 ```ts
 type AdminEditPropertiesPopulationPayload = {
-  adminManager: unknown;
-  driverResource: unknown;
-  entityData: unknown;
-  entityId: unknown;
-  loadedEntity: unknown;
-  renderedEditProperties: unknown;
-  req: ExpressRequest;
+  adminManager: AdminManager;
+  driverResource: object;
+  entityData: object;
+  entityId: string;
+  loadedEntity: object;
+  renderedEditProperties: object;
+  req: object;
 };
 ```
 
@@ -23,7 +23,7 @@ type AdminEditPropertiesPopulationPayload = {
 ### adminManager
 
 ```ts
-adminManager: unknown;
+adminManager: AdminManager;
 ```
 
 ***
@@ -31,7 +31,7 @@ adminManager: unknown;
 ### driverResource
 
 ```ts
-driverResource: unknown;
+driverResource: object;
 ```
 
 ***
@@ -39,7 +39,7 @@ driverResource: unknown;
 ### entityData
 
 ```ts
-entityData: unknown;
+entityData: object;
 ```
 
 ***
@@ -47,7 +47,7 @@ entityData: unknown;
 ### entityId
 
 ```ts
-entityId: unknown;
+entityId: string;
 ```
 
 ***
@@ -55,7 +55,7 @@ entityId: unknown;
 ### loadedEntity
 
 ```ts
-loadedEntity: unknown;
+loadedEntity: object;
 ```
 
 ***
@@ -63,7 +63,7 @@ loadedEntity: unknown;
 ### renderedEditProperties
 
 ```ts
-renderedEditProperties: unknown;
+renderedEditProperties: object;
 ```
 
 ***
@@ -71,5 +71,5 @@ renderedEditProperties: unknown;
 ### req
 
 ```ts
-req: ExpressRequest;
+req: object;
 ```

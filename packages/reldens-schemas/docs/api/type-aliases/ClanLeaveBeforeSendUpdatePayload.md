@@ -2,12 +2,12 @@
 
 ```ts
 type ClanLeaveBeforeSendUpdatePayload = {
-  currentClan: unknown;
-  disbandClan: unknown;
-  playerId: unknown;
+  currentClan: object;
+  disbandClan: boolean;
+  playerId: number;
   playerSchema: PlayerState;
-  sendUpdate: unknown;
-  singleRemoveId: number | string;
+  sendUpdate: object;
+  singleRemoveId: number;
   teamsPlugin: TeamsPlugin;
 };
 ```
@@ -23,7 +23,7 @@ type ClanLeaveBeforeSendUpdatePayload = {
 ### currentClan
 
 ```ts
-currentClan: unknown;
+currentClan: object;
 ```
 
 ***
@@ -31,7 +31,7 @@ currentClan: unknown;
 ### disbandClan
 
 ```ts
-disbandClan: unknown;
+disbandClan: boolean;
 ```
 
 ***
@@ -39,7 +39,7 @@ disbandClan: unknown;
 ### playerId
 
 ```ts
-playerId: unknown;
+playerId: number;
 ```
 
 ***
@@ -55,7 +55,7 @@ playerSchema: PlayerState;
 ### sendUpdate
 
 ```ts
-sendUpdate: unknown;
+sendUpdate: object;
 ```
 
 ***
@@ -63,7 +63,7 @@ sendUpdate: unknown;
 ### singleRemoveId
 
 ```ts
-singleRemoveId: number | string;
+singleRemoveId: number;
 ```
 
 ***

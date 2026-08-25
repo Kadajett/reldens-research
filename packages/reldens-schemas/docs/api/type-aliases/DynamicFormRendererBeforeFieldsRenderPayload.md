@@ -2,13 +2,13 @@
 
 ```ts
 type DynamicFormRendererBeforeFieldsRenderPayload = {
-  attributes: unknown;
-  domain: unknown;
-  enhancedData: unknown;
-  fieldsToRender: unknown;
-  formConfig: unknown;
-  req: ExpressRequest;
-  systemVariables: unknown;
+  attributes: object;
+  domain: string;
+  enhancedData: object;
+  fieldsToRender: object;
+  formConfig: object;
+  req: object;
+  systemVariables: object;
 };
 ```
 
@@ -23,7 +23,7 @@ type DynamicFormRendererBeforeFieldsRenderPayload = {
 ### attributes
 
 ```ts
-attributes: unknown;
+attributes: object;
 ```
 
 ***
@@ -31,7 +31,7 @@ attributes: unknown;
 ### domain
 
 ```ts
-domain: unknown;
+domain: string;
 ```
 
 ***
@@ -39,7 +39,7 @@ domain: unknown;
 ### enhancedData
 
 ```ts
-enhancedData: unknown;
+enhancedData: object;
 ```
 
 ***
@@ -47,7 +47,7 @@ enhancedData: unknown;
 ### fieldsToRender
 
 ```ts
-fieldsToRender: unknown;
+fieldsToRender: object;
 ```
 
 ***
@@ -55,7 +55,7 @@ fieldsToRender: unknown;
 ### formConfig
 
 ```ts
-formConfig: unknown;
+formConfig: object;
 ```
 
 ***
@@ -63,7 +63,7 @@ formConfig: unknown;
 ### req
 
 ```ts
-req: ExpressRequest;
+req: object;
 ```
 
 ***
@@ -71,5 +71,5 @@ req: ExpressRequest;
 ### systemVariables
 
 ```ts
-systemVariables: unknown;
+systemVariables: object;
 ```

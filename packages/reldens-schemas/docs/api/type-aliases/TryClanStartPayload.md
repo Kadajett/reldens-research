@@ -2,9 +2,9 @@
 
 ```ts
 type TryClanStartPayload = {
-  client: unknown;
+  client: Client;
   continueStart: boolean;
-  data: unknown;
+  data: object;
   playerSchema: PlayerState;
   room: RoomScene;
   teamsPlugin: TeamsPlugin;
@@ -22,7 +22,7 @@ type TryClanStartPayload = {
 ### client
 
 ```ts
-client: unknown;
+client: Client;
 ```
 
 ***
@@ -38,7 +38,7 @@ continueStart: boolean;
 ### data
 
 ```ts
-data: unknown;
+data: object;
 ```
 
 ***
