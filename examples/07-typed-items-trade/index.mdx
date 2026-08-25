@@ -7,7 +7,7 @@ The [items system](/packages/reldens-items-types/docs/api/index) is the engine f
 
 ## What it produces
 
-`npm start` builds two inventories, gives Alice a sword and Bob 100 gold, and trades the sword for 50 gold:
+`npm start` builds two inventories, trades a sword for 50 gold, then builds a custom item type:
 
 ```text
 Before trade:
@@ -16,6 +16,10 @@ Before trade:
 After trade:
   Alice: gold x50
   Bob:   gold x50, iron_sword x1
+
+Custom item type:
+  built a Runestone -> Fire Rune (fire +5)
+  element: fire power: 5
 ```
 
 ## The one idea
@@ -48,6 +52,9 @@ The game code imports `@reldens/items-system` and nothing else. Validation is a 
   </Card>
   <Card title="Optional zod validation" icon="shield-check" href="/examples/07-typed-items-trade/docs/validation">
     Verifying the catalog without coupling the app to it.
+  </Card>
+  <Card title="Extending the item system" icon="puzzle-piece" href="/examples/07-typed-items-trade/docs/extending">
+    A custom item type, and the matching schema extension.
   </Card>
   <Card title="API used here" icon="code" href="/examples/07-typed-items-trade/docs/reference">
     Method tables for every call in this example.

@@ -14,12 +14,27 @@ declare module '@reldens/items-system' {
     export interface ItemsModelDataEntry { class: unknown; data: ItemModel }
     export type ItemsModelData = Record<string, ItemsModelDataEntry>;
 
+    // Base item classes, exported so you can subclass them to add a custom type.
+    export class ItemBase {
+        key: string;
+        uid: string;
+        qty: number;
+        label: string;
+        manager: unknown;
+        constructor(props: { key: string; manager?: unknown; [key: string]: unknown });
+        getInventoryId(): string;
+        static isSingleInstance(): boolean;
+    }
+    export class ItemSingle extends ItemBase {}
+    export class ItemEquipment extends ItemBase {}
+    export class ItemUsable extends ItemBase {}
+
     export class ItemsManager {
         constructor(props: { owner: OwnerLike; itemsModelData?: ItemsModelData; [key: string]: unknown });
         items: Record<string, ItemInstance>;
         setup(props?: { items?: Record<string, ItemInstance>; groups?: unknown }): Promise<unknown>;
         createItemInstance(key: string, qty?: number): ItemInstance | ItemInstance[] | false;
-        addItem(item: ItemInstance): Promise<ItemInstance | false>;
+        addItem(item: ItemInstance | ItemBase): Promise<ItemInstance | false>;
         findItemByKey(key: string): ItemInstance | false;
         getOwnerId(): string | number;
     }

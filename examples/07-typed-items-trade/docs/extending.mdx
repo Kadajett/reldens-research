@@ -1,0 +1,119 @@
+---
+title: "Extending the item system"
+description: "Add a custom item type by subclassing an item class and registering it per key. Then extend the zod schema so the new fields are typed and validated too."
+---
+
+The engine ships six item types. When you need behavior they do not cover, you add a class. The schema follows the same shape: extend it and your new fields get typed and checked.
+
+Two edits, one on each side of the two-layer split:
+
+<Steps>
+  <Step title="Subclass an item class (engine)">
+    A `Runestone` extends `ItemSingle` and carries two fields the base classes know nothing about.
+
+    ```ts src/runestone.ts
+    import { ItemSingle } from '@reldens/items-system';
+
+    export const RUNE_ELEMENTS = ['fire', 'water', 'earth', 'air'] as const;
+    export type RuneElement = (typeof RUNE_ELEMENTS)[number];
+
+    export class Runestone extends ItemSingle {
+        element: RuneElement;
+        power: number;
+
+        constructor(props: { key: string; element: RuneElement; power: number; [key: string]: unknown }) {
+            super(props);
+            this.element = props.element;
+            this.power = props.power;
+        }
+
+        summary(): string {
+            return `${this.label} (${this.element} +${this.power})`;
+        }
+    }
+    ```
+  </Step>
+  <Step title="Register it per item key (engine)">
+    `ItemsDataGenerator` takes a `{ key: Class }` map. Listed keys use your class; the rest fall back to the built-in class for their `type`.
+
+    ```ts src/custom-type-demo.ts
+    const itemsModelData = ItemsDataGenerator.itemsListMappedData(
+        { fire_rune: Runestone },
+        structuredClone(catalog),
+    );
+    ```
+
+    Nothing else changes. `createItemInstance('fire_rune')` now returns a `Runestone`:
+
+    ```text
+    Custom item type:
+      built a Runestone -> Fire Rune (fire +5)
+      element: fire power: 5
+    ```
+  </Step>
+</Steps>
+
+## What this does to the zod types
+
+The base [`itemDataSchema`](/examples/07-typed-items-trade/docs/validation) is a *loose* object: it has a catchall, so it accepts the extra fields but does not type or check them.
+
+```ts
+itemDataSchema.safeParse({ key: 'fire_rune', type: 3, element: 'plasma', power: 5 });
+// success: true - the catchall waved 'plasma' through
+```
+
+Extend the schema and those fields become part of it: required, typed, and validated. The catchall stays, so a runestone can still hold further custom keys.
+
+```ts optional-validation/runestone-schema.ts
+import { z } from 'zod';
+import { itemDataSchema } from '@reldens-community/items-types';
+import { RUNE_ELEMENTS } from '../src/runestone';
+
+export const runestoneSchema = itemDataSchema.extend({
+    element: z.enum(RUNE_ELEMENTS),
+    power: z.number().int().positive(),
+});
+
+export type Runestone = z.infer<typeof runestoneSchema>;
+```
+
+`Runestone` is now the base item type plus `element` and `power`. The difference is the whole point of extending:
+
+```ts test/runestone.test.ts
+const bad = { ...runestoneModel, element: 'plasma' };
+
+itemDataSchema.safeParse(bad).success;  // true  - base schema does not know 'element'
+runestoneSchema.safeParse(bad).success; // false - extended schema rejects 'plasma'
+```
+
+## Own the schema, shadcn-style
+
+`.extend()` composes on the published schema and keeps the dependency. If you would rather own the schema outright, copy the floor helper into your app and build from scratch. It is three lines:
+
+```ts your-app/item-schema.ts
+import { z } from 'zod';
+
+// Copied from @reldens-community/items-types - now yours to edit.
+const zAny = z.custom(() => true);
+const loose = <T extends z.ZodRawShape>(shape: T) => z.object(shape).catchall(zAny);
+
+export const itemSchema = loose({
+    key: z.string(),
+    type: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5), z.literal(10)]),
+    element: z.enum(['fire', 'water', 'earth', 'air']),
+    power: z.number().int().positive(),
+    // ...add or drop fields freely
+});
+```
+
+<Note>
+`loose` is `z.object(shape).catchall(zAny)`: strict on the keys you name, open to the ones you do not. That is why both extending and cloning keep unknown fields flowing to the engine untouched.
+</Note>
+
+## Which path
+
+| You want | Do |
+|---|---|
+| Add fields, stay current with the package | `itemDataSchema.extend({...})` |
+| A one-off type in one project | `.extend()` in your validation layer |
+| Full control, no dependency, edit anything | copy `loose` and author your own schema |

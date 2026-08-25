@@ -8,8 +8,9 @@ is an opt-in layer you can add or remove without touching the app.
 
 ## What it does
 
-`src/` builds an inventory for two players, gives Alice a sword and Bob 100 gold, then trades
-the sword for 50 gold through `ExchangePlatform`:
+`src/` builds an inventory for two players, trades a sword for 50 gold through
+`ExchangePlatform`, then builds a custom item type (`Runestone`) to show how you extend the
+engine and the schema together:
 
 ```
 Before trade:
@@ -18,6 +19,10 @@ Before trade:
 After trade:
   Alice: gold x50
   Bob:   gold x50, iron_sword x1
+
+Custom item type:
+  built a Runestone -> Fire Rune (fire +5)
+  element: fire power: 5
 ```
 
 ## The two layers
@@ -34,6 +39,11 @@ malformed catalog before it reaches the engine.
 
 `import type { ItemData }` gives you editor types with no runtime cost. `itemDataSchema.parse`
 is the runtime check. Both are additive, so users choose their level of strictness.
+
+**Extending both.** `src/runestone.ts` subclasses an item class to add a type the engine does
+not ship; `optional-validation/runestone-schema.ts` extends `itemDataSchema` so the new fields
+are typed and validated. The schema is small enough to copy into your app and own outright,
+shadcn-style, if you would rather not depend on the package at all.
 
 ## Scripts
 
