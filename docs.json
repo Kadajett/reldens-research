@@ -16,7 +16,7 @@
           {
             "group": "Overview",
             "pages": [
-              "README",
+              "index",
               "docs/01-architecture",
               "docs/02-events",
               "docs/03-typescript",
@@ -27,11 +27,11 @@
           {
             "group": "Examples",
             "pages": [
-              "examples/01-server-plugin-events/README",
-              "examples/02-custom-room-world/README",
-              "examples/03-client-plugin-phaser/README",
-              "examples/04-npcs-items-skills/README",
-              "examples/05-threejs-client/README"
+              "examples/01-server-plugin-events/index",
+              "examples/02-custom-room-world/index",
+              "examples/03-client-plugin-phaser/index",
+              "examples/04-npcs-items-skills/index",
+              "examples/05-threejs-client/index"
             ]
           }
         ]
@@ -42,8 +42,8 @@
           {
             "group": "Package",
             "pages": [
-              "packages/reldens-schemas/README",
-              "packages/reldens-schemas/docs/api/README"
+              "packages/reldens-schemas/index",
+              "packages/reldens-schemas/docs/api/index"
             ]
           },
           {

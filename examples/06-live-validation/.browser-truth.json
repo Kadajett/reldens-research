@@ -1,0 +1,44 @@
+{
+  "roomName": "reldens-town",
+  "sessionId": "sAlSe2yA2",
+  "pos": {
+    "x": 400,
+    "y": 360
+  },
+  "changePoints": [
+    {
+      "i": 444,
+      "n": "reldens-house-1"
+    },
+    {
+      "i": 951,
+      "n": "reldens-house-2"
+    },
+    {
+      "i": 18,
+      "n": "reldens-forest"
+    },
+    {
+      "i": 19,
+      "n": "reldens-forest"
+    }
+  ],
+  "sdKeys": [
+    "roomId",
+    "roomName",
+    "roomTitle",
+    "serverUrl",
+    "roomMap",
+    "sceneImages",
+    "changePoints",
+    "returnPoints",
+    "roomClassPath",
+    "returnPointDefault",
+    "customData",
+    "preloadAssets",
+    "objectsAnimationsData",
+    "worldConfig",
+    "preloadAssetsDefaults",
+    "animationsDefaults"
+  ]
+}

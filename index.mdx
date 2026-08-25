@@ -1,0 +1,93 @@
+---
+title: "Reldens Research"
+description: "Five TypeScript tutorials, a typed schema package, and reading notes for Reldens, the Colyseus and Phaser MMORPG platform."
+---
+
+Tutorials, examples and notes for [Reldens](https://github.com/damian-pastorini/reldens),
+an MMORPG platform built on Colyseus, Phaser and Node.
+
+Five example projects, each a complete Reldens installation scaffolded in
+TypeScript, each with the interesting parts left as stubs to write. Alongside
+them: a schema package that carries a Zod schema and a documented payload type
+for every one of the platform's 231 events, verified against a live server.
+
+## Start here
+
+<CardGroup cols={2}>
+  <Card title="Architecture" icon="sitemap" href="/docs/01-architecture">
+    How the platform is put together, and where the seams are.
+  </Card>
+  <Card title="Events" icon="bolt" href="/docs/02-events">
+    The extension model, plus every `reldens.*` event name.
+  </Card>
+  <Card title="Room protocol" icon="network-wired" href="/docs/04-room-protocol">
+    The wire protocol, for writing your own client.
+  </Card>
+  <Card title="Running it" icon="play" href="/docs/05-running">
+    Setup, ports, CLI, rebuilding, regenerating entities.
+  </Card>
+</CardGroup>
+
+## The examples
+
+| | What it covers |
+|---|---|
+| [01 server plugin & events](/examples/01-server-plugin-events/index) | booting `ServerManager` from TS, the plugin contract, ~200 lifecycle events |
+| [02 custom room & world](/examples/02-custom-room-world/index) | subclassing `RoomScene`, room lifecycle, the p2 world, and the event-based alternative |
+| [03 client plugin & Phaser](/examples/03-client-plugin-phaser/index) | a TypeScript client entry bundled by Parcel, `ClientPlugin`, custom render classes |
+| [04 NPCs, items & skills](/examples/04-npcs-items-skills/index) | `NpcObject` dialog logic, `@reldens/items-system`, `@reldens/modifiers`, `@reldens/skills` |
+| [05 Three.js client](/examples/05-threejs-client/index) | the AgentArena pattern: stock server, a non-Phaser client speaking the room protocol |
+
+## The schema package
+
+`@reldens/schemas` (in `packages/reldens-schemas`) is a Zod schema and a
+TypeScript payload type for every Reldens event. The types are read from the
+emit sites in the source, so a field is typed as the concrete runtime class the
+platform actually passes, not `any`. Browse them under
+[Schema API](/packages/reldens-schemas/docs/api/index).
+
+## Getting started
+
+```bash
+npm install                        # once, at the root
+cd examples/01-server-plugin-events
+npm run db:up                      # MySQL 8.4 in docker
+npm run build && npm start
+# open http://localhost:8081 and run the web installer
+```
+
+Full setup, ports and per-database details: [Running](/docs/05-running).
+
+## Layout
+
+```
+reldens-source/            upstream clone, reference only (gitignored)
+packages/reldens-schemas/  Zod schemas + payload types for all 231 events
+packages/reldens-types/    hand-written .d.ts for the untyped reldens packages
+examples/                  the five tutorials
+docs/                      notes taken while reading the source
+```
+
+npm workspaces, so `reldens` and its ~750 transitive packages (Parcel, Phaser,
+Firebase, Colyseus) install **once** at the root and are shared. Each example
+still has its own `package.json`, `tsconfig.json` and `docker-compose.yml`, and
+can be lifted out into a standalone repo unchanged.
+
+## Root scripts
+
+```bash
+npm run typecheck      # every workspace
+npm run build          # every workspace
+npm run link:reldens   # re-create the per-example reldens symlinks
+```
+
+## Notes on this repo
+
+- `reldens-source/` is a shallow clone of upstream, kept for grepping. It is
+  gitignored and not a workspace.
+- Anything Reldens generates inside an example (`theme/`, `dist/`, `.env`,
+  `install.lock`, `generated-entities/`) is gitignored. The web installer also
+  overwrites each example's `.gitignore`, which is why those are ignored too.
+- `packages/reldens-types` is deliberately loose: every declared class has an
+  index signature, so a missing member never blocks you. Tighten declarations as
+  you learn the real shapes.
