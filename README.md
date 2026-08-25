@@ -1,34 +1,50 @@
-# Reldens research
+---
+title: "Reldens Research"
+description: "Five TypeScript tutorials, a typed schema package, and reading notes for Reldens, the Colyseus and Phaser MMORPG platform."
+---
 
 Tutorials, examples and notes for [Reldens](https://github.com/damian-pastorini/reldens),
 an MMORPG platform built on Colyseus, Phaser and Node.
 
 Five example projects, each a complete Reldens installation scaffolded in
-TypeScript, each with the interesting parts left as stubs to write.
+TypeScript, each with the interesting parts left as stubs to write. Alongside
+them: a schema package that carries a Zod schema and a documented payload type
+for every one of the platform's 231 events, verified against a live server.
 
-## Layout
+## Start here
 
-```
-reldens-source/            upstream clone, reference only (gitignored)
-packages/reldens-types/    hand-written .d.ts for the untyped reldens packages
-examples/                  the five tutorials
-docs/                      notes taken while reading the source
-```
-
-npm workspaces, so `reldens` and its ~750 transitive packages (Parcel, Phaser,
-Firebase, Colyseus) install **once** at the root and are shared. Each example
-still has its own `package.json`, `tsconfig.json` and `docker-compose.yml`, and
-can be lifted out into a standalone repo unchanged.
+<CardGroup cols={2}>
+  <Card title="Architecture" icon="sitemap" href="/docs/01-architecture">
+    How the platform is put together, and where the seams are.
+  </Card>
+  <Card title="Events" icon="bolt" href="/docs/02-events">
+    The extension model, plus every `reldens.*` event name.
+  </Card>
+  <Card title="Room protocol" icon="network-wired" href="/docs/04-room-protocol">
+    The wire protocol, for writing your own client.
+  </Card>
+  <Card title="Running it" icon="play" href="/docs/05-running">
+    Setup, ports, CLI, rebuilding, regenerating entities.
+  </Card>
+</CardGroup>
 
 ## The examples
 
 | | What it covers |
 |---|---|
-| [01 server plugin & events](examples/01-server-plugin-events) | booting `ServerManager` from TS, the plugin contract, ~200 lifecycle events |
-| [02 custom room & world](examples/02-custom-room-world) | subclassing `RoomScene`, room lifecycle, the p2 world, and the event-based alternative |
-| [03 client plugin & Phaser](examples/03-client-plugin-phaser) | a TypeScript client entry bundled by Parcel, `ClientPlugin`, custom render classes |
-| [04 NPCs, items & skills](examples/04-npcs-items-skills) | `NpcObject` dialog logic, `@reldens/items-system`, `@reldens/modifiers`, `@reldens/skills` |
-| [05 Three.js client](examples/05-threejs-client) | the AgentArena pattern: stock server, a non-Phaser client speaking the room protocol |
+| [01 server plugin & events](/examples/01-server-plugin-events/README) | booting `ServerManager` from TS, the plugin contract, ~200 lifecycle events |
+| [02 custom room & world](/examples/02-custom-room-world/README) | subclassing `RoomScene`, room lifecycle, the p2 world, and the event-based alternative |
+| [03 client plugin & Phaser](/examples/03-client-plugin-phaser/README) | a TypeScript client entry bundled by Parcel, `ClientPlugin`, custom render classes |
+| [04 NPCs, items & skills](/examples/04-npcs-items-skills/README) | `NpcObject` dialog logic, `@reldens/items-system`, `@reldens/modifiers`, `@reldens/skills` |
+| [05 Three.js client](/examples/05-threejs-client/README) | the AgentArena pattern: stock server, a non-Phaser client speaking the room protocol |
+
+## The schema package
+
+`@reldens/schemas` (in `packages/reldens-schemas`) is a Zod schema and a
+TypeScript payload type for every Reldens event. The types are read from the
+emit sites in the source, so a field is typed as the concrete runtime class the
+platform actually passes, not `any`. Browse them under
+[Schema API](/packages/reldens-schemas/docs/api/README).
 
 ## Getting started
 
@@ -40,17 +56,22 @@ npm run build && npm start
 # open http://localhost:8081 and run the web installer
 ```
 
-Full setup, ports and per-database details: [docs/05-running.md](docs/05-running.md).
+Full setup, ports and per-database details: [Running](/docs/05-running).
 
-## Docs
+## Layout
 
-| | |
-|---|---|
-| [01 architecture](docs/01-architecture.md) | how the platform is put together, and where the seams are |
-| [02 events](docs/02-events.md) | the extension model, plus every `reldens.*` event name |
-| [03 typescript](docs/03-typescript.md) | working against an untyped CommonJS platform |
-| [04 room protocol](docs/04-room-protocol.md) | the wire protocol, for writing your own client |
-| [05 running](docs/05-running.md) | setup, ports, CLI, rebuilding, regenerating entities |
+```
+reldens-source/            upstream clone, reference only (gitignored)
+packages/reldens-schemas/  Zod schemas + payload types for all 231 events
+packages/reldens-types/    hand-written .d.ts for the untyped reldens packages
+examples/                  the five tutorials
+docs/                      notes taken while reading the source
+```
+
+npm workspaces, so `reldens` and its ~750 transitive packages (Parcel, Phaser,
+Firebase, Colyseus) install **once** at the root and are shared. Each example
+still has its own `package.json`, `tsconfig.json` and `docker-compose.yml`, and
+can be lifted out into a standalone repo unchanged.
 
 ## Root scripts
 
