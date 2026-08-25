@@ -1,0 +1,26 @@
+{
+  "name": "@reldens-community/modifiers-types",
+  "version": "0.1.0",
+  "description": "Zod schemas and inferred TypeScript types for @reldens/modifiers - the Reldens modifiers/conditions engine. Hand-written from the source and drift-tested against the installed package.",
+  "type": "commonjs",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "keywords": ["reldens", "modifiers", "zod", "types", "modifiers", "conditions", "mmorpg"],
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.json",
+    "test": "tsx --test test/*.test.ts"
+  },
+  "peerDependencies": {
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@reldens/modifiers": "0.34.0",
+    "zod": "^4.4.3"
+  },
+  "reldens": {
+    "typesFor": "@reldens/modifiers",
+    "verifiedAgainst": "0.34.0"
+  }
+}
