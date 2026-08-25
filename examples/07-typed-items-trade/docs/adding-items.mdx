@@ -1,0 +1,71 @@
+---
+title: "Adding items"
+description: "Adding an item is two steps: createItemInstance builds an instance from the catalog, addItem puts it in the inventory. Single-instance items stack; others do not."
+---
+
+Adding an item is two calls: build an instance from the catalog, then add it.
+
+```ts src/trade-demo.ts
+async function give(manager: ItemsManager, key: string, qty?: number): Promise<ItemInstance> {
+    const created = manager.createItemInstance(key, qty);
+    if (created === false || Array.isArray(created)) {
+        throw new Error(`Could not create a single instance of "${key}".`);
+    }
+    const added = await manager.addItem(created);
+    if (added === false) {
+        throw new Error(`Could not add "${key}" to the inventory.`);
+    }
+    return added;
+}
+```
+
+## createItemInstance(key, qty?)
+
+Looks `key` up in the model data and constructs its class. What `qty` does depends on whether the type is single-instance.
+
+<Tabs>
+  <Tab title="Single-instance (SINGLE*)">
+    Returns one instance carrying the full `qty`.
+
+    ```ts
+    manager.createItemInstance('gold', 100); // one ItemSingle, qty 100
+    ```
+  </Tab>
+  <Tab title="Non-single (BASE / EQUIPMENT / USABLE)">
+    `qty` is ignored; you always get one instance with `qty` 1. Call it in a loop for several.
+
+    ```ts
+    manager.createItemInstance('iron_sword'); // one ItemEquipment, qty 1
+    manager.createItemInstance('iron_sword', 5); // still one, qty 1
+    ```
+  </Tab>
+</Tabs>
+
+Returns `false` if the key is unknown. It can return an **array** for a non-single type asked for a quantity above one, which is why `give` rejects both `false` and arrays before calling `addItem`.
+
+## addItem(instance)
+
+Validates the instance, then stores it under `getInventoryId()`.
+
+| Situation | Result |
+|---|---|
+| First time, any type | stored under its slot key |
+| Same key again, single-instance | quantities merge via `increaseItemQty` |
+| Same `uid` again, non-single | rejected: item already exists |
+| Inventory `locked` | rejected |
+| `itemsLimit` reached | rejected |
+
+<Warning>
+`addItem` returns the stored item or `false`; it never throws. Check the return value. On `false`, `manager.lastError.message` says why.
+</Warning>
+
+## Stacking
+
+A single-instance item indexes by `key`, so adding `gold` twice increases the existing stack instead of creating a second slot:
+
+```ts
+await give(bob, 'gold', 100); // gold x100
+await give(bob, 'gold', 25);  // gold x125 (same slot)
+```
+
+Next: move items between inventories on the [trading page](/examples/07-typed-items-trade/docs/trading).

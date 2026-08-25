@@ -1,0 +1,57 @@
+---
+title: "The item catalog"
+description: "Item models are plain data. Each entry names a key, a type, and a label; the type decides how it behaves in an inventory."
+---
+
+An item catalog is a list of plain objects. Each one is an item *model*: the definition a game authors, before any inventory exists.
+
+```ts src/items-catalog.ts
+import { ItemsConst } from '@reldens/items-system';
+
+const { EQUIPMENT, USABLE, SINGLE } = ItemsConst.TYPES;
+
+export const itemsCatalog = [
+    { id: 1, key: 'iron_sword', type: EQUIPMENT, label: 'Iron Sword', description: 'A dependable blade.' },
+    { id: 2, key: 'health_potion', type: USABLE, label: 'Health Potion', uses_limit: 1 },
+    { id: 3, key: 'gold', type: SINGLE, label: 'Gold Coin', qty_limit: -1 },
+];
+```
+
+No validation library is attached. This file is copyable into any project that has `@reldens/items-system`.
+
+## Fields
+
+Every field maps to a property [`ItemBase`](/packages/reldens-items-types/docs/api/index) reads in its constructor. Only `key` is required.
+
+| Field | Type | Meaning |
+|---|---|---|
+| `key` | `string` | **Required.** Item-type key; also the inventory slot for single-instance items. |
+| `id` | `number \| string \| null` | Storage id; `null` when you have no database. |
+| `type` | one of `ItemsConst.TYPES` | How the item behaves in an inventory. Defaults to `ITEM_BASE` (10). |
+| `label` | `string` | Display name. |
+| `description` | `string` | Display text. |
+| `qty_limit` | `number \| false` | Max quantity; `-1` means unlimited. |
+| `uses_limit` | `number \| false` | Uses before the item is spent. |
+| `modifiers` | `array \| map` | Stat modifiers applied when the item executes. |
+| `customData` | `object \| string` | Extra keys merged onto the instance. |
+
+The full field list is on [`itemDataSchema`](/examples/07-typed-items-trade/docs/validation).
+
+## The six item types
+
+`type` is a number from `ItemsConst.TYPES`. The `SINGLE*` types collapse quantity into one inventory slot; the others get one instance each.
+
+| Name | Id | Slot key | Stacks? | Use for |
+|---|---|---|---|---|
+| `ITEM_BASE` | 10 | `uid` | no | a plain item |
+| `EQUIPMENT` | 1 | `uid` | no | wearable gear |
+| `USABLE` | 2 | `uid` | no | consumables with uses |
+| `SINGLE` | 3 | `key` | yes | stackables (gold, arrows) |
+| `SINGLE_EQUIPMENT` | 4 | `key` | yes | stackable gear |
+| `SINGLE_USABLE` | 5 | `key` | yes | stackable consumables |
+
+<Note>
+"Slot key" is what `getInventoryId()` returns: single-instance items index by `key` (so a second `gold` stacks onto the first), everything else by a generated `uid` (so each sword is its own slot).
+</Note>
+
+Next: turn this catalog into a live inventory on the [inventories page](/examples/07-typed-items-trade/docs/inventories).

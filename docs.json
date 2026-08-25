@@ -37,7 +37,20 @@
               "examples/02-custom-room-world/index",
               "examples/03-client-plugin-phaser/index",
               "examples/04-npcs-items-skills/index",
-              "examples/05-threejs-client/index"
+              "examples/05-threejs-client/index",
+              {
+                "group": "07 - Typed Items Trade",
+                "pages": [
+                  "examples/07-typed-items-trade/index",
+                  "examples/07-typed-items-trade/docs/catalog",
+                  "examples/07-typed-items-trade/docs/inventories",
+                  "examples/07-typed-items-trade/docs/adding-items",
+                  "examples/07-typed-items-trade/docs/trading",
+                  "examples/07-typed-items-trade/docs/validation",
+                  "examples/07-typed-items-trade/docs/reference",
+                  "examples/07-typed-items-trade/docs/gotchas"
+                ]
+              }
             ]
           }
         ]

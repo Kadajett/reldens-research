@@ -1,0 +1,71 @@
+---
+title: "07 - Typed Items Trade"
+description: "Add items to inventories and run a trade with @reldens/items-system, then verify the item catalog with zod - as an opt-in layer the game never depends on."
+---
+
+The [items system](/packages/reldens-items-types/docs/api/index) is the engine for adding, holding, and trading items. This example runs a real trade between two players, then shows how to verify the item data with the [`@reldens-community/items-types`](/packages/reldens-items-types/docs/api/index) zod schemas without the game code depending on them.
+
+## What it produces
+
+`npm start` builds two inventories, gives Alice a sword and Bob 100 gold, and trades the sword for 50 gold:
+
+```text
+Before trade:
+  Alice: iron_sword x1
+  Bob:   gold x100
+After trade:
+  Alice: gold x50
+  Bob:   gold x50, iron_sword x1
+```
+
+## The one idea
+
+The game code imports `@reldens/items-system` and nothing else. Validation is a separate, deletable layer.
+
+<CardGroup cols={2}>
+  <Card title="The app" icon="gamepad">
+    `src/` - plain data plus the engine. Copyable into any project that has `@reldens/items-system`. No zod at runtime.
+  </Card>
+  <Card title="The check" icon="circle-check">
+    `optional-validation/` and `test/` - zod-verify the same data against the types package. Delete them and the game still runs.
+  </Card>
+</CardGroup>
+
+## Pages
+
+<CardGroup cols={2}>
+  <Card title="The item catalog" icon="table-list" href="/examples/07-typed-items-trade/docs/catalog">
+    The data you author, and the six item types.
+  </Card>
+  <Card title="Inventories" icon="box-archive" href="/examples/07-typed-items-trade/docs/inventories">
+    Building an `ItemsManager` for an owner.
+  </Card>
+  <Card title="Adding items" icon="plus" href="/examples/07-typed-items-trade/docs/adding-items">
+    `createItemInstance` and `addItem`, stacking rules.
+  </Card>
+  <Card title="Trading" icon="right-left" href="/examples/07-typed-items-trade/docs/trading">
+    The `ExchangePlatform` push / confirm / finalize flow.
+  </Card>
+  <Card title="Optional zod validation" icon="shield-check" href="/examples/07-typed-items-trade/docs/validation">
+    Verifying the catalog without coupling the app to it.
+  </Card>
+  <Card title="API used here" icon="code" href="/examples/07-typed-items-trade/docs/reference">
+    Method tables for every call in this example.
+  </Card>
+  <Card title="Gotchas" icon="triangle-exclamation" href="/examples/07-typed-items-trade/docs/gotchas">
+    Owner required, single-instance uids, a latent engine bug.
+  </Card>
+</CardGroup>
+
+## Run it
+
+```bash
+npm start      # the trade demo (uses @reldens/items-system only)
+npm run verify # opt-in: zod-check the catalog
+npm test       # the same check as a repeatable test
+npm run typecheck
+```
+
+<Info>
+Verified against `@reldens/items-system@0.49.0` and `@reldens-community/items-types@0.1.0`.
+</Info>

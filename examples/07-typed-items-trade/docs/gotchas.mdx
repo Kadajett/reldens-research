@@ -1,0 +1,55 @@
+---
+title: "Gotchas"
+description: "The sharp edges this example steps around: a required owner, single vs non-single ids, quantity rules, locked inventories, and one latent engine bug."
+---
+
+The sharp edges, and how the example handles each.
+
+## owner is required
+
+An `ItemsManager` with no `owner` is dead on arrival: it logs a critical error, sets `hasError = true`, and every later call returns `false`. There is no exception to catch.
+
+```ts
+new ItemsManager({ itemsModelData }); // no owner -> hasError, silently unusable
+```
+
+## Single vs non-single ids
+
+What you push for a trade depends on the type. Single-instance items are keyed by `key`; everything else by a generated `uid`.
+
+```ts
+await exchange.pushForExchange('gold', 50, 'B'); // SINGLE -> key
+await exchange.pushForExchange(sword.uid, 1, 'A'); // EQUIPMENT -> uid
+```
+
+Capture the `uid` from what `addItem` returns; do not guess it.
+
+## Non-single qty is not a count
+
+`createItemInstance('iron_sword', 5)` does not make five swords. For a non-single type the `qty` argument is ignored and you get one instance. Loop to make several.
+
+## Inventories stay locked until finalize or cancel
+
+`initializeExchangeBetween` locks both inventories. While locked, `addItem` and `modifyItemQty` refuse. `finalizeExchange` unlocks on success; on any abort call `cancelExchange` yourself, or the inventories stay frozen.
+
+## Latent bug: empty-rewards fast path
+
+The trade in this example carries no rewards, and it still completes, but not for the reason the code intends.
+
+`RewardsProcessor` guards the empty case with `rewards.length`. The value it reads is a `RewardsCollection`, which exposes `count()` and has no `length`:
+
+```js
+// @reldens/items-system 0.49.0, lib/exchange/rewards-processor.js:23
+let rewards = exchange.exchangeRewards[inventoryKeyFrom];
+if(0 === rewards.length){ return true; } // rewards.length is undefined -> never true
+```
+
+`0 === undefined` is `false`, so the fast path never fires. The trade survives only because the fallback `fetchAllBy` returns an empty array. The fix is `rewards.count()`.
+
+<Warning>
+This is an upstream defect, not something this example can configure around. It is filed for the maintainer. If you add real rewards, exercise that path carefully.
+</Warning>
+
+<Info>
+Two sibling defects live in the same package: `GroupsDataGenerator.appendGroup` passes `addGroup` arguments in the wrong order, and `SingleEquipment` omits the `static isSingleInstance()` override so the manager stacks it like a normal item.
+</Info>

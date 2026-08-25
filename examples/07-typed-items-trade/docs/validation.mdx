@@ -1,0 +1,90 @@
+---
+title: "Optional zod validation"
+description: "The types package verifies the catalog without the game depending on it. import type gives editor types with no runtime cost; itemDataSchema.parse is the runtime check."
+---
+
+The game runs on plain data. [`@reldens-community/items-types`](/packages/reldens-items-types/docs/api/index) lets you *verify* that data, as a layer you add or remove freely.
+
+## Two layers
+
+<CardGroup cols={2}>
+  <Card title="src/ (the app)" icon="gamepad">
+    Imports `@reldens/items-system` only. Copy it anywhere; it needs no types package to run.
+  </Card>
+  <Card title="optional-validation/ + test/" icon="shield-check">
+    Import the types package and check the same catalog. Deleting them changes nothing about how the game runs.
+  </Card>
+</CardGroup>
+
+## import type: strictness, no runtime cost
+
+`import type` is erased at compile time. It gives you editor autocomplete and errors with zero effect on the shipped bundle.
+
+```ts
+import type { ItemData } from '@reldens-community/items-types';
+
+const sword: ItemData = { id: 1, key: 'iron_sword', type: 1, label: 'Iron Sword' };
+//    ^ typo a field name or use a wrong type and tsc flags it here
+```
+
+## parse: the runtime check
+
+`itemDataSchema` validates a value at runtime. Use `safeParse` to handle failure yourself, or `parse` to throw.
+
+```ts optional-validation/validate-catalog.ts
+import { itemDataSchema, type ItemData } from '@reldens-community/items-types';
+import { itemsCatalog } from '../src/items-catalog';
+
+function verifyCatalog(): ItemData[] {
+    return itemsCatalog.map((entry, index) => {
+        const result = itemDataSchema.safeParse(entry);
+        if (!result.success) {
+            const key = (entry as { key?: string }).key ?? `#${index}`;
+            throw new Error(`Item "${key}" is invalid:\n${result.error.message}`);
+        }
+        return result.data;
+    });
+}
+```
+
+```text
+$ npm run verify
+Catalog OK: 3 items passed itemDataSchema.
+  iron_sword (type 1)
+  health_potion (type 2)
+  gold (type 3)
+```
+
+## The same check, as a test
+
+`test/catalog.test.ts` asserts the shipped catalog is a shape the schemas, and therefore the engine, accept.
+
+```ts test/catalog.test.ts
+import { itemDataSchema, ITEM_TYPES } from '@reldens-community/items-types';
+import { itemsCatalog } from '../src/items-catalog';
+
+test('every catalog entry passes itemDataSchema', () => {
+    for (const entry of itemsCatalog) {
+        assert.equal(itemDataSchema.safeParse(entry).success, true);
+    }
+});
+
+test('a bad catalog entry is rejected', () => {
+    assert.equal(itemDataSchema.safeParse({ id: 9, key: 'broken', type: 999 }).success, false);
+});
+```
+
+`type: 999` fails because [`itemTypeSchema`](/examples/07-typed-items-trade/docs/catalog) accepts only the six real `ItemsConst.TYPES` ids.
+
+## When to reach for which
+
+| You want | Use |
+|---|---|
+| Editor types, zero runtime weight | `import type { ItemData }` |
+| Fail loudly on bad data at startup | `itemDataSchema.parse(x)` |
+| Branch on validity yourself | `itemDataSchema.safeParse(x)` |
+| Catch a bad catalog in CI | the `test/` check |
+
+<Tip>
+Config that comes from a database, an admin panel, or a file is where `parse` earns its keep. Hand-written constants are better served by `import type` alone.
+</Tip>

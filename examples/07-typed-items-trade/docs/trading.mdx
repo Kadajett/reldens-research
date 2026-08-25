@@ -1,0 +1,70 @@
+---
+title: "Trading"
+description: "ExchangePlatform moves items between two inventories: initialize, push what each side offers, both confirm, finalize. Inventories lock while the trade is open."
+---
+
+[`ExchangePlatform`](/packages/reldens-items-types/docs/api/classes/ExchangePlatform) moves items between two inventories, `A` and `B`. It locks both while the trade is open, so neither side can change an inventory mid-deal.
+
+## The flow
+
+<Steps>
+  <Step title="Initialize">
+    Bind the two inventories to sides `A` and `B`. This locks both.
+
+    ```ts
+    const exchange = new ExchangePlatform();
+    exchange.initializeExchangeBetween({ inventoryA: alice, inventoryB: bob });
+    ```
+  </Step>
+  <Step title="Push what each side offers">
+    Push by the item's slot id and a quantity. A non-single item is pushed by its `uid`; a single-instance item by its `key`.
+
+    ```ts
+    await exchange.pushForExchange(sword.uid, 1, 'A');
+    await exchange.pushForExchange('gold', 50, 'B');
+    ```
+
+    Each push is validated: the item must exist in that inventory and the quantity must be available (or the item's `qty` must be `-1`, meaning infinite). An invalid push returns `false` and emits `INVALID_PUSH`.
+  </Step>
+  <Step title="Both sides confirm">
+    ```ts
+    await exchange.confirmExchange('A');
+    await exchange.confirmExchange('B');
+    ```
+
+    Once either side confirms, further pushes are blocked. `disconfirmExchange('A')` reopens the deal.
+  </Step>
+  <Step title="Finalize">
+    ```ts
+    const finalized = await exchange.finalizeExchange();
+    if (!finalized) {
+        throw new Error(`Trade failed: ${exchange.lastError.message}`);
+    }
+    ```
+
+    Finalize checks both confirmations, revalidates, unlocks the inventories, and executes both directions (`A→B`, then `B→A`). It returns `true` on success, `false` with `lastError` set otherwise.
+  </Step>
+</Steps>
+
+## Result
+
+```text
+Before trade:
+  Alice: iron_sword x1
+  Bob:   gold x100
+After trade:
+  Alice: gold x50
+  Bob:   gold x50, iron_sword x1
+```
+
+Alice's sword became a slot in Bob's inventory; 50 of Bob's gold became a stack in Alice's.
+
+<Warning>
+Finalize fails with "Missing confirmation" unless **both** `A` and `B` have confirmed. Check the boolean it returns rather than assuming the trade went through.
+</Warning>
+
+<Note>
+`cancelExchange()` unlocks both inventories and resets the platform. Reach for it on any abort so the inventories do not stay locked.
+</Note>
+
+The trade here carries no requirements or rewards. Those optional gates (an item the other side must own, or a bonus item minted on trade) run through `RequirementsProcessor` and `RewardsProcessor` inside finalize; see the [gotchas page](/examples/07-typed-items-trade/docs/gotchas) for a latent bug in the empty-rewards path.

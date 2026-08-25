@@ -1,0 +1,50 @@
+---
+title: "Inventories"
+description: "An ItemsManager is an inventory bound to an owner. It needs the catalog as a {class, data} map, which ItemsDataGenerator builds for you."
+---
+
+An [`ItemsManager`](/packages/reldens-items-types/docs/api/index) is an inventory with an owner. To build one you need two things: the owner, and the catalog turned into the `{class, data}` map the manager stores items from.
+
+## The owner
+
+The owner is any object with an `id`. The manager reads `owner.id` to key its events and to answer `getOwnerId()`.
+
+```ts
+function makePlayer(id: number, name: string): OwnerLike {
+    return { id, name };
+}
+```
+
+<Warning>
+`owner` is required. Construct an `ItemsManager` without it and the manager logs a critical error and sets `hasError = true`; every later call short-circuits to `false`.
+</Warning>
+
+## From catalog to model data
+
+`ItemsDataGenerator.itemsListMappedData` maps each catalog entry to its item class (resolved from `type`) and its data.
+
+```ts
+const itemsModelData = ItemsDataGenerator.itemsListMappedData({}, structuredClone(itemsCatalog));
+// { iron_sword: { class: ItemEquipment, data: {...} }, gold: { class: ItemSingle, data: {...} }, ... }
+```
+
+The first argument is an override map of custom classes per key; `{}` uses the built-in class for each `type`. `structuredClone` keeps the generator from mutating your source catalog.
+
+## Building the manager
+
+```ts src/trade-demo.ts
+async function buildInventory(owner: OwnerLike): Promise<ItemsManager> {
+    const itemsModelData = ItemsDataGenerator.itemsListMappedData({}, structuredClone(itemsCatalog));
+    const manager = new ItemsManager({ owner, itemsModelData });
+    await manager.setup({});
+    return manager;
+}
+```
+
+`setup()` fires the manager's init event and applies any `items` or `groups` you pass. Passing `{}` gives you an empty, ready inventory.
+
+<Note>
+Both players in this example get the **full** catalog. A trade builds the counterparty's item in the receiving inventory, so each manager must know every key it might receive.
+</Note>
+
+Next: [add items](/examples/07-typed-items-trade/docs/adding-items) to the inventory you just built.

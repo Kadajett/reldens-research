@@ -1,0 +1,69 @@
+---
+title: "API used here"
+description: "Method tables for every @reldens/items-system call this example makes: ItemsManager, ExchangePlatform, ItemsDataGenerator, and ItemsConst."
+---
+
+Every call this example makes, in one place. Full class references live under [Ecosystem API](/packages/reldens-items-types/docs/api/index).
+
+## ItemsManager
+
+Constructed with `{ owner, itemsModelData }`. Extends the base `Inventory`.
+
+| Member | Signature | Returns |
+|---|---|---|
+| `setup` | `setup(props?)` | fires init, applies `items`/`groups` |
+| `createItemInstance` | `createItemInstance(key, qty?)` | an instance, an array, or `false` |
+| `addItem` | `addItem(instance)` | the stored item, or `false` |
+| `addItems` | `addItems(instances)` | `true`, or `false` on the first failure |
+| `findItemByKey` | `findItemByKey(key)` | an item, or `false` |
+| `getOwnerId` | `getOwnerId()` | `owner.id` |
+| `items` | property | `Record<slotKey, ItemInstance>` |
+
+## ExchangePlatform
+
+A trade coordinator over two inventories bound to `A` and `B`.
+
+| Member | Signature | Notes |
+|---|---|---|
+| `initializeExchangeBetween` | `({ inventoryA, inventoryB })` | binds and **locks** both |
+| `pushForExchange` | `(itemId, qty, side)` | `side` is `'A'` or `'B'`; validates availability |
+| `removeFromExchange` | `(itemId, side)` | un-pushes an item |
+| `confirmExchange` | `(side)` | marks a side ready; blocks further pushes |
+| `disconfirmExchange` | `(side)` | reopens the deal |
+| `finalizeExchange` | `()` | needs both confirmations; executes both directions |
+| `cancelExchange` | `()` | unlocks and resets |
+| `lastError` | property | `{ message, ... }`, set when a call returns `false` |
+
+<Note>
+`itemId` is the item's slot key: a `uid` for non-single types, the item `key` for single-instance types. It matches what `getInventoryId()` returns.
+</Note>
+
+## ItemsDataGenerator
+
+A static helper; no instance needed.
+
+| Member | Signature | Returns |
+|---|---|---|
+| `itemsListMappedData` | `(inventoryClasses, itemsModelsList)` | `Record<key, { class, data }>` |
+
+Pass `{}` as `inventoryClasses` to use the built-in class for each `type`; pass a map to override a key with your own subclass.
+
+## ItemsConst.TYPES
+
+| Name | Id |
+|---|---|
+| `EQUIPMENT` | 1 |
+| `USABLE` | 2 |
+| `SINGLE` | 3 |
+| `SINGLE_EQUIPMENT` | 4 |
+| `SINGLE_USABLE` | 5 |
+| `ITEM_BASE` | 10 |
+
+## Types from the types package
+
+| Import | Kind | Use |
+|---|---|---|
+| `itemDataSchema` | zod schema | validate an authored item |
+| `ItemData` | inferred type | `import type` for editor types |
+| `ITEM_TYPES` | const object | the type ids as names |
+| `itemTypeSchema` | zod schema | validate a `type` value alone |
