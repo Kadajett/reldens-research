@@ -1,0 +1,26 @@
+{
+  "name": "@reldens-community/storage-types",
+  "version": "0.1.0",
+  "description": "Zod schemas and inferred TypeScript types for @reldens/storage - the Reldens storage layer (Objection.js / MikroORM / Prisma). Hand-written from the source and drift-tested against the installed package.",
+  "type": "commonjs",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "keywords": ["reldens", "storage", "zod", "types", "storage", "database", "orm"],
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.json",
+    "test": "tsx --test test/*.test.ts"
+  },
+  "peerDependencies": {
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@reldens/storage": "0.91.0",
+    "zod": "^4.4.3"
+  },
+  "reldens": {
+    "typesFor": "@reldens/storage",
+    "verifiedAgainst": "0.91.0"
+  }
+}
