@@ -51,6 +51,14 @@ class Cdp {
         return this.send('Page.navigate', {url});
     }
 
+    // TRUSTED keyboard input at the browser level, so Phaser's own input handles it
+    // exactly like a real key press (synthetic DOM events are ignored as untrusted)
+    key(type: 'keyDown' | 'keyUp', code: string, vk: number, key: string): Promise<CdpMessage> {
+        return this.send('Input.dispatchKeyEvent', {
+            type, code, key, windowsVirtualKeyCode: vk, nativeVirtualKeyCode: vk
+        });
+    }
+
     close(): void {
         this.ws.close();
     }
@@ -161,13 +169,16 @@ async function main(): Promise<void> {
     await cdp.evaluate(`(() => { const t = document.querySelector('#close-target, .close-target'); if(t){ t.click(); } return true; })()`);
     await sleep(1500);
 
-    // cross the town->forest change point via click-to-move toward the top edge
-    // (the door sits up and slightly right of the spawn). Detect the real scene
-    // change through the client's own startChangedScene event, then fight+die.
-    const changed = await changeScene(cdp);
-    console.info('[browser-driver] scene changed:', changed);
-    if(changed){
+    // if the account loaded straight into the forest, fight there; otherwise try to
+    // cross the town->forest change point first, then fight
+    const room = await cdp.evaluate<string>(`(() => { try { return window.reldens.activeRoomEvents.room.name; } catch(e){ return ''; } })()`);
+    console.info('[browser-driver] room:', room);
+    if('reldens-forest' === room){
         await fightAndDie(cdp);
+    } else {
+        const changed = await changeScene(cdp);
+        console.info('[browser-driver] scene changed:', changed);
+        if(changed){ await fightAndDie(cdp); }
     }
 
     const seen = await cdp.evaluate<number>(
@@ -233,47 +244,61 @@ async function pathTo(cdp: Cdp, tx: number, ty: number, tries: number): Promise<
     return last;
 }
 
-// step-walk toward a target with plain direction messages (blunt, but crosses into
-// doorways where pointer pathing stops short) - mirrors driver.stepTowards
-async function stepTowards(cdp: Cdp, tx: number, ty: number, timeoutMs: number, closeEnough: number): Promise<boolean> {
-    const startedAt = Date.now();
-    let prev: {x: number; y: number} | null = null;
-    let stuck = 0;
-    while(Date.now() - startedAt < timeoutMs){
-        const s = await playerPos(cdp);
-        if(!s){ await sleep(250); continue; }
-        const dx = tx - s.x, dy = ty - s.y;
-        if(closeEnough > Math.hypot(dx, dy)){ await roomSend(cdp, `{act:'stop'}`); return true; }
-        if(await recSeen(cdp, 'reldens.startChangedScene')){ return true; }
-        // when blocked (no progress), push along the other axis to slip past the wall
-        stuck = (prev && Math.hypot(s.x - prev.x, s.y - prev.y) < 3) ? stuck + 1 : 0;
-        prev = s;
-        let dir = Math.abs(dx) > Math.abs(dy) ? (0 < dx ? 'right' : 'left') : (0 < dy ? 'down' : 'up');
-        if(1 < stuck){ dir = Math.abs(dx) > Math.abs(dy) ? (0 < dy ? 'down' : 'up') : (0 < dx ? 'right' : 'left'); }
-        await roomSend(cdp, `{dir:'${dir}'}`);
+const KEYS: Record<string, {vk: number; code: string; key: string}> = {
+    up: {vk: 38, code: 'ArrowUp', key: 'ArrowUp'},
+    down: {vk: 40, code: 'ArrowDown', key: 'ArrowDown'},
+    left: {vk: 37, code: 'ArrowLeft', key: 'ArrowLeft'},
+    right: {vk: 39, code: 'ArrowRight', key: 'ArrowRight'}
+};
+
+// hold a real arrow key down for a while so the client walks the player, releasing
+// early if the scene changes; returns whether a scene change fired
+async function holdKey(cdp: Cdp, dir: keyof typeof KEYS, ms: number): Promise<boolean> {
+    const k = KEYS[dir];
+    await cdp.key('keyDown', k.code, k.vk, k.key);
+    const until = Date.now() + ms;
+    while(Date.now() < until){
         await sleep(300);
-        await roomSend(cdp, `{act:'stop'}`);
-        await sleep(120);
+        if(await recSeen(cdp, 'reldens.startChangedScene')){ await cdp.key('keyUp', k.code, k.vk, k.key); return true; }
     }
-    await roomSend(cdp, `{act:'stop'}`);
+    await cdp.key('keyUp', k.code, k.vk, k.key);
     return false;
 }
 
-// reach any town exit and cross it: pointer-path to the landing near a door, then
-// step-walk into the change point tile. Town has three doors (forest, two houses);
-// try each until the client reports a real scene change.
+// step toward a target using real held arrow keys, reading the authoritative server
+// position; crosses into doorways the way a human player walks through them
+async function stepTowards(cdp: Cdp, tx: number, ty: number, timeoutMs: number, closeEnough: number): Promise<boolean> {
+    const startedAt = Date.now();
+    while(Date.now() - startedAt < timeoutMs){
+        const s = await playerPos(cdp);
+        if(!s){ await sleep(200); continue; }
+        if(closeEnough > Math.hypot(tx - s.x, ty - s.y)){ return true; }
+        if(await recSeen(cdp, 'reldens.startChangedScene')){ return true; }
+        const dir = Math.abs(tx - s.x) > Math.abs(ty - s.y)
+            ? (0 < tx - s.x ? 'right' : 'left') : (0 < ty - s.y ? 'down' : 'up');
+        if(await holdKey(cdp, dir, 700)){ return true; }
+    }
+    return false;
+}
+
+// reach a town exit and cross it with real key presses. Town has three doors; walk
+// to each landing (pointer path) then hold the arrow into the change point tile.
 async function changeScene(cdp: Cdp): Promise<boolean> {
     console.info('[browser-driver] start pos', JSON.stringify(await playerPos(cdp)));
     const doors = [
-        {name: 'house-1', x: 400, y: 304, ax: 400, ay: 368},
-        {name: 'forest', x: 592, y: 16, ax: 592, ay: 80},
-        {name: 'house-2', x: 1264, y: 624, ax: 1264, ay: 688}
+        {name: 'forest', ax: 592, ay: 112, into: 'up' as const, hold: 4500},
+        {name: 'house-1', ax: 400, ay: 400, into: 'up' as const, hold: 4000},
+        {name: 'house-2', ax: 1264, ay: 720, into: 'up' as const, hold: 4000}
     ];
     for(const door of doors){
         await pathTo(cdp, door.ax, door.ay, 14);
         console.info('[browser-driver] at', door.name, JSON.stringify(await playerPos(cdp)));
-        await stepTowards(cdp, door.x, door.y, 12000, 14);
-        if(await recSeen(cdp, 'reldens.startChangedScene')){ console.info('[browser-driver] crossed', door.name); return true; }
+        // hold the arrow straight into the door in bursts, re-approaching if pushed off
+        for(let burst = 0; burst < 4; burst++){
+            if(await holdKey(cdp, door.into, door.hold)){ console.info('[browser-driver] crossed', door.name); return true; }
+            const p = await playerPos(cdp);
+            if(p && Math.abs(p.x - door.ax) > 40){ await pathTo(cdp, door.ax, door.ay, 8); }
+        }
     }
     return false;
 }
@@ -282,24 +307,23 @@ async function changeScene(cdp: Cdp): Promise<boolean> {
 // the player trades damage and eventually dies, firing playerAttack and gameOver
 async function fightAndDie(cdp: Cdp): Promise<void> {
     await sleep(3000);
-    // move into the forest interior, away from the entrance edge, to meet enemies
-    await pathTo(cdp, 592, 320, 8);
-    for(let round = 0; round < 22; round++){
+    const dirs: Array<keyof typeof KEYS> = ['up', 'right', 'down', 'left'];
+    for(let round = 0; round < 30; round++){
+        // attack every enemy body the client currently knows about
         const enemies = await cdp.evaluate<string[]>(`(() => {
             try {
                 const r = ${ROOM}; const st = r && r.state; const out = [];
-                const bodies = st && (st.bodies || st.objects || st.players);
-                if(bodies && bodies.forEach){ bodies.forEach((v,k) => { if(out.length < 8){ out.push(String(k)); } }); }
+                if(st && st.bodies && st.bodies.forEach){ st.bodies.forEach((v,k) => { if(out.length < 12){ out.push(String(k)); } }); }
                 return out;
             } catch(e){ return []; }
         })()`);
         for(const id of enemies ?? []){
             await roomSend(cdp, `{act:'action', type:'attackShort', target:{id:'${id}', type:'obj'}}`);
-            await sleep(250);
+            await sleep(200);
+            if(await recSeen(cdp, 'reldens.gameOver')){ return; }
         }
-        await roomSend(cdp, `{dir:'${['up', 'down', 'left', 'right'][round % 4]}'}`);
-        await sleep(400);
-        await roomSend(cdp, `{act:'stop'}`);
+        // roam with real keys to aggro more enemies and keep trading damage
+        await holdKey(cdp, dirs[round % 4], 900);
         if(await recSeen(cdp, 'reldens.gameOver')){ return; }
     }
 }

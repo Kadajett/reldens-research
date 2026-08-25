@@ -40,13 +40,42 @@ async function main(): Promise<void> {
     cdp.navigate(PAGE_URL);
     await waitFor(cdp, `!!(window.reldens && window.reldens.events && window.reldens.events.__harnessAttached)`, 20000);
     await sleep(1500);
-    const guest = 'gp'+String(Date.now()).slice(-8);
-    await cdp.evaluate(`window.reldens.startGame({formId:'guest-form',username:'${guest}',password:'${guest}',rePassword:'${guest}',isGuest:true}, true)`);
-    if(await waitFor(cdp, `!!document.querySelector('#player-create-form:not(.hidden)')`, 15000)){
-        await cdp.evaluate(`(()=>{document.querySelector('#new-player-name').value='BP${String(Date.now()).slice(-6)}';document.querySelector('#player-create-form').dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}));return true;})()`);
+    const loginUser = process.env.HARNESS_LOGIN_USER;
+    const loginPass = process.env.HARNESS_LOGIN_PASS || '';
+    if(loginUser){
+        await cdp.evaluate(`window.reldens.startGame({formId:'login-form',username:'${loginUser}',password:'${loginPass}'}, false)`);
+        if(await waitFor(cdp, `!!document.querySelector('#player-selector-form:not(.hidden)')`, 8000)){
+            await cdp.evaluate(`(()=>{const s=document.querySelector('#player-select-element');if(s&&s.options.length){s.selectedIndex=0;}document.querySelector('#player-selector-form').dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}));return true;})()`);
+        }
+    } else {
+        const guest = 'gp'+String(Date.now()).slice(-8);
+        await cdp.evaluate(`window.reldens.startGame({formId:'guest-form',username:'${guest}',password:'${guest}',rePassword:'${guest}',isGuest:true}, true)`);
+        if(await waitFor(cdp, `!!document.querySelector('#player-create-form:not(.hidden)')`, 15000)){
+            await cdp.evaluate(`(()=>{document.querySelector('#new-player-name').value='BP${String(Date.now()).slice(-6)}';document.querySelector('#player-create-form').dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}));return true;})()`);
+        }
     }
     await waitFor(cdp, `!!document.querySelector('#reldens canvas')`, 30000);
     await sleep(4000);
+
+    // ground truth: room name, parsed sceneData change points, map dims, player pos
+    const truth = await cdp.evaluate<any>(`(() => {
+        try {
+            const r = window.reldens, room = r.activeRoomEvents.room;
+            const sd = JSON.parse(room.state.sceneData || '{}');
+            let key = room.sessionId; const p = room.state.players.get(key);
+            return {
+                roomName: room.name,
+                sessionId: room.sessionId,
+                pos: p && p.state ? {x: p.state.x, y: p.state.y} : null,
+                changePoints: sd.changePoints || sd.roomChangePoints || null,
+                mapWidth: sd.roomMap && sd.roomMap.width, mapHeight: sd.roomMap && sd.roomMap.height,
+                tileWidth: sd.roomMap && (sd.roomMap.tilewidth || sd.roomMap.tileWidth),
+                sdKeys: Object.keys(sd)
+            };
+        } catch(e){ return {err: String(e)}; }
+    })()`);
+    require('node:fs').writeFileSync(__dirname+'/../.browser-truth.json', JSON.stringify(truth, null, 2));
+    console.info('[probe] TRUTH', JSON.stringify(truth));
 
     // find the structure: walk window.reldens for the game engine, active scene and player
     const struct = await cdp.evaluate<any>(`(() => {
