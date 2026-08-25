@@ -1,0 +1,26 @@
+{
+  "name": "@reldens-community/skills-types",
+  "version": "0.1.0",
+  "description": "Zod schemas and inferred TypeScript types for @reldens/skills - the Reldens skills, levels and abilities engine. Hand-written from the source and drift-tested against the installed package.",
+  "type": "commonjs",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "keywords": ["reldens", "skills", "zod", "types", "skills", "abilities", "mmorpg"],
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.json",
+    "test": "tsx --test test/*.test.ts"
+  },
+  "peerDependencies": {
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@reldens/skills": "0.48.0",
+    "zod": "^4.4.3"
+  },
+  "reldens": {
+    "typesFor": "@reldens/skills",
+    "verifiedAgainst": "0.48.0"
+  }
+}
