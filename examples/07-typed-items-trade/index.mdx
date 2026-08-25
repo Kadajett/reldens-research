@@ -3,7 +3,11 @@ title: "07 - Typed Items Trade"
 description: "Add items to inventories and run a trade with @reldens/items-system, then verify the item catalog with zod - as an opt-in layer the game never depends on."
 ---
 
-The [items system](/packages/reldens-items-types/docs/api/index) is the engine for adding, holding, and trading items. This example runs a real trade between two players, then shows how to verify the item data with the [`@reldens-community/items-types`](/packages/reldens-items-types/docs/api/index) zod schemas without the game code depending on them.
+<Warning>
+**`@reldens-community/items-types` is a community proposal, not an official reldens package.** It is unpublished, and reldens neither ships nor depends on it. The zod validation shown here exists only in this repo, pending the maintainer's decision to adopt it. The `@reldens/items-system` half of this example uses the real, published package and works today regardless.
+</Warning>
+
+The [items system](/packages/reldens-items-types/docs/api/index) is the engine for adding, holding, and trading items. This example runs a real trade between two players, then shows how the item data *could* be verified with the proposed [`@reldens-community/items-types`](/packages/reldens-items-types/docs/api/index) zod schemas without the game code depending on them.
 
 ## What it produces
 
